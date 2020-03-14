@@ -1,0 +1,125 @@
+{
+    "common": {
+        "name": "rss-feed",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "首次出版"
+            }
+        },
+        "title": "RSS Feed",
+        "titleLang": {
+            "en": "RSS Feed",
+            "de": "RSS-Feed",
+            "ru": "Новостная лента",
+            "pt": "Feed RSS",
+            "nl": "RSS-feed",
+            "fr": "Flux RSS",
+            "it": "RSS Feed",
+            "es": "RSS Feed",
+            "pl": "Kanał RSS",
+            "zh-cn": "RSS订阅"
+        },
+        "desc": {
+            "en": "Adapter and vis widget for rss feeds",
+            "de": "Adapter und Vis-Widget für RSS-Feeds",
+            "ru": "Адаптер и виджет vis для каналов RSS",
+            "pt": "Adaptador e widget vis para feeds RSS",
+            "nl": "Adapter en vis widget voor RSS-feeds",
+            "fr": "Adaptateur et widget vis pour les flux rss",
+            "it": "Adattatore e widget vis per feed rss",
+            "es": "Adaptador y widget de visualización para feeds rss",
+            "pl": "Adapter i widżet Vis dla kanałów RSS",
+            "zh-cn": "rss提要的适配器和可见小部件"
+        },
+        "authors": [
+            "oweitman <oweitman@gmx.de>"
+        ],
+        "keywords": [
+            "rss",
+            "atom",
+            "rdf",
+            "feed"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "rss-feed.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.rss-feed/master/admin/rss-feed.png",
+        "readme": "https://github.com/oweitman/ioBroker.rss-feed/blob/master/README.md",
+        "loglevel": "info",
+        "restartAdapters": [
+            "vis"
+        ],
+        "localLink": "%web_protocol%://%ip%:%web_port%/vis/edit.html",
+        "mode": "daemon",
+        "type": "misc-data",
+        "compact": true,
+        "connectionType": "cloud",
+        "dataSource": "poll",
+        "materialize": true,
+        "materializeTab": true,
+        "adminTab": {
+            "singleton": true,
+            "name": {
+                "en": "RSS Feed",
+                "de": "RSS-Feed",
+                "ru": "Новостная лента",
+                "pt": "Feed RSS",
+                "nl": "RSS-feed",
+                "fr": "Flux RSS",
+                "it": "RSS Feed",
+                "es": "RSS Feed",
+                "pl": "Kanał RSS",
+                "zh-cn": "RSS订阅"
+            },
+            "link": "",
+            "fa-icon": "info"
+        },
+        "supportCustoms": true,
+        "dependencies": [
+            {
+                "js-controller": ">=1.4.2"
+            },
+            "vis"
+        ]
+    },
+    "native": {
+        "option1": true,
+        "option2": "42"
+    },
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "role": "indicator.connected",
+                "name": "Device or service connected",
+                "type": "boolean",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        }
+    ]
+}
