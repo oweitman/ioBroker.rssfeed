@@ -1,18 +1,18 @@
-![Logo](admin/rss-feed.png)
-# ioBroker.rss-feed
+![Logo](admin/rssfeed.png)
+# ioBroker.rssfeed
 
-[![NPM version](http://img.shields.io/npm/v/iobroker.rss-feed.svg)](https://www.npmjs.com/package/iobroker.rss-feed)
-[![Downloads](https://img.shields.io/npm/dm/iobroker.rss-feed.svg)](https://www.npmjs.com/package/iobroker.rss-feed)
-![Number of Installations (latest)](http://iobroker.live/badges/rss-feed-installed.svg)
-![Number of Installations (stable)](http://iobroker.live/badges/rss-feed-stable.svg)
-[![Dependency Status](https://img.shields.io/david/oweitman/iobroker.rss-feed.svg)](https://david-dm.org/oweitman/iobroker.rss-feed)
-[![Known Vulnerabilities](https://snyk.io/test/github/oweitman/ioBroker.rss-feed/badge.svg)](https://snyk.io/test/github/oweitman/ioBroker.rss-feed)
+[![NPM version](http://img.shields.io/npm/v/iobroker.rssfeed.svg)](https://www.npmjs.com/package/iobroker.rssfeed)
+[![Downloads](https://img.shields.io/npm/dm/iobroker.rssfeed.svg)](https://www.npmjs.com/package/iobroker.rssfeed)
+![Number of Installations (latest)](http://iobroker.live/badges/rssfeed-installed.svg)
+![Number of Installations (stable)](http://iobroker.live/badges/rssfeed-stable.svg)
+[![Dependency Status](https://img.shields.io/david/oweitman/iobroker.rssfeed.svg)](https://david-dm.org/oweitman/iobroker.rssfeed)
+[![Known Vulnerabilities](https://snyk.io/test/github/oweitman/ioBroker.rssfeed/badge.svg)](https://snyk.io/test/github/oweitman/ioBroker.rssfeed)
 
-[![NPM](https://nodei.co/npm/iobroker.rss-feed.png?downloads=true)](https://nodei.co/npm/iobroker.rss-feed/)
+[![NPM](https://nodei.co/npm/iobroker.rssfeed.png?downloads=true)](https://nodei.co/npm/iobroker.rssfeed/)
 
-**Tests:**: [![Travis-CI](http://img.shields.io/travis/oweitman/ioBroker.rss-feed/master.svg)](https://travis-ci.org/oweitman/ioBroker.rss-feed)
+**Tests:**: [![Travis-CI](http://img.shields.io/travis/oweitman/ioBroker.rssfeed/master.svg)](https://travis-ci.org/oweitman/ioBroker.rssfeed)
 
-## rss-feed adapter for ioBroker
+## rssfeed adapter for ioBroker
 
 Adapter and vis widget for rss feeds
 
@@ -22,7 +22,7 @@ This section is intended for the developer. It can be deleted later
 ### Getting started
 
 You are almost done, only a few steps left:
-1. Create a new repository on GitHub with the name `ioBroker.rss-feed`
+1. Create a new repository on GitHub with the name `ioBroker.rssfeed`
 
 1. Push all files to the GitHub repo. The creator has already set up the local repository for you:  
     ```bash
@@ -72,8 +72,8 @@ In order to install the adapter locally without publishing, the following steps 
     ```
 
 For later updates, the above procedure is not necessary. Just do the following:
-1. Overwrite the changed files in the adapter directory (`/opt/iobroker/node_modules/iobroker.rss-feed`)
-1. Execute `iobroker upload rss-feed` on the ioBroker host
+1. Overwrite the changed files in the adapter directory (`/opt/iobroker/node_modules/iobroker.rssfeed`)
+1. Execute `iobroker upload rssfeed` on the ioBroker host
 
 ## Changelog
 

@@ -18,6 +18,7 @@
     <script type="text/javascript" src="words.js"></script>
 
     <script type="text/javascript">
+
         // This will be called by the admin adapter when the settings page loads
         function load(settings, onChange) {
             // example: select elements with id=key and class=value and insert value
@@ -39,10 +40,63 @@
                 }
             });
             onChange(false);
+            document.getElementById('rssform').addEventListener (
+                "submit", 
+                function (evt) {
+                    var refresh = $('#refresh').val() || 60;
+                    var rssname = $('#rssname').val() || '';
+                    rssname = rssname.replace(/[^0-9a-z]/gi, '');
+                    var rssurl = $('#rssurl').val() || '';
+                    var rssrefresh = $('#rssrefresh').val() || refresh;
+                    if (rssname !=  '' && rssurl !=  '' && rssrefresh != '') {
+                        var rss = JSON.parse($('#rss').val());
+                        const found = rss.some(el => el.name === rssname && el.url === rssurl && el.refresh === rssrefresh);
+                        onChange(true);
+                        if (!found) rss.push({"name": rssname,"url": rssurl,"refresh":rssrefresh});
+                        $('#rss').val(JSON.stringify(rss));
+                        $('#rssname').val('');
+                        $('#rssurl').val('');
+                        $('#rssrefresh').val('');
+                        updatetable(onChange);
+                    }
+
+                    evt.preventDefault();
+                    //
+            });
+
             // reinitialize all the Materialize labels on the page if you are dynamically adding inputs:
             if (M) M.updateTextFields();
-        }
+            updatetable(onChange);
 
+        }
+        function deleteitem(onChange, rssname,rssurl,rssrefresh) {
+            var rss = JSON.parse($('#rss').val());
+            rss = $.grep(rss, function(e){ 
+                 return !(e.name == rssname && e.url == rssurl && e.refresh == rssrefresh); 
+            });            
+            $('#rss').val(JSON.stringify(rss));
+            onChange(true);
+            updatetable(onChange);
+        }
+        function updatetable(onChange) {
+            var tablebody = $('#oldb-data');
+            var rss = JSON.parse($('#rss').val());
+            tablebody.html('');
+            rss.forEach(function(onChange,item){
+                var text='';
+                text += '<tr>';
+                text += '<td class="wizard-table-name">'+item.name+'</td>';
+                text += '<td class="wizard-table-url">'+item.url+'</td>';
+                text += '<td class="wizard-table-refresh">'+item.refresh+'</td>';
+                text += '<td class="wizard-table-delete">';
+                text += '<a class="waves-effect waves-light btn"><i class="material-icons">delete</i></a>';
+                text += '</td>';
+                text += '</tr>';
+                var newtr = $(text);
+                newtr.find('a').click(deleteitem.bind(this,onChange,item.name,item.url,item.refresh));
+                tablebody.append(newtr);
+            }.bind(this,onChange));
+        }
         // This will be called by the admin adapter when the user presses the save button
         function save(callback) {
             // example: select elements with class=value and build settings object
@@ -64,30 +118,117 @@
 <body>
 
     <div class="m adapter-container">
-
         <div class="row">
-            <div class="col s12 m4 l2">
-                <img src="rss-feed.png" class="logo">
+            <div class="col s12">
+                <ul class="tabs">
+                    <li class="tab col s2"><a href="#tab-main"  class="translate active">Main settings</a></li>
+                </ul>
+            </div>
+            <div id="tab-main" class="col s12 page">
+                <div class="row valign-wrapper">
+                    <div class="col" style="">
+                        <img class="responsive-img valign" src="rssfeed.png" width="64" height="64">
+                    </div>
+                    <div class="col">
+                        <h3 class="translate">RSS Feed  settings </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s2">
+                        <input class="value" id="refresh" type="text" />
+                        <label class="translate" for="refresh">Refresh (Minutes):</label>
+                    </div>
+                </div>                
+                <div class="row">
+                    <div class="input-field col s2">
+                        <input class="value" id="maxarticles" type="text" />
+                        <label class="translate" for="maxarticles">Maximale Articlesin Datapoint:</label>
+                    </div>
+                </div>                
+                <div class="row">
+                    <div class="col s4">
+                        <h5 class="translate">Adding RSS Feeds</h5>
+                    </div>
+                </div>                
+                <div class="row">
+                    <form id="rssform">
+                        <div class="input-field col s2">
+                            <input class="" id="rssname" type="text" />
+                            <label class="translate" for="rssname">Name:</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input class="" id="rssurl" type="text" />
+                            <label class="translate" for="rssurl">Url:</label>
+                        </div>
+                        <div class="input-field col s2">
+                            <input class="" id="rssrefresh" type="text" />
+                            <label class="translate" for="rssrefresh">Refresh (Minutes):</label>
+                        </div>
+                        <div class="input-field col s1">
+                            <button class="btn waves-effect waves-light blue table-button-add" type="submit" name="action">
+                                <i class="material-icons">add</i>
+                            </button>
+                        </div>
+                    <form>
+                </div>
+                <div class="row">
+                    <div class="">
+                        <table class="wizard-table">
+                            <thead>
+                            <tr>
+                                <th class="translate wizard-table-name" style="width:5%;">Name</th>
+                                <th class="translate wizard-table-url" style="width:10%;">Url</th>
+                                <th class="translate wizard-table-refresh" style="width:5%;">  Refresh</th>
+                                <th class="translate wizard-table-delete" style="width:5%;"></th>
+                            </tr>
+                            </thead>
+                            <tbody id="oldb-data">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row hide">
+                    <div class="input-field col s1">
+                        <input class="value" id="rss" type="text" />
+                    </div>
+                </div>
+                
             </div>
         </div>
-
-        <!-- Put your content here -->
-
-        <!-- For example columns with settings: -->
-        <div class="row">
-            <div class="col s6 input-field">
-                <input type="checkbox" class="value" id="option1" />
-                <label for="option1" class="translate">option1</label>
-            </div>
-
-            <div class="col s6 input-field">
-                <input type="text" class="value" id="option2" />
-                <label for="option2" class="translate">option2</label>
-            </div>
-        </div>
-
     </div>
-
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

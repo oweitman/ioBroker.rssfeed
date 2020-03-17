@@ -1,12 +1,12 @@
 {
-  "name": "iobroker.rss-feed",
+  "name": "iobroker.rssfeed",
   "version": "0.0.1",
   "description": "Adapter and vis widget for rss feeds",
   "author": {
     "name": "oweitman",
     "email": "oweitman@gmx.de"
   },
-  "homepage": "https://github.com/oweitman/ioBroker.rss-feed",
+  "homepage": "https://github.com/oweitman/ioBroker.rssfeed",
   "license": "MIT",
   "keywords": [
     "rss",
@@ -16,10 +16,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:oweitman/ioBroker.rss-feed.git"
+    "url": "git@github.com:oweitman/ioBroker.rssfeed.git"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^2.2.1"
+    "@iobroker/adapter-core": "^2.2.1",
+    "feedparser": "^2.2.9",
+    "request": "^2.88.2"
   },
   "devDependencies": {
     "@iobroker/testing": "^2.1.0",
@@ -51,7 +53,7 @@
     "lint": "eslint"
   },
   "bugs": {
-    "url": "https://github.com/oweitman/ioBroker.rss-feed/issues"
+    "url": "https://github.com/oweitman/ioBroker.rssfeed/issues"
   },
   "readmeFilename": "README.md"
 }

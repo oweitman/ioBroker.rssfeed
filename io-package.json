@@ -1,6 +1,6 @@
 {
     "common": {
-        "name": "rss-feed",
+        "name": "rssfeed",
         "version": "0.0.1",
         "news": {
             "0.0.1": {
@@ -19,10 +19,10 @@
         "title": "RSS Feed",
         "titleLang": {
             "en": "RSS Feed",
-            "de": "RSS-Feed",
+            "de": "rssfeed",
             "ru": "Новостная лента",
             "pt": "Feed RSS",
-            "nl": "RSS-feed",
+            "nl": "rssfeed",
             "fr": "Flux RSS",
             "it": "RSS Feed",
             "es": "RSS Feed",
@@ -31,10 +31,10 @@
         },
         "desc": {
             "en": "Adapter and vis widget for rss feeds",
-            "de": "Adapter und Vis-Widget für RSS-Feeds",
+            "de": "Adapter und Vis-Widget für rssfeeds",
             "ru": "Адаптер и виджет vis для каналов RSS",
             "pt": "Adaptador e widget vis para feeds RSS",
-            "nl": "Adapter en vis widget voor RSS-feeds",
+            "nl": "Adapter en vis widget voor rssfeeds",
             "fr": "Adaptateur et widget vis pour les flux rss",
             "it": "Adattatore e widget vis per feed rss",
             "es": "Adaptador y widget de visualización para feeds rss",
@@ -45,6 +45,10 @@
             "oweitman <oweitman@gmx.de>"
         ],
         "keywords": [
+            "ioBroker",
+            "template",
+            "Smart Home",
+            "home automation",
             "rss",
             "atom",
             "rdf",
@@ -53,10 +57,10 @@
         "license": "MIT",
         "platform": "Javascript/Node.js",
         "main": "main.js",
-        "icon": "rss-feed.png",
+        "icon": "rssfeed.png",
         "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.rss-feed/master/admin/rss-feed.png",
-        "readme": "https://github.com/oweitman/ioBroker.rss-feed/blob/master/README.md",
+        "extIcon": "https://raw.githubusercontent.com/oweitman/iobroker.rssfeed/master/admin/rssfeed.png",
+        "readme": "https://github.com/oweitman/ioBroker.rssfeed/blob/master/README.md",
         "loglevel": "info",
         "restartAdapters": [
             "vis"
@@ -73,10 +77,10 @@
             "singleton": true,
             "name": {
                 "en": "RSS Feed",
-                "de": "RSS-Feed",
+                "de": "rssfeed",
                 "ru": "Новостная лента",
                 "pt": "Feed RSS",
-                "nl": "RSS-feed",
+                "nl": "rssfeed",
                 "fr": "Flux RSS",
                 "it": "RSS Feed",
                 "es": "RSS Feed",
@@ -95,8 +99,9 @@
         ]
     },
     "native": {
-        "option1": true,
-        "option2": "42"
+        "rss": "[]",
+        "refresh": 60,
+		"maxarticles": 100
     },
     "objects": [],
     "instanceObjects": [

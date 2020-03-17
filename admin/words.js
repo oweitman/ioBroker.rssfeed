@@ -2,17 +2,17 @@
 'use strict';
 
 systemDictionary = {
-    'rss-feed adapter settings': {
-        'en': 'Adapter settings for rss-feed',
-        'de': 'Adaptereinstellungen für rss-feed',
-        'ru': 'Настройки адаптера для rss-feed',
-        'pt': 'Configurações do adaptador para rss-feed',
-        'nl': 'Adapterinstellingen voor rss-feed',
-        'fr': "Paramètres d'adaptateur pour rss-feed",
-        'it': "Impostazioni dell'adattatore per rss-feed",
-        'es': 'Ajustes del adaptador para rss-feed',
-        'pl': 'Ustawienia adaptera dla rss-feed',
-        'zh-cn': 'rss-feed的适配器设置'
+    'rssfeed adapter settings': {
+        'en': 'Adapter settings for rssfeed',
+        'de': 'Adaptereinstellungen für rssfeed',
+        'ru': 'Настройки адаптера для rssfeed',
+        'pt': 'Configurações do adaptador para rssfeed',
+        'nl': 'Adapterinstellingen voor rssfeed',
+        'fr': "Paramètres d'adaptateur pour rssfeed",
+        'it': "Impostazioni dell'adattatore per rssfeed",
+        'es': 'Ajustes del adaptador para rssfeed',
+        'pl': 'Ustawienia adaptera dla rssfeed',
+        'zh-cn': 'rssfeed的适配器设置'
     },
     'option1': {
         'en': 'option1',
