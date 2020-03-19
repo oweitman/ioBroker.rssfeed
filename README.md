@@ -13,11 +13,11 @@
 ## Overview
 Adapter to request and show RSS Feeds of different standandarst (Atom, RSS, RDF)
 
-##Installations
+## Installations
 The adapter is currently only available on github.
 Repository name is https://github.com/oweitman/iobroker.rssfeed
 
-##Add am Instance
+## Add am Instance
 After Installation the adapter should then be displayed in the adapter section in the iobroker.
 Sometimes it happens that the changes are not visible, especially with web changes (widgets / configuration dialog), the following command may have to be executed on the command line:
 
@@ -38,7 +38,7 @@ Refresh: A different value can be specified for this feed. Otherwise the general
 
 If you saved and closed the configuration, the feed-data can be found as a JSON data point in the object tree.
 
-##vis and widgets
+## vis and widgets
 The following widgets actually exists
 ### RSS view widget
 Widget to display a feed. This can be found via the search filter in vis using rssfeed.
@@ -62,7 +62,7 @@ There are the following additional settings
 prefix: Name of a javascript variable you want to use in the template. This helps to copy the name directly to the template
 article: Number of an article you want to see in the helper.
 
-##Template based on examples
+## Template based on examples
 An example that I tested with the following RSS feeds:
 
 * http://www.tagesschau.de/xml/rss2
@@ -89,7 +89,7 @@ The tags used mean the following
 Everything that is outside of these tags is displayed exactly as it is or if it is HTML interpreted as HTML. (see e.g. the p-tag, div-tag, small-tag
 Within the template you have 2 predefined variables available
 
-###meta 
+### meta 
 This contains all meta information about the feed. The following content is available. I think the identifiers are self-explanatory. In the help I will describe them in more detail. or specify the content (some are arrays)
 meta.title
 meta.description
@@ -105,7 +105,7 @@ meta.copyright
 meta.generator
 meta.categories
 
-###articles
+### articles
 Is an array with individual elements (javascript array). Each element has the following properties.
 So that it fits, for example, I will do the prefix item in front of it. But if you want you can choose that yourself. It only has to be named accordingly in the loop (forEach). Here, too, the identifiers are self-explanatory. Not all attributes are filled in every feed. The most important ones are already included in the template above.
 
@@ -125,7 +125,7 @@ item.categories
 item.source
 item.enclosures
 
-##Template example and detailed description
+## Template example and detailed description
 ```
 <%= meta.title %> 
 <% articles.forEach(function(item){ %>
