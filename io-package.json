@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "rssfeed",
-        "version": "0.0.3",
+        "version": "0.0.4",
         "news": {
+            "0.0.4": {
+                "en": "some adjustments in readme, io-package"
+            },
             "0.0.3": {
                 "en": "add addveyor build"
             },
@@ -54,15 +57,14 @@
         "license": "MIT",
         "platform": "Javascript/Node.js",
         "main": "main.js",
-        "icon": "rssfeed.png",
+        "icon": "rssfeed-logo.png",
         "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/oweitman/iobroker.rssfeed/master/admin/rssfeed.png",
+        "extIcon": "https://raw.githubusercontent.com/oweitman/iobroker.rssfeed/master/admin/rssfeed-logo.png",
         "readme": "https://github.com/oweitman/ioBroker.rssfeed/blob/master/README.md",
         "loglevel": "info",
         "restartAdapters": [
             "vis"
         ],
-        "localLink": "%web_protocol%://%ip%:%web_port%/vis/edit.html",
         "mode": "daemon",
         "type": "misc-data",
         "compact": true,

@@ -1,4 +1,4 @@
-![Logo](admin/rssfeed.png)
+![Logo](admin/rssfeed-logo.png)
 
 # ioBroker Adapter to request and show RSS Feeds of different standandarst (Atom, RSS, RDF)
 
@@ -87,8 +87,8 @@ The tags used mean the following
 | ----- | --------------------------------------------------------------------- |  
 | <%=   | The content of the contained expression / variable will be escaped.   |  
 | <%-   | The content of the contained expression / variable is unescaped.      |  
-| <%    | Day without output, is used for javascript instructions               |  
-| %>    | is generally a closing day to complete one of the previous ones       |  
+| <%    | No output, is used for enclosed javascript instructions               |  
+| %>    | is generally a closing tag to complete one of the previous ones       |  
 
 Everything that is outside of these tags is displayed exactly as it is or if it is HTML interpreted as HTML. (see e.g. the p-tag, div-tag, small-tag
 Within the template you have 2 predefined variables available
@@ -152,6 +152,8 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 
 ## Changelog
 
+### 0.0.4
+* some adjustments in readme, io-package
 ### 0.0.3
 * add addveyor build
 ### 0.0.2
