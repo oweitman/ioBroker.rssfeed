@@ -1,6 +1,6 @@
 ![Logo](admin/rssfeed-logo.png)
 
-# ioBroker Adapter to request and show RSS Feeds of different standandarst (Atom, RSS, RDF)
+# ioBroker Adapter to request and show RSS Feeds of different standands (Atom, RSS, RDF)
 
 [![Number of Installations](http://iobroker.live/badges/rssfeed-installed.svg)](https://github.com/oweitman/ioBroker.rssfeed)
 [![NPM version](http://img.shields.io/npm/v/iobroker.rssfeed.svg)](https://www.npmjs.com/package/iobroker.rssfeed)
@@ -11,7 +11,7 @@
 
 
 ## Overview
-Adapter to request and show RSS Feeds of different standandarst (Atom, RSS, RDF)
+Adapter to request and show RSS Feeds of different standands (Atom, RSS, RDF)
 
 ## Installation
 The adapter is currently only available on github.
