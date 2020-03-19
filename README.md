@@ -148,6 +148,8 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 
 ## Changelog
 
+### 0.0.3
+* add addveyor build
 ### 0.0.2
 * added widgets meta helper and article helper
 ### 0.0.1

@@ -3,6 +3,9 @@
         "name": "rssfeed",
         "version": "0.0.2",
         "news": {
+            "0.0.3": {
+                "en": "add addveyor build"
+            },
             "0.0.2": {
                 "en": "added widgets meta helper and article helper"
             },
