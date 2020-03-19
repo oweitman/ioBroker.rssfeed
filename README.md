@@ -83,10 +83,10 @@ An example that I tested with the following RSS feeds:
 The template system works with certain tags.
 The tags used mean the following
 
-| <%= | The content of the contained expression / variable will be escaped. | 
-| <%- | The content of the contained expression / variable is unescaped. | 
-| <%  | Day without output, is used for javascript instructions | 
-| %>  | is generally a closing day to complete one of the previous ones | 
+| <%=   | The content of the contained expression / variable will be escaped.   |  
+| <%-   | The content of the contained expression / variable is unescaped.   |  
+| <%    | Day without output, is used for javascript instructions   |  
+| %>    | is generally a closing day to complete one of the previous ones   |  
 
 Everything that is outside of these tags is displayed exactly as it is or if it is HTML interpreted as HTML. (see e.g. the p-tag, div-tag, small-tag
 Within the template you have 2 predefined variables available
