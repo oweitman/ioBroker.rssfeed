@@ -13,20 +13,22 @@
 ## Overview
 Adapter to request and show RSS Feeds of different standandarst (Atom, RSS, RDF)
 
-## Installations
+## Installation
 The adapter is currently only available on github.
 Repository name is https://github.com/oweitman/iobroker.rssfeed
 
-## Add am Instance
+## Add an Instance
 After Installation the adapter should then be displayed in the adapter section in the iobroker.
 Sometimes it happens that the changes are not visible, especially with web changes (widgets / configuration dialog), the following command may have to be executed on the command line:
 
+```
 iobroker upload rssfeed
+```
 
 In the right area in the line of the adapter, an instance can be added using the plus button
 
 ## Configuration
-The configuration is relatively simple. There are only a few fields
+The configuration is relatively easy. There are only a few fields
 
 Refresh: is the general specification of how often the feed should be called up again in minutes. The default is 60 minutes 
 Maximum items in the data point: The total amount of data to be processed can be limited here.
@@ -136,14 +138,14 @@ item.enclosures
 <% }); %>
 ```
 
-Brief description of what happens in the individual lines
-Z1: The output of the feed title 
-Z2: Without output. Javascript command to loop over all articles, with each turn the current element is assigned to the variable item.
-Z3: Output of date and time is. It is enclosed with a p / small tag for formatting. The vis-own date format function is used for formatting. Description can be found in the adapter vis.
-Z4: The output of the article title. A Header 3 - tag is used for formatting.
-Z5: Output of the content of the article. It is  enclosed with a p-tag. Here, at least in the two examples, HTML code is included, which usually comes with an image and descriptive text
-Z6: Output a div tag that clears special formatting in the feed-html (in both examples for tagesschau and bild it is needed. Other feed maybe didnt need it.
-Z7: Without output. This line closed the javascript loop . Everything that was defined between Z2 and Z7 is repeated for every single article.
+Brief description of what happens in the individual lines  
+Z1: The output of the feed title  
+Z2: Without output. Javascript command to loop over all articles, with each turn the current element is assigned to the variable item.  
+Z3: Output of date and time is. It is enclosed with a p / small tag for formatting. The vis-own date format function is used for formatting. Description can be found in the adapter vis.  
+Z4: The output of the article title. A Header 3 - tag is used for formatting.  
+Z5: Output of the content of the article. It is  enclosed with a p-tag. Here, at least in the two examples, HTML code is included, which usually comes with an image and descriptive text  
+Z6: Output a div tag that clears special formatting in the feed-html (in both examples for tagesschau and bild it is needed. Other feed maybe didnt need it.  
+Z7: Without output. This line closed the javascript loop . Everything that was defined between Z2 and Z7 is repeated for every single article.  
 
 
 ## Changelog
