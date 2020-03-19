@@ -23,36 +23,6 @@ vis.binds['rssfeed'] = {
             vis.binds['rssfeed'].version = null;
         }
     },
-    createWidget: function (widgetID, view, data, style) {
-        var $div = $('#' + widgetID);
-        // if nothing found => wait
-        if (!$div.length) {
-            return setTimeout(function () {
-                vis.binds['rssfeed'].createWidget(widgetID, view, data, style);
-            }, 100);
-        }
-
-        var text = '';
-        text += 'OID: ' + data.oid + '</div><br>';
-        text += 'OID value: <span class="myset-value">' + vis.states[data.oid + '.val'] + '</span><br>';
-        text += 'Color: <span style="color: ' + data.myColor + '">' + data.myColor + '</span><br>';
-        text += 'extraAttr: ' + data.extraAttr + '<br>';
-        text += 'Browser instance: ' + vis.instance + '<br>';
-        text += 'htmlText: <textarea readonly style="width:100%">' + (data.htmlText || '') + '</textarea><br>';
-
-		$("#" + widgetID).html(text);
-
-		function onChange (e, newVal, oldVal) {
-			$div.find('.template-value').html(newVal);
-		}
-
-		// subscribe on updates of value
-		if (data.oid) {
-			vis.states.bind(data.oid + '.val', onChange);
-			$div.data('bound', [data.oid + '.val']); //remember bound state that vis can release if didnt needed
-			$div.data('bindHandler', onChange);      //remember onchange handler to release bound states
-		}
-    },
 	
     rssfeedwidget: {
         createWidget: function (widgetID, view, data, style) {
@@ -81,6 +51,127 @@ vis.binds['rssfeed'] = {
             }
 			
 			var text = ejs.render(template, rss);            
+            $('#' + widgetID).html(text);
+        },    
+    },
+    metahelper: {
+        createWidget: function (widgetID, view, data, style) {
+            
+            var $div = $('#' + widgetID);
+            // if nothing found => wait
+            if (!$div.length) {
+                return setTimeout(function () {
+                    vis.binds["rssfeed"].metahelper.createWidget(widgetID, view, data, style);
+                }, 100);
+            }
+            var rss  = data.rss_oid ? JSON.parse(vis.states.attr(data.rss_oid + '.val')) : {};
+            
+            function onChange(e, newVal, oldVal) {
+                if (newVal) vis.binds["rssfeed"].metahelper.createWidget(widgetID, view, data, style);
+            }
+
+            if (data.rss_oid ) {
+                if (1 || !vis.editMode) {
+                    vis.binds["rssfeed"].bindStates($div,[data.rss_oid],onChange);                    
+                }
+            }
+			
+			var text = '';
+
+            text += '<style> \n';
+            text += '#'+widgetID + ' .rssfeed th {\n';
+            text += '   white-space: nowrap;\n';
+            text += '   text-align: left;\n';
+            text += '   vertical-align: top;\n';			
+            text += '} \n';
+            text += '</style> \n';
+			
+			text += '<table class="rssfeed attributes">';
+			text += '<tr><th>meta.title</th><td>'+rss.meta.title+'</td></tr>';
+			text += '<tr><th>meta.description</th><td>'+rss.meta.description+'</td></tr>';
+			text += '<tr><th>meta.link</th><td>'+rss.meta.link+'</td></tr>';
+			text += '<tr><th>meta.xmlurl</th><td>'+rss.meta.xmlurl+'</td></tr>';
+			text += '<tr><th>meta.date</th><td>'+rss.meta.date+'</td></tr>';
+			text += '<tr><th>meta.pubdate</th><td>'+rss.meta.pubdate+'</td></tr>';
+			text += '<tr><th>meta.author</th><td>'+rss.meta.author+'</td></tr>';
+			text += '<tr><th>meta.language</th><td>'+rss.meta.language+'</td></tr>';
+			text += '<tr><th>meta.image.url</th><td>'+rss.meta.image.url+'</td></tr>';
+			text += '<tr><th>meta.image.title</th><td>'+rss.meta.image.title+'</td></tr>';
+			text += '<tr><th>meta.favicon</th><td>'+rss.meta.favicon+'</td></tr>';
+			text += '<tr><th>meta.copyright</th><td>'+rss.meta.copyright+'</td></tr>';
+			text += '<tr><th>meta.generator</th><td>'+rss.meta.generator+'</td></tr>';
+			text += '<tr><th>meta.categories</th><td>'+rss.meta.categories.toString()+'</td></tr>';
+			text += '</table>';
+			
+            $('#' + widgetID).html(text);
+        },    
+    },
+    articlehelper: {
+        createWidget: function (widgetID, view, data, style) {
+            
+            var $div = $('#' + widgetID);
+            // if nothing found => wait
+            if (!$div.length) {
+                return setTimeout(function () {
+                    vis.binds["rssfeed"].articlehelper.createWidget(widgetID, view, data, style);
+                }, 100);
+            }
+            var rss  = data.rss_oid ? JSON.parse(vis.states.attr(data.rss_oid + '.val')) : {};
+			var prefix = data.prefix ? data.prefix : 'item';
+			var article = data.article ? data.article : 1;
+            article = article > 0 ? article : 1;
+						
+            function onChange(e, newVal, oldVal) {
+                if (newVal) vis.binds["rssfeed"].articlehelper.createWidget(widgetID, view, data, style);
+            }
+
+            if (data.rss_oid ) {
+                if (1 || !vis.editMode) {
+                    vis.binds["rssfeed"].bindStates($div,[data.rss_oid],onChange);                    
+                }
+            }
+			
+			
+			
+			var item = rss.articles[article-1];
+			
+			var text = '';
+			
+			if (item) {
+
+				text += '<style> \n';
+				text += '#'+widgetID + ' .rssfeed th {\n';
+				text += '   white-space: nowrap;\n';
+				text += '   text-align: left;\n';
+				text += '   vertical-align: top;\n';
+				text += '} \n';
+				text += '</style> \n';
+				
+				text += '<table class="rssfeed attributes">';
+				text += '<tr><th>'+prefix+'.title</th><td>'+item.title+'</td></tr>';
+				text += '<tr><th>'+prefix+'.description</th><td>'+item.description+'</td></tr>';
+				text += '<tr><th>'+prefix+'.summary</th><td>'+item.summary+'</td></tr>';
+				text += '<tr><th>'+prefix+'.link</th><td>'+item.link+'</td></tr>';
+				text += '<tr><th>'+prefix+'.origlink</th><td>'+item.origlink+'</td></tr>';
+				text += '<tr><th>'+prefix+'.permalink</th><td>'+item.permalink+'</td></tr>';
+				text += '<tr><th>'+prefix+'.date</th><td>'+item.date+'</td></tr>';
+				text += '<tr><th>'+prefix+'.pubdate</th><td>'+item.pubdate+'</td></tr>';
+				text += '<tr><th>'+prefix+'.author</th><td>'+item.author+'</td></tr>';
+				text += '<tr><th>'+prefix+'.guid</th><td>'+item.guid+'</td></tr>';
+				text += '<tr><th>'+prefix+'.comments</th><td>'+item.comments+'</td></tr>';
+				text += '<tr><th>'+prefix+'.image.url</th><td>'+item.image.url+'</td></tr>';
+				text += '<tr><th>'+prefix+'.image.title</th><td>'+item.image.title+'</td></tr>';
+				text += '<tr><th>'+prefix+'.categories</th><td>'+item.categories+'</td></tr>';
+				text += '<tr><th>'+prefix+'.source</th><td>'+JSON.stringify(item.source)+'</td></tr>';
+				text += '<tr><th>'+prefix+'.enclosures</th><td>'+JSON.stringify(item.enclosures)+'</td></tr>';
+				text += '</table>';
+			} else {
+				text += '<table class="rssfeed attributes">';
+				text += '<tr><th>No Data. End of List of '+ rss.articles.length +' Articles</th></tr>';
+				text += '</table>';				
+			}
+			
+			
             $('#' + widgetID).html(text);
         },    
     },

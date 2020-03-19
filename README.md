@@ -1,84 +1,157 @@
 ![Logo](admin/rssfeed.png)
-# ioBroker.rssfeed
 
+# ioBroker Adapter to request and show RSS Feeds of different standandarst (Atom, RSS, RDF)
+
+[![Number of Installations](http://iobroker.live/badges/rssfeed-installed.svg)](https://github.com/oweitman/ioBroker.rssfeed)
 [![NPM version](http://img.shields.io/npm/v/iobroker.rssfeed.svg)](https://www.npmjs.com/package/iobroker.rssfeed)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.rssfeed.svg)](https://www.npmjs.com/package/iobroker.rssfeed)
-![Number of Installations (latest)](http://iobroker.live/badges/rssfeed-installed.svg)
-![Number of Installations (stable)](http://iobroker.live/badges/rssfeed-stable.svg)
-[![Dependency Status](https://img.shields.io/david/oweitman/iobroker.rssfeed.svg)](https://david-dm.org/oweitman/iobroker.rssfeed)
-[![Known Vulnerabilities](https://snyk.io/test/github/oweitman/ioBroker.rssfeed/badge.svg)](https://snyk.io/test/github/oweitman/ioBroker.rssfeed)
+[![Travis](https://img.shields.io/travis/oweitman/ioBroker.rssfeed.svg)](https://travis-ci.org/oweitman/ioBroker.rssfeed/)
+[![AppVeyor Build Status](https://img.shields.io/appveyor/ci/oweitman/iobroker-rssfeed.svg)](https://ci.appveyor.com/project/oweitman/iobroker-rssfeed)
+[![GitHub issues](https://img.shields.io/github/issues/oweitman/ioBroker.rssfeed.svg)](https://github.com/oweitman/ioBroker.rssfeed/issues)
 
-[![NPM](https://nodei.co/npm/iobroker.rssfeed.png?downloads=true)](https://nodei.co/npm/iobroker.rssfeed/)
 
-**Tests:**: [![Travis-CI](http://img.shields.io/travis/oweitman/ioBroker.rssfeed/master.svg)](https://travis-ci.org/oweitman/ioBroker.rssfeed)
+## Overview
+Adapter to request and show RSS Feeds of different standandarst (Atom, RSS, RDF)
 
-## rssfeed adapter for ioBroker
+##Installations
+The adapter is currently only available on github.
+Repository name is https://github.com/oweitman/iobroker.rssfeed
 
-Adapter and vis widget for rss feeds
+##Add am Instance
+After Installation the adapter should then be displayed in the adapter section in the iobroker.
+Sometimes it happens that the changes are not visible, especially with web changes (widgets / configuration dialog), the following command may have to be executed on the command line:
 
-## Developer manual
-This section is intended for the developer. It can be deleted later
+iobroker upload rssfeed
 
-### Getting started
+In the right area in the line of the adapter, an instance can be added using the plus button
 
-You are almost done, only a few steps left:
-1. Create a new repository on GitHub with the name `ioBroker.rssfeed`
+## Configuration
+The configuration is relatively simple. There are only a few fields
 
-1. Push all files to the GitHub repo. The creator has already set up the local repository for you:  
-    ```bash
-    git push origin master
-    ```
-1. Head over to [main.js](main.js) and start programming!
+Refresh: is the general specification of how often the feed should be called up again in minutes. The default is 60 minutes 
+Maximum items in the data point: The total amount of data to be processed can be limited here.
 
-### Best Practices
-We've collected some [best practices](https://github.com/ioBroker/ioBroker.repositories#development-and-coding-best-practices) regarding ioBroker development and coding in general. If you're new to ioBroker or Node.js, you should
-check them out. If you're already experienced, you should also take a look at them - you might learn something new :)
+Then each new feed:
+Name: A unique name, must not appear twice
+Url: The full address of the feed (with http: // or https: //, see examples below)
+Refresh: A different value can be specified for this feed. Otherwise the general specification is taken
 
-### Scripts in `package.json`
-Several npm scripts are predefined for your convenience. You can run them using `npm run <scriptname>`
-| Script name | Description                                              |
-|-------------|----------------------------------------------------------|
-| `test:js`   | Executes the tests you defined in `*.test.js` files.     |
-| `test:package`    | Ensures your `package.json` and `io-package.json` are valid. |
-| `test` | Performs a minimal test run on package files and your tests. |
-| `lint` | Runs `ESLint` to check your code for formatting errors and potential bugs. |
+If you saved and closed the configuration, the feed-data can be found as a JSON data point in the object tree.
 
-### Writing tests
-When done right, testing code is invaluable, because it gives you the 
-confidence to change your code while knowing exactly if and when 
-something breaks. A good read on the topic of test-driven development 
-is https://hackernoon.com/introduction-to-test-driven-development-tdd-61a13bc92d92. 
-Although writing tests before the code might seem strange at first, but it has very 
-clear upsides.
+##vis and widgets
+The following widgets actually exists
+### RSS view widget
+Widget to display a feed. This can be found via the search filter in vis using rssfeed.
 
-The template provides you with basic tests for the adapter startup and package files.
-It is recommended that you add your own tests into the mix.
+The widget has the following setting options
 
-### Publishing the adapter
-To get your adapter released in ioBroker, please refer to the documentation 
-of [ioBroker.repositories](https://github.com/ioBroker/ioBroker.repositories#requirements-for-adapter-to-get-added-to-the-latest-repository).
+rss_oid The JSON data point of the desired feed is selected here. I have noticed that the object browser does not always work satisfactorily since it tries to display the HTML parts contained in the JSON.
+Alternatively, copy the data point ID directly from vis.
+template: A template can be entered here, which can contain javascript and html mixed.
 
-### Test the adapter manually on a local ioBroker installation
-In order to install the adapter locally without publishing, the following steps are recommended:
-1. Create a tarball from your dev directory:  
-    ```bash
-    npm pack
-    ```
-1. Upload the resulting file to your ioBroker host
-1. Install it locally (The paths are different on Windows):
-    ```bash
-    cd /opt/iobroker
-    npm i /path/to/tarball.tgz
-    ```
+maxarticles: Here the widget can be individually limited to the number of articles.
 
-For later updates, the above procedure is not necessary. Just do the following:
-1. Overwrite the changed files in the adapter directory (`/opt/iobroker/node_modules/iobroker.rssfeed`)
-1. Execute `iobroker upload rssfeed` on the ioBroker host
+All other settings are identical to the other widgets. The format specifications generally apply to all widget content
+### RSS meta helper widget
+A widget to view all the meta attributes in the feed
+this widgets helps you to find the right attribute to select in the template.
+### RSS article helper widget
+A widget to view all the attributes of an article
+This widgets helps you to find the right attribute of an article to select in the template.
+There are the following additional settings
+prefix: Name of a javascript variable you want to use in the template. This helps to copy the name directly to the template
+article: Number of an article you want to see in the helper.
+
+##Template based on examples
+An example that I tested with the following RSS feeds:
+
+* http://www.tagesschau.de/xml/rss2
+* https://www.bild.de/rssfeeds/rss3-20745882,feed=alles.bild.html
+
+```
+<%= meta.title %> 
+<% articles.forEach(function(item){ %>
+<p><small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small></p>
+<h3><%- item.title %></h3>
+<p><%- item.description %></p>
+<div style="clear:both;" />
+<% }); %>
+```
+
+The template system works with certain tags.
+The tags used mean the following
+
+| <%= | The content of the contained expression / variable will be escaped. | 
+| <%- | The content of the contained expression / variable is unescaped. | 
+| <%  | Day without output, is used for javascript instructions | 
+| %>  | is generally a closing day to complete one of the previous ones | 
+
+Everything that is outside of these tags is displayed exactly as it is or if it is HTML interpreted as HTML. (see e.g. the p-tag, div-tag, small-tag
+Within the template you have 2 predefined variables available
+
+###meta 
+This contains all meta information about the feed. The following content is available. I think the identifiers are self-explanatory. In the help I will describe them in more detail. or specify the content (some are arrays)
+meta.title
+meta.description
+meta.link
+meta.xmlurl
+meta.date
+meta.pubdate
+meta.author
+meta.language
+meta.image
+meta.favicon
+meta.copyright
+meta.generator
+meta.categories
+
+###articles
+Is an array with individual elements (javascript array). Each element has the following properties.
+So that it fits, for example, I will do the prefix item in front of it. But if you want you can choose that yourself. It only has to be named accordingly in the loop (forEach). Here, too, the identifiers are self-explanatory. Not all attributes are filled in every feed. The most important ones are already included in the template above.
+
+item.title
+item.description
+item.summary
+item.link
+item.origlink
+item.permalink
+item.date
+item.pubdate
+item.author
+item.guid
+item.comments
+item.image
+item.categories
+item.source
+item.enclosures
+
+##Template example and detailed description
+```
+<%= meta.title %> 
+<% articles.forEach(function(item){ %>
+<p><small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small></p>
+<h3><%- item.title %></h3>
+<p><%- item.description %></p>
+<div style="clear:both;" />
+<% }); %>
+```
+
+Brief description of what happens in the individual lines
+Z1: The output of the feed title 
+Z2: Without output. Javascript command to loop over all articles, with each turn the current element is assigned to the variable item.
+Z3: Output of date and time is. It is enclosed with a p / small tag for formatting. The vis-own date format function is used for formatting. Description can be found in the adapter vis.
+Z4: The output of the article title. A Header 3 - tag is used for formatting.
+Z5: Output of the content of the article. It is  enclosed with a p-tag. Here, at least in the two examples, HTML code is included, which usually comes with an image and descriptive text
+Z6: Output a div tag that clears special formatting in the feed-html (in both examples for tagesschau and bild it is needed. Other feed maybe didnt need it.
+Z7: Without output. This line closed the javascript loop . Everything that was defined between Z2 and Z7 is repeated for every single article.
+
 
 ## Changelog
 
+### 0.0.2
+* added widgets meta helper and article helper
 ### 0.0.1
-* (oweitman) initial release
+* initial release
 
 ## License
 MIT License
