@@ -30,19 +30,24 @@ In the right area in the line of the adapter, an instance can be added using the
 ## Configuration
 The configuration is relatively easy. There are only a few fields
 
-Refresh: is the general specification of how often the feed should be called up again in minutes. The default is 60 minutes 
-Maximum items in the data point: The total amount of data to be processed can be limited here.
+| Setting                           | description                                                                                                           |  
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------- |  
+| Refresh                           | is the general specification of how often the feed should be called up again in minutes. The default is 60 minutes    |  
+| Maximum items in the data point   | The total amount of data to be processed can be limited here.                                                         |  
 
-Then each new feed:
-Name: A unique name, must not appear twice
-Url: The full address of the feed (with http: // or https: //, see examples below)
-Refresh: A different value can be specified for this feed. Otherwise the general specification is taken
+Then for each new feed:
+
+| Setting                           | description                                                                                       |  
+| --------------------------------- | ------------------------------------------------------------------------------------------------- |  
+| Name                              | A unique name, must not appear twice                                                              |  
+| Url                               | The full address of the feed (with http: // or https: //, see examples below)                     |  
+| Refresh                           | A different value can be specified for this feed. Otherwise the general specification is taken    |  
 
 If you saved and closed the configuration, the feed-data can be found as a JSON data point in the object tree.
 
 ## vis and widgets
 The following widgets actually exists
-### RSS view widget
+#### RSS view widget
 Widget to display a feed. This can be found via the search filter in vis using rssfeed.
 
 The widget has the following setting options
@@ -54,10 +59,10 @@ template: A template can be entered here, which can contain javascript and html 
 maxarticles: Here the widget can be individually limited to the number of articles.
 
 All other settings are identical to the other widgets. The format specifications generally apply to all widget content
-### RSS meta helper widget
+#### RSS meta helper widget
 A widget to view all the meta attributes in the feed
 this widgets helps you to find the right attribute to select in the template.
-### RSS article helper widget
+#### RSS article helper widget
 A widget to view all the attributes of an article
 This widgets helps you to find the right attribute of an article to select in the template.
 There are the following additional settings
@@ -93,7 +98,7 @@ The tags used mean the following
 Everything that is outside of these tags is displayed exactly as it is or if it is HTML interpreted as HTML. (see e.g. the p-tag, div-tag, small-tag
 Within the template you have 2 predefined variables available
 
-### meta 
+#### meta 
 This contains all meta information about the feed. The following content is available. I think the identifiers are self-explanatory. In the help I will describe them in more detail. or specify the content (some are arrays)
 meta.title
 meta.description
@@ -109,7 +114,7 @@ meta.copyright
 meta.generator
 meta.categories
 
-### articles
+#### articles
 Is an array with individual elements (javascript array). Each element has the following properties.
 So that it fits, for example, I will do the prefix item in front of it. But if you want you can choose that yourself. It only has to be named accordingly in the loop (forEach). Here, too, the identifiers are self-explanatory. Not all attributes are filled in every feed. The most important ones are already included in the template above.
 
@@ -149,9 +154,14 @@ Z5: Output of the content of the article. It is  enclosed with a p-tag. Here, at
 Z6: Output a div tag that clears special formatting in the feed-html (in both examples for tagesschau and bild it is needed. Other feed maybe didnt need it.  
 Z7: Without output. This line closed the javascript loop . Everything that was defined between Z2 and Z7 is repeated for every single article.  
 
+## Todo
+* Widget für Laufschrift mit den Titeln https://forum.iobroker.net/topic/31242/nachrichten-ticker-newsticker-via-php-in-vis-einbinden/2
+
 
 ## Changelog
 
+### 0.0.5
+* new widget marquee for article titles
 ### 0.0.4
 * some adjustments in readme, io-package
 ### 0.0.3

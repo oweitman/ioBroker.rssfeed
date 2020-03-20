@@ -36,9 +36,16 @@ vis.binds['rssfeed'] = {
             }
             var rss  = data.rss_oid ? JSON.parse(vis.states.attr(data.rss_oid + '.val')) : {};            
             var template  = data.template ? data.template : '';
+            var filter  = data.filter ? data.filter : '';
 			var maxarticles = data.maxarticles ? data.maxarticles : 999;
 			maxarticles = maxarticles > 0 ? maxarticles : 1;
 			if (rss && rss.articles && rss.articles.length > maxarticles) rss.articles = rss.articles.slice(0,maxarticles);
+            
+            if (filter!='') {
+                rss.articles = rss.articles.filter(function(item){
+                    return vis.binds["rssfeed"].checkHighlite(item.title+item.description+item.categories.toString(),filter);
+                });
+            }
             
             function onChange(e, newVal, oldVal) {
                 if (newVal) vis.binds["rssfeed"].rssfeedwidget.createWidget(widgetID, view, data, style);
@@ -54,6 +61,83 @@ vis.binds['rssfeed'] = {
             $('#' + widgetID).html(text);
         },    
     },
+    marquee: {
+        createWidget: function (widgetID, view, data, style) {
+            
+            var $div = $('#' + widgetID);
+            // if nothing found => wait
+            if (!$div.length) {
+                return setTimeout(function () {
+                    vis.binds["rssfeed"].marquee.createWidget(widgetID, view, data, style);
+                }, 100);
+            }
+            var rss  = data.rss_oid ? JSON.parse(vis.states.attr(data.rss_oid + '.val')) : {};            
+			var maxarticles = data.maxarticles ? data.maxarticles : 999;
+			maxarticles = maxarticles > 0 ? maxarticles : 1;
+			if (rss && rss.articles && rss.articles.length > maxarticles) rss.articles = rss.articles.slice(0,maxarticles);
+            var frontcolor = style.color ? style.color : undefined;
+            var backcolor = style['background-color'] ? style['background-color'] : undefined;
+            var pauseonhover = (data.pauseonhover) ? true : data.pauseonhover;
+            var filter  = data.filter ? data.filter : '';
+
+            if (filter!='') {
+                rss.articles = rss.articles.filter(function(item){
+                    return vis.binds["rssfeed"].checkHighlite(item.title+item.description+item.categories.toString(),filter);
+                });
+            }            
+            
+            function onChange(e, newVal, oldVal) {
+                if (newVal) vis.binds["rssfeed"].marquee.createWidget(widgetID, view, data, style);
+            }
+
+            if (data.rss_oid ) {
+                if (1 || !vis.editMode) {
+                    vis.binds["rssfeed"].bindStates($div,[data.rss_oid],onChange);                    
+                }
+            }
+            
+            var titles = '';
+            if (rss && rss.articles && rss.articles.length > 0) {
+                titles = rss.articles.reduce(function(collect,item){
+                    collect += ' +++ ' + item.title;
+                    return collect;
+                },titles);
+            }
+
+			var text = '';
+            
+            text += '<style> \n';
+            text += '.marquee {\n';
+            text += '    max-width: 100vw; /* iOS braucht das */\n';
+            text += '    white-space: nowrap;\n';
+            text += '    overflow: hidden;\n';
+            if (backcolor) text += '    background-color: ' + backcolor +'; /* Hintergrundfarbe des Lauftextes. Auskommentieren, um Transparent zu erhalten */\n';
+            text += '    font-size:20px;\n';
+            text += '}\n';
+            text += '.marquee span {\n';
+            text += '    display: inline-block;\n';
+            text += '    padding-left: 100%;\n';
+            text += '    animation: marquee '+ (titles.length/6).toFixed()+'s linear infinite;\n';
+            if (frontcolor) text += '    color: ' + frontcolor + '; /* Textfarbe des Lauftextes */\n';
+            text += '}\n';
+            if (pauseonhover) {
+                text += '/* Optional: mouseover (oder Tipp auf dem Touchscreen) pausiert die Laufschrift */\n';
+                text += '.marquee span:hover {\n';
+                text += '    animation-play-state: paused \n';
+                text += '}\n';
+            }
+            text += '/* Make it move */\n';
+            text += '@keyframes marquee {\n';
+            text += '    0%   { transform: translateX(0); }\n';
+            text += '    100% { transform: translateX(-100%); }\n';
+            text += '}\n';
+            text += '</style> \n';
+
+            text += '<div id="marquee" class="marquee"><span>'+ titles +'</span></div>';
+            
+            $('#' + widgetID).html(text);
+        },    
+    },    
     metahelper: {
         createWidget: function (widgetID, view, data, style) {
             
@@ -175,6 +259,14 @@ vis.binds['rssfeed'] = {
             $('#' + widgetID).html(text);
         },    
     },
+    checkHighlite: function(value,highlights,sep) {
+        sep = typeof sep !== 'undefined' ? sep : ";";
+        var highlight = highlights.split(sep);
+        return highlight.reduce(function(acc,cur){
+            if (cur=='') return acc;
+            return acc || value.toLowerCase().indexOf(cur.toLowerCase())>=0; 
+        },false);
+    },
     bindStates: function(elem,bound,change_callback) {
         var $div = $(elem);
         var boundstates = $div.data('bound');
@@ -198,3 +290,12 @@ vis.binds['rssfeed'] = {
 };
 
 vis.binds['rssfeed'].showVersion();
+
+/* remember for strip tag function
+str='this string has <i>html</i> code i want to <b>remove</b><br>Link Number 1 -><a href="http://www.bbc.co.uk">BBC</a> Link Number 1<br><p>Now back to normal text and stuff</p>
+';
+str=str.replace(/<br>/gi, "\n");
+str=str.replace(/<p.*>/gi, "\n");
+str=str.replace(/<a.*href="(.*?)".*>(.*?)<\/a>/gi, " $2 (Link->$1) ");
+str=str.replace(/<(?:.|\s)*?>/g, "");
+*/
