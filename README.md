@@ -162,6 +162,7 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 
 ### 0.0.5
 * new widget marquee for article titles
+* add filter function for articles. the filter searchs in title,description and categories, seceral filter criteria can be seperated by semicolon
 ### 0.0.4
 * some adjustments in readme, io-package
 ### 0.0.3
