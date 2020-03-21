@@ -160,6 +160,8 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 
 ## Changelog
 
+### 0.0.7
+* test with encapsulation of ejs.js, becaus of error in some browsers
 ### 0.0.6
 * add attribute duration for widget marquee to control animation duration
 ### 0.0.5

@@ -1,3 +1,4 @@
+(function(){
 /*
  * EJS Embedded JavaScript templates
  * Copyright 2112 Matthew Eernisse (mde@fleegix.org)
@@ -1109,3 +1110,4 @@ exports.name = _NAME;
 if (typeof window != 'undefined') {
   window.ejs = exports;
 }
+})();

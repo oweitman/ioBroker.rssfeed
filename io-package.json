@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "rssfeed",
-        "version": "0.0.6",
+        "version": "0.0.7",
         "news": {
+            "0.0.7": {
+                "en": "test with encapsulation of ejs.js, becaus of error in some browsers"
+            },
             "0.0.6": {
                 "en": "add attribute duration for widget marquee to control animation duration"
             },
