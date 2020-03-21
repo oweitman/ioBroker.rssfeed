@@ -79,6 +79,7 @@ vis.binds['rssfeed'] = {
             var backcolor = style['background-color'] ? style['background-color'] : undefined;
             var pauseonhover = (data.pauseonhover) ? true : data.pauseonhover;
             var filter  = data.filter ? data.filter : '';
+            var duration  = data.duration ? data.duration : 0;
 
             if (filter!='') {
                 rss.articles = rss.articles.filter(function(item){
@@ -117,7 +118,8 @@ vis.binds['rssfeed'] = {
             text += '.marquee span {\n';
             text += '    display: inline-block;\n';
             text += '    padding-left: 100%;\n';
-            text += '    animation: marquee '+ (titles.length/6).toFixed()+'s linear infinite;\n';
+            if (duration==0) duration = (titles.length/6).toFixed();
+            text += '    animation: marquee '+ duration+'s linear infinite;\n';
             if (frontcolor) text += '    color: ' + frontcolor + '; /* Textfarbe des Lauftextes */\n';
             text += '}\n';
             if (pauseonhover) {

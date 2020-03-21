@@ -160,6 +160,8 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 
 ## Changelog
 
+### 0.0.6
+* add attribute duration for widget marquee to control animation duration
 ### 0.0.5
 * new widget marquee for article titles
 * add filter function for articles. the filter searchs in title,description and categories, seceral filter criteria can be seperated by semicolon

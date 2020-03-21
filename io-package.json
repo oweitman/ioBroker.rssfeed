@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "rssfeed",
-        "version": "0.0.5",
+        "version": "0.0.6",
         "news": {
+            "0.0.6": {
+                "en": "add attribute duration for widget marquee to control animation duration"
+            },
             "0.0.5": {
                 "en": "new widget marquee for article titles, add filter function for articles. the filter searchs in title,description and categories, seceral filter criteria can be seperated by semicolon"
             },
