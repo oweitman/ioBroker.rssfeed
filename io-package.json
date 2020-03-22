@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "rssfeed",
-        "version": "0.0.7",
+        "version": "0.0.8",
         "news": {
+            "0.0.8": {
+                "en": "improve lasrequest logic of the adapter, fix problem with datapoint naming"
+            },
             "0.0.7": {
                 "en": "test with encapsulation of ejs.js, becaus of error in some browsers"
             },

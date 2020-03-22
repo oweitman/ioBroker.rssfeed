@@ -160,6 +160,9 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 
 ## Changelog
 
+### 0.0.8
+* improve lasrequest logic of the adapter
+* fix problem with datapoint naming
 ### 0.0.7
 * test with encapsulation of ejs.js, becaus of error in some browsers
 ### 0.0.6
