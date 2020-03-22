@@ -135,9 +135,10 @@ vis.binds['rssfeed'] = {
             text += '}\n';
             text += '</style> \n';
 
-            text += '<div id="marquee" class="marquee"><span>'+ titles +'</span></div>';
+            text += '<div class="marquee"><span>'+ titles +'</span></div>';
             
             $('#' + widgetID).html(text);
+            $('#' + widgetID+' span').css(style);
         },    
     },    
     metahelper: {
