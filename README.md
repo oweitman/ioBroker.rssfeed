@@ -160,6 +160,11 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 
 ## Changelog
 
+### 0.0.9
+* apply widget styles also to the inner span element, because they had not any effect on the marquee.
+* renew the package-lock.json
+* add categories to save feeds in subfolders
+* improve mechanism to write only updated feeds to datapoint. the feed has new data if comparision of articles in title and description is different.
 ### 0.0.8
 * improve lasrequest logic of the adapter
 * fix problem with datapoint naming

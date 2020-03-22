@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "rssfeed",
-        "version": "0.0.8",
+        "version": "0.0.9",
         "news": {
+            "0.0.9": {
+                "en": "apply widget styles also to the inner span element, because they had not any effect on the marquee / renew the package-lock.json / add categories to save feeds in subfolders / improve mechanism to write only updated feeds to datapoint. the feed has new data if comparision of articles in title and description is different."
+            },
             "0.0.8": {
                 "en": "improve lasrequest logic of the adapter, fix problem with datapoint naming"
             },
