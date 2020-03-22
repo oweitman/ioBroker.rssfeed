@@ -82,7 +82,7 @@
             updatetable(onChange);
         }
         function updatetable(onChange) {
-            var tablebody = $('#oldb-data');
+            var tablebody = $('#rssfeed-data');
             var rss = JSON.parse($('#rss').val());
             tablebody.html('');
             rss.forEach(function(onChange,item){
@@ -157,11 +157,11 @@
                 </div>                
                 <div class="row">
                     <form id="rssform">
-                        <div class="input-field col s2">
+                        <div class="input-field col s1">
                             <input class="" id="rssname" type="text" />
                             <label class="translate" for="rssname">Name:</label>
                         </div>
-                        <div class="input-field col s4">
+                        <div class="input-field col s1">
                             <input class="" id="rsscat" type="text" />
                             <label class="translate" for="rsscat">Category:</label>
                         </div>
@@ -192,7 +192,7 @@
                                 <th class="translate wizard-table-delete" style="width:5%;"></th>
                             </tr>
                             </thead>
-                            <tbody id="oldb-data">
+                            <tbody id="rssfeed-data">
 
                             </tbody>
                         </table>
