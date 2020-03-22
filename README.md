@@ -159,7 +159,11 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 
 
 ## Changelog
-
+### 0.0.11
+* improve admin layout
+* implement a forceRefresh button
+### 0.0.10
+* fix bug a bug in marquee widget. not all styles should applied to the span tag.
 ### 0.0.9
 * apply widget styles also to the inner span element, because they had not any effect on the marquee.
 * renew the package-lock.json
