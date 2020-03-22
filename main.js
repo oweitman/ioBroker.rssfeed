@@ -86,6 +86,7 @@ class RssFeed extends utils.Adapter {
         if (state) {
             // The state was changed
             this.log.silly(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
+            rssfeedserver.stateChange(id,state);
         } else {
             // The state was deleted
             this.log.silly(`state ${id} deleted`);
