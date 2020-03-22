@@ -159,6 +159,8 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 
 
 ## Changelog
+### 0.0.12
+* now you can download the adapter configuration in the admin dialog. upload is not possible due to security restrictions in modern browsers.
 ### 0.0.11
 * improve admin layout
 * implement a forceRefresh button

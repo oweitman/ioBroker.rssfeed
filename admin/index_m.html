@@ -116,6 +116,23 @@
             });
             callback(obj);
         }
+        function download_rssconfig() {
+            var text = $('#rss').val();
+            var data = new Blob([text], {type: 'text/plain'});
+            var url = window.URL.createObjectURL(data);
+            document.getElementById('rssfeeddownload').href = url;
+        }
+
+/*        function upload_rssconfig() {
+            var client = new XMLHttpRequest();
+            var file = $('#rssfeedupload').val();
+            client.open('GET', file);
+            client.onreadystatechange = function() {
+              alert(client.responseText);
+            }
+            client.send();
+        }
+*/
     </script>
 
 </head>
@@ -198,6 +215,13 @@
                         </table>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="">
+                        <div>
+                        <a id="rssfeeddownload" class="waves-effect waves-light btn" download="rssfeed-config.txt" href=””><span class="">Download Konfiguration</span></a>
+                        </div>
+                    </div>
+                </div>
                 <div class="row hide">
                     <div class="input-field col s1">
                         <input class="value" id="rss" type="text" />
@@ -207,6 +231,15 @@
             </div>
         </div>
     </div>
+    <script>
+    // self executing function here
+    (function() {
+        // your page initialization code here
+        // the DOM will be available here
+        $('#rssfeeddownload').click(download_rssconfig);
+        //$('#rssfeedupload').change(upload_rssconfig);
+    })();
+    </script>
 </body>
 
 </html>
