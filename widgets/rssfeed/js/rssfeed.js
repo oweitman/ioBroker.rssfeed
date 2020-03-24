@@ -23,7 +23,7 @@ vis.binds['rssfeed'] = {
             vis.binds['rssfeed'].version = null;
         }
     },
-	
+
     rssfeedwidget: {
         createWidget: function (widgetID, view, data, style) {
             
@@ -58,6 +58,33 @@ vis.binds['rssfeed'] = {
             }
 			
 			var text = ejs.render(template, rss);            
+            $('#' + widgetID).html(text);
+        },    
+    },
+    jsontemplate: {
+        createWidget: function (widgetID, view, data, style) {
+            
+            var $div = $('#' + widgetID);
+            // if nothing found => wait
+            if (!$div.length) {
+                return setTimeout(function () {
+                    vis.binds["rssfeed"].jsontemplate.createWidget(widgetID, view, data, style);
+                }, 100);
+            }
+            var oiddata  = data.oid ? JSON.parse(vis.states.attr(data.oid + '.val')) : {};            
+            var template  = data.template ? data.template : '';
+            
+            function onChange(e, newVal, oldVal) {
+                if (newVal) vis.binds["rssfeed"].jsontemplate.createWidget(widgetID, view, data, style);
+            }
+
+            if (data.oid ) {
+                if (1 || !vis.editMode) {
+                    vis.binds["rssfeed"].bindStates($div,[data.oid],onChange);                    
+                }
+            }
+			
+			var text = ejs.render(template, {"data":oiddata});            
             $('#' + widgetID).html(text);
         },    
     },
@@ -303,4 +330,10 @@ str=str.replace(/<br>/gi, "\n");
 str=str.replace(/<p.*>/gi, "\n");
 str=str.replace(/<a.*href="(.*?)".*>(.*?)<\/a>/gi, " $2 (Link->$1) ");
 str=str.replace(/<(?:.|\s)*?>/g, "");
+*/
+
+/*
+Remember JSON Path finder https://github.com/joebeachjoebeach/json-path-finder
+Remember JSON Formatter https://github.com/mohsen1/json-formatter-js
+
 */

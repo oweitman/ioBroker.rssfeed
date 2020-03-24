@@ -142,7 +142,7 @@
     <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 230px; height: 210px" id="<%= this.data.attr('wid') %>"><%
         vis.binds.rssfeed.articlehelper.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
-</script>     
+</script>
 <script id="tplrssfeedMarquee"
         type="text/ejs"
         class="vis-tpl"
@@ -157,4 +157,18 @@
         vis.binds.rssfeed.marquee.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>     
-        
+<script id="tplJSONTemplate"
+        type="text/ejs"
+        class="vis-tpl"
+		data-vis-prev='<img src="widgets/rssfeed/img/jsontemplate.png"></img>'
+        data-vis-attrs="oid/id;template/html;"
+        data-vis-set="rssfeed"
+        data-vis-type="val"
+        data-vis-beta="true"
+        data-vis-update-style="true"
+        data-vis-name="JSON Template">
+    <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 230px; height: 20px" id="<%= this.data.attr('wid') %>"><%
+        vis.binds.rssfeed.jsontemplate.createWidget(this.data.wid, this.view, this.data, this.style);
+    %></div>
+</script>
+                  
