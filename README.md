@@ -159,6 +159,10 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 
 
 ## Changelog
+### 0.0.14
+* update package.json and install new tools for stream encoding/decoding detection
+* implement encoding detection and stream encoding
+* change the ejs lib with a real browserified lib
 ### 0.0.13
 * new widget as a guest, because it is not directly related to the rssfeed functionality, but reuse the same code base. maybe later i transfer it to an own adapter. the new widget can take a json datapoint and you can visualize the data with the ejs template system.
 ### 0.0.12
