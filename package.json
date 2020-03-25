@@ -20,7 +20,10 @@
   },
   "dependencies": {
     "@iobroker/adapter-core": "^2.2.1",
+    "chardet": "^0.8.0",
+    "ejs": "^3.0.1",
     "feedparser": "^2.2.9",
+    "iconv-lite": "^0.5.1",
     "request": "^2.88.2"
   },
   "devDependencies": {
