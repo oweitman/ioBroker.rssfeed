@@ -159,6 +159,8 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 
 
 ## Changelog
+### 0.0.15
+* fix bug saving last request in adapter configuration / improve debug messages
 ### 0.0.14
 * update package.json and install new tools for stream encoding/decoding detection
 * implement encoding detection and stream encoding

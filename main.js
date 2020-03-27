@@ -34,11 +34,13 @@ class RssFeed extends utils.Adapter {
      * Is called when databases are connected and adapter received configuration.
      */
     async onReady() {
+        this.log.debug('main onReady start');
         // Reset the connection indicator during startup
         this.setState('info.connection', false, true);
 
         // Initialize your adapter here
         if (!rssfeedserver) {
+            this.log.debug('main onReady open rssfeed');
             rssfeedserver = new rssfeedrequire(this);
         }
 
@@ -52,12 +54,15 @@ class RssFeed extends utils.Adapter {
      */
     onUnload(callback) {
         try {
+            this.log.debug('main onUnload try');             
+
             rssfeedserver.closeConnections();
             this.log.info('cleaned everything up...');
 			// Reset the connection indicator during startup
 			this.setState('info.connection', false, true);
             callback();
         } catch (e) {
+            this.log.debug('main onUnload error');
             callback();
         }
     }
