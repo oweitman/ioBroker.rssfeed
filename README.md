@@ -159,6 +159,12 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 
 
 ## Changelog
+### 0.0.16
+* improve logic adding rssfeed in configuration dialog
+* fix wrong icon for marquee widget
+* define default template for rssfeed widget
+* deprecate existing and replace with new version of widgets to improve naming of the attributes in case of translation
+* widget rss marquee: replace duration attribute with speed attribute and improved the calculation algorithm. now same number is same speed regardless of the length of the titles
 ### 0.0.15
 * fix bug saving last request in adapter configuration / improve debug messages
 ### 0.0.14

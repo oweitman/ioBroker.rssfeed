@@ -67,6 +67,54 @@ vis.binds['rssfeed'] = {
                 }
             }
 			
+			var text = ejs.render(template, rss);
+            text = "<div style='color:red;'>deprecated - dont use it anymore - please use RSS Feed Widget 2</div><br>" + text;
+            $('#' + widgetID).html(text);
+        },    
+    },
+    rssfeedwidget2: {
+        createWidget: function (widgetID, view, data, style) {
+            
+            var $div = $('#' + widgetID);
+            // if nothing found => wait
+            if (!$div.length) {
+                return setTimeout(function () {
+                    vis.binds["rssfeed"].rssfeedwidget2.createWidget(widgetID, view, data, style);
+                }, 100);
+            }
+            var rss  = data.rss_oid ? JSON.parse(vis.states.attr(data.rss_oid + '.val')) : {};
+            var defaulttemplate = `
+                <p><%- meta.title %> </p>
+                <img src="<%- meta.image.url %>">
+                <% articles.forEach(function(item){ %>
+                <p><small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small></p>
+                <h3><%- item.title %></h3>
+                <p><%- item.description %></p>
+                <div style="clear:both;" />
+                <% }); %>
+                            `;
+            var template  = data.rss_template ? data.rss_template : defaulttemplate;
+            var filter  = data.rss_filter ? data.rss_filter : '';
+			var maxarticles = data.rss_maxarticles ? data.rss_maxarticles : 999;
+			maxarticles = maxarticles > 0 ? maxarticles : 1;
+			if (rss && rss.articles && rss.articles.length > maxarticles) rss.articles = rss.articles.slice(0,maxarticles);
+            
+            if (filter!='') {
+                rss.articles = rss.articles.filter(function(item){
+                    return vis.binds["rssfeed"].checkHighlite(item.title+item.description+item.categories.toString(),filter);
+                });
+            }
+            
+            function onChange(e, newVal, oldVal) {
+                if (newVal) vis.binds["rssfeed"].rssfeedwidget2.createWidget(widgetID, view, data, style);
+            }
+
+            if (data.rss_oid ) {
+                if (1 || !vis.editMode) {
+                    vis.binds["rssfeed"].bindStates($div,[data.rss_oid],onChange);                    
+                }
+            }
+			
 			var text = ejs.render(template, rss);            
             $('#' + widgetID).html(text);
         },    
@@ -91,6 +139,35 @@ vis.binds['rssfeed'] = {
             if (data.oid ) {
                 if (1 || !vis.editMode) {
                     vis.binds["rssfeed"].bindStates($div,[data.oid],onChange);                    
+                }
+            }
+			
+			var text = ejs.render(template, {"data":oiddata});
+            
+            text = "<div style='color:red;'>deprecated - dont use it anymore - please use RSS Feed Widget 2</div><br>" + text;
+            $('#' + widgetID).html(text);
+        },    
+    },
+    jsontemplate2: {
+        createWidget: function (widgetID, view, data, style) {
+            
+            var $div = $('#' + widgetID);
+            // if nothing found => wait
+            if (!$div.length) {
+                return setTimeout(function () {
+                    vis.binds["rssfeed"].jsontemplate2.createWidget(widgetID, view, data, style);
+                }, 100);
+            }
+            var oiddata  = data.json_oid ? JSON.parse(vis.states.attr(data.json_oid + '.val')) : {};            
+            var template  = data.json_template ? data.json_template : '';
+            
+            function onChange(e, newVal, oldVal) {
+                if (newVal) vis.binds["rssfeed"].jsontemplate2.createWidget(widgetID, view, data, style);
+            }
+
+            if (data.json_oid ) {
+                if (1 || !vis.editMode) {
+                    vis.binds["rssfeed"].bindStates($div,[data.json_oid],onChange);                    
                 }
             }
 			
@@ -173,6 +250,8 @@ vis.binds['rssfeed'] = {
             text += '</style> \n';
 
             text += '<div class="marquee"><span>'+ titles +'</span></div>';
+
+            text = "<div style='color:red;'>deprecated - dont use it anymore - please use RSS Feed Widget 2</div><br>" + text;
             
             $('#' + widgetID).html(text);
             for(var attr in style){
@@ -180,6 +259,88 @@ vis.binds['rssfeed'] = {
             }            
         },    
     },    
+    marquee2: {
+        createWidget: function (widgetID, view, data, style) {
+            
+            var $div = $('#' + widgetID);
+            // if nothing found => wait
+            if (!$div.length) {
+                return setTimeout(function () {
+                    vis.binds["rssfeed"].marquee2.createWidget(widgetID, view, data, style);
+                }, 100);
+            }
+            var rss  = data.rss_oid ? JSON.parse(vis.states.attr(data.rss_oid + '.val')) : {};            
+			var maxarticles = data.rss_maxarticles ? data.rss_maxarticles : 999;
+			maxarticles = maxarticles > 0 ? maxarticles : 1;
+			if (rss && rss.articles && rss.articles.length > maxarticles) rss.articles = rss.articles.slice(0,maxarticles);
+            var frontcolor = style.color ? style.color : undefined;
+            var backcolor = style['background-color'] ? style['background-color'] : undefined;
+            var pauseonhover = (data.rss_pauseonhover) ? true : data.rss_pauseonhover;
+            var filter  = data.rss_filter ? data.rss_filter : '';
+            var speed  = data.rss_speed ? data.rss_speed : 6;
+
+            if (filter!='') {
+                rss.articles = rss.articles.filter(function(item){
+                    return vis.binds["rssfeed"].checkHighlite(item.title+item.description+item.categories.toString(),filter);
+                });
+            }            
+            
+            function onChange(e, newVal, oldVal) {
+                if (newVal) vis.binds["rssfeed"].marquee2.createWidget(widgetID, view, data, style);
+            }
+
+            if (data.rss_oid ) {
+                if (1 || !vis.editMode) {
+                    vis.binds["rssfeed"].bindStates($div,[data.rss_oid],onChange);                    
+                }
+            }
+            
+            var titles = '';
+            if (rss && rss.articles && rss.articles.length > 0) {
+                titles = rss.articles.reduce(function(collect,item){
+                    collect += ' +++ ' + item.title;
+                    return collect;
+                },titles);
+            }
+
+			var text = '';
+            
+            text += '<style> \n';
+            text += '#' + widgetID + ' .marquee {\n';
+            text += '    max-width: 100vw; /* iOS braucht das */\n';
+            text += '    white-space: nowrap;\n';
+            text += '    overflow: hidden;\n';
+            if (backcolor) text += '    background-color: ' + backcolor +'; /* Hintergrundfarbe des Lauftextes. Auskommentieren, um Transparent zu erhalten */\n';
+            text += '    font-size:20px;\n';
+            text += '}\n';
+            text += '#' + widgetID + ' .marquee span {\n';
+            text += '    display: inline-block;\n';
+            text += '    padding-left: 100%;\n';
+            var duration = (titles.length/speed).toFixed();
+            text += '    animation: marquee '+ duration+'s linear infinite;\n';
+            if (frontcolor) text += '    color: ' + frontcolor + '; /* Textfarbe des Lauftextes */\n';
+            text += '}\n';
+            if (pauseonhover) {
+                text += '/* Optional: mouseover (oder Tipp auf dem Touchscreen) pausiert die Laufschrift */\n';
+                text += '#' + widgetID + ' .marquee span:hover {\n';
+                text += '    animation-play-state: paused \n';
+                text += '}\n';
+            }
+            text += '/* Make it move */\n';
+            text += '@keyframes .' + widgetID + '.marquee {\n';
+            text += '    0%   { transform: translateX(0); }\n';
+            text += '    100% { transform: translateX(-100%); }\n';
+            text += '}\n';
+            text += '</style> \n';
+
+            text += '<div class="' + widgetID + ' marquee"><span>'+ titles +'</span></div>';
+            
+            $('#' + widgetID).html(text);
+            for(var attr in style){
+                if ('left,top,width,height'.indexOf(attr)<0 && style[attr]!='') $('#' + widgetID+' span').css(attr,style[attr]); 
+            }            
+        },    
+    },        
     metahelper: {
         createWidget: function (widgetID, view, data, style) {
             
@@ -257,7 +418,71 @@ vis.binds['rssfeed'] = {
                 }
             }
 			
+			var item = rss.articles[article-1];
 			
+			var text = '';
+			
+			if (item) {
+
+				text += '<style> \n';
+				text += '#'+widgetID + ' .rssfeed th {\n';
+				text += '   white-space: nowrap;\n';
+				text += '   text-align: left;\n';
+				text += '   vertical-align: top;\n';
+				text += '} \n';
+				text += '</style> \n';
+				
+				text += '<table class="rssfeed attributes">';
+				text += '<tr><th>'+prefix+'.title</th><td>'+item.title+'</td></tr>';
+				text += '<tr><th>'+prefix+'.description</th><td>'+item.description+'</td></tr>';
+				text += '<tr><th>'+prefix+'.summary</th><td>'+item.summary+'</td></tr>';
+				text += '<tr><th>'+prefix+'.link</th><td>'+item.link+'</td></tr>';
+				text += '<tr><th>'+prefix+'.origlink</th><td>'+item.origlink+'</td></tr>';
+				text += '<tr><th>'+prefix+'.permalink</th><td>'+item.permalink+'</td></tr>';
+				text += '<tr><th>'+prefix+'.date</th><td>'+item.date+'</td></tr>';
+				text += '<tr><th>'+prefix+'.pubdate</th><td>'+item.pubdate+'</td></tr>';
+				text += '<tr><th>'+prefix+'.author</th><td>'+item.author+'</td></tr>';
+				text += '<tr><th>'+prefix+'.guid</th><td>'+item.guid+'</td></tr>';
+				text += '<tr><th>'+prefix+'.comments</th><td>'+item.comments+'</td></tr>';
+				text += '<tr><th>'+prefix+'.image.url</th><td>'+item.image.url+'</td></tr>';
+				text += '<tr><th>'+prefix+'.image.title</th><td>'+item.image.title+'</td></tr>';
+				text += '<tr><th>'+prefix+'.categories</th><td>'+item.categories+'</td></tr>';
+				text += '<tr><th>'+prefix+'.source</th><td>'+JSON.stringify(item.source)+'</td></tr>';
+				text += '<tr><th>'+prefix+'.enclosures</th><td>'+JSON.stringify(item.enclosures)+'</td></tr>';
+				text += '</table>';
+			} else {
+				text += '<table class="rssfeed attributes">';
+				text += '<tr><th>No Data. End of List of '+ rss.articles.length +' Articles</th></tr>';
+				text += '</table>';				
+			}
+            text = "<div style='color:red;'>deprecated - dont use it anymore - please use RSS Feed Widget 2</div><br>" + text;
+            $('#' + widgetID).html(text);
+        },    
+    },
+    articlehelper2: {
+        createWidget: function (widgetID, view, data, style) {
+            
+            var $div = $('#' + widgetID);
+            // if nothing found => wait
+            if (!$div.length) {
+                return setTimeout(function () {
+                    vis.binds["rssfeed"].articlehelper2.createWidget(widgetID, view, data, style);
+                }, 100);
+            }
+            var rss  = data.rss_oid ? JSON.parse(vis.states.attr(data.rss_oid + '.val')) : {};
+			var prefix = data.rss_prefix ? data.rss_prefix : 'item';
+			var article = data.rss_article ? data.rss_article : 1;
+            article = article > 0 ? article : 1;
+						
+            function onChange(e, newVal, oldVal) {
+                if (newVal) vis.binds["rssfeed"].articlehelper2.createWidget(widgetID, view, data, style);
+            }
+
+            if (data.rss_oid ) {
+                if (1 || !vis.editMode) {
+                    vis.binds["rssfeed"].bindStates($div,[data.rss_oid],onChange);                    
+                }
+            }
 			
 			var item = rss.articles[article-1];
 			
