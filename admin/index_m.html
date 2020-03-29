@@ -50,11 +50,10 @@
                     rsscat = rsscat.replace(/[^0-9a-z]/gi, '');
                     var rssurl = $('#rssurl').val() || '';
                     var rssrefresh = $('#rssrefresh').val() || refresh;
-                    if (rssname !=  '' && rssurl !=  '' && rssrefresh != '') {
-                        var rss = JSON.parse($('#rss').val());
-                        const found = rss.some(el => el.name === rssname && el.cat === rsscat && el.url === rssurl && el.refresh === rssrefresh);
+                    var rss = JSON.parse($('#rss').val());
+                    if (rssname !=  '' && rssurl !=  '' && rssrefresh != '' && !rss.some(el => el.name === rssname && el.cat === rsscat)) {
                         onChange(true);
-                        if (!found) rss.push({"name": rssname,"cat": rsscat,"url": rssurl,"refresh":rssrefresh});
+                        rss.push({"name": rssname,"cat": rsscat,"url": rssurl,"refresh":rssrefresh});
                         $('#rss').val(JSON.stringify(rss));
                         $('#rssname').val('');
                         $('#rsscat').val('');
