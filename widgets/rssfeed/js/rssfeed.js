@@ -34,8 +34,18 @@ vis.binds['rssfeed'] = {
                     vis.binds["rssfeed"].rssfeedwidget.createWidget(widgetID, view, data, style);
                 }, 100);
             }
-            var rss  = data.rss_oid ? JSON.parse(vis.states.attr(data.rss_oid + '.val')) : {};            
-            var template  = data.template ? data.template : '';
+            var rss  = data.rss_oid ? JSON.parse(vis.states.attr(data.rss_oid + '.val')) : {};
+            var defaulttemplate = `
+                <p><%- meta.title %> </p>
+                <img src="<%- meta.image.url %>">
+                <% articles.forEach(function(item){ %>
+                <p><small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small></p>
+                <h3><%- item.title %></h3>
+                <p><%- item.description %></p>
+                <div style="clear:both;" />
+                <% }); %>
+                            `;
+            var template  = data.template ? data.template : defaulttemplate;
             var filter  = data.filter ? data.filter : '';
 			var maxarticles = data.maxarticles ? data.maxarticles : 999;
 			maxarticles = maxarticles > 0 ? maxarticles : 1;
