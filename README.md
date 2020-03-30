@@ -159,6 +159,8 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 
 
 ## Changelog
+### 0.0.19
+* try to fix marquee widget.
 ### 0.0.18
 * try to fix the wrong NoSave dialog
 ### 0.0.17

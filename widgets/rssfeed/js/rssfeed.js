@@ -317,7 +317,7 @@ vis.binds['rssfeed'] = {
             text += '    display: inline-block;\n';
             text += '    padding-left: 100%;\n';
             var duration = (titles.length/speed).toFixed();
-            text += '    animation: marquee '+ duration+'s linear infinite;\n';
+            text += '    animation: ' + widgetID + 'marquee '+ duration+'s linear infinite;\n';
             if (frontcolor) text += '    color: ' + frontcolor + '; /* Textfarbe des Lauftextes */\n';
             text += '}\n';
             if (pauseonhover) {
@@ -327,7 +327,7 @@ vis.binds['rssfeed'] = {
                 text += '}\n';
             }
             text += '/* Make it move */\n';
-            text += '@keyframes .' + widgetID + '.marquee {\n';
+            text += '@keyframes '+ widgetID + 'marquee {\n';
             text += '    0%   { transform: translateX(0); }\n';
             text += '    100% { transform: translateX(-100%); }\n';
             text += '}\n';

@@ -1,7 +1,7 @@
 {
     "common": {
         "name": "rssfeed",
-        "version": "0.0.18",
+        "version": "0.0.19",
         "news": {
             "0.0.18": {
                 "en": "try to fix the wrong NoSave dialog"
