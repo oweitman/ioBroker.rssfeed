@@ -159,6 +159,8 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 
 
 ## Changelog
+### 0.0.20
+* add ejs syntax to template editor
 ### 0.0.19
 * try to fix marquee widget.
 ### 0.0.18

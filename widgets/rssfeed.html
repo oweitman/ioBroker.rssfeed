@@ -10,13 +10,14 @@
 <!-- here you can include so many js-files as you want -->
 <script type="text/javascript" src="widgets/rssfeed/js/rssfeed.js"></script>
 <script type="text/javascript" src="widgets/rssfeed/js/ejs.js"></script>
+<script type="text/javascript" src="widgets/rssfeed/js/mode-ejs.js"></script>
 
 
 <script id="tplrssfeedWidget2"
         type="text/ejs"
         class="vis-tpl"
 		data-vis-prev='<img src="widgets/rssfeed/img/rssfeed-vis.png"></img>'
-        data-vis-attrs="rss_oid/id;rss_template/html;rss_maxarticles/number,1;rss_filter;"
+        data-vis-attrs="rss_oid/id;rss_template/custom,rssfeed.editEjs;rss_maxarticles/number,1;rss_filter;"
         data-vis-set="rssfeed"
         data-vis-type="val"
         data-vis-beta="true"
@@ -72,7 +73,7 @@
         type="text/ejs"
         class="vis-tpl"
 		data-vis-prev='<img src="widgets/rssfeed/img/jsontemplate.png"></img>'
-        data-vis-attrs="json_oid/id;json_template/html;"
+        data-vis-attrs="json_oid/id;json_template/custom,rssfeed.editEjs;"
         data-vis-set="rssfeed"
         data-vis-type="val"
         data-vis-beta="true"
@@ -142,4 +143,4 @@
         vis.binds.rssfeed.jsontemplate.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>
-                 
+                      

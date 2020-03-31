@@ -552,6 +552,111 @@ vis.binds['rssfeed'] = {
         $div.data('bindHandler', change_callback);
         
     },
+    editEjs: function (widAttr) {
+        var that = vis;
+        var line = {
+            input: '<textarea id="inspect_' + widAttr + '"></textarea>'
+        };
+
+        line.button = {
+            icon: 'ui-icon-note',
+            text: false,
+            title: _('Select color'),
+            click: function (/*event*/) {
+                var wdata = $(this).data('wdata');
+                var data = {};
+                if (that.config['dialog-edit-text']) {
+                    data = JSON.parse(that.config['dialog-edit-text']);
+                }
+                var editor = ace.edit('dialog-edit-text-textarea');
+                var changed = false;
+                $('#dialog-edit-text').dialog({
+                    autoOpen: true,
+                    width:    data.width  || 800,
+                    height:   data.height || 600,
+                    modal:    true,
+                    resize:   function () {
+                        editor.resize();
+                    },
+                    open: function (event) {
+                        $(event.target).parent().find('.ui-dialog-titlebar-close .ui-button-text').html('');
+                        $(this).parent().css({'z-index': 1000});
+                        if (data.top !== undefined) {
+                            if (data.top >= 0) {
+                                $(this).parent().css({top:  data.top});
+                            } else {
+                                $(this).parent().css({top:  0});
+                            }
+                        }
+                        if (data.left !== undefined) {
+                            if (data.left >= 0) {
+                                $(this).parent().css({left: data.left});
+                            } else {
+                                $(this).parent().css({left: 0});
+                            }
+                        }
+                        editor.getSession().setMode('ace/mode/ejs');
+                        editor.setOptions({
+                            enableBasicAutocompletion: true,
+                            enableLiveAutocompletion:  true
+                        });
+                        editor.$blockScrolling = Infinity;
+                        editor.getSession().setUseWrapMode(true);
+                        editor.setValue($('#inspect_' + wdata.attr).val());
+                        editor.navigateFileEnd();
+                        editor.focus();
+                        editor.getSession().on('change', function() {
+                            changed = true;
+                        });
+                    },
+                    beforeClose: function () {
+                        var $parent = $('#dialog-edit-text').parent();
+                        var pos = $parent.position();
+                        that.editSaveConfig('dialog-edit-text', JSON.stringify({
+                            top:    pos.top  > 0 ? pos.top  : 0,
+                            left:   pos.left > 0 ? pos.left : 0,
+                            width:  $parent.width(),
+                            height: $parent.height() + 9
+                        }));
+
+                        if (changed) {
+                            if (!window.confirm(_('Changes are not saved!. Continue?'))) {
+                                return false;
+                            }
+                        }
+                    },
+                    buttons:  [
+                        {
+                            text: _('Ok'),
+                            click: function () {
+                                $('#inspect_' + wdata.attr).val(editor.getValue()).trigger('change');
+                                changed = false;
+                                $(this).dialog('close');
+                            }
+                        },
+                        {
+                            text: _('Cancel'),
+                            click: function () {
+                                $(this).dialog('close');
+                            }
+                        }
+                    ]
+                }).show();
+            }
+        };
+        return line;
+    },    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 	
 	
 };

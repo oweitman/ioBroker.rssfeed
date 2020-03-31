@@ -1,8 +1,14 @@
 {
     "common": {
         "name": "rssfeed",
-        "version": "0.0.19",
+        "version": "0.0.20",
         "news": {
+            "0.0.20": {
+                "en": "add ejs syntax to template editor"
+            },
+            "0.0.19": {
+                "en": "try to fix marquee widget."
+            },
             "0.0.18": {
                 "en": "try to fix the wrong NoSave dialog"
             },
