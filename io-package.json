@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "rssfeed",
-        "version": "0.0.20",
+        "version": "0.0.21",
         "news": {
+            "0.0.21": {
+                "en": "add link option to marquee widget / widget help added / marquee widget: the divider characters (default: +++) are configurable"
+            },
             "0.0.20": {
                 "en": "add ejs syntax to template editor"
             },
@@ -59,9 +62,6 @@
             },
             "0.0.2": {
                 "en": "added widgets meta helper and article helper"
-            },
-            "0.0.1": {
-                "en": "initial release"
             }
         },
         "title": "RSS Feed",

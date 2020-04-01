@@ -278,6 +278,7 @@ vis.binds['rssfeed'] = {
             var pauseonhover = (data.rss_pauseonhover) ? true : data.rss_pauseonhover;
             var link = (data.rss_link) ? data.rss_link : false;
             var filter  = data.rss_filter ? data.rss_filter : '';
+            var divider  = data.rss_divider ? data.rss_divider : '+++';
             var speed  = data.rss_speed ? data.rss_speed : 6;
 
             if (filter!='') {
@@ -302,9 +303,9 @@ vis.binds['rssfeed'] = {
                 titles = rss.articles.reduce(function(collect,item){
                     titleslength+=item.title.length
                     if (link) {
-                        collect += ' +++ ' + '<a href="' + item.link + '" target="rssarticle">' + item.title + '</a>';
+                        collect += ' ' + divider + ' ' + '<a href="' + item.link + '" target="rssarticle">' + item.title + '</a>';
                     } else {
-                        collect += ' +++ ' + item.title;
+                        collect += ' ' + divider + ' ' + item.title;
                     }
                     return collect;
                 },titles);

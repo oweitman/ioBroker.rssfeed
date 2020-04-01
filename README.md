@@ -159,6 +159,10 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 
 
 ## Changelog
+### 0.0.21
+* add link option to marquee widget
+* widget help added 
+* marquee widget: the divider characters (default: +++) are configurable
 ### 0.0.20
 * add ejs syntax to template editor
 ### 0.0.19
