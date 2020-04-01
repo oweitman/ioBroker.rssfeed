@@ -276,6 +276,7 @@ vis.binds['rssfeed'] = {
             var frontcolor = style.color ? style.color : undefined;
             var backcolor = style['background-color'] ? style['background-color'] : undefined;
             var pauseonhover = (data.rss_pauseonhover) ? true : data.rss_pauseonhover;
+            var link = (data.rss_link) ? data.rss_link : false;
             var filter  = data.rss_filter ? data.rss_filter : '';
             var speed  = data.rss_speed ? data.rss_speed : 6;
 
@@ -296,9 +297,15 @@ vis.binds['rssfeed'] = {
             }
             
             var titles = '';
+            var titleslength = 0;
             if (rss && rss.articles && rss.articles.length > 0) {
                 titles = rss.articles.reduce(function(collect,item){
-                    collect += ' +++ ' + item.title;
+                    titleslength+=item.title.length
+                    if (link) {
+                        collect += ' +++ ' + '<a href="' + item.link + '" target="rssarticle">' + item.title + '</a>';
+                    } else {
+                        collect += ' +++ ' + item.title;
+                    }
                     return collect;
                 },titles);
             }
@@ -316,7 +323,7 @@ vis.binds['rssfeed'] = {
             text += '#' + widgetID + ' .marquee span {\n';
             text += '    display: inline-block;\n';
             text += '    padding-left: 100%;\n';
-            var duration = (titles.length/speed).toFixed();
+            var duration = (titleslength/speed).toFixed();
             text += '    animation: ' + widgetID + 'marquee '+ duration+'s linear infinite;\n';
             if (frontcolor) text += '    color: ' + frontcolor + '; /* Textfarbe des Lauftextes */\n';
             text += '}\n';
@@ -330,6 +337,10 @@ vis.binds['rssfeed'] = {
             text += '@keyframes '+ widgetID + 'marquee {\n';
             text += '    0%   { transform: translateX(0); }\n';
             text += '    100% { transform: translateX(-100%); }\n';
+            text += '}\n';
+            text += '#' + widgetID + ' a {\n';
+            text += '    text-decoration: none;';
+            text += '    color: inherit;';
             text += '}\n';
             text += '</style> \n';
 
@@ -647,18 +658,6 @@ vis.binds['rssfeed'] = {
         return line;
     },    
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-	
-	
 };
 
 vis.binds['rssfeed'].showVersion();
