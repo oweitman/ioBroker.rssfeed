@@ -18,7 +18,8 @@
     <script type="text/javascript" src="words.js"></script>
 
     <script type="text/javascript">
-
+        
+        var __onChange = null;
         // This will be called by the admin adapter when the settings page loads
         function load(settings, onChange) {
             // example: select elements with id=key and class=value and insert value
@@ -40,7 +41,8 @@
                 }
             });
             onChange(false);
-            document.getElementById('rssform').addEventListener (
+            $('#rssform').off('submit').on(
+            //document.getElementById('rssform').addEventListener (
                 "submit", 
                 function (evt) {
                     var refresh = $('#refresh').val() || 60;
@@ -69,7 +71,6 @@
             // reinitialize all the Materialize labels on the page if you are dynamically adding inputs:
             if (M) M.updateTextFields();
             updatetable(onChange);
-
         }
         function deleteitem(onChange, rssname,rsscat,rssurl,rssrefresh) {
             var rss = JSON.parse($('#rss').val());
@@ -116,23 +117,7 @@
             callback(obj);
             changed = false;
         }
-        function download_rssconfig() {
-            var text = $('#rss').val();
-            var data = new Blob([text], {type: 'text/plain'});
-            var url = window.URL.createObjectURL(data);
-            document.getElementById('rssfeeddownload').href = url;
-        }
 
-/*        function upload_rssconfig() {
-            var client = new XMLHttpRequest();
-            var file = $('#rssfeedupload').val();
-            client.open('GET', file);
-            client.onreadystatechange = function() {
-              alert(client.responseText);
-            }
-            client.send();
-        }
-*/
     </script>
 
 </head>
@@ -148,11 +133,11 @@
             </div>
             <div id="tab-main" class="col s12 page">
                 <div class="row valign-wrapper">
-                    <div class="col" style="">
-                        <img class="responsive-img valign" src="admin/rssfeed-logo.png" width="64" height="64">
-                    </div>
                     <div class="col">
                         <h3 class="translate">RSS Feed  settings </h3>
+                    </div>
+                    <div class="col" style="">
+                        <img class="responsive-img valign logo" src="admin/rssfeed-logo.png" width="64" height="64">
                     </div>
                 </div>
                 <div class="row">
@@ -160,13 +145,11 @@
                         <input class="value" id="refresh" type="text" />
                         <label class="translate" for="refresh">Refresh (Minutes):</label>
                     </div>
-                </div>                
-                <div class="row">
                     <div class="input-field col s2">
                         <input class="value" id="maxarticles" type="text" />
                         <label class="translate" for="maxarticles">Maximale Articlesin Datapoint:</label>
                     </div>
-                </div>                
+                </div>
                 <div class="row">
                     <div class="col s4">
                         <h5 class="translate">Adding RSS Feeds</h5>
@@ -215,13 +198,6 @@
                         </table>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="">
-                        <div>
-                        <a id="rssfeeddownload" class="waves-effect waves-light btn" download="rssfeed-config.txt" href=””><span class="">Download Konfiguration</span></a>
-                        </div>
-                    </div>
-                </div>
                 <div class="row hide">
                     <div class="input-field col s1">
                         <input class="value" id="rss" type="text" />
@@ -231,15 +207,6 @@
             </div>
         </div>
     </div>
-    <script>
-    // self executing function here
-    (function() {
-        // your page initialization code here
-        // the DOM will be available here
-        $('#rssfeeddownload').click(download_rssconfig);
-        //$('#rssfeedupload').change(upload_rssconfig);
-    })();
-    </script>
 </body>
 
 </html>
