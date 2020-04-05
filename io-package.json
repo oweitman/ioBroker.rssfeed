@@ -120,23 +120,6 @@
         "dataSource": "poll",
         "materialize": true,
         "materializeTab": true,
-        "adminTab": {
-            "singleton": true,
-            "name": {
-                "en": "RSS Feed",
-                "de": "rssfeed",
-                "ru": "Новостная лента",
-                "pt": "Feed RSS",
-                "nl": "rssfeed",
-                "fr": "Flux RSS",
-                "it": "RSS Feed",
-                "es": "RSS Feed",
-                "pl": "Kanał RSS",
-                "zh-cn": "RSS订阅"
-            },
-            "link": "",
-            "fa-icon": "info"
-        },
         "supportCustoms": true,
         "dependencies": [
             {
