@@ -89,7 +89,7 @@ vis.binds['rssfeed'] = {
             var datapoints = [];
             var bound = [];
 
-            for (var i = 1; i <= feedCount; i++) {
+            for (var i = 1; i <= dpCount; i++) {
                 if (data['rss_dp'+i]) {
                     datapoints[data['rss_dp'+i]] = vis.states.attr(data['rss_dp'+i] + '.val');
                     bound.push(data['rss_dp'+i]);
@@ -157,7 +157,118 @@ vis.binds['rssfeed'] = {
 			var text = ejs.render(template, {'articles': collect,'dp':datapoints});
             $('#' + widgetID).html(text);
         },    
-    },    
+    },
+    marquee3: {
+        createWidget: function (widgetID, view, data, style) {
+            
+            var $div = $('#' + widgetID);
+            // if nothing found => wait
+            if (!$div.length) {
+                return setTimeout(function () {
+                    vis.binds["rssfeed"].marquee3.createWidget(widgetID, view, data, style);
+                }, 100);
+            }
+
+            var bound = [];
+            var articles = [];
+            var feedCount = data.rss_feedCount ? data.rss_feedCount : 1;
+            var divider  = data.rss_divider ? data.rss_divider : '+++';
+            var speed  = data.rss_speed ? data.rss_speed : 6;
+            var pauseonhover = (data.rss_pauseonhover) ? true : data.rss_pauseonhover;
+            var link = (data.rss_link) ? data.rss_link : false;
+            var frontcolor = style.color ? style.color : undefined;
+            var backcolor = style['background-color'] ? style['background-color'] : undefined;
+
+            for (var i = 1; i <= feedCount; i++) {
+                var rss  = data['rss_oid'+i] ? JSON.parse(vis.states.attr(data['rss_oid'+i] + '.val')) : {};
+                if (!rss.hasOwnProperty('articles')) continue;
+                bound.push(data['rss_oid'+i]);
+                
+                var filter  = data['rss_filter'+i] ? data['rss_filter'+i] : '';
+                var maxarticles = data['rss_maxarticles'+i] ? data['rss_maxarticles'+i] : 999;
+                maxarticles = maxarticles > 0 ? maxarticles : 1;            
+                if (filter!='') {
+                    rss.articles = rss.articles.filter(function(item){
+                        return vis.binds["rssfeed"].checkHighlite(item.title+item.description+item.categories.toString(),filter);
+                    });
+                }            
+                if (rss && rss.articles && rss.articles.length > maxarticles) rss.articles = rss.articles.slice(0,maxarticles);
+                articles.push(rss.articles);
+            }
+            function onChange(e, newVal, oldVal) {
+                if (newVal) vis.binds["rssfeed"].marquee3.createWidget(widgetID, view, data, style);
+            }
+            if (bound.length>0 ) {
+                if (1 || !vis.editMode) {
+                    vis.binds["rssfeed"].bindStates($div,bound,onChange);                    
+                }
+            }
+            var collect = [];
+            articles.forEach(function(item){collect=collect.concat(item)})
+
+            collect.sort(function(a,b){
+              // Turn your strings into dates, and then subtract them
+              // to get a value that is either negative, positive, or zero.
+              return new Date(b.date) - new Date(a.date);
+            });   
+
+            var titles = '';
+            var titleslength = 0;
+            if (collect && collect.length > 0) {
+                titles = collect.reduce(function(t,item){
+                    titleslength+=item.title.length
+                    if (link) {
+                        t += ' ' + divider + ' ' + '<a href="' + item.link + '" target="rssarticle">' + item.title + '</a>';
+                    } else {
+                        t += ' ' + divider + ' ' + item.title;
+                    }
+                    return t;
+                },titles);
+            }
+
+			var text = '';
+            
+            text += '<style> \n';
+            text += '#' + widgetID + ' .marquee {\n';
+            text += '    max-width: 100vw; /* iOS braucht das */\n';
+            text += '    white-space: nowrap;\n';
+            text += '    overflow: hidden;\n';
+            if (backcolor) text += '    background-color: ' + backcolor +'; /* Hintergrundfarbe des Lauftextes. Auskommentieren, um Transparent zu erhalten */\n';
+            text += '    font-size:20px;\n';
+            text += '}\n';
+            text += '#' + widgetID + ' .marquee span {\n';
+            text += '    display: inline-block;\n';
+            text += '    padding-left: 100%;\n';
+            var duration = (titleslength/speed).toFixed();
+            text += '    animation: ' + widgetID + 'marquee '+ duration+'s linear infinite;\n';
+            if (frontcolor) text += '    color: ' + frontcolor + '; /* Textfarbe des Lauftextes */\n';
+            text += '}\n';
+            if (pauseonhover) {
+                text += '/* Optional: mouseover (oder Tipp auf dem Touchscreen) pausiert die Laufschrift */\n';
+                text += '#' + widgetID + ' .marquee span:hover {\n';
+                text += '    animation-play-state: paused \n';
+                text += '}\n';
+            }
+            text += '/* Make it move */\n';
+            text += '@keyframes '+ widgetID + 'marquee {\n';
+            text += '    0%   { transform: translateX(0); }\n';
+            text += '    100% { transform: translateX(-100%); }\n';
+            text += '}\n';
+            text += '#' + widgetID + ' a {\n';
+            text += '    text-decoration: none;';
+            text += '    color: inherit;';
+            text += '}\n';
+            text += '</style> \n';
+
+            text += '<div class="' + widgetID + ' marquee"><span>'+ titles +'</span></div>';
+            
+            $('#' + widgetID).html(text);
+            for(var attr in style){
+                if ('left,top,width,height'.indexOf(attr)<0 && style[attr]!='') $('#' + widgetID+' span').css(attr,style[attr]); 
+            }            
+        },    
+    },     
+    
     rssfeedwidget2: {
         createWidget: function (widgetID, view, data, style) {
             
@@ -222,12 +333,12 @@ vis.binds['rssfeed'] = {
                 if (newVal) vis.binds["rssfeed"].jsontemplate.createWidget(widgetID, view, data, style);
             }
 
-            if (data.oid ) {
+            if (bound.length>0 ) {
                 if (1 || !vis.editMode) {
-                    vis.binds["rssfeed"].bindStates($div,[data.oid],onChange);                    
+                    vis.binds["rssfeed"].bindStates($div,bound,onChange);                    
                 }
-            }
-			
+            }            
+            			
 			var text = ejs.render(template, {"data":oiddata});
             
             text = "<div style='color:red;'>deprecated - dont use it anymore - please use RSS Feed Widget 2</div><br>" + text;
@@ -244,8 +355,21 @@ vis.binds['rssfeed'] = {
                     vis.binds["rssfeed"].jsontemplate2.createWidget(widgetID, view, data, style);
                 }, 100);
             }
+            var bound = [];            
             var oiddata  = data.json_oid ? JSON.parse(vis.states.attr(data.json_oid + '.val')) : {};            
             var template  = data.json_template ? data.json_template : '';
+            bound.push(data.json_oid);
+
+            var dpCount = data.rss_dpCount ? data.rss_dpCount : 1;
+            var datapoints = [];
+
+            for (var i = 1; i <= dpCount; i++) {
+                if (data['rss_dp'+i]) {
+                    datapoints[data['rss_dp'+i]] = vis.states.attr(data['rss_dp'+i] + '.val');
+                    bound.push(data['rss_dp'+i]);
+                }
+            }
+
             
             function onChange(e, newVal, oldVal) {
                 if (newVal) vis.binds["rssfeed"].jsontemplate2.createWidget(widgetID, view, data, style);
@@ -257,7 +381,7 @@ vis.binds['rssfeed'] = {
                 }
             }
 			
-			var text = ejs.render(template, {"data":oiddata});            
+			var text = ejs.render(template, {"data":oiddata,'dp':datapoints});            
             $('#' + widgetID).html(text);
         },    
     },
@@ -344,7 +468,7 @@ vis.binds['rssfeed'] = {
                 if ('left,top,width,height'.indexOf(attr)<0 && style[attr]!='') $('#' + widgetID+' span').css(attr,style[attr]); 
             }            
         },    
-    },    
+    },
     marquee2: {
         createWidget: function (widgetID, view, data, style) {
             
@@ -432,7 +556,7 @@ vis.binds['rssfeed'] = {
             text += '</style> \n';
 
             text += '<div class="' + widgetID + ' marquee"><span>'+ titles +'</span></div>';
-            
+            text = "<div style='color:red;'>deprecated - dont use it anymore - please use RSS Feed Widget 2</div><br>" + text;            
             $('#' + widgetID).html(text);
             for(var attr in style){
                 if ('left,top,width,height'.indexOf(attr)<0 && style[attr]!='') $('#' + widgetID+' span').css(attr,style[attr]); 

@@ -81,7 +81,6 @@
 
 <h2><a name="Attribute" ></a>Dokumentation RSS Feed Widgets</h2>
 
-
 <h3><a name="tplrssfeedWidget2" ></a>RSS Feed Widget 2</h3>
 <img src="img/rssfeed-vis.png"/><br>
 Mit diesem Widget kann man die im Konfigurationsdialog des Adapters abonnierten RSS Feeds anzeigen lassen. 
@@ -264,26 +263,33 @@ Zum leicheteren Verwendung der Attributnamen per Copy/Paste, kann hier der im Te
 <h5>Attribut rss_article</h5>
 Über dieses Attribut kann durch die verschiedenen vorhandenen Artikeln im RSS Feed geschaltet werden.
 <br><br>
-<h3><a name="tplrssfeedMarquee2" ></a>RSS Feed Title marquee 2</h3>
+<h3><a name="tplrssfeedMarquee3" ></a>RSS Feed Title marquee 3</h3>
 <img src="img/rssfeed-mrqe.png"/><br>
 Mit diesem Widget werden alle Titel-Attribute als Laufschrift ausgegeben werden.
+Im Rahmen der Umstellung von marquee widget 2 auf 3, ist diese widget nun ein Multi widget, in dem man auch mehr wie ein RSS feed zusammen aggregieren kann.
 <h4>Attribute</h4>
-<h5>Attribut rss_oid</h5>
-Auswahl des Datenpunktes mit dem entsprechenden RSS Feed.
-<h5>Attribut rss_maxarticles</h5>
-Die maximal angezeigte Anzahl von einzelnen Artikeln aus dem RSS Feed
-<h5>Attribut rss_speed</h5>
+<h5>Attribut rss_feedCount - Gruppe Allgemein</h5>
+Hier kann die Anzahl der zu konfigurierenden Feeds eingestellt werden. Für jeden Feed wird in vis eine separate Gruppe zur Konfiguration erzeugt.
+<h5>Attribut rss_speed - Gruppe Allgemein</h5>
 Die Scrollgeschwindigkeit der Laufschrift 
-<h5>Attribut rss_divider</h5>
+<h5>Attribut rss_divider - Gruppe Allgemein</h5>
 Hier können die Zeichen eingegeben werden, mit dem die Schlagzeilen getrennt werden. Als Standardwert is +++ voreingestellt.
-<h5>Attribut rss_pauseonhover</h5>
+<h5>Attribut rss_pauseonhover - Gruppe Allgemein</h5>
 Wenn diese Option angeschaltet ist, dann hält die Laufschrift an, sobald man mit der Maus über dem Text schwebt.
-<h5>Attribut rss_link</h5>
+<h5>Attribut rss_link - Gruppe Allgemein</h5>
 Wenn diese Option angeschaltet ist, werden die Schlagzeilen als Link ausgegeben. Bei Klick oder Touch auf eine Schlagzeile, wird der Link zum Artikel in einem neuen Fenster oder Tab geöffnet.
-<h5>Attribut rss_filter</h5>
+<h5>Attribut rss_oid - Gruppe Feeds[zahl]</h5>
+Auswahl des Datenpunktes mit dem entsprechenden RSS Feed.
+<h5>Attribut rss_maxarticles - Gruppe Feeds[zahl]</h5>
+Die maximal angezeigte Anzahl von einzelnen Artikeln aus dem RSS Feed
+<h5>Attribut rss_filter - Gruppe Feeds[zahl]</h5>
 Für die Filter-Funktion kann in das Feld ein oder mehrere Filterkriterien mit Semikolon (;) getrennt eingegeben werden.<br>
 Für die Suche werden die folgenden Artikel-Attribute durchsucht: titel, description, categories.<br>
 Es werden nur Artikel angezeigt, die einen dieser Begriffe enthält.<br>
+<br><br>
+<h3><a name="tplrssfeedMarquee2" ></a>RSS Feed Title marquee 2</h3>
+<img src="img/rssfeed-mrqe.png"/><br>
+Dieses Widget nicht mehr verwenden.
 <br><br>
 <h3><a name="tplJSONTemplate2" ></a>JSON Template2</h3>
 <img src="img/jsontemplate.png"/><br>
@@ -320,6 +326,15 @@ An das Template werden die JSON-Daten mit dem prefix data übergeben.<br>
 }
 </code>
 </pre>
+<br><br>
+<b>dp:</b> Ist ein Objekt, mit den einzelnen konfigurierten Datenpunkten, die innerhalb des Template verfügbar gemacht werden sollen.<br>
+Ein Datenpunkt kann innerhalb des Templates wie folgt abgerufen werden <br>
+<pre>
+<code class="javascript hljs">
+dp['ID des Datenpunktes']<br>
+</code>
+</pre>
+<br>
 <b>Attribute</b>
 Innerhalb des Templates sind alle Attribute über das prefix data erreichbar.<br>
 <br>
