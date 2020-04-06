@@ -155,10 +155,19 @@ Z6: Output a div tag that clears special formatting in the feed-html (in both ex
 Z7: Without output. This line closed the javascript loop . Everything that was defined between Z2 and Z7 is repeated for every single article.  
 
 ## Todo
-* Widget für Laufschrift mit den Titeln https://forum.iobroker.net/topic/31242/nachrichten-ticker-newsticker-via-php-in-vis-einbinden/2
-
+* Multi widget RSS Feeds
+* Multi widget marquee
+* Weitere Datenpunkte im Template verfügbar machen.
+* ~~Widget für Laufschrift mit den Titeln https://forum.iobroker.net/topic/31242/nachrichten-ticker-newsticker-via-php-in-vis-einbinden/2~~
 
 ## Changelog
+### 0.0.22
+* improvements in the configuration dialog
+* remove unused admintab
+* new RSS Feed multi widget. in this widget you can add your one or more datapoints, that are available in the template.
+* New marquee widget 3 replaces the existing marquee widget 2.The marquee widget 3 is now a multi widget and can handle more than one feed. The Headlines are now aggregated.
+* the existing widget JSON template is improved. in this widget you can add your one or more datapoints, that are available in the template.
+* Remove several deprecated widgets (RSS Feed widget 1, Article Helper 1, Marquee 1, JSON template 1)
 ### 0.0.21
 * add link option to marquee widget
 * widget help added 
