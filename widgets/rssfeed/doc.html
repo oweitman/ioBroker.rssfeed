@@ -171,6 +171,79 @@ Für die Filter-Funktion kann in das Feld ein oder mehrere Filterkriterien mit S
 Für die Suche werden die folgenden Artikel-Attribute durchsucht: titel, description, categories.<br>
 Es werden nur Artikel angezeigt, die einen dieser Begriffe enthält.<br>
 <br><br>
+<h3><a name="tplrssfeedMultiWidget" ></a>RSS Feed Multi Widget</h3>
+<img src="img/rssfeed-vis.png"/><br>
+Mit diesem Widget können mehrere Feeds in einem widget aggregiert dargestellt werden. <br>
+Aufgrund der mehreren Feed, gibt es hier ein paar Unterschiede zur Datenverfügbarkeit im Template im Vergleich zum normalen RSS Feed widget.<br>
+Die Variable meta ist im template nicht verfügbar. Allerdings sind  3 Meta-attrribute title und description in jedem einzelnen Artikel unter den Bezeichnungen meta_title und meta_description verfügbar.<br>
+Darüber Hinaus kann in den Einstellungen für jeden Feed ein Allgemeiner Name vergeben werden, der innerhalb des templates unter der Bezeichung meta_name in jedem Artikel zur Verfügung steht, damit die Herkunft eines Artikels jeweils gekennzeichnet werden.<br>
+Ansonsten gelten für das Template die selben Regeln wie bei RSS Feed widget.<br>
+Beschreibung der Formatierung und Syntax finden sich auf den folgenden Seiten<br>
+https://ejs.co/ und https://github.com/mde/ejs<br>
+
+<h4>Attribute</h4>
+<h5>Attribut rss_feedCount - Gruppe Allgemein</h5>
+Hier kann die Anzahl der zu konfigurierenden Feeds eingestellt werden. Für jeden Feed wird in vis eine separate Gruppe zur Konfiguration erzeugt.
+<h5>Attribut rss_template - Gruppe Allgemein</h5>
+Das Template bestimmt das Aussehen des RSS Feeds. Im Template können alle gültigen HTML-Tags (inklusive CSS-Attribute in Style-Tags) verwendet werden.<br>
+Darüber hinaus gibt es spezielle Tags, innerhalb derer die Feed-Daten angezeigt werden und Javascript-Anweisungen ausgeführt werden können.
+Um die Daten und ihre verwendeten Attributnamen besser identifiziert werden können, existieren noch die beiden Widgets <b>rssfeed Meta helper</b> und <b>rssfeed Article helper</b>.<br>
+<br>
+Für dieses Feld gelten, bis auf die Verfügbarkeit der Variablen, die selben Regeln wie für das Feld Template im widget RSS Feed Widget<br>
+<br>
+Innerhalb des Templates habt ihr 2 vorgegebene Variable zur Verfügung<br>
+<br>
+<b>articles:</b> Ist ein Array mit einzelnen Elementen (javascript array). Jedes Element hat die folgenden Eigenschaften.<br>
+Damit es zum Beispiel passt mache ich hier mal das Prefix item davor. Aber wenn ihr wollt könnt ihr das selbst wählen. Es muss dann nur in der Schleife (forEach) entsprechend benannt werden. Auch hier sind die Bezeichner erst einmal selbst erklärend. Nicht in jedem Feed sind alle attribute auch gefüllt. Die wichtigsten sind im obigen Template bereits enthalten.<br>
+Wie Eingangs bereits beschrieben gibt es in jedem Artikel noch 3 ergänzende Attibute, aus den Meta-Informationen des Feeds (meta_title und meta_description.<br>
+meta_name stammt aus dem Attribut rss_name aus der vis Konfiguration zum jeweiligen Feed.<br>
+<br>
+item.title<br>
+item.description<br>
+item.summary<br>
+item.link<br>
+item.origlink<br>
+item.permalink<br>
+item.date<br>
+item.pubdate<br>
+item.author<br>
+item.guid<br>
+item.comments<br>
+item.image<br>
+item.categories<br>
+item.source<br>
+item.enclosures<br>
+meta_title<br>
+meta_description<br>
+meta_name<br>
+<br>
+<b>dp:</b> Ist ein Objekt, mit den einzelnen konfigurierten Datenpunkten, die innerhalb des Template verfügbar gemacht werden sollen.<br>
+Ein Datenpunkt kann innerhalb des Templates wie folgt abgerufen werden <br>
+<pre>
+<code class="javascript hljs">
+dp['ID des Datenpunktes']<br>
+</code>
+</pre>
+<br>
+<h5>Attribut rss_dpCount - Gruppe Allgemein</h5>
+Hier kann die Anzahl der weiteren Datenpunkte angegeben werden, die innerhalb des Templates verfügbar gemacht werden sollen.
+<h5>Attribut rss_dp[zahl] - Gruppe Allgemein</h5>
+Hier kann der jeweilige Datenpunkt ausgewählt werden. Der Datenpunk ist innerhalb des Templates unter der Variable dp verfügbar. d.h. ein Datenpunkt kann innerhalb des Templates wie folgt abgerufen werden <br>
+<pre>
+<code class="javascript hljs">
+dp['ID des Datenpunktes']<br>
+</code>
+</pre>
+<h5>Attribut rss_oid - Gruppe Feeds[zahl]</h5>
+Auswahl des Datenpunktes mit dem entsprechenden RSS Feed.
+<h5>Attribut rss_name - Gruppe Feeds[zahl]</h5>
+Hier kann eine Bezeichnung eingegeben werden, die im Template je Artikel unter dem Attributnamen meta_name verfügbar gemacht wird.
+<h5>Attribut rss_maxarticles - Gruppe Feeds[zahl]</h5>
+Die maximal angezeigte Anzahl von einzelnen Artikeln aus dem RSS Feed
+<h5>Attribut rss_filter - Gruppe Feeds[zahl]</h5>
+Für die Filter-Funktion kann in das Feld ein oder mehrere Filterkriterien mit Semikolon (;) getrennt eingegeben werden.<br>
+Für die Suche werden die folgenden Artikel-Attribute durchsucht: titel, description, categories.<br>
+Es werden nur Artikel angezeigt, die einen dieser Begriffe enthält.<br>
 <h3><a name="tplrssfeedMetaHelper" ></a>RSS Feed Meta Helper</h3>
 <img src="img/rssfeed-meta.png"/><br>
 Mit diesem Widget können die Meta-Attribute eines bestimmten Feeds angezeigt werden.

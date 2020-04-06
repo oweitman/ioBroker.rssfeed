@@ -72,6 +72,92 @@ vis.binds['rssfeed'] = {
             $('#' + widgetID).html(text);
         },    
     },
+    rssfeedmultiwidget: {
+        createWidget: function (widgetID, view, data, style) {
+            
+            var $div = $('#' + widgetID);
+            // if nothing found => wait
+            if (!$div.length) {
+                return setTimeout(function () {
+                    vis.binds["rssfeed"].rssfeedmultiwidget.createWidget(widgetID, view, data, style);
+                }, 100);
+            }
+            
+            var articles = [];
+            var feedCount = data.rss_feedCount ? data.rss_feedCount : 1;
+            var dpCount = data.rss_dpCount ? data.rss_dpCount : 1;
+            var datapoints = [];
+            var bound = [];
+
+            for (var i = 1; i <= feedCount; i++) {
+                if (data['rss_dp'+i]) {
+                    datapoints[data['rss_dp'+i]] = vis.states.attr(data['rss_dp'+i] + '.val');
+                    bound.push(data['rss_dp'+i]);
+                }
+            }
+
+            var defaulttemplate = `
+                <% articles.forEach(function(item){ %>
+                <p><%- item.meta_name || item.meta_title || '' %></p>
+                <p><small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small></p>
+                <h3><%- item.title %></h3>
+                <p><%- item.description %></p>
+                <div style="clear:both;" />
+                <% }); %>
+                            `;
+
+            var template  = (data['rss_template'] ? ( data['rss_template'].trim() ? data['rss_template'].trim() : defaulttemplate) : defaulttemplate);
+            
+            for (var i = 1; i <= feedCount; i++) {
+                var rss  = data['rss_oid'+i] ? JSON.parse(vis.states.attr(data['rss_oid'+i] + '.val')) : {};
+                if (!rss.hasOwnProperty('articles')) continue;
+                bound.push(data['rss_oid'+i]);
+                
+                var filter  = data['rss_filter'+i] ? data['rss_filter'+i] : '';
+                var maxarticles = data['rss_maxarticles'+i] ? data['rss_maxarticles'+i] : 999;
+                maxarticles = maxarticles > 0 ? maxarticles : 1;
+                var name  = data['rss_name'+i] ? data['rss_name'+i] : '';
+
+                if (rss && rss.articles && rss.articles.length > maxarticles) rss.articles = rss.articles.slice(0,maxarticles);
+                
+                if (filter!='') {
+                    rss.articles = rss.articles.filter(function(item){
+                        return vis.binds["rssfeed"].checkHighlite(item.title+item.description+item.categories.toString(),filter);
+                    });
+                }
+                rss.articles = rss.articles.map(function(item) {
+                   item['meta_title'] = rss.meta.title;
+                   item['meta_description'] = rss.meta.description;
+                   item['meta_name'] = name;
+                   return item;
+                }.bind(this));
+                
+                articles.push(rss.articles);            
+            }
+            
+            function onChange(e, newVal, oldVal) {
+                if (newVal) vis.binds["rssfeed"].rssfeedmultiwidget.createWidget(widgetID, view, data, style);
+            }
+            if (bound.length>0 ) {
+                if (1 || !vis.editMode) {
+                    vis.binds["rssfeed"].bindStates($div,bound,onChange);                    
+                }
+            }            
+            
+            var collect = [];
+            articles.forEach(function(item){collect=collect.concat(item)})
+
+            collect.sort(function(a,b){
+              // Turn your strings into dates, and then subtract them
+              // to get a value that is either negative, positive, or zero.
+              return new Date(b.date) - new Date(a.date);
+            });            
+            
+            
+			var text = ejs.render(template, {'articles': collect,'dp':datapoints});
+            $('#' + widgetID).html(text);
+        },    
+    },    
     rssfeedwidget2: {
         createWidget: function (widgetID, view, data, style) {
             
