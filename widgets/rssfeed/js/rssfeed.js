@@ -102,10 +102,24 @@ vis.binds['rssfeed'] = {
               // Turn your strings into dates, and then subtract them
               // to get a value that is either negative, positive, or zero.
               return new Date(b.date) - new Date(a.date);
-            });            
+            });
+            var meta = new Proxy({},{get(target,name) {
+                if (name=='title' || name=='description') {
+                    return 'meta.'+ name +' is not available please use RSS Feed widget. Read the widget help';
+                } else {
+                    return 'meta is not available please use RSS Feed widget. Read the widget help.';
+                }
+            }})
             
+            try {
+                var text = ejs.render(template, {'articles': collect,'meta':meta,'dp':datapoints});
+            }
+            catch (e) {
+                text = vis.binds["rssfeed"].escapeHTML(e.message).replace(/(?:\r\n|\r|\n)/g, '<br>');
+                text = text.replace(/ /gm,'&nbsp;');
+                text = '<code style="color:red;">' + text + '</code>';
+            }
             
-			var text = ejs.render(template, {'articles': collect,'dp':datapoints});
             $('#' + widgetID).html(text);
         },    
     },
@@ -269,8 +283,16 @@ vis.binds['rssfeed'] = {
                     vis.binds["rssfeed"].bindStates($div,[data.rss_oid],onChange);                    
                 }
             }
-			
-			var text = ejs.render(template, rss);            
+
+            try {
+                var text = ejs.render(template, rss);
+            }
+            catch (e) {
+                text = vis.binds["rssfeed"].escapeHTML(e.message).replace(/(?:\r\n|\r|\n)/g, '<br>');
+                text = text.replace(/ /gm,'&nbsp;');
+                text = '<code style="color:red;">' + text + '</code>';
+            }
+
             $('#' + widgetID).html(text);
         },    
     },
@@ -309,8 +331,16 @@ vis.binds['rssfeed'] = {
                     vis.binds["rssfeed"].bindStates($div,[data.json_oid],onChange);                    
                 }
             }
-			
-			var text = ejs.render(template, {"data":oiddata,'dp':datapoints});            
+
+            try {
+                var text = ejs.render(template, {"data":oiddata,'dp':datapoints});
+            }
+            catch (e) {
+                text = vis.binds["rssfeed"].escapeHTML(e.message).replace(/(?:\r\n|\r|\n)/g, '<br>');
+                text = text.replace(/ /gm,'&nbsp;');
+                text = '<code style="color:red;">' + text + '</code>';
+            }            
+         
             $('#' + widgetID).html(text);
         },    
     },
@@ -552,6 +582,13 @@ vis.binds['rssfeed'] = {
         $div.data('bound', {bound,change_callback});
         $div.data('bindHandler', change_callback);
         
+    },
+    escapeHTML: function (html) {
+        var escapeEl = document.createElement('textarea');
+        escapeEl.textContent = html;
+        var ret = escapeEl.innerHTML;
+        escapeEl = null;
+        return ret;
     },
     editEjs: function (widAttr) {
         var that = vis;
