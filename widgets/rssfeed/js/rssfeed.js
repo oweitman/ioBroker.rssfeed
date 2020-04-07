@@ -562,6 +562,7 @@ vis.binds['rssfeed'] = {
                 if (that.config['dialog-edit-text']) {
                     data = JSON.parse(that.config['dialog-edit-text']);
                 }
+                ace.config.setModuleUrl("ace/mode/ejs", "widgets/rssfeed/js/mode-ejs.js");
                 var editor = ace.edit('dialog-edit-text-textarea');
                 var changed = false;
                 $('#dialog-edit-text').dialog({
