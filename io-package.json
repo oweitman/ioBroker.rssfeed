@@ -20,51 +20,6 @@
             },
             "0.0.20": {
                 "en": "add ejs syntax to template editor"
-            },
-            "0.0.19": {
-                "en": "try to fix marquee widget."
-            },
-            "0.0.18": {
-                "en": "try to fix the wrong NoSave dialog"
-            },
-            "0.0.17": {
-                "en": "rework setting objects and states"
-            },
-            "0.0.16": {
-                "en": "improve logic adding rssfeed in configuration dialog / fix wrong icon for marquee widget / define default template for rssfeed widget / deprecate existing and replace with new version of widgets to improve naming of the attributes in case of translation / widget rss marquee: replace duration attribute with speed attribute and improved the calculation algorithm. now same number is same speed regardless of the length of the titles"
-            },
-            "0.0.15": {
-                "en": "fix bug saving last request in adapter configuration / improve debug messages"
-            },
-            "0.0.14": {
-                "en": "update package.json and install new tools for stream encoding/decoding detection / implement encoding detection and stream encoding / change the ejs lib with a real browserified lib"
-            },
-            "0.0.13": {
-                "en": "new widget as a guest, because it is not directly related to the rssfeed functionality, but reuse the same code base. maybe later i transfer it to an own adapter. the new widget can take a json datapoint and you can visualize the data with the ejs template system."
-            },
-            "0.0.12": {
-                "en": "now you can download the adapter configuration in the admin dialog"
-            },
-            "0.0.11": {
-                "en": "improve admin layout / implement a forceRefresh button"
-            },
-            "0.0.10": {
-                "en": "fix bug a bug in marquee widget. not all styles should applied to the span tag"
-            },
-            "0.0.9": {
-                "en": "apply widget styles also to the inner span element, because they had not any effect on the marquee / renew the package-lock.json / add categories to save feeds in subfolders / improve mechanism to write only updated feeds to datapoint. the feed has new data if comparision of articles in title and description is different."
-            },
-            "0.0.8": {
-                "en": "improve lasrequest logic of the adapter, fix problem with datapoint naming"
-            },
-            "0.0.7": {
-                "en": "test with encapsulation of ejs.js, becaus of error in some browsers"
-            },
-            "0.0.6": {
-                "en": "add attribute duration for widget marquee to control animation duration"
-            },
-            "0.0.5": {
-                "en": "new widget marquee for article titles, add filter function for articles. the filter searchs in title,description and categories, seceral filter criteria can be seperated by semicolon"
             }
         },
         "title": "RSS Feed",
