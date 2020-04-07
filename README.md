@@ -161,6 +161,10 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 * ~~Widget für Laufschrift mit den Titeln https://forum.iobroker.net/topic/31242/nachrichten-ticker-newsticker-via-php-in-vis-einbinden/2~~
 
 ## Changelog
+### 0.0.24
+* errors in the request of feeds are now real errors in the iobroker log
+* loading of rules for ejs in the editor is improved 
+* marquee3 widget: options to show time and date
 ### 0.0.23
 * republish to npm
 ### 0.0.22
