@@ -129,6 +129,9 @@ vis.binds['rssfeed'] = {
             var link = (data.rss_link) ? data.rss_link : false;
             var frontcolor = style.color ? style.color : undefined;
             var backcolor = style['background-color'] ? style['background-color'] : undefined;
+            var rss_withtime = (data.rss_withtime) ? data.rss_withtime : false;
+            var rss_withdate = (data.rss_withdate) ? data.rss_withdate : false;
+            var rss_withyear = (data.rss_withyear) ? data.rss_withyear : false;
 
             for (var i = 1; i <= feedCount; i++) {
                 var rss  = data['rss_oid'+i] ? JSON.parse(vis.states.attr(data['rss_oid'+i] + '.val')) : {};
@@ -167,11 +170,15 @@ vis.binds['rssfeed'] = {
             var titleslength = 0;
             if (collect && collect.length > 0) {
                 titles = collect.reduce(function(t,item){
-                    titleslength+=item.title.length
+                    var time = "";
+                    titleslength+=item.title.length;
+                    if (rss_withtime) time = vis.formatDate(item.date,"hh:mm");
+                    if (rss_withdate) time = vis.formatDate(item.date,"DD.MM/hh:mm");
+                    if (rss_withyear) time = vis.formatDate(item.date,"DD.MM.YY/hh:mm");
                     if (link) {
-                        t += ' ' + divider + ' ' + '<a href="' + item.link + '" target="rssarticle">' + item.title + '</a>';
+                        t += ' ' + divider + ' ' + '<a href="' + item.link + '" target="rssarticle">' + time + " " + item.title + '</a>';
                     } else {
-                        t += ' ' + divider + ' ' + item.title;
+                        t += ' ' + divider + ' ' + time + " " + item.title;
                     }
                     return t;
                 },titles);
