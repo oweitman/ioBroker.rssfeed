@@ -1,6 +1,6 @@
 {
   "name": "iobroker.rssfeed",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "description": "Adapter and vis widget for rss feeds",
   "author": {
     "name": "oweitman",
