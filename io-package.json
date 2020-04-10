@@ -1,8 +1,14 @@
 {
     "common": {
         "name": "rssfeed",
-        "version": "0.0.26",
+        "version": "0.0.27",
         "news": {
+            "0.0.27": {
+                "en": "adapter configuration is now editable"
+            },
+            "0.0.26": {
+                "en": "correct changelog size"
+            },
             "0.0.25": {
                 "en": "the error messages for the template are improved"
             },
