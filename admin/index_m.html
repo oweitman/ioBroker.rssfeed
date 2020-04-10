@@ -63,7 +63,6 @@
                         $('#rssrefresh').val('');
                         updatetable(onChange);
                     }
-
                     evt.preventDefault();
                     //
             });
@@ -72,14 +71,26 @@
             if (M) M.updateTextFields();
             updatetable(onChange);
         }
-        function deleteitem(onChange, rssname,rsscat,rssurl,rssrefresh) {
+        function del_edititem(event) {
             var rss = JSON.parse($('#rss').val());
-            rss = $.grep(rss, function(e){ 
-                 return !(e.name == rssname && e.cat == rsscat && e.url == rssurl && e.refresh == rssrefresh); 
-            });            
-            $('#rss').val(JSON.stringify(rss));
-            onChange(true);
-            updatetable(onChange);
+            if ($(event.currentTarget).hasClass('del')) {
+                rss = $.grep(rss, function(e){
+                     return !(e.name == event.data.name && e.cat == event.data.cat && e.url == event.data.url && e.refresh == event.data.refresh);
+                });
+                $('#rss').val(JSON.stringify(rss));
+                event.data.onChange(true);
+            }
+            if ($(event.currentTarget).hasClass('edit')) {
+                rss = $.grep(rss, function(e){
+                     return !(e.name == event.data.name && e.cat == event.data.cat && e.url == event.data.url && e.refresh == event.data.refresh);
+                });
+                $('#rss').val(JSON.stringify(rss));
+                $('#rssname').val(event.data.name);
+                $('#rsscat').val(event.data.cat);
+                $('#rssurl').val(event.data.url);
+                $('#rssrefresh').val(event.data.refresh);
+            }
+            updatetable(event.data.onChange);
         }
         function updatetable(onChange) {
             var tablebody = $('#rssfeed-data');
@@ -94,11 +105,12 @@
                 text += '<td class="wizard-table-url">'+item.url+'</td>';
                 text += '<td class="wizard-table-refresh">'+item.refresh+'</td>';
                 text += '<td class="wizard-table-delete">';
-                text += '<a class="waves-effect waves-light btn"><i class="material-icons">delete</i></a>';
+                text += '<a class="waves-effect waves-light btn edit"><i class="material-icons">edit</i></a>';
+                text += '<a class="waves-effect waves-light btn del"><i class="material-icons">delete</i></a>';
                 text += '</td>';
                 text += '</tr>';
                 var newtr = $(text);
-                newtr.find('a').click(deleteitem.bind(this,onChange,item.name,item.cat,item.url,item.refresh));
+                newtr.find('a').click({that:this,onChange:onChange,name:item.name,cat:item.cat,url:item.url,refresh:item.refresh},del_edititem);
                 tablebody.append(newtr);
             }.bind(this,onChange));
         }
