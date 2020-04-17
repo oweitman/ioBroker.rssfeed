@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "rssfeed",
-        "version": "0.0.27",
+        "version": "0.0.28",
         "news": {
+            "0.0.28": {
+                "en": "remove customtab"
+            },
             "0.0.27": {
                 "en": "adapter configuration is now editable"
             },
