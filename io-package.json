@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "rssfeed",
-        "version": "0.0.28",
+        "version": "0.0.29",
         "news": {
+            "0.0.29": {
+                "en": "change createObject/setState logic due iobroker-controller >3.0"
+            },
             "0.0.28": {
                 "en": "remove customtab"
             },

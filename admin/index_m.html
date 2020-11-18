@@ -17,8 +17,7 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script type="text/javascript" src="words.js"></script>
 
-    <script type="text/javascript">
-        
+    <script type="text/javascript">        
         var __onChange = null;
         // This will be called by the admin adapter when the settings page loads
         function load(settings, onChange) {
@@ -42,7 +41,6 @@
             });
             onChange(false);
             $('#rssform').off('submit').on(
-            //document.getElementById('rssform').addEventListener (
                 "submit", 
                 function (evt) {
                     var refresh = $('#refresh').val() || 60;
@@ -129,6 +127,7 @@
             callback(obj);
             changed = false;
         }
+
 
     </script>
 
