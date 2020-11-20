@@ -170,6 +170,75 @@ Für die Filter-Funktion kann in das Feld ein oder mehrere Filterkriterien mit S
 Für die Suche werden die folgenden Artikel-Attribute durchsucht: titel, description, categories.<br>
 Es werden nur Artikel angezeigt, die einen dieser Begriffe enthält.<br>
 <br><br>
+
+
+<h4>Templatebeipiele</h4>
+<h5>Standardtemplate</h5>
+Diese Template wird intern verwendet, auch wenn in der Widgetkonfiguration nichts erfasst wurde.<br>
+<pre style="background-color: black;">
+<code class="mycode">
+&lt;%= meta.title %&gt; 
+&lt;% articles.forEach(function(item){ %&gt;
+&lt;p&gt;&lt;small&gt;&lt;%- vis.formatDate(item.pubdate, &quot;TT.MM.JJJJ SS:mm&quot;) %&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;%- item.title %&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;%- item.description %&gt;&lt;/p&gt;
+&lt;div style=&quot;clear:both;&quot; /&gt;
+&lt;% }); %&gt;
+</code>
+</pre>
+<br>
+<h5>Template Slideshow</h5>
+Mit diesem Template werden die Artikel der Reihe nach ein und wieder ausgeblendet.<br>
+Am Anfang des Templates können die Zeiten für das Ein/Ausblenden, sowie die Anzeigedauer konfiguriert werden. Die Werte werden in Millisekunden notiert.<br>
+Vielen Dank an Sebastian-IO für deinen Beitrag<br><br>
+
+<pre style="background-color: black;">
+<code class="mycode">
+&lt;script&gt;
+// Konfigurationsbereich Anfang
+var fadeTime = 1000; //Zeit in Millisekunden zum Ein und Ausblenden eines Artikels
+var showTime = 4000; //Zeitdauer, wie lange ein Artikel angezeigt werden soll
+// Konfigurationsbereich Ende
+&lt;/script&gt;
+&lt;style&gt;
+#{wname} .slideshow {
+  position: relative;
+}
+#{wname} .slideshow &gt; div {
+  position: absolute;
+  display: none;
+}
+#{wname} .slideshow &gt;  div:nth-child(0n+1) {
+    display: block;
+}
+&lt;/style&gt;
+&lt;script&gt;
+setInterval(function() {
+  $('#{wname} .slideshow &gt; div:first')
+    .fadeOut(fadeTime)
+    .next()
+    .fadeIn(fadeTime)
+    .end()
+    .appendTo('#{wname} .slideshow');
+}, showTime);
+
+&lt;/script&gt;
+&lt;%= meta.title %&gt; 
+&lt;div class=&quot;slideshow&quot;&gt;
+&lt;% articles.forEach(function(item){ %&gt;
+   &lt;div&gt;
+&lt;p&gt;&lt;small&gt;&lt;%- vis.formatDate(item.pubdate, &quot;TT.MM.JJJJ SS:mm&quot;) %&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;%- item.title %&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;%- item.description %&gt;&lt;/p&gt;
+&lt;div style=&quot;clear:both;&quot; /&gt;
+   &lt;/div&gt;
+&lt;% }); %&gt;
+&lt;/div&gt;
+
+</code>
+</pre>
+<br>
+
 <h3><a name="tplrssfeedMultiWidget" ></a>RSS Feed Multi Widget</h3>
 <img src="img/rssfeed-vis.png"/><br>
 Mit diesem Widget können mehrere Feeds in einem widget aggregiert dargestellt werden. <br>
