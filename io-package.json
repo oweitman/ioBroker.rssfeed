@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "rssfeed",
-        "version": "0.0.30",
+        "version": "0.8.0",
         "news": {
+            "0.8.0": {
+                "en": "* adapt configuration pages to react. * Prepare for stable release"
+            },
             "0.0.30": {
                 "en": "add some template examples to the widget documentation"
             },
@@ -104,7 +107,7 @@
     "native": {
         "rss": "[]",
         "refresh": 60,
-		"maxarticles": 100
+        "maxarticles": 100
     },
     "objects": [],
     "instanceObjects": [
