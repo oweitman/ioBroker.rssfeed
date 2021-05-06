@@ -5,6 +5,7 @@
 node_modules
 nbproject
 todo
+iob_npm.done
 
 # npm package files
 iobroker.*.tgz
