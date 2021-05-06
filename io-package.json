@@ -1,136 +1,137 @@
 {
-    "common": {
-        "name": "rssfeed",
-        "version": "0.8.0",
-        "news": {
-            "0.8.0": {
-                "en": "* adapt configuration pages to react. * Prepare for stable release"
-            },
-            "0.0.30": {
-                "en": "add some template examples to the widget documentation"
-            },
-            "0.0.29": {
-                "en": "change createObject/setState logic due iobroker-controller >3.0"
-            },
-            "0.0.28": {
-                "en": "remove customtab"
-            },
-            "0.0.27": {
-                "en": "adapter configuration is now editable"
-            },
-            "0.0.26": {
-                "en": "correct changelog size"
-            },
-            "0.0.25": {
-                "en": "the error messages for the template are improved"
-            },
-            "0.0.24": {
-                "en": "errors in the request of feeds are now real errors in the iobroker log / loading of rules for ejs in the editor is improved / marquee3 widget: options to show time and date"
-            },
-            "0.0.23": {
-                "en": "Republish to npm"
-            },
-            "0.0.22": {
-                "en": "improvements in the configuration dialog /  remove unused admintab /  new RSS Feed multi widget. in this widget you can add your one or more datapoints, that are available in the template. /  New marquee widget 3 replaces the existing marquee widget 2.The marquee widget 3 is now a multi widget and can handle more than one feed. The Headlines are now aggregated. /  the existing widget JSON template is improved. in this widget you can add your one or more datapoints, that are available in the template. /  Remove several deprecated widgets (RSS Feed widget 1, Article Helper 1, Marquee 1, JSON template 1)"
-            },
-            "0.0.21": {
-                "en": "add link option to marquee widget / widget help added / marquee widget: the divider characters (default: +++) are configurable"
-            },
-            "0.0.20": {
-                "en": "add ejs syntax to template editor"
-            }
-        },
-        "title": "RSS Feed",
-        "titleLang": {
-            "en": "RSS Feed",
-            "de": "rssfeed",
-            "ru": "Новостная лента",
-            "pt": "Feed RSS",
-            "nl": "rssfeed",
-            "fr": "Flux RSS",
-            "it": "RSS Feed",
-            "es": "RSS Feed",
-            "pl": "Kanał RSS",
-            "zh-cn": "RSS订阅"
-        },
-        "desc": {
-            "en": "Adapter and vis widget for rss feeds",
-            "de": "Adapter und Vis-Widget für rssfeeds",
-            "ru": "Адаптер и виджет vis для каналов RSS",
-            "pt": "Adaptador e widget vis para feeds RSS",
-            "nl": "Adapter en vis widget voor rssfeeds",
-            "fr": "Adaptateur et widget vis pour les flux rss",
-            "it": "Adattatore e widget vis per feed rss",
-            "es": "Adaptador y widget de visualización para feeds rss",
-            "pl": "Adapter i widżet Vis dla kanałów RSS",
-            "zh-cn": "rss提要的适配器和可见小部件"
-        },
-        "authors": [
-            "oweitman <oweitman@gmx.de>"
-        ],
-        "keywords": [
-            "ioBroker",
-            "template",
-            "Smart Home",
-            "home automation",
-            "rss",
-            "atom",
-            "rdf",
-            "feed"
-        ],
-        "license": "MIT",
-        "platform": "Javascript/Node.js",
-        "main": "main.js",
-        "icon": "rssfeed-logo.png",
-        "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/oweitman/iobroker.rssfeed/master/admin/rssfeed-logo.png",
-        "readme": "https://github.com/oweitman/ioBroker.rssfeed/blob/master/README.md",
-        "loglevel": "info",
-        "restartAdapters": [
-            "vis"
-        ],
-        "mode": "daemon",
-        "type": "misc-data",
-        "compact": true,
-        "connectionType": "cloud",
-        "dataSource": "poll",
-        "materialize": true,
-        "materializeTab": false,
-        "supportCustoms": false,
-        "dependencies": [
-            {
-                "js-controller": ">=1.4.2"
-            },
-            "vis"
-        ]
+  "common": {
+    "name": "rssfeed",
+    "version": "0.8.0",
+    "news": {
+      "0.8.0": {
+        "en": "* adapt configuration pages to react. * Prepare for stable release"
+      },
+      "0.0.30": {
+        "en": "add some template examples to the widget documentation"
+      },
+      "0.0.29": {
+        "en": "change createObject/setState logic due iobroker-controller >3.0"
+      },
+      "0.0.28": {
+        "en": "remove customtab"
+      },
+      "0.0.27": {
+        "en": "adapter configuration is now editable"
+      },
+      "0.0.26": {
+        "en": "correct changelog size"
+      },
+      "0.0.25": {
+        "en": "the error messages for the template are improved"
+      },
+      "0.0.24": {
+        "en": "errors in the request of feeds are now real errors in the iobroker log / loading of rules for ejs in the editor is improved / marquee3 widget: options to show time and date"
+      },
+      "0.0.23": {
+        "en": "Republish to npm"
+      },
+      "0.0.22": {
+        "en": "improvements in the configuration dialog /  remove unused admintab /  new RSS Feed multi widget. in this widget you can add your one or more datapoints, that are available in the template. /  New marquee widget 3 replaces the existing marquee widget 2.The marquee widget 3 is now a multi widget and can handle more than one feed. The Headlines are now aggregated. /  the existing widget JSON template is improved. in this widget you can add your one or more datapoints, that are available in the template. /  Remove several deprecated widgets (RSS Feed widget 1, Article Helper 1, Marquee 1, JSON template 1)"
+      },
+      "0.0.21": {
+        "en": "add link option to marquee widget / widget help added / marquee widget: the divider characters (default: +++) are configurable"
+      },
+      "0.0.20": {
+        "en": "add ejs syntax to template editor"
+      }
     },
-    "native": {
-        "rss": "[]",
-        "refresh": 60,
-        "maxarticles": 100
+    "title": "RSS Feed",
+    "titleLang": {
+      "en": "RSS Feed",
+      "de": "rssfeed",
+      "ru": "Новостная лента",
+      "pt": "Feed RSS",
+      "nl": "rssfeed",
+      "fr": "Flux RSS",
+      "it": "RSS Feed",
+      "es": "RSS Feed",
+      "pl": "Kanał RSS",
+      "zh-cn": "RSS订阅"
     },
-    "objects": [],
-    "instanceObjects": [
-        {
-            "_id": "info",
-            "type": "channel",
-            "common": {
-                "name": "Information"
-            },
-            "native": {}
-        },
-        {
-            "_id": "info.connection",
-            "type": "state",
-            "common": {
-                "role": "indicator.connected",
-                "name": "Device or service connected",
-                "type": "boolean",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        }
-    ]
+    "desc": {
+      "en": "Adapter and vis widget for rss feeds",
+      "de": "Adapter und Vis-Widget für rssfeeds",
+      "ru": "Адаптер и виджет vis для каналов RSS",
+      "pt": "Adaptador e widget vis para feeds RSS",
+      "nl": "Adapter en vis widget voor rssfeeds",
+      "fr": "Adaptateur et widget vis pour les flux rss",
+      "it": "Adattatore e widget vis per feed rss",
+      "es": "Adaptador y widget de visualización para feeds rss",
+      "pl": "Adapter i widżet Vis dla kanałów RSS",
+      "zh-cn": "rss提要的适配器和可见小部件"
+    },
+    "authors": [
+      "oweitman <oweitman@gmx.de>"
+    ],
+    "keywords": [
+      "ioBroker",
+      "template",
+      "Smart Home",
+      "home automation",
+      "rss",
+      "atom",
+      "rdf",
+      "feed"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "main": "main.js",
+    "icon": "rssfeed-logo.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/oweitman/iobroker.rssfeed/master/admin/rssfeed-logo.png",
+    "readme": "https://github.com/oweitman/ioBroker.rssfeed/blob/master/README.md",
+    "loglevel": "info",
+    "restartAdapters": [
+      "vis"
+    ],
+    "mode": "daemon",
+    "type": "misc-data",
+    "compact": true,
+    "connectionType": "cloud",
+    "dataSource": "poll",
+    "materialize": true,
+    "materializeTab": false,
+    "supportCustoms": false,
+    "dependencies": [
+      {
+        "js-controller": ">=1.4.2"
+      },
+      "vis"
+    ],
+    "installedFrom": "iobroker.rssfeed@0.8.0"
+  },
+  "native": {
+    "rss": "[]",
+    "refresh": 60,
+    "maxarticles": 100
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "role": "indicator.connected",
+        "name": "Device or service connected",
+        "type": "boolean",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    }
+  ]
 }
