@@ -1,8 +1,11 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "0.8.0",
+    "version": "0.9.0",
     "news": {
+      "0.).0": {
+        "en": "* fix/extend json template"
+      },
       "0.8.0": {
         "en": "* adapt configuration pages to react. * Prepare for stable release"
       },

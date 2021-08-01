@@ -306,10 +306,10 @@ vis.binds['rssfeed'] = {
                     vis.binds["rssfeed"].jsontemplate2.createWidget(widgetID, view, data, style);
                 }, 100);
             }
-            var bound = [];            
+            var bound = [];
             var oiddata  = data.json_oid ? JSON.parse(vis.states.attr(data.json_oid + '.val')) : {};            
             var template  = data.json_template ? data.json_template : '';
-            bound.push(data.json_oid);
+            if (data.json_oid) bound.push(data.json_oid);
 
             var dpCount = data.rss_dpCount ? data.rss_dpCount : 1;
             var datapoints = [];
@@ -326,12 +326,11 @@ vis.binds['rssfeed'] = {
                 if (newVal) vis.binds["rssfeed"].jsontemplate2.createWidget(widgetID, view, data, style);
             }
 
-            if (data.json_oid ) {
+            if (bound ) {
                 if (1 || !vis.editMode) {
-                    vis.binds["rssfeed"].bindStates($div,[data.json_oid],onChange);                    
+                    vis.binds["rssfeed"].bindStates($div,bound,vis.binds["rssfeed"].jsontemplate2.onChange.bind({widgetID:widgetID, view:view, data:data, style:style}));
                 }
             }
-
             try {
                 var text = ejs.render(template, {"data":oiddata,'dp':datapoints});
             }
@@ -340,9 +339,32 @@ vis.binds['rssfeed'] = {
                 text = text.replace(/ /gm,'&nbsp;');
                 text = '<code style="color:red;">' + text + '</code>';
             }            
-         
             $('#' + widgetID).html(text);
-        },    
+        },
+        onChange: function(e, newVal, oldVal) {
+                if (newVal) vis.binds["rssfeed"].jsontemplate2.render(this.widgetID, this.view, this.data, this.style);
+        },
+        render: function(widgetID, view, data, style) {
+            var oiddata  = data.json_oid ? JSON.parse(vis.states.attr(data.json_oid + '.val')) : {};
+            var dpCount = data.rss_dpCount ? data.rss_dpCount : 1;
+            var template  = data.json_template ? data.json_template : '';
+            var datapoints = [];
+
+            for (var i = 1; i <= dpCount; i++) {
+                if (data['rss_dp'+i]) {
+                    datapoints[data['rss_dp'+i]] = vis.states.attr(data['rss_dp'+i] + '.val');
+                }
+            }
+            try {
+                var text = ejs.render(template, {"data":oiddata,'dp':datapoints});
+            }
+            catch (e) {
+                text = vis.binds["rssfeed"].escapeHTML(e.message).replace(/(?:\r\n|\r|\n)/g, '<br>');
+                text = text.replace(/ /gm,'&nbsp;');
+                text = '<code style="color:red;">' + text + '</code>';
+            }
+            $('#' + widgetID).html(text);
+        }
     },
     marquee2: {
         createWidget: function (widgetID, view, data, style) {
@@ -565,23 +587,28 @@ vis.binds['rssfeed'] = {
             return acc || value.toLowerCase().indexOf(cur.toLowerCase())>=0; 
         },false);
     },
-    bindStates: function(elem,bound,change_callback) {
+    bindStates: function(elem, bound, change_callback) {
         var $div = $(elem);
         var boundstates = $div.data('bound');
         if (boundstates) {
-            for (var i = 0; i < boundstates.bound.length; i++) {
-                vis.states.unbind(boundstates.bound[i], boundstates.change_callback);
+            for (var i = 0; i < boundstates.length; i++) {
+                vis.states.unbind(boundstates[i], change_callback);
             }
         }
         $div.data('bound', null);
         $div.data('bindHandler', null);
-        for (var i=0;i<bound.length;i++) {
-            bound[i]=bound[i]+'.val';
-            vis.states.bind(bound[i] , change_callback);            
-        }
-        $div.data('bound', {bound,change_callback});
-        $div.data('bindHandler', change_callback);
-        
+
+        vis.conn.gettingStates = 0;
+        vis.conn.getStates(bound, function (error, states) {
+            vis.conn.subscribe(bound);
+            $div.data('bound', bound);
+            $div.data('bindHandler', change_callback);
+            for (var i=0;i<bound.length;i++) {
+                bound[i]=bound[i]+'.val';
+                vis.states.bind(bound[i] , change_callback);
+            }
+            vis.updateStates(states);
+        }.bind({change_callback}));
     },
     escapeHTML: function (html) {
         var escapeEl = document.createElement('textarea');
