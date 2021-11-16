@@ -332,7 +332,7 @@ vis.binds['rssfeed'] = {
                 }
             }
             try {
-                var text = ejs.render(template, {"data":oiddata,'dp':datapoints});
+                var text = ejs.render(template, {"widgetID":widgetID,"data":oiddata,'dp':datapoints});
             }
             catch (e) {
                 text = vis.binds["rssfeed"].escapeHTML(e.message).replace(/(?:\r\n|\r|\n)/g, '<br>');
@@ -356,7 +356,7 @@ vis.binds['rssfeed'] = {
                 }
             }
             try {
-                var text = ejs.render(template, {"data":oiddata,'dp':datapoints});
+                var text = ejs.render(template, {"widgetID":widgetID,"data":oiddata,'dp':datapoints});
             }
             catch (e) {
                 text = vis.binds["rssfeed"].escapeHTML(e.message).replace(/(?:\r\n|\r|\n)/g, '<br>');
