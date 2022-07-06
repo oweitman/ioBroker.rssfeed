@@ -20,3 +20,12 @@ admin/i18n/flat.txt
 admin/i18n/*/flat.txt
 
 
+
+
+# ioBroker dev-server
+.dev-server/
+admin/build/index.css
+admin/build/index.css.map
+admin/build/index.js
+admin/build/index.js.map
+
