@@ -253,14 +253,20 @@ vis.binds['rssfeed'] = {
             }
             var rss  = data.rss_oid ? JSON.parse(vis.states.attr(data.rss_oid + '.val')) : {};
             var defaulttemplate = `
-                <p><%- meta.title %> </p>
-                <img src="<%- meta.image.url %>">
-                <% articles.forEach(function(item){ %>
-                <p><small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small></p>
-                <h3><%- item.title %></h3>
-                <p><%- item.description %></p>
-                <div style="clear:both;" />
-                <% }); %>
+                <% if (typeof meta == "undefined") { %>
+                    No Object ID set
+                <% } else { %>
+
+                    <p><%- meta.title %> </p>
+                    <img src="<%- meta.image.url %>">
+                    <% articles.forEach(function(item){ %>
+                    <p><small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small></p>
+                    <h3><%- item.title %></h3>
+                    <p><%- item.description %></p>
+                    <div style="clear:both;" />
+                    <% }); %>
+                <% } %>
+
                             `;
             var template  = data.rss_template ? data.rss_template : defaulttemplate;
             var filter  = data.rss_filter ? data.rss_filter : '';

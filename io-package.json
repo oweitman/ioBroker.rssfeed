@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "news": {
       "0.1.0": {
         "en": "* prepare for stable * add widgetID as field in template"
@@ -103,6 +103,10 @@
     "materialize": true,
     "materializeTab": false,
     "supportCustoms": false,
+    "jsonConfig": true,    
+    "adminUI": {
+      "config": "json"
+    },
     "dependencies": [
       {
         "js-controller": ">=1.4.2"
@@ -111,9 +115,6 @@
     ]
   },
   "native": {
-    "rss": "[]",
-    "refresh": 60,
-    "maxarticles": 100
   },
   "objects": [],
   "instanceObjects": [

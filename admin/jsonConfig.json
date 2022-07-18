@@ -1,0 +1,97 @@
+{
+    "type": "tabs",
+    "i18n": true,
+    "items": {
+      "mainTab": {
+        "type": "panel",
+        "label": "Main settings",
+        "items": {
+          "refresh": {
+            "type": "number",
+            "min": 5,
+            "default":60,
+            "label": "Default Refresh (min)"
+          },
+          "maxarticles": {
+            "type": "number",
+            "min": 1,
+            "default":100,
+            "label": "Default Max articles"
+          },     
+          "warning": {
+            "newLine": true,
+            "type": "statictext",
+            "label": "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service"
+          },     
+          "rss": {
+            "newLine": true,
+            "sm": 12,
+            "noDelete": false,
+            "type": "table",
+            "items": [
+                {
+                  "width": "20%",
+                  "type": "text",
+                  "attr": "name",
+                  "title": "Name",
+                  "filter": true,
+                  "sort": true,
+                  "default":"",
+                  "validator":"return !/[^0-9a-zöÖüÜäÄß]/i.test(data.name) && data.name.length>0 && data.name.length<30;",
+                  "validatorNoSaveOnError": true,
+                  "tooltip":"valid characters only 0-9 A-Z a-z öäüÖÄÜß\nlength from 1 to 29"
+                },                
+                {
+                  "width": "15%",
+                  "type": "text",
+                  "attr": "cat",
+                  "title": "Category",
+                  "filter": true,
+                  "sort": true,
+                  "default":"",
+                  "validator":"return (data.cat=='')?true:!/[^0-9a-zöÖüÜäÄß]/i.test(data.cat) && data.cat.length>0 && data.cat.length<30;",
+                  "validatorNoSaveOnError": true,
+                  "tooltip":"valid characters only 0-9 A-Z a-z öäüÖÄÜß or \nlength from 1 to 29 or empty"                    
+                },
+                {
+                  "width": "30%",
+                  "type": "text",
+                  "attr": "url",
+                  "title": "URL",
+                  "filter": true,
+                  "sort": true,
+                  "default":"",
+                  "validator":"return data.url!='';",
+                  "validatorNoSaveOnError": true,
+                  "tooltip":"valid url for rss-data"                    
+                },
+                {
+                  "width": "15%",
+                  "type": "number",
+                  "attr": "refresh",
+                  "title": "Refresh (min)",
+                  "filter": false,
+                  "sort": true,
+                  "min":5,
+                  "defaultFunc": "return globalData.refresh;",
+                  "xvalidator":"return data.refresh>=5;",
+                  "validatorNoSaveOnError": true
+                },
+                {
+                  "width": "15%",
+                  "type": "number",
+                  "attr": "maxarticles",
+                  "title": "Max Articles",
+                  "filter": false,
+                  "sort": true,
+                  "min":1,
+                  "defaultFunc": "return globalData.maxarticles;",
+                  "xvalidator":"return data.maxarticles>=1;",
+                  "validatorNoSaveOnError": true
+                }
+            ]
+          }
+        }
+      }
+    }
+  }
