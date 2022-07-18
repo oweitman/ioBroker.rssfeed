@@ -4,5 +4,9 @@
     "javascript.validate.enable": false,
     "compilerOptions": { 
         "checkJs": true,
-    },        
+    },
+    "markdownlint.config": {
+        "MD041": false,
+    },
+
 }
