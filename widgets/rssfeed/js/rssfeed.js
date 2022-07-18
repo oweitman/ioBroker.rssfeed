@@ -6,6 +6,8 @@
     Copyright 2020 oweitman oweitman@gmx.de
 */
 'use strict';
+/*jshint -W069 */
+/*globals $,systemDictionary,vis,ejs,document,ace,_,window */
 
 // add translations for edit mode
 $.get( 'adapter/rssfeed/words.js', function(script) {
@@ -40,10 +42,10 @@ vis.binds['rssfeed'] = {
             var datapoints = [];
             var bound = [];
 
-            for (var i = 1; i <= dpCount; i++) {
-                if (data['rss_dp'+i]) {
-                    datapoints[data['rss_dp'+i]] = vis.states.attr(data['rss_dp'+i] + '.val');
-                    bound.push(data['rss_dp'+i]);
+            for (var i1 = 1; i1 <= dpCount; i1++) {
+                if (data['rss_dp'+i1]) {
+                    datapoints[data['rss_dp'+i1]] = vis.states.attr(data['rss_dp'+i1] + '.val');
+                    bound.push(data['rss_dp'+i1]);
                 }
             }
 
@@ -59,6 +61,16 @@ vis.binds['rssfeed'] = {
 
             var template  = (data['rss_template'] ? ( data['rss_template'].trim() ? data['rss_template'].trim() : defaulttemplate) : defaulttemplate);
             
+            var filterFunction = function(item){
+                return vis.binds["rssfeed"].checkHighlite(item.title+item.description+item.categories.toString(),filter);
+            };
+            var mapFunction = function(item) {
+                item['meta_title'] = rss.meta.title;
+                item['meta_description'] = rss.meta.description;
+                item['meta_name'] = name;
+                return item;
+             }.bind(this);
+
             for (var i = 1; i <= feedCount; i++) {
                 var rss  = data['rss_oid'+i] ? JSON.parse(vis.states.attr(data['rss_oid'+i] + '.val')) : {};
                 if (!rss.hasOwnProperty('articles')) continue;
@@ -72,17 +84,10 @@ vis.binds['rssfeed'] = {
                 if (rss && rss.articles && rss.articles.length > maxarticles) rss.articles = rss.articles.slice(0,maxarticles);
                 
                 if (filter!='') {
-                    rss.articles = rss.articles.filter(function(item){
-                        return vis.binds["rssfeed"].checkHighlite(item.title+item.description+item.categories.toString(),filter);
-                    });
+                    rss.articles = rss.articles.filter(filterFunction);
                 }
-                rss.articles = rss.articles.map(function(item) {
-                   item['meta_title'] = rss.meta.title;
-                   item['meta_description'] = rss.meta.description;
-                   item['meta_name'] = name;
-                   return item;
-                }.bind(this));
-                
+
+                rss.articles = rss.articles.map(mapFunction);
                 articles.push(rss.articles);            
             }
             
@@ -96,7 +101,10 @@ vis.binds['rssfeed'] = {
             }            
             
             var collect = [];
-            articles.forEach(function(item){collect=collect.concat(item)})
+            articles.forEach(function(item){
+                collect=collect.concat(item);
+            }
+            );
 
             collect.sort(function(a,b){
               // Turn your strings into dates, and then subtract them
@@ -109,10 +117,10 @@ vis.binds['rssfeed'] = {
                 } else {
                     return 'meta is not available please use RSS Feed widget. Read the widget help.';
                 }
-            }})
-            
+            }});
+            var text="";
             try {
-                var text = ejs.render(template, {'articles': collect,'meta':meta,'dp':datapoints});
+                text = ejs.render(template, {'articles': collect,'meta':meta,'dp':datapoints});
             }
             catch (e) {
                 text = vis.binds["rssfeed"].escapeHTML(e.message).replace(/(?:\r\n|\r|\n)/g, '<br>');
@@ -147,6 +155,9 @@ vis.binds['rssfeed'] = {
             var rss_withdate = (data.rss_withdate) ? data.rss_withdate : false;
             var rss_withyear = (data.rss_withyear) ? data.rss_withyear : false;
 
+            var filterFunction = function(item){
+                return vis.binds["rssfeed"].checkHighlite(item.title+item.description+item.categories.toString(),filter);
+            };
             for (var i = 1; i <= feedCount; i++) {
                 var rss  = data['rss_oid'+i] ? JSON.parse(vis.states.attr(data['rss_oid'+i] + '.val')) : {};
                 if (!rss.hasOwnProperty('articles')) continue;
@@ -156,9 +167,7 @@ vis.binds['rssfeed'] = {
                 var maxarticles = data['rss_maxarticles'+i] ? data['rss_maxarticles'+i] : 999;
                 maxarticles = maxarticles > 0 ? maxarticles : 1;            
                 if (filter!='') {
-                    rss.articles = rss.articles.filter(function(item){
-                        return vis.binds["rssfeed"].checkHighlite(item.title+item.description+item.categories.toString(),filter);
-                    });
+                    rss.articles = rss.articles.filter(filterFunction);
                 }            
                 if (rss && rss.articles && rss.articles.length > maxarticles) rss.articles = rss.articles.slice(0,maxarticles);
                 articles.push(rss.articles);
@@ -172,7 +181,9 @@ vis.binds['rssfeed'] = {
                 }
             }
             var collect = [];
-            articles.forEach(function(item){collect=collect.concat(item)})
+            articles.forEach(function(item){
+                collect=collect.concat(item);
+            });
 
             collect.sort(function(a,b){
               // Turn your strings into dates, and then subtract them
@@ -288,11 +299,12 @@ vis.binds['rssfeed'] = {
                 }
             }
 
+            var text="";
             try {
                 if (typeof rss.meta=="undefined") {
-                    var text = ejs.render(errortemplate, rss);
+                    text = ejs.render(errortemplate, rss);
                 } else {
-                    var text = ejs.render(template, rss);
+                    text = ejs.render(template, rss);
                 }
             }
             catch (e) {
@@ -339,8 +351,9 @@ vis.binds['rssfeed'] = {
                     vis.binds["rssfeed"].bindStates($div,bound,vis.binds["rssfeed"].jsontemplate2.onChange.bind({widgetID:widgetID, view:view, data:data, style:style}));
                 }
             }
+            var text="";
             try {
-                var text = ejs.render(template, {"widgetID":widgetID,"data":oiddata,'dp':datapoints});
+                text = ejs.render(template, {"widgetID":widgetID,"data":oiddata,'dp':datapoints});
             }
             catch (e) {
                 text = vis.binds["rssfeed"].escapeHTML(e.message).replace(/(?:\r\n|\r|\n)/g, '<br>');
@@ -363,8 +376,9 @@ vis.binds['rssfeed'] = {
                     datapoints[data['rss_dp'+i]] = vis.states.attr(data['rss_dp'+i] + '.val');
                 }
             }
+            var text="";
             try {
-                var text = ejs.render(template, {"widgetID":widgetID,"data":oiddata,'dp':datapoints});
+                text = ejs.render(template, {"widgetID":widgetID,"data":oiddata,'dp':datapoints});
             }
             catch (e) {
                 text = vis.binds["rssfeed"].escapeHTML(e.message).replace(/(?:\r\n|\r|\n)/g, '<br>');
@@ -416,7 +430,7 @@ vis.binds['rssfeed'] = {
             var titleslength = 0;
             if (rss && rss.articles && rss.articles.length > 0) {
                 titles = rss.articles.reduce(function(collect,item){
-                    titleslength+=item.title.length
+                    titleslength+=item.title.length;
                     if (link) {
                         collect += ' ' + divider + ' ' + '<a href="' + item.link + '" target="rssarticle">' + item.title + '</a>';
                     } else {
