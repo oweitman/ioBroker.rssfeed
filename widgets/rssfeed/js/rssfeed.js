@@ -253,21 +253,19 @@ vis.binds['rssfeed'] = {
             }
             var rss  = data.rss_oid ? JSON.parse(vis.states.attr(data.rss_oid + '.val')) : {};
             var defaulttemplate = `
-                <% if (typeof meta == "undefined") { %>
-                    No Object ID set
-                <% } else { %>
-
-                    <p><%- meta.title %> </p>
-                    <img src="<%- meta.image.url %>">
-                    <% articles.forEach(function(item){ %>
-                    <p><small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small></p>
-                    <h3><%- item.title %></h3>
-                    <p><%- item.description %></p>
-                    <div style="clear:both;" />
-                    <% }); %>
-                <% } %>
-
+                <p><%- meta.title %> </p>
+                <img src="<%- meta.image.url %>">
+                <% articles.forEach(function(item){ %>
+                <p><small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small></p>
+                <h3><%- item.title %></h3>
+                <p><%- item.description %></p>
+                <div style="clear:both;" />
+                <% }); %>
                             `;
+            var errortemplate = `
+            No Object ID set
+            `;
+
             var template  = data.rss_template ? data.rss_template : defaulttemplate;
             var filter  = data.rss_filter ? data.rss_filter : '';
 			var maxarticles = data.rss_maxarticles ? data.rss_maxarticles : 999;
@@ -291,7 +289,11 @@ vis.binds['rssfeed'] = {
             }
 
             try {
-                var text = ejs.render(template, rss);
+                if (typeof rss.meta=="undefined") {
+                    var text = ejs.render(errortemplate, rss);
+                } else {
+                    var text = ejs.render(template, rss);
+                }
             }
             catch (e) {
                 text = vis.binds["rssfeed"].escapeHTML(e.message).replace(/(?:\r\n|\r|\n)/g, '<br>');
