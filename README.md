@@ -47,6 +47,7 @@ Then for each new feed:
 | Max Articles | A different value can be specified for this feed. Otherwise the general specification is taken |
 
 If you saved and closed the configuration, the feed-data can be found as a JSON data point in the object tree.
+If you delete an entry, the datapoints arent deleted.
 
 ## vis and widgets
 
