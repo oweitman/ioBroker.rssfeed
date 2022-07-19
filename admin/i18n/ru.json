@@ -1,11 +1,10 @@
 {
-    "actions": "действия",
-    "tabrssfeed": "Новостная лента",
-    "Base Parameter RSS Feeds": "RSS-каналы с базовыми параметрами",
-    "refresh": "Обновить",
-    "maxarticles": "Максимальное количество статей",
-    "Adding RSS Feeds": "Добавление RSS-каналов",
-    "cat": "Категория",
-    "url": "URL",
-    "List RSS Feeds": "Список RSS-каналов"
+    "Default Refresh (min)": "Обновление по умолчанию (мин)",
+    "Default Max articles": "Максимальное количество статей по умолчанию",
+    "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service": "Предупреждение: Пожалуйста, не устанавливайте слишком низкую частоту обновления. ",
+    "Name": "Имя",
+    "Category": "Категория",
+    "URL": "URL-адрес",
+    "Refresh (min)": "Обновить (мин)",
+    "Max Articles": "Максимальное количество статей"
 }

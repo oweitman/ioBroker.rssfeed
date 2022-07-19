@@ -1,9 +1,10 @@
 {
-    "Refresh (sec)": "Aktualisierung",
-    "maxarticles": "Max Artikel",
-    "cat": "Kategorie",
-    "url": "Url",
-    "Default Refresh (sec)":"Aktualisierung (sec) (Standard)",
-    "Default Max articles":"Max Artikel (Standard)"
-
+    "Default Refresh (min)": "Standardaktualisierung (Min.)",
+    "Default Max articles": "Standard-Max-Artikel",
+    "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service": "Bitte stellen Sie die Aktualisierungszeit nicht zu niedrig ein. Möglicherweise wird der Anbieter Sie sperren oder den Dienst einstellen ",
+    "Name": "Name",
+    "Category": "Kategorie",
+    "URL": "URL",
+    "Refresh (min)": "Aktualisieren (Min.)",
+    "Max Articles": "Max-Artikel"
 }

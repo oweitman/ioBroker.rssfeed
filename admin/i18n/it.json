@@ -1,11 +1,10 @@
 {
-    "actions": "Azioni",
-    "tabrssfeed": "RSS Feed",
-    "Base Parameter RSS Feeds": "Feed RSS dei parametri di base",
-    "refresh": "ricaricare",
-    "maxarticles": "Max articoli",
-    "Adding RSS Feeds": "Aggiunta di feed RSS",
-    "cat": "Categoria",
-    "url": "Url",
-    "List RSS Feeds": "Elenca feed RSS"
+    "Default Refresh (min)": "Aggiornamento predefinito (min)",
+    "Default Max articles": "Numero massimo di articoli predefinito",
+    "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service": "Avvertenza: non impostare una frequenza di aggiornamento troppo bassa. ",
+    "Name": "Nome",
+    "Category": "Categoria",
+    "URL": "URL",
+    "Refresh (min)": "Aggiorna (min)",
+    "Max Articles": "Max articoli"
 }

@@ -1,8 +1,10 @@
 {
-    "refresh": "Refresh",
-    "maxarticles": "Max articles",
-    "cat": "Category",
-    "url": "Url",
-    "Default Refresh (sec)":"Refresh (sec) (default)",
-    "Default Max articles":"Max articles (default)"
+    "Default Refresh (min)": "Default Refresh (min)",
+    "Default Max articles": "Default Max articles",
+    "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service": "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service",
+    "Name": "Name",
+    "Category": "Category",
+    "URL": "URL",
+    "Refresh (min)": "Refresh (min)",
+    "Max Articles": "Max Articles"
 }

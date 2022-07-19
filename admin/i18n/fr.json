@@ -1,11 +1,10 @@
 {
-    "actions": "Actions",
-    "tabrssfeed": "Flux RSS",
-    "Base Parameter RSS Feeds": "Flux RSS des paramètres de base",
-    "refresh": "Rafraîchir",
-    "maxarticles": "Articles max",
-    "Adding RSS Feeds": "Ajouter des flux RSS",
-    "cat": "Catégorie",
-    "url": "URL",
-    "List RSS Feeds": "Lister les flux RSS"
+    "Default Refresh (min)": "Actualisation par défaut (min)",
+    "Default Max articles": "Articles Max par défaut",
+    "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service": "Avertissement : veuillez ne pas régler le taux de rafraîchissement trop bas. ",
+    "Name": "Nom",
+    "Category": "Catégorie",
+    "URL": "URL",
+    "Refresh (min)": "Actualiser (minutes)",
+    "Max Articles": "Nombre maximal d'articles"
 }
