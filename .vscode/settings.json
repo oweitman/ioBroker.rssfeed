@@ -1,5 +1,6 @@
 {
     "eslint.enable": true,
+    "jshint.options": { "esversion": 6 },
     "typescript.validate.enable": false,
     "javascript.validate.enable": false,
     "compilerOptions": { 
