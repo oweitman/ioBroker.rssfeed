@@ -17,5 +17,15 @@
             "stopOnEntry": true,
             "outputCapture": "std",
         },
+        {
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "name": "Gulp package node",
+            "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
+            "args": [
+                "translate" // replace this with your gulp task name
+            ]
+        }
     ]
 }
