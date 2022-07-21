@@ -250,8 +250,141 @@ vis.binds['rssfeed'] = {
                 if ('left,top,width,height'.indexOf(attr)<0 && style[attr]!='') $('#' + widgetID+' span').css(attr,style[attr]); 
             }            
         },    
-    },     
-    
+    },
+    marquee4: {
+        createWidget: function (widgetID, view, data, style) {
+            var $div = $('#' + widgetID);
+            // if nothing found => wait
+            if (!$div.length) {
+                return setTimeout(function () {
+                    vis.binds["rssfeed"].marquee4.createWidget(widgetID, view, data, style);
+                }, 100);
+            }
+
+            var bound = [];
+            var feedCount = data.rss_feedCount ? data.rss_feedCount : 1;
+            var pauseonhover = (data.rss_pauseonhover) ? true : data.rss_pauseonhover;
+            var frontcolor = style.color ? style.color : undefined;
+            var backcolor = style['background-color'] ? style['background-color'] : undefined;
+
+            var filter  = data['rss_filter'+i] ? data['rss_filter'+i] : '';
+
+            for (var i = 1; i <= feedCount; i++) {
+                var rss  = data['rss_oid'+i] ? JSON.parse(vis.states.attr(data['rss_oid'+i] + '.val')) : {};
+                if (!rss.hasOwnProperty('articles')) continue;
+                bound.push(data['rss_oid'+i]);
+            }
+            let that=this;
+            function onChange(e, newVal, oldVal) {
+                if (newVal) that.render(widgetID,data);
+            }
+
+            if (bound.length>0 ) {
+                if (1 || !vis.editMode) {
+                    console.debug("bound");
+                    vis.binds["rssfeed"].bindStates($div,bound,onChange);
+                }
+            }
+
+			var text = '';
+            text += '<style> \n';
+            text += '#' + widgetID + ' .marquee {\n';
+            text += '    max-width: 100vw; /* iOS braucht das */\n';
+            text += '    white-space: nowrap;\n';
+            text += '    overflow: hidden;\n';
+            if (backcolor) text += '    background-color: ' + backcolor +'; /* Hintergrundfarbe des Lauftextes. Auskommentieren, um Transparent zu erhalten */\n';
+            text += '    font-size:20px;\n';
+            text += '}\n';
+            text += '#' + widgetID + ' .marquee span {\n';
+            text += '    display: inline-block;\n';
+            text += '    padding-left: 100%;\n';
+            text += '    animation: ' + widgetID + 'marquee 100s linear infinite;\n';
+            if (frontcolor) text += '    color: ' + frontcolor + '; /* Textfarbe des Lauftextes */\n';
+            text += '}\n';
+            if (pauseonhover) {
+                text += '/* Optional: mouseover (oder Tipp auf dem Touchscreen) pausiert die Laufschrift */\n';
+                text += '#' + widgetID + ' .marquee span:hover {\n';
+                text += '    animation-play-state: paused \n';
+                text += '}\n';
+            }
+            text += '/* Make it move */\n';
+            text += '@keyframes '+ widgetID + 'marquee {\n';
+            text += '    0%   { transform: translateX(0); }\n';
+            text += '    100% { transform: translateX(-100%); }\n';
+            text += '}\n';
+            text += '#' + widgetID + ' a {\n';
+            text += '    text-decoration: none;';
+            text += '    color: inherit;';
+            text += '}\n';
+            text += '</style> \n';
+            text += '<div class="' + widgetID + ' marquee"><span>test test test</span></div>';
+
+            $('#' + widgetID).html(text);
+            for(var attr in style){
+                if ('left,top,width,height'.indexOf(attr)<0 && style[attr]!='') $('#' + widgetID+' span').css(attr,style[attr]); 
+            }
+            this.render(widgetID,data);
+        },
+        render: function(widgetID,data){
+            var articles = [];
+            var feedCount = data.rss_feedCount ? data.rss_feedCount : 1;
+            var rss_withtime = (data.rss_withtime) ? data.rss_withtime : false;
+            var rss_withdate = (data.rss_withdate) ? data.rss_withdate : false;
+            var rss_withyear = (data.rss_withyear) ? data.rss_withyear : false;
+            var divider  = data.rss_divider ? data.rss_divider : '+++';
+            var link = (data.rss_link) ? data.rss_link : false;
+            var speed  = data.rss_speed ? data.rss_speed : 6;
+
+            var filterFunction = function(item){
+                return vis.binds["rssfeed"].checkHighlite(item.title+item.description+item.categories.toString(),filter);
+            };
+
+            for (var i = 1; i <= feedCount; i++) {
+                var filter  = data['rss_filter'+i] ? data['rss_filter'+i] : '';
+                var rss  = data['rss_oid'+i] ? JSON.parse(vis.states.attr(data['rss_oid'+i] + '.val')) : {};
+                if (!rss.hasOwnProperty('articles')) continue;
+
+                var maxarticles = data['rss_maxarticles'+i] ? data['rss_maxarticles'+i] : 999;
+                maxarticles = maxarticles > 0 ? maxarticles : 1;
+                if (filter!='') {
+                    rss.articles = rss.articles.filter(filterFunction);
+                }
+                if (rss && rss.articles && rss.articles.length > maxarticles) rss.articles = rss.articles.slice(0,maxarticles);
+                articles.push(rss.articles);
+            }
+            var collect = [];
+            articles.forEach(function(item){
+                collect=collect.concat(item);
+            });
+
+            collect.sort(function(a,b){
+              // Turn your strings into dates, and then subtract them
+              // to get a value that is either negative, positive, or zero.
+              return new Date(b.date) - new Date(a.date);
+            });
+
+            var titles = '';
+            var titleslength = 0;
+            if (collect && collect.length > 0) {
+                titles = collect.reduce(function(t,item){
+                    var time = "";
+                    titleslength+=item.title.length;
+                    if (rss_withtime) time = vis.formatDate(item.date,"hh:mm");
+                    if (rss_withdate) time = vis.formatDate(item.date,"DD.MM/hh:mm");
+                    if (rss_withyear) time = vis.formatDate(item.date,"DD.MM.YY/hh:mm");
+                    if (link) {
+                        t += ' ' + divider + ' ' + '<a href="' + item.link + '" target="rssarticle">' + time + " " + item.title + '</a>';
+                    } else {
+                        t += ' ' + divider + ' ' + time + " " + item.title;
+                    }
+                    return t;
+                },titles);
+                var duration = (titleslength/speed).toFixed();
+                $("#"+widgetID+" .marquee span").css("animation-duration",duration+"s");
+                $("#"+widgetID+" .marquee span").text(titles);
+            }
+        }
+    },
     rssfeedwidget2: {
         createWidget: function (widgetID, view, data, style) {
             
@@ -388,100 +521,6 @@ vis.binds['rssfeed'] = {
             $('#' + widgetID).html(text);
         }
     },
-    marquee2: {
-        createWidget: function (widgetID, view, data, style) {
-            
-            var $div = $('#' + widgetID);
-            // if nothing found => wait
-            if (!$div.length) {
-                return setTimeout(function () {
-                    vis.binds["rssfeed"].marquee2.createWidget(widgetID, view, data, style);
-                }, 100);
-            }
-            var rss  = data.rss_oid ? JSON.parse(vis.states.attr(data.rss_oid + '.val')) : {};            
-			var maxarticles = data.rss_maxarticles ? data.rss_maxarticles : 999;
-			maxarticles = maxarticles > 0 ? maxarticles : 1;
-			if (rss && rss.articles && rss.articles.length > maxarticles) rss.articles = rss.articles.slice(0,maxarticles);
-            var frontcolor = style.color ? style.color : undefined;
-            var backcolor = style['background-color'] ? style['background-color'] : undefined;
-            var pauseonhover = (data.rss_pauseonhover) ? true : data.rss_pauseonhover;
-            var link = (data.rss_link) ? data.rss_link : false;
-            var filter  = data.rss_filter ? data.rss_filter : '';
-            var divider  = data.rss_divider ? data.rss_divider : '+++';
-            var speed  = data.rss_speed ? data.rss_speed : 6;
-
-            if (filter!='') {
-                rss.articles = rss.articles.filter(function(item){
-                    return vis.binds["rssfeed"].checkHighlite(item.title+item.description+item.categories.toString(),filter);
-                });
-            }            
-            
-            function onChange(e, newVal, oldVal) {
-                if (newVal) vis.binds["rssfeed"].marquee2.createWidget(widgetID, view, data, style);
-            }
-
-            if (data.rss_oid ) {
-                if (1 || !vis.editMode) {
-                    vis.binds["rssfeed"].bindStates($div,[data.rss_oid],onChange);                    
-                }
-            }
-            
-            var titles = '';
-            var titleslength = 0;
-            if (rss && rss.articles && rss.articles.length > 0) {
-                titles = rss.articles.reduce(function(collect,item){
-                    titleslength+=item.title.length;
-                    if (link) {
-                        collect += ' ' + divider + ' ' + '<a href="' + item.link + '" target="rssarticle">' + item.title + '</a>';
-                    } else {
-                        collect += ' ' + divider + ' ' + item.title;
-                    }
-                    return collect;
-                },titles);
-            }
-
-			var text = '';
-            
-            text += '<style> \n';
-            text += '#' + widgetID + ' .marquee {\n';
-            text += '    max-width: 100vw; /* iOS braucht das */\n';
-            text += '    white-space: nowrap;\n';
-            text += '    overflow: hidden;\n';
-            if (backcolor) text += '    background-color: ' + backcolor +'; /* Hintergrundfarbe des Lauftextes. Auskommentieren, um Transparent zu erhalten */\n';
-            text += '    font-size:20px;\n';
-            text += '}\n';
-            text += '#' + widgetID + ' .marquee span {\n';
-            text += '    display: inline-block;\n';
-            text += '    padding-left: 100%;\n';
-            var duration = (titleslength/speed).toFixed();
-            text += '    animation: ' + widgetID + 'marquee '+ duration+'s linear infinite;\n';
-            if (frontcolor) text += '    color: ' + frontcolor + '; /* Textfarbe des Lauftextes */\n';
-            text += '}\n';
-            if (pauseonhover) {
-                text += '/* Optional: mouseover (oder Tipp auf dem Touchscreen) pausiert die Laufschrift */\n';
-                text += '#' + widgetID + ' .marquee span:hover {\n';
-                text += '    animation-play-state: paused \n';
-                text += '}\n';
-            }
-            text += '/* Make it move */\n';
-            text += '@keyframes '+ widgetID + 'marquee {\n';
-            text += '    0%   { transform: translateX(0); }\n';
-            text += '    100% { transform: translateX(-100%); }\n';
-            text += '}\n';
-            text += '#' + widgetID + ' a {\n';
-            text += '    text-decoration: none;';
-            text += '    color: inherit;';
-            text += '}\n';
-            text += '</style> \n';
-
-            text += '<div class="' + widgetID + ' marquee"><span>'+ titles +'</span></div>';
-            text = "<div style='color:red;'>deprecated - dont use it anymore - please use RSS Feed Widget 2</div><br>" + text;            
-            $('#' + widgetID).html(text);
-            for(var attr in style){
-                if ('left,top,width,height'.indexOf(attr)<0 && style[attr]!='') $('#' + widgetID+' span').css(attr,style[attr]); 
-            }            
-        },    
-    },        
     metahelper: {
         createWidget: function (widgetID, view, data, style) {
             
