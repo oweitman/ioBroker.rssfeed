@@ -1,6 +1,6 @@
 {
   "name": "iobroker.rssfeed",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Adapter and vis widget for rss feeds",
   "author": {
     "name": "oweitman",
@@ -37,14 +37,6 @@
     "mocha": "^9.2.2"
   },
   "main": "main.js",
-  "xfiles": [
-    "admin/",
-    "widgets/",
-    "lib/",
-    "io-package.json",
-    "LICENSE",
-    "main.js"
-  ],
   "scripts": {
     "test": "node node_modules/mocha/bin/mocha --exit",
     "release": "release-script",
