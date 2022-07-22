@@ -55,12 +55,12 @@ class RssFeed extends utils.Adapter {
      */
     onUnload(callback) {
         try {
-            this.log.debug('main onUnload try');             
+            this.log.debug('main onUnload try');
 
             rssfeedserver.closeConnections();
             this.log.info('cleaned everything up...');
-			// Reset the connection indicator during startup
-			this.setState('info.connection', false, true);
+            // Reset the connection indicator during startup
+            this.setState('info.connection', false, true);
             callback();
         } catch (e) {
             this.log.debug('main onUnload error');
