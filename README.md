@@ -163,6 +163,8 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 
 ## Changelog
 
+### **WORK IN PROGRESS**
+
 ### 2.0.0
 
 * Rework of the admin dialog
