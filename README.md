@@ -167,7 +167,7 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 2.4.0 (2022-07-25)
 
 * add name option to marquee widget
 
