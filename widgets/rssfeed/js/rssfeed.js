@@ -458,9 +458,10 @@ vis.binds['rssfeed'] = {
         render: function(widgetID,data){
             var articles = [];
             var feedCount = data.rss_feedCount ? data.rss_feedCount : 1;
-            var rss_withtime = (data.rss_withtime) ? data.rss_withtime : false;
-            var rss_withdate = (data.rss_withdate) ? data.rss_withdate : false;
-            var rss_withyear = (data.rss_withyear) ? data.rss_withyear : false;
+            var rss_withtime  = (data.rss_withtime)  ? data.rss_withtime  : false;
+            var rss_withdate  = (data.rss_withdate)  ? data.rss_withdate  : false;
+            var rss_withyear  = (data.rss_withyear)  ? data.rss_withyear  : false;
+            var rss_withname  = (data.rss_withname)  ? data.rss_withname  : false;
             var divider  = data.rss_divider ? data.rss_divider : '+++';
             var link = (data.rss_link) ? data.rss_link : false;
             var speed  = data.rss_speed ? data.rss_speed : 6;
@@ -468,6 +469,14 @@ vis.binds['rssfeed'] = {
             var filterFunction = function(item){
                 return vis.binds['rssfeed'].checkHighlite(item.title+item.description+item.categories.toString(),filter);
             };
+            var mapFunction = function(item) {
+                item['meta_title'] = rss.meta.title;
+                item['meta_description'] = rss.meta.description;
+                item['meta_name'] = name;
+                item['meta_image'] = (rss.meta.image.url?rss.meta.image.url:"");
+
+                return item;
+            }.bind(this);
 
             for (var i = 1; i <= feedCount; i++) {
                 var filter  = data['rss_filter'+i] ? data['rss_filter'+i] : '';
@@ -476,10 +485,12 @@ vis.binds['rssfeed'] = {
 
                 var maxarticles = data['rss_maxarticles'+i] ? data['rss_maxarticles'+i] : 999;
                 maxarticles = maxarticles > 0 ? maxarticles : 1;
+                var name  = data['rss_name'+i] ? data['rss_name'+i] : '';
                 if (filter!='') {
                     rss.articles = rss.articles.filter(filterFunction);
                 }
                 if (rss && rss.articles && rss.articles.length > maxarticles) rss.articles = rss.articles.slice(0,maxarticles);
+                rss.articles = rss.articles.map(mapFunction);
                 articles.push(rss.articles);
             }
             var collect = [];
@@ -503,15 +514,15 @@ vis.binds['rssfeed'] = {
                     if (rss_withdate) time = vis.formatDate(item.date,'DD.MM/hh:mm');
                     if (rss_withyear) time = vis.formatDate(item.date,'DD.MM.YY/hh:mm');
                     if (link) {
-                        t += ' ' + divider + ' ' + '<a href="' + item.link + '" target="rssarticle">' + time + ' ' + item.title + '</a>';
+                        t += ' ' + divider + ' ' + time + ' ' + (rss_withname?(item.meta_name||item.meta_title)+": ":"") + '<a href="' + item.link + '" target="rssarticle">' + time + ' ' + item.title + '</a>';
                     } else {
-                        t += ' ' + divider + ' ' + time + ' ' + item.title;
+                        t += ' ' + divider + ' ' + time + ' ' + (rss_withname?(item.meta_name||item.meta_title)+": ":"") + item.title;
                     }
                     return t;
                 },titles);
                 var duration = (titleslength/speed).toFixed();
                 $('#'+widgetID+' .marquee span').css('animation-duration',duration+'s');
-                $('#'+widgetID+' .marquee span').text(titles);
+                $('#'+widgetID+' .marquee span').html(titles);
             }
         }
     },
