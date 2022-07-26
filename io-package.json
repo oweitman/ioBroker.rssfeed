@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "rssfeed",
-        "version": "2.5.0",
+        "version": "2.6.0",
         "news": {
+            "2.6.0": {
+                "en": "add sentry"
+            },
             "2.5.0": {
                 "en": "add name option to widget marquee"
             },
@@ -244,6 +247,11 @@
         "materialize": true,
         "materializeTab": false,
         "supportCustoms": false,
+        "plugins": {
+            "sentry": {
+                "dsn": "https://abfab39a66054631bef76b3e92979c43@o1335795.ingest.sentry.io/6603729"
+            }
+        },
         "jsonConfig": true,
         "adminUI": {
             "config": "json"
