@@ -1,7 +1,7 @@
 {
     "common": {
         "name": "rssfeed",
-        "version": "2.6.0",
+        "version": "2.6.1",
         "news": {
             "2.6.1": {
                 "en": "add more informations to sentry"
