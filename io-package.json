@@ -3,6 +3,9 @@
         "name": "rssfeed",
         "version": "2.6.0",
         "news": {
+            "2.6.1": {
+                "en": "add more informations to sentry"
+            },
             "2.6.0": {
                 "en": "add sentry"
             },

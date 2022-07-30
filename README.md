@@ -167,6 +167,11 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
+### 2.6.1 (2022-07-30)
+
+* add more informations to sentry
+
 ### 2.6.0 (2022-07-26)
 
 * add sentry
