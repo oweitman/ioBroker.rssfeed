@@ -168,6 +168,10 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
   ### **WORK IN PROGRESS**
 -->
 
+### 2.7.0 (2022-12-11)
+
+* admin changed to jsonConfig, dev-environment now devcontainer
+
 ### 2.6.1 (2022-07-30)
 
 * add more informations to sentry

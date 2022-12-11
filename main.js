@@ -1,52 +1,46 @@
-/* jshint -W097 */
-'use strict';
+"use strict";
 
 /*
- * Created with @iobroker/create-adapter v1.22.0
+ * Created with @iobroker/create-adapter v2.3.0
  */
 
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
-const utils = require('@iobroker/adapter-core');
+const utils = require("@iobroker/adapter-core");
 
 // Load your modules here, e.g.:
 // const fs = require("fs");
-
-const rssfeedrequire = require(__dirname +'/lib/rssfeedserver.js');
+const rssfeedrequire = require(__dirname +"/lib/rssfeedserver.js");
 let rssfeedserver;
-class RssFeed extends utils.Adapter {
-
+class Rssfeed extends utils.Adapter {
     /**
-     * @param {Partial<ioBroker.AdapterOptions>} [options={}]
+     * @param {Partial<utils.AdapterOptions>} [options={}]
      */
     constructor(options) {
         super({
             ...options,
-            name: 'rssfeed',
+            name: "rssfeed",
         });
-        this.on('ready', this.onReady.bind(this));
-        this.on('objectChange', this.onObjectChange.bind(this));
-        this.on('stateChange', this.onStateChange.bind(this));
+        this.on("ready", this.onReady.bind(this));
+        this.on("objectChange", this.onObjectChange.bind(this));
+        this.on("stateChange", this.onStateChange.bind(this));
         // this.on('message', this.onMessage.bind(this));
-        this.on('unload', this.onUnload.bind(this));
+        this.on("unload", this.onUnload.bind(this));
     }
 
     /**
      * Is called when databases are connected and adapter received configuration.
      */
     async onReady() {
-        this.log.debug('main onReady start');
+        this.log.debug("main onReady start");
         // Reset the connection indicator during startup
-        this.setState('info.connection', false, true);
+        this.setState("info.connection", false, true);
 
         // Initialize your adapter here
         if (!rssfeedserver) {
-            this.log.debug('main onReady open rssfeed');
+            this.log.debug("main onReady open rssfeed");
             rssfeedserver = new rssfeedrequire(this);
         }
-
-        // in this template all states changes inside the adapters namespace are subscribed
-        this.subscribeStates('*');
     }
 
     /**
@@ -55,19 +49,18 @@ class RssFeed extends utils.Adapter {
      */
     onUnload(callback) {
         try {
-            this.log.debug('main onUnload try');
+            this.log.debug("main onUnload try");
 
             rssfeedserver.closeConnections();
-            this.log.info('cleaned everything up...');
+            this.log.info("cleaned everything up...");
             // Reset the connection indicator during startup
-            this.setState('info.connection', false, true);
+            this.setState("info.connection", false, true);
             callback();
         } catch (e) {
-            this.log.debug('main onUnload error');
+            this.log.debug("main onUnload error");
             callback();
         }
     }
-
     /**
      * Is called if a subscribed object changes
      * @param {string} id
@@ -83,11 +76,6 @@ class RssFeed extends utils.Adapter {
         }
     }
 
-    /**
-     * Is called if a subscribed state changes
-     * @param {string} id
-     * @param {ioBroker.State | null | undefined} state
-     */
     onStateChange(id, state) {
         if (state) {
             // The state was changed
@@ -98,17 +86,15 @@ class RssFeed extends utils.Adapter {
             this.log.silly(`state ${id} deleted`);
         }
     }
-
 }
 
-// @ts-ignore parent is a valid property on module
-if (module.parent) {
+if (require.main !== module) {
     // Export the constructor in compact mode
     /**
-     * @param {Partial<ioBroker.AdapterOptions>} [options={}]
+     * @param {Partial<utils.AdapterOptions>} [options={}]
      */
-    module.exports = (options) => new RssFeed(options);
+    module.exports = (options) => new Rssfeed(options);
 } else {
     // otherwise start the instance directly
-    new RssFeed();
+    new Rssfeed();
 }

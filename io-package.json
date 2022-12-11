@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "rssfeed",
-        "version": "2.6.1",
+        "version": "2.7.0",
         "news": {
+            "2.7.0": {
+                "en": "admin changed to jsonConfig, dev-environment now devcontainer"
+            },
             "2.6.1": {
                 "en": "add more informations to sentry"
             },
@@ -174,7 +177,7 @@
                 "ru": "добавить опцию ссылки в виджет выделения / добавлена ​​справка по виджету / виджет выделения: символы-разделители (по умолчанию: +++) настраиваются",
                 "pt": "adicionar opção de link ao widget de letreiro / ajuda do widget adicionado / widget de letreiro: os caracteres divisores (padrão: +++) são configuráveis",
                 "nl": "link optie toevoegen aan selectiekader widget / widget hulp toegevoegd / selectiekader widget: de scheidingstekens (standaard: +++) zijn configureerbaar",
-                "fr": "ajouter une option de lien au widget de sélection / aide au widget ajoutée / widget de sélection : les caractères de séparation (par défaut : +++) sont configurables",
+                "fr": "ajouter une option de lien au widget de sélection / aide au widget ajoutée / widget de sélection : les caractères de séparation (par défaut : +++) sont configurables",
                 "it": "aggiungi l'opzione di collegamento al widget di selezione / aiuto widget aggiunto / widget di selezione: i caratteri divisori (predefinito: +++) sono configurabili",
                 "es": "agregar opción de enlace al widget de marquesina / widget de ayuda agregado / widget de marquesina: los caracteres divisores (predeterminado: +++) son configurables",
                 "pl": "dodaj opcję linku do widżetu marquee / pomoc widżetu dodana / widżet marquee: znaki rozdzielające (domyślnie: +++) są konfigurowalne",
@@ -218,9 +221,7 @@
             "pl": "Adapter i widżet Vis dla kanałów RSS",
             "zh-cn": "rss提要的适配器和可见小部件"
         },
-        "authors": [
-            "oweitman <oweitman@gmx.de>"
-        ],
+        "authors": ["oweitman <oweitman@gmx.de>"],
         "keywords": [
             "ioBroker",
             "template",
@@ -236,20 +237,15 @@
         "main": "main.js",
         "icon": "rssfeed-logo.png",
         "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/oweitman/iobroker.rssfeed/master/admin/rssfeed-logo.png",
-        "readme": "https://github.com/oweitman/ioBroker.rssfeed/blob/master/README.md",
+        "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.rssfeed/main/admin/rssfeed.png",
+        "readme": "https://github.com/oweitman/ioBroker.rssfeed/blob/main/README.md",
         "loglevel": "info",
-        "restartAdapters": [
-            "vis"
-        ],
+        "restartAdapters": ["vis"],
         "mode": "daemon",
         "type": "misc-data",
         "compact": true,
         "connectionType": "cloud",
         "dataSource": "poll",
-        "materialize": true,
-        "materializeTab": false,
-        "supportCustoms": false,
         "plugins": {
             "sentry": {
                 "dsn": "https://abfab39a66054631bef76b3e92979c43@o1335795.ingest.sentry.io/6603729"
@@ -259,14 +255,20 @@
         "adminUI": {
             "config": "json"
         },
+        "eraseOnUpload": true,
         "dependencies": [
             {
-                "js-controller": ">=1.4.2"
+                "js-controller": ">=3.3.22"
             },
             "vis"
+        ],
+        "globalDependencies": [
+            {
+                "admin": ">=5.1.13"
+            }
         ]
     },
-    "native": {},
+    "native": {"test":123},
     "objects": [],
     "instanceObjects": [
         {

@@ -7,25 +7,13 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
+            "name": "Launch javascript Adapter",
+            "skipFiles": ["<node_internals>/**"],
+            "program": "${workspaceFolder}/main.js",
             "args": ["--debug", "0"],
-            "program": "node_modules/iobroker.rssfeed/main.js",
-            "cwd":"${workspaceFolder}/../../",
-            "stopOnEntry": true,
-            "outputCapture": "std",
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "cwd": "${workspaceRoot}",
-            "name": "Gulp package node",
-            "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
-            "args": [
-                "translate" // replace this with your gulp task name
-            ]
+            "outFiles": ["${workspaceFolder}/build/**/*.js"],
+            "outputCapture": "std"
+
         }
     ]
 }

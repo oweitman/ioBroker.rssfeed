@@ -1,32 +1,17 @@
-.cache
-.git
-.idea
+# No dot-directories except github/vscode
+.*/
+!.vscode/
+!.github/
 
 *.code-workspace
 node_modules
 nbproject
-todo
-iob_npm.done
 
 # npm package files
 iobroker.*.tgz
-
-# Sourcemaps
-maps/
 
 Thumbs.db
 
 # i18n intermediate files
 admin/i18n/flat.txt
 admin/i18n/*/flat.txt
-
-
-
-
-# ioBroker dev-server
-.dev-server/
-admin/build/index.css
-admin/build/index.css.map
-admin/build/index.js
-admin/build/index.js.map
-
