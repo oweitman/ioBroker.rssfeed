@@ -82,7 +82,10 @@
     "lint": "eslint --ext .js,.jsx .",
     "translate": "translate-adapter",
     "release": "release-script",
-    "upload":"NPM_PACK=$(npm pack) && iob url \"$(pwd)/$NPM_PACK\" --debug && rm \"$NPM_PACK\""
+    "release-patch": "release-script patch --yes --no-update-lockfile",
+    "release-minor": "release-script minor --yes --no-update-lockfile",
+    "release-major": "release-script major --yes --no-update-lockfile",
+    "upload": "NPM_PACK=$(npm pack) && iob url \"$(pwd)/$NPM_PACK\" --debug && rm \"$NPM_PACK\""
   },
   "bugs": {
     "url": "https://github.com/oweitman/ioBroker.rssfeed/issues"
