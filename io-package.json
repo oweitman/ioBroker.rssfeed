@@ -1,9 +1,9 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "2.8.0",
+    "version": "2.8.1",
     "news": {
-      "2.8.0": {
+      "2.8.1": {
         "en": "Corrected vis widget\nadmin changed to jsonConfig, dev-environment now devcontainer",
         "de": "Korrigiert vis Widget\nadmin geändert in jsonConfig, dev-environment jetzt devcontainer",
         "ru": "Исправленный виджет vis\nadmin изменился к jsonConfig, dev-environment теперь devcontainer",

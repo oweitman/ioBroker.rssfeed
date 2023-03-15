@@ -3,7 +3,7 @@
 /*
     ioBroker.vis rssfeed Widget-Set
 
-    version: "2.7.1"
+    version: "2.8.1"
 
     Copyright 2020-2023 oweitman oweitman@gmx.de
 */
