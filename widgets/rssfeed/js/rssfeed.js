@@ -3,16 +3,16 @@
 /*
     ioBroker.vis rssfeed Widget-Set
 
-    version: "0.0.1"
+    version: "2.7.1"
 
-    Copyright 2020 oweitman oweitman@gmx.de
+    Copyright 2020-2023 oweitman oweitman@gmx.de
 */
 'use strict';
 /* jshint -W069 */
 /* globals $,systemDictionary,vis,ejs,document,ace,_,window */
 
 // add translations for edit mode
-$.get('adapter/rssfeed/words.js', function(script) {
+$.get('widgets/rssfeed/js/words.js', function(script) {
     let translation = script.substring(script.indexOf('{'), script.length);
     translation = translation.substring(0, translation.lastIndexOf(';'));
     $.extend(systemDictionary, JSON.parse(translation));
@@ -486,7 +486,7 @@ vis.binds['rssfeed'] = {
                 var maxarticles = data['rss_maxarticles'+i] ? data['rss_maxarticles'+i] : 999;
                 maxarticles = maxarticles > 0 ? maxarticles : 1;
                 var name  = data['rss_name'+i] ? data['rss_name'+i] : '';
-                if (filter!='') {
+                if (filter) {
                     rss.articles = rss.articles.filter(filterFunction);
                 }
                 if (rss && rss.articles && rss.articles.length > maxarticles) rss.articles = rss.articles.slice(0,maxarticles);

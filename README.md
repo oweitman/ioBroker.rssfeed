@@ -1,6 +1,6 @@
 ![Logo](admin/rssfeed-logo.png)
 
-# ioBroker Adapter to request and show RSS Feeds of different standands (Atom, RSS, RDF)
+# ioBroker Adapter to request and show RSS Feeds of different standards (Atom, RSS, RDF)
 
 [![Number of Installations](http://iobroker.live/badges/rssfeed-installed.svg)](https://github.com/oweitman/ioBroker.rssfeed)
 [![NPM version](http://img.shields.io/npm/v/iobroker.rssfeed.svg)](https://www.npmjs.com/package/iobroker.rssfeed)
@@ -11,7 +11,7 @@
 
 ## Overview
 
-Adapter to request and show RSS Feeds of different standands (Atom, RSS, RDF).
+Adapter to request and show RSS Feeds of different standards (Atom, RSS, RDF).
 You can customize the output of the feed with a template system. In the templates you can include HTML, CSS and Javascript.
 
 Important: Only the english translation is valid due to bugs in automatic translations into other languages made by iobroker
@@ -47,7 +47,7 @@ Then for each new feed:
 | Max Articles | A different value can be specified for this feed. Otherwise the general specification is taken |
 
 If you saved and closed the configuration, the feed-data can be found as a JSON data point in the object tree.
-If you delete an entry, the datapoints arent deleted.
+If you delete an entry, the datapoints aren't deleted.
 
 ## vis and widgets
 
@@ -55,10 +55,10 @@ The following widgets actually exists
 
 * `RSS Feed widget 2` -  to show a single feed
 * `RSS Feed Multi widget` -  to show several aggregated feeds in one widget.
-* `RSS Feed Meta Helper` - a helper widget to inspect the meta data of a feed
+* `RSS Feed Meta Helper` - a helper widget to inspect the metadata of a feed
 * `RSS Feed Article Helper 2` - a helper widget to inspect the article data of a feed
 * `RSS Feed Title marquee 3` - a widget to show the Headlines of a feed as a marquee
-* `JSON Template` - a wdiget that have nothing todo with RSS Feeds, but uses the same technology and you can define a custom template to show any JSON-Data in vis.
+* `JSON Template` - a widget that have nothing todo with RSS Feeds, but uses the same technology, and you can define a custom template to show any JSON-Data in vis.
 
 Documentation for the vis-widgets are available inside vis or [Widget-Documentation/german](https://htmlpreview.github.io/?https://github.com/oweitman/ioBroker.rssfeed/blob/master/widgets/rssfeed/doc.html)
 
@@ -149,12 +149,12 @@ Z2: Without output. Javascript command to loop over all articles, with each turn
 Z3: Output of date and time is. It is enclosed with a p / small tag for formatting. The vis-own date format function is used for formatting. Description can be found in the adapter vis.  
 Z4: The output of the article title. A Header 3 - tag is used for formatting.  
 Z5: Output of the content of the article. It is  enclosed with a p-tag. Here, at least in the two examples, HTML code is included, which usually comes with an image and descriptive text  
-Z6: Output a div tag that clears special formatting in the feed-html (in both examples for tagesschau and bild it is needed. Other feed maybe didnt need it.  
+Z6: Output a div tag that clears special formatting in the feed-html (in both examples for tagesschau and bild it is needed. Other feed maybe didn't need it.  
 Z7: Without output. This line closed the javascript loop . Everything that was defined between Z2 and Z7 is repeated for every single article.  
 
 ## Todo
 
-* cleanup unused entrys in datapoint info.lastRequest by saving in admin dialog.
+* cleanup unused entries in datapoint info.lastRequest by saving in admin dialog.
 * button for cleanup not used datapoints in admin dialog
 * ~~Multi widget RSS Feeds~~
 * ~~Multi widget marquee~~
@@ -169,12 +169,13 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 -->
 
 ### 2.7.0 (2022-12-11)
-
+### **WORK IN PROGRESS**
+* (bluefox) Corrected vis widget
 * admin changed to jsonConfig, dev-environment now devcontainer
 
 ### 2.6.1 (2022-07-30)
 
-* add more informations to sentry
+* add more information to sentry
 
 ### 2.6.0 (2022-07-26)
 
@@ -318,7 +319,7 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 
 ### 0.0.7
 
-* test with encapsulation of ejs.js, becaus of error in some browsers
+* test with encapsulation of ejs.js, because of error in some browsers
 
 ### 0.0.6
 
@@ -327,7 +328,7 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 ### 0.0.5
 
 * new widget marquee for article titles
-* add filter function for articles. the filter searchs in title,description and categories, seceral filter criteria can be seperated by semicolon
+* add filter function for articles. the filter searches in title,description and categories, several filter criteria can be seperated by semicolon
 
 ### 0.0.4
 
@@ -349,7 +350,7 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 
 MIT License
 
-Copyright (c) 2021 oweitman <oweitman@gmx.de>
+Copyright (c) 2021-2023 oweitman <oweitman@gmx.de>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
