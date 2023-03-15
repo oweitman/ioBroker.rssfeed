@@ -167,11 +167,11 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-
-### 2.7.0 (2022-12-11)
-### **WORK IN PROGRESS**
+### 2.8.0 (2023-03-15)
 * (bluefox) Corrected vis widget
 * admin changed to jsonConfig, dev-environment now devcontainer
+
+### 2.7.0 (2022-12-11)
 
 ### 2.6.1 (2022-07-30)
 
