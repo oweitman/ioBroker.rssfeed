@@ -240,7 +240,7 @@
         "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.rssfeed/main/admin/rssfeed.png",
         "readme": "https://github.com/oweitman/ioBroker.rssfeed/blob/main/README.md",
         "loglevel": "info",
-        "restartAdapters": ["vis"],
+        "restartAdapters": ["vis","vis-2"],
         "mode": "daemon",
         "type": "misc-data",
         "compact": true,
@@ -259,8 +259,7 @@
         "dependencies": [
             {
                 "js-controller": ">=3.3.22"
-            },
-            "vis"
+            }
         ],
         "globalDependencies": [
             {
