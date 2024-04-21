@@ -12,11 +12,14 @@
 /* globals $,systemDictionary,vis,ejs,document,ace,_,window */
 
 // add translations for edit mode
-$.get('widgets/rssfeed/js/words.js', function(script) {
-    let translation = script.substring(script.indexOf('{'), script.length);
-    translation = translation.substring(0, translation.lastIndexOf(';'));
-    $.extend(systemDictionary, JSON.parse(translation));
-});
+fetch('widgets/rssfeed/js/words.js')
+    .then(response => response.text())
+    .then(script => {
+        let translation = script.substring(script.indexOf('{'), script.length);
+        translation = translation.substring(0, translation.lastIndexOf(';'));
+        $.extend(systemDictionary, JSON.parse(translation));
+    })
+    .catch(e => console.error('Cannot load translations for RSS feed: ' + e));
 
 // this code can be placed directly in rssfeed.html
 vis.binds['rssfeed'] = {

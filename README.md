@@ -167,6 +167,9 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (bluefox) Fixed loading of words.js in vis
+
 ### 2.8.1 (2023-03-15)
 * (bluefox) Corrected vis widget
 * admin changed to jsonConfig, dev-environment now devcontainer
@@ -175,15 +178,15 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 
 ### 2.6.1 (2022-07-30)
 
-* add more information to sentry
+* added more information to sentry
 
 ### 2.6.0 (2022-07-26)
 
-* add sentry
+* added sentry
 
 ### 2.4.0 (2022-07-25)
 
-* add name option to marquee widget
+* added name option to marquee widget
 
 ### 2.0.0
 
@@ -192,30 +195,30 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 
 ### 1.0.0
 
-* Release in stable
+* Released in stable
 
 ### 0.9.0
 
-* fix/extend json template
+* fixed/extended json template
 
 ### 0.8.0
 
-* adapt configuration pages to react.
-* Prepare for stable release
+* adapted configuration pages to react.
+* Prepared for stable release
 
 ### 0.0.30
 
-* add some template examples to the widget documentation
+* added some template examples to the widget documentation
 
 ### 0.0.29
 
-* improve error messages
-* remove deprecated widget / change widget beta flag
-* change createObject/setState logic due iobroker-controller >3.0
+* improved error messages
+* removed deprecated widget / change widget beta flag
+* changed createObject/setState logic due iobroker-controller >3.0
 
 ### 0.0.28
 
-* remove customtab
+* removed customtab
 
 ### 0.0.27
 
@@ -223,7 +226,7 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 
 ### 0.0.26
 
-* correct changelog size
+* corrected changelog size
 
 ### 0.0.25
 
@@ -350,7 +353,7 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 
 MIT License
 
-Copyright (c) 2021-2023 oweitman <oweitman@gmx.de>
+Copyright (c) 2021-2024 oweitman <oweitman@gmx.de>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

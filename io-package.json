@@ -94,10 +94,10 @@
     "license": "MIT",
     "platform": "Javascript/Node.js",
     "main": "main.js",
-    "icon": "rssfeed-logo.png",
+    "icon": "rssfeed.png",
     "enabled": true,
-    "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.rssfeed/main/admin/rssfeed.png",
-    "readme": "https://github.com/oweitman/ioBroker.rssfeed/blob/main/README.md",
+    "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.rssfeed/master/admin/rssfeed-logo.png",
+    "readme": "https://github.com/oweitman/ioBroker.rssfeed/blob/master/README.md",
     "loglevel": "info",
     "restartAdapters": [
       "vis"
@@ -117,20 +117,26 @@
       "config": "json"
     },
     "eraseOnUpload": true,
+    "licenseInformation": {
+      "type": "free"
+    },
+
     "dependencies": [
       {
         "js-controller": ">=3.3.22"
-      },
-      "vis"
+      }
     ],
     "globalDependencies": [
       {
         "admin": ">=5.1.13"
       }
-    ]
+    ],
+    "tier": 3
   },
   "native": {
-    "test": 123
+    "refresh": 60,
+    "maxarticles": 100,
+    "rss": []
   },
   "objects": [],
   "instanceObjects": [
