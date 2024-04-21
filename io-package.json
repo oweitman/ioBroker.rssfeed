@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "2.8.1",
+    "version": "2.8.2",
     "news": {
+      "2.8.2": {
+        "en": "Fixed loading of words.js in vis",
+        "de": "Feste Beladung von Wörtern. in den Warenkorb",
+        "ru": "Фиксированная загрузка слов. js in vis",
+        "pt": "Carga fixa de palavras. O que se passa",
+        "nl": "Vast laden van woorden. js in vis",
+        "fr": "Chargement fixe de mots. js en vis",
+        "it": "Caricamento fisso delle parole. js in vis",
+        "es": "Carga fija de palabras. js in vis",
+        "pl": "Naprawiono ładowanie słów. js in vis",
+        "uk": "Фіксоване завантаження слів. js в vis",
+        "zh-cn": "固定装填文字. js 相对"
+      },
       "2.8.1": {
         "en": "Corrected vis widget\nadmin changed to jsonConfig, dev-environment now devcontainer",
         "de": "Korrigiert vis Widget\nadmin geändert in jsonConfig, dev-environment jetzt devcontainer",
@@ -39,18 +52,6 @@
         "es": "Revisión básica",
         "pl": "Remont podstawowy",
         "zh-cn": "基本大修"
-      },
-      "0.1.0": {
-        "en": "* prepare for stable * add widgetID as field in template",
-        "de": "* für Stable vorbereiten * WidgetID als Feld im Template hinzufügen",
-        "ru": "* подготовиться к стабильной версии * добавить widgetID в качестве поля в шаблон",
-        "pt": "* prepare-se para estável * adicione widgetID como campo no modelo",
-        "nl": "* bereid je voor op stabiel * voeg widgetID toe als veld in sjabloon",
-        "fr": "* préparer pour stable * ajouter widgetID comme champ dans le modèle",
-        "it": "* preparare per stabile * aggiungere widgetID come campo nel modello",
-        "es": "* prepárese para estable * agregue widgetID como campo en la plantilla",
-        "pl": "* przygotuj się na stabilną * dodaj widgetID jako pole w szablonie",
-        "zh-cn": "* 为稳定做准备 * 在模板中添加 widgetID 作为字段"
       }
     },
     "title": "RSS Feed",
@@ -120,7 +121,6 @@
     "licenseInformation": {
       "type": "free"
     },
-
     "dependencies": [
       {
         "js-controller": ">=3.3.22"
