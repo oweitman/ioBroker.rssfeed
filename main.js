@@ -10,7 +10,7 @@ const utils = require("@iobroker/adapter-core");
 
 // Load your modules here, e.g.:
 // const fs = require("fs");
-const RssFeedRequire = require('./lib/rssFeedServer');
+const RssFeedRequire = require("./lib/rssFeedServer");
 let rssFeedServer;
 class RssFeed extends utils.Adapter {
     /**
