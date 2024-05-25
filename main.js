@@ -10,9 +10,9 @@ const utils = require("@iobroker/adapter-core");
 
 // Load your modules here, e.g.:
 // const fs = require("fs");
-const rssfeedrequire = require(__dirname +"/lib/rssfeedserver.js");
-let rssfeedserver;
-class Rssfeed extends utils.Adapter {
+const RssFeedRequire = require('./lib/rssFeedServer');
+let rssFeedServer;
+class RssFeed extends utils.Adapter {
     /**
      * @param {Partial<utils.AdapterOptions>} [options={}]
      */
@@ -37,9 +37,9 @@ class Rssfeed extends utils.Adapter {
         this.setState("info.connection", false, true);
 
         // Initialize your adapter here
-        if (!rssfeedserver) {
+        if (!rssFeedServer) {
             this.log.debug("main onReady open rssfeed");
-            rssfeedserver = new rssfeedrequire(this);
+            rssFeedServer = new RssFeedRequire(this);
         }
     }
 
@@ -51,7 +51,7 @@ class Rssfeed extends utils.Adapter {
         try {
             this.log.debug("main onUnload try");
 
-            rssfeedserver.closeConnections();
+            rssFeedServer.closeConnections();
             this.log.info("cleaned everything up...");
             // Reset the connection indicator during startup
             this.setState("info.connection", false, true);
@@ -80,7 +80,7 @@ class Rssfeed extends utils.Adapter {
         if (state) {
             // The state was changed
             this.log.silly(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
-            rssfeedserver.stateChange(id,state);
+            rssFeedServer.stateChange(id,state);
         } else {
             // The state was deleted
             this.log.silly(`state ${id} deleted`);
@@ -93,8 +93,8 @@ if (require.main !== module) {
     /**
      * @param {Partial<utils.AdapterOptions>} [options={}]
      */
-    module.exports = (options) => new Rssfeed(options);
+    module.exports = (options) => new RssFeed(options);
 } else {
     // otherwise start the instance directly
-    new Rssfeed();
+    new RssFeed();
 }
