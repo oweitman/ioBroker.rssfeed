@@ -92,7 +92,6 @@
       "rdf",
       "feed"
     ],
-    "license": "MIT",
     "platform": "Javascript/Node.js",
     "main": "main.js",
     "icon": "rssfeed.png",
@@ -119,7 +118,8 @@
     },
     "eraseOnUpload": true,
     "licenseInformation": {
-      "type": "free"
+      "type": "free",
+      "license": "MIT"
     },
     "dependencies": [
       {
