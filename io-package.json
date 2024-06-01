@@ -1,295 +1,165 @@
 {
-    "common": {
-        "name": "rssfeed",
-        "version": "2.7.0",
-        "news": {
-            "2.7.0": {
-                "en": "admin changed to jsonConfig, dev-environment now devcontainer"
-            },
-            "2.6.1": {
-                "en": "add more informations to sentry"
-            },
-            "2.6.0": {
-                "en": "add sentry"
-            },
-            "2.5.0": {
-                "en": "add name option to widget marquee"
-            },
-            "2.0.0": {
-                "en": "Basic overhaul",
-                "de": "Grundüberholung",
-                "ru": "Капитальный ремонт",
-                "pt": "Revisão básica",
-                "nl": "Basisrevisie",
-                "fr": "Révision de base",
-                "it": "Revisione di base",
-                "es": "Revisión básica",
-                "pl": "Remont podstawowy",
-                "zh-cn": "基本大修"
-            },
-            "0.1.0": {
-                "en": "* prepare for stable * add widgetID as field in template",
-                "de": "* für Stable vorbereiten * WidgetID als Feld im Template hinzufügen",
-                "ru": "* подготовиться к стабильной версии * добавить widgetID в качестве поля в шаблон",
-                "pt": "* prepare-se para estável * adicione widgetID como campo no modelo",
-                "nl": "* bereid je voor op stabiel * voeg widgetID toe als veld in sjabloon",
-                "fr": "* préparer pour stable * ajouter widgetID comme champ dans le modèle",
-                "it": "* preparare per stabile * aggiungere widgetID come campo nel modello",
-                "es": "* prepárese para estable * agregue widgetID como campo en la plantilla",
-                "pl": "* przygotuj się na stabilną * dodaj widgetID jako pole w szablonie",
-                "zh-cn": "* 为稳定做准备 * 在模板中添加 widgetID 作为字段"
-            },
-            "0.9.0": {
-                "en": "* fix/extend json template",
-                "de": "* JSON-Vorlage reparieren/erweitern",
-                "ru": "* исправить/расширить шаблон json",
-                "pt": "* corrigir/estender o modelo json",
-                "nl": "* json-sjabloon repareren / uitbreiden",
-                "fr": "* corriger/étendre le modèle json",
-                "it": "* correggere/estendere il modello json",
-                "es": "* corregir/ampliar la plantilla json",
-                "pl": "* napraw/rozszerz szablon json",
-                "zh-cn": "* 修复/扩展 json 模板"
-            },
-            "0.8.0": {
-                "en": "* adapt configuration pages to react. * Prepare for stable release",
-                "de": "* Konfigurationsseiten anpassen, um zu reagieren. ",
-                "ru": "* адаптировать страницы конфигурации, чтобы реагировать. ",
-                "pt": "* adapte as páginas de configuração para reagir. ",
-                "nl": "* configuratiepagina's aanpassen om te reageren. ",
-                "fr": "* adapter les pages de configuration pour réagir. ",
-                "it": "* adattare le pagine di configurazione per reagire. ",
-                "es": "* adaptar las páginas de configuración para reaccionar. ",
-                "pl": "* dostosuj strony konfiguracji, aby zareagować. ",
-                "zh-cn": "* 调整配置页面以做出反应。 "
-            },
-            "0.0.30": {
-                "en": "add some template examples to the widget documentation",
-                "de": "Fügen Sie der Widget-Dokumentation einige Vorlagenbeispiele hinzu",
-                "ru": "добавить несколько примеров шаблонов в документацию виджета",
-                "pt": "adicione alguns exemplos de modelo à documentação do widget",
-                "nl": "voeg enkele sjabloonvoorbeelden toe aan de widgetdocumentatie",
-                "fr": "ajouter quelques exemples de modèles à la documentation du widget",
-                "it": "aggiungi alcuni esempi di modelli alla documentazione del widget",
-                "es": "agregue algunos ejemplos de plantillas a la documentación del widget",
-                "pl": "dodać kilka przykładów szablonów do dokumentacji widżetu",
-                "zh-cn": "向小部件文档添加一些模板示例"
-            },
-            "0.0.29": {
-                "en": "change createObject/setState logic due iobroker-controller >3.0",
-                "de": "Ändern Sie die createObject/setState-Logik aufgrund von iobroker-controller >3.0",
-                "ru": "изменить логику createObject/setState из-за iobroker-controller > 3.0",
-                "pt": "alterar a lógica createObject/setState devido iobroker-controller > 3.0",
-                "nl": "verander createObject/setState-logica vanwege iobroker-controller> 3.0",
-                "fr": "modifier la logique createObject/setState due iobroker-controller > 3.0",
-                "it": "cambia la logica createObject/setState a causa di iobroker-controller >3.0",
-                "es": "cambiar la lógica createObject/setState debido a iobroker-controller >3.0",
-                "pl": "zmiana logiki createObject/setState z powodu iobroker-controller >3.0",
-                "zh-cn": "由于 iobroker-controller >3.0 更改 createObject/setState 逻辑"
-            },
-            "0.0.28": {
-                "en": "remove customtab",
-                "de": "benutzerdefinierte Registerkarte entfernen",
-                "ru": "удалить пользовательскую вкладку",
-                "pt": "remover a aba personalizada",
-                "nl": "verwijder aangepast tabblad",
-                "fr": "supprimer l'onglet personnalisé",
-                "it": "rimuovi la scheda personalizzata",
-                "es": "quitar pestaña personalizada",
-                "pl": "usuń kartę niestandardową",
-                "zh-cn": "删除自定义选项卡"
-            },
-            "0.0.27": {
-                "en": "adapter configuration is now editable",
-                "de": "Die Adapterkonfiguration kann jetzt bearbeitet werden",
-                "ru": "конфигурация адаптера теперь доступна для редактирования",
-                "pt": "a configuração do adaptador agora é editável",
-                "nl": "adapterconfiguratie kan nu worden bewerkt",
-                "fr": "la configuration de l'adaptateur est maintenant modifiable",
-                "it": "la configurazione dell'adattatore è ora modificabile",
-                "es": "la configuración del adaptador ahora es editable",
-                "pl": "konfiguracja adaptera jest teraz edytowalna",
-                "zh-cn": "适配器配置现在可编辑"
-            },
-            "0.0.26": {
-                "en": "correct changelog size",
-                "de": "richtige Changelog-Größe",
-                "ru": "правильный размер списка изменений",
-                "pt": "tamanho correto do registro de alterações",
-                "nl": "juiste changelog grootte",
-                "fr": "taille correcte du journal des modifications",
-                "it": "dimensione corretta del registro delle modifiche",
-                "es": "tamaño correcto del registro de cambios",
-                "pl": "prawidłowy rozmiar dziennika zmian",
-                "zh-cn": "正确的变更日志大小"
-            },
-            "0.0.25": {
-                "en": "the error messages for the template are improved",
-                "de": "die Fehlermeldungen für die Vorlage wurden verbessert",
-                "ru": "сообщения об ошибках для шаблона улучшены",
-                "pt": "as mensagens de erro para o modelo são melhoradas",
-                "nl": "de foutmeldingen voor de sjabloon zijn verbeterd",
-                "fr": "les messages d'erreur pour le modèle sont améliorés",
-                "it": "i messaggi di errore per il modello sono migliorati",
-                "es": "se mejoran los mensajes de error de la plantilla",
-                "pl": "poprawiono komunikaty o błędach szablonu",
-                "zh-cn": "模板的错误消息得到改进"
-            },
-            "0.0.24": {
-                "en": "errors in the request of feeds are now real errors in the iobroker log / loading of rules for ejs in the editor is improved / marquee3 widget: options to show time and date",
-                "de": "Fehler beim Abrufen von Feeds sind jetzt echte Fehler im iobroker-Log / Laden von Regeln für EJs im Editor verbessert / marquee3-Widget: Optionen zum Anzeigen von Uhrzeit und Datum",
-                "ru": "ошибки в запросе фидов теперь являются реальными ошибками в журнале iobroker / улучшена загрузка правил для ejs в редакторе / виджет marquee3: опции для отображения времени и даты",
-                "pt": "erros na solicitação de feeds agora são erros reais no log do iobroker / carregamento de regras para ejs no editor é aprimorado / widget marquee3: opções para mostrar hora e data",
-                "nl": "fouten in het verzoek van feeds zijn nu echte fouten in het iobroker-logboek / laden van regels voor ejs in de editor is verbeterd / marquee3-widget: opties om tijd en datum te tonen",
-                "fr": "les erreurs dans la demande de flux sont désormais de vraies erreurs dans le log iobroker / le chargement des règles pour les ejs dans l'éditeur est amélioré / widget marquee3 : options pour afficher l'heure et la date",
-                "it": "gli errori nella richiesta dei feed ora sono veri errori nel log di iobroker / il caricamento delle regole per ejs nell'editor è migliorato / widget marquee3: opzioni per mostrare ora e data",
-                "es": "los errores en la solicitud de feeds ahora son errores reales en el registro de iobroker / Se mejora la carga de reglas para ejs en el editor / widget marquee3: opciones para mostrar la hora y la fecha",
-                "pl": "błędy w żądaniu kanałów są teraz prawdziwymi błędami w logu iobroker / poprawiono ładowanie reguł dla ejs w edytorze / widget marquee3: opcje wyświetlania czasu i daty",
-                "zh-cn": "提要请求中的错误现在是 iobroker 日志中的真正错误/编辑器中 ejs 规则的加载得到改进/marquee3 小部件：显示时间和日期的选项"
-            },
-            "0.0.23": {
-                "en": "Republish to npm",
-                "de": "Neuveröffentlichen auf npm",
-                "ru": "Опубликовать в npm",
-                "pt": "Republicar para npm",
-                "nl": "Opnieuw publiceren naar npm",
-                "fr": "Republier dans npm",
-                "it": "Ripubblica su npm",
-                "es": "Volver a publicar en npm",
-                "pl": "Opublikuj ponownie w npm",
-                "zh-cn": "重新发布到 npm"
-            },
-            "0.0.22": {
-                "en": "improvements in the configuration dialog /  remove unused admintab /  new RSS Feed multi widget. in this widget you can add your one or more datapoints, that are available in the template. /  New marquee widget 3 replaces the existing marquee widget 2.The marquee widget 3 is now a multi widget and can handle more than one feed. The Headlines are now aggregated. /  the existing widget JSON template is improved. in this widget you can add your one or more datapoints, that are available in the template. /  Remove several deprecated widgets (RSS Feed widget 1, Article Helper 1, Marquee 1, JSON template 1)",
-                "de": "Verbesserungen im Konfigurationsdialog / unbenutztes Admintab entfernen / neues RSS-Feed-Multi-Widget. ",
-                "ru": "улучшения в диалоговом окне конфигурации / удаление неиспользуемой административной вкладки / новый мультивиджет RSS Feed. ",
-                "pt": "melhorias na caixa de diálogo de configuração / remover admintab não utilizado / novo multi widget RSS Feed. ",
-                "nl": "verbeteringen in de configuratiedialoog / verwijder ongebruikte admintab / nieuwe RSS Feed multi-widget. ",
-                "fr": "améliorations dans la boîte de dialogue de configuration / suppression de l'onglet d'administration inutilisé / nouveau widget multi de flux RSS. ",
-                "it": "miglioramenti nella finestra di configurazione / rimozione della scheda admin inutilizzata / nuovo widget multi feed RSS. ",
-                "es": "mejoras en el cuadro de diálogo de configuración / eliminar la pestaña de administración no utilizada / nuevo widget múltiple RSS Feed. ",
-                "pl": "ulepszenia w oknie konfiguracji / usunięcie nieużywanej tablicy admintab / nowy widżet RSS Feed multi. ",
-                "zh-cn": "配置对话框中的改进/删除未使用的管理选项卡/新的 RSS Feed 多小部件。"
-            },
-            "0.0.21": {
-                "en": "add link option to marquee widget / widget help added / marquee widget: the divider characters (default: +++) are configurable",
-                "de": "Link-Option zum Marquee-Widget hinzufügen / Widget-Hilfe hinzugefügt / Marquee-Widget: Die Trennzeichen (Standard: +++) sind konfigurierbar",
-                "ru": "добавить опцию ссылки в виджет выделения / добавлена ​​справка по виджету / виджет выделения: символы-разделители (по умолчанию: +++) настраиваются",
-                "pt": "adicionar opção de link ao widget de letreiro / ajuda do widget adicionado / widget de letreiro: os caracteres divisores (padrão: +++) são configuráveis",
-                "nl": "link optie toevoegen aan selectiekader widget / widget hulp toegevoegd / selectiekader widget: de scheidingstekens (standaard: +++) zijn configureerbaar",
-                "fr": "ajouter une option de lien au widget de sélection / aide au widget ajoutée / widget de sélection : les caractères de séparation (par défaut : +++) sont configurables",
-                "it": "aggiungi l'opzione di collegamento al widget di selezione / aiuto widget aggiunto / widget di selezione: i caratteri divisori (predefinito: +++) sono configurabili",
-                "es": "agregar opción de enlace al widget de marquesina / widget de ayuda agregado / widget de marquesina: los caracteres divisores (predeterminado: +++) son configurables",
-                "pl": "dodaj opcję linku do widżetu marquee / pomoc widżetu dodana / widżet marquee: znaki rozdzielające (domyślnie: +++) są konfigurowalne",
-                "zh-cn": "添加链接选项到选取框小部件/小部件帮助添加/选取框小部件：分隔符（默认值：+++）是可配置的"
-            },
-            "0.0.20": {
-                "en": "add ejs syntax to template editor",
-                "de": "EJS-Syntax zum Vorlageneditor hinzufügen",
-                "ru": "добавить синтаксис ejs в редактор шаблонов",
-                "pt": "adicionar sintaxe ejs ao editor de modelos",
-                "nl": "voeg ejs-syntaxis toe aan sjablooneditor",
-                "fr": "ajouter la syntaxe ejs à l'éditeur de modèles",
-                "it": "aggiungi la sintassi ejs all'editor di modelli",
-                "es": "agregar sintaxis ejs al editor de plantillas",
-                "pl": "dodaj składnię ejs do edytora szablonów",
-                "zh-cn": "将 ejs 语法添加到模板编辑器"
-            }
-        },
-        "title": "RSS Feed",
-        "titleLang": {
-            "en": "RSS Feed",
-            "de": "rssfeed",
-            "ru": "Новостная лента",
-            "pt": "Feed RSS",
-            "nl": "rssfeed",
-            "fr": "Flux RSS",
-            "it": "RSS Feed",
-            "es": "RSS Feed",
-            "pl": "Kanał RSS",
-            "zh-cn": "RSS订阅"
-        },
-        "desc": {
-            "en": "Adapter and vis widget for rss feeds",
-            "de": "Adapter und Vis-Widget für rssfeeds",
-            "ru": "Адаптер и виджет vis для каналов RSS",
-            "pt": "Adaptador e widget vis para feeds RSS",
-            "nl": "Adapter en vis widget voor rssfeeds",
-            "fr": "Adaptateur et widget vis pour les flux rss",
-            "it": "Adattatore e widget vis per feed rss",
-            "es": "Adaptador y widget de visualización para feeds rss",
-            "pl": "Adapter i widżet Vis dla kanałów RSS",
-            "zh-cn": "rss提要的适配器和可见小部件"
-        },
-        "authors": ["oweitman <oweitman@gmx.de>"],
-        "keywords": [
-            "ioBroker",
-            "template",
-            "Smart Home",
-            "home automation",
-            "rss",
-            "atom",
-            "rdf",
-            "feed"
-        ],
-        "license": "MIT",
-        "platform": "Javascript/Node.js",
-        "main": "main.js",
-        "icon": "rssfeed-logo.png",
-        "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.rssfeed/main/admin/rssfeed.png",
-        "readme": "https://github.com/oweitman/ioBroker.rssfeed/blob/main/README.md",
-        "loglevel": "info",
-        "restartAdapters": ["vis","vis-2"],
-        "mode": "daemon",
-        "type": "misc-data",
-        "compact": true,
-        "connectionType": "cloud",
-        "dataSource": "poll",
-        "plugins": {
-            "sentry": {
-                "dsn": "https://abfab39a66054631bef76b3e92979c43@o1335795.ingest.sentry.io/6603729"
-            }
-        },
-        "jsonConfig": true,
-        "adminUI": {
-            "config": "json"
-        },
-        "eraseOnUpload": true,
-        "dependencies": [
-            {
-                "js-controller": ">=3.3.22"
-            }
-        ],
-        "globalDependencies": [
-            {
-                "admin": ">=5.1.13"
-            }
-        ]
+  "common": {
+    "name": "rssfeed",
+    "version": "2.8.2",
+    "news": {
+      "2.8.2": {
+        "en": "Fixed loading of words.js in vis",
+        "de": "Feste Beladung von Wörtern. in den Warenkorb",
+        "ru": "Фиксированная загрузка слов. js in vis",
+        "pt": "Carga fixa de palavras. O que se passa",
+        "nl": "Vast laden van woorden. js in vis",
+        "fr": "Chargement fixe de mots. js en vis",
+        "it": "Caricamento fisso delle parole. js in vis",
+        "es": "Carga fija de palabras. js in vis",
+        "pl": "Naprawiono ładowanie słów. js in vis",
+        "uk": "Фіксоване завантаження слів. js в vis",
+        "zh-cn": "固定装填文字. js 相对"
+      },
+      "2.8.1": {
+        "en": "Corrected vis widget\nadmin changed to jsonConfig, dev-environment now devcontainer",
+        "de": "Korrigiert vis Widget\nadmin geändert in jsonConfig, dev-environment jetzt devcontainer",
+        "ru": "Исправленный виджет vis\nadmin изменился к jsonConfig, dev-environment теперь devcontainer",
+        "pt": "Widget de vis corrigido\nadmin mudou para jsonConfig, dev-ambiente agora devcontainer",
+        "nl": "Vertaling:\nadministratie veranderd in JsonConfig, dev-environment nu devcontainer",
+        "fr": "Corrigé vis widget\nadministrateur a changé en jsonConfig, dev-environment maintenant devcontainer",
+        "it": "Corretto vis widget\nadmin cambiato in jsonConfig, dev-environment ora devcontainer",
+        "es": "Corregido vis widget\nadmin cambió a jsonConfig, dev-environment ahora devcontainer",
+        "pl": "Wyklęty widget\nadmin zmienił się na jsonConfig, dev-environment",
+        "uk": "Виправлено vis віджет\nadmin змінився на jsonConfig, dev-environment now devcontainer",
+        "zh-cn": "A. 殴打妻子\n降到目前降水的丛金。"
+      },
+      "2.7.0": {
+        "en": "admin changed to jsonConfig, dev-environment now devcontainer"
+      },
+      "2.6.1": {
+        "en": "add more informations to sentry"
+      },
+      "2.6.0": {
+        "en": "add sentry"
+      },
+      "2.5.0": {
+        "en": "add name option to widget marquee"
+      },
+      "2.0.0": {
+        "en": "Basic overhaul",
+        "de": "Grundüberholung",
+        "ru": "Капитальный ремонт",
+        "pt": "Revisão básica",
+        "nl": "Basisrevisie",
+        "fr": "Révision de base",
+        "it": "Revisione di base",
+        "es": "Revisión básica",
+        "pl": "Remont podstawowy",
+        "zh-cn": "基本大修"
+      }
     },
-    "native": {"test":123},
-    "objects": [],
-    "instanceObjects": [
-        {
-            "_id": "info",
-            "type": "channel",
-            "common": {
-                "name": "Information"
-            },
-            "native": {}
-        },
-        {
-            "_id": "info.connection",
-            "type": "state",
-            "common": {
-                "role": "indicator.connected",
-                "name": "Device or service connected",
-                "type": "boolean",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        }
-    ]
+    "title": "RSS Feed",
+    "titleLang": {
+      "en": "RSS Feed",
+      "de": "rssfeed",
+      "ru": "Новостная лента",
+      "pt": "Feed RSS",
+      "nl": "rssfeed",
+      "fr": "Flux RSS",
+      "it": "RSS Feed",
+      "es": "RSS Feed",
+      "pl": "Kanał RSS",
+      "zh-cn": "RSS订阅"
+    },
+    "desc": {
+      "en": "Adapter and vis widget for rss feeds",
+      "de": "Adapter und Vis-Widget für rssfeeds",
+      "ru": "Адаптер и виджет vis для каналов RSS",
+      "pt": "Adaptador e widget vis para feeds RSS",
+      "nl": "Adapter en vis widget voor rssfeeds",
+      "fr": "Adaptateur et widget vis pour les flux rss",
+      "it": "Adattatore e widget vis per feed rss",
+      "es": "Adaptador y widget de visualización para feeds rss",
+      "pl": "Adapter i widżet Vis dla kanałów RSS",
+      "zh-cn": "rss提要的适配器和可见小部件"
+    },
+    "authors": [
+      "oweitman <oweitman@gmx.de>"
+    ],
+    "keywords": [
+      "ioBroker",
+      "template",
+      "Smart Home",
+      "home automation",
+      "rss",
+      "atom",
+      "rdf",
+      "feed"
+    ],
+    "platform": "Javascript/Node.js",
+    "main": "main.js",
+    "icon": "rssfeed.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.rssfeed/master/admin/rssfeed-logo.png",
+    "readme": "https://github.com/oweitman/ioBroker.rssfeed/blob/master/README.md",
+    "loglevel": "info",
+    "restartAdapters": [
+      "vis"
+    ],
+    "mode": "daemon",
+    "type": "misc-data",
+    "compact": true,
+    "connectionType": "cloud",
+    "dataSource": "poll",
+    "plugins": {
+      "sentry": {
+        "dsn": "https://abfab39a66054631bef76b3e92979c43@o1335795.ingest.sentry.io/6603729"
+      }
+    },
+    "jsonConfig": true,
+    "adminUI": {
+      "config": "json"
+    },
+    "eraseOnUpload": true,
+    "licenseInformation": {
+      "type": "free",
+      "license": "MIT"
+    },
+    "dependencies": [
+      {
+        "js-controller": ">=3.3.22"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=5.1.13"
+      }
+    ],
+    "tier": 3
+  },
+  "native": {
+    "refresh": 60,
+    "maxarticles": 100,
+    "rss": []
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "role": "indicator.connected",
+        "name": "Device or service connected",
+        "type": "boolean",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    }
+  ]
 }
