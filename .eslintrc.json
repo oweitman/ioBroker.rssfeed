@@ -6,6 +6,7 @@
         "mocha": true
     },
     "extends": ["eslint:recommended"],
+    "plugins": [],
     "rules": {
         "indent": [
             "error",
@@ -36,7 +37,6 @@
         "semi": ["error", "always"]
     },
     "parserOptions": {
-        "ecmaVersion": 2020
-    },
-    "ignorePatterns": "widgets/"
+        "ecmaVersion": "latest"
+    }
 }

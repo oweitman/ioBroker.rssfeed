@@ -167,10 +167,16 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+
+* xxx
+
 ### 2.8.2 (2024-04-21)
+
 * (bluefox) Fixed loading of words.js in vis
 
 ### 2.8.1 (2023-03-15)
+
 * (bluefox) Corrected vis widget
 * admin changed to jsonConfig, dev-environment now devcontainer
 

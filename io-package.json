@@ -54,7 +54,6 @@
         "zh-cn": "基本大修"
       }
     },
-    "title": "RSS Feed",
     "titleLang": {
       "en": "RSS Feed",
       "de": "rssfeed",
@@ -83,15 +82,15 @@
       "oweitman <oweitman@gmx.de>"
     ],
     "keywords": [
-      "ioBroker",
-      "template",
-      "Smart Home",
-      "home automation",
       "rss",
       "atom",
       "rdf",
       "feed"
     ],
+    "licenseInformation": {
+        "type": "free",
+        "license": "MIT"
+    },
     "platform": "Javascript/Node.js",
     "main": "main.js",
     "icon": "rssfeed.png",
@@ -99,9 +98,8 @@
     "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.rssfeed/master/admin/rssfeed-logo.png",
     "readme": "https://github.com/oweitman/ioBroker.rssfeed/blob/master/README.md",
     "loglevel": "info",
-    "restartAdapters": [
-      "vis"
-    ],
+    "tier": 3,
+    "restartAdapters": [],
     "mode": "daemon",
     "type": "misc-data",
     "compact": true,
@@ -116,11 +114,6 @@
     "adminUI": {
       "config": "json"
     },
-    "eraseOnUpload": true,
-    "licenseInformation": {
-      "type": "free",
-      "license": "MIT"
-    },
     "dependencies": [
       {
         "js-controller": ">=3.3.22"
@@ -131,7 +124,6 @@
         "admin": ">=5.1.13"
       }
     ],
-    "tier": 3
   },
   "native": {
     "refresh": 60,
