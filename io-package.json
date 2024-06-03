@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "2.9.0",
+    "version": "2.9.1",
     "news": {
+      "2.9.1": {
+        "en": "update iobroker files and settings",
+        "de": "iobroker dateien und einstellungen aktualisieren",
+        "ru": "обновление iobroker файлов и настроек",
+        "pt": "atualizar arquivos e configurações do iobroker",
+        "nl": "iobroker bestanden en instellingen bijwerken",
+        "fr": "mettre à jour les fichiers et les paramètres d'iobroker",
+        "it": "aggiornare i file e le impostazioni di ibroker",
+        "es": "actualizar archivos y ajustes de iobroker",
+        "pl": "aktualizacja plików iobroker i ustawień",
+        "uk": "оновлення файлів і налаштувань iobroker",
+        "zh-cn": "更新 iobroduc 文件与设置"
+      },
       "2.8.2": {
         "en": "Fixed loading of words.js in vis",
         "de": "Feste Beladung von Wörtern. in den Warenkorb",
@@ -40,18 +53,6 @@
       },
       "2.5.0": {
         "en": "add name option to widget marquee"
-      },
-      "2.0.0": {
-        "en": "Basic overhaul",
-        "de": "Grundüberholung",
-        "ru": "Капитальный ремонт",
-        "pt": "Revisão básica",
-        "nl": "Basisrevisie",
-        "fr": "Révision de base",
-        "it": "Revisione di base",
-        "es": "Revisión básica",
-        "pl": "Remont podstawowy",
-        "zh-cn": "基本大修"
       }
     },
     "titleLang": {
@@ -88,8 +89,8 @@
       "feed"
     ],
     "licenseInformation": {
-        "type": "free",
-        "license": "MIT"
+      "type": "free",
+      "license": "MIT"
     },
     "platform": "Javascript/Node.js",
     "main": "main.js",
