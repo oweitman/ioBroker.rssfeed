@@ -1,2 +1,7 @@
 .prettierrc.js
 **/.eslintrc.js
+widgets/rssfeed/js/clipboard-polyfill.promise.js
+widgets/rssfeed/js/highlight.pack.js
+widgets/rssfeed/js/jquery-3.2.1.min.js
+widgets/rssfeed/js/ejs.js
+widgets/rssfeed/js/mode-ejs.js

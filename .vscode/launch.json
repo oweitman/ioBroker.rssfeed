@@ -1,19 +1,77 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch javascript Adapter",
+            "name": "default Launch ioBroker Adapter ",
             "skipFiles": ["<node_internals>/**"],
-            "program": "${workspaceFolder}/main.js",
             "args": ["--debug", "0"],
-            "outFiles": ["${workspaceFolder}/build/**/*.js"],
-            "outputCapture": "std"
-
-        }
+            "program": "node_modules/iobroker.rssfeed/main.js",
+            "cwd": "${workspaceFolder}/.dev-server/default",
+            "runtimeExecutable": "c:/Users/oweit/AppData/Roaming/fnm/aliases/default/node.exe",
+            "stopOnEntry": false,
+            "sourceMaps": true,
+            "resolveSourceMapLocations": ["${workspaceFolder}/**", "!**/node_modules/**"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "vis2 Launch ioBroker Adapter ",
+            "skipFiles": ["<node_internals>/**"],
+            "args": ["--debug", "0"],
+            "program": "node_modules/iobroker.rssfeed/main.js",
+            "cwd": "${workspaceFolder}/.dev-server/vis2",
+            "runtimeExecutable": "c:/Users/oweit/AppData/Roaming/fnm/aliases/default/node.exe",
+            "xstopOnEntry": true,
+            "sourceMaps": true,
+            "resolveSourceMapLocations": ["${workspaceFolder}/**", "!**/node_modules/**"]
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "vis2 attach ioBroker Adapter ",
+            "sourceMaps": true,
+            "port": 9229
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch my cool app",
+            "url": "http://127.0.0.1:8082/vis/index.html#main",
+            "trace": true,
+            "skipFiles": [
+                "socket.io.js",
+              ]            
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "vis2 Launch Edit",
+            "url": "http://127.0.0.1:8082/vis-2/edit.html#default",
+            "trace": true,
+            "skipFiles": [
+                "socket.io.js",
+              ]            
+        },            {
+            "type": "chrome",
+            "request": "launch",
+            "name": "vis2 Launch my cool app",
+            "url": "http://localhost:8082/vis-2/?main#default",
+            "trace": true,
+            "skipFiles": [
+                "socket.io.js",
+              ]            
+        },        
+		{
+			"name": "Debug TS adapter",
+			"port": 9229,
+			"request": "attach",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"type": "node"
+		}
     ]
 }
+//node --inspect-brk=localhost:9229 .\node_modules\iobroker.rssfeed\main.js

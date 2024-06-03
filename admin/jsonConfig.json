@@ -20,7 +20,7 @@
         },
         "_warning": {
           "newLine": true,
-          "type": "statictext",
+          "type": "staticText",
           "label": "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service"
         },
         "rss": {
@@ -74,7 +74,7 @@
               "sort": true,
               "min": 5,
               "defaultFunc": "globalData.refresh",
-              "xvalidator": "data.refresh>=5",
+              "validator": "data.refresh>=5",
               "validatorNoSaveOnError": true
             },
             {
@@ -86,7 +86,7 @@
               "sort": true,
               "min": 1,
               "defaultFunc": "globalData.maxarticles",
-              "xvalidator": "data.maxarticles>=1",
+              "validator": "data.maxarticles>=1",
               "validatorNoSaveOnError": true
             }
           ]

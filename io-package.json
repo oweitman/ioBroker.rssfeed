@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "2.8.2",
+    "version": "2.9.0",
     "news": {
       "2.8.2": {
         "en": "Fixed loading of words.js in vis",
@@ -93,7 +93,7 @@
     },
     "platform": "Javascript/Node.js",
     "main": "main.js",
-    "icon": "rssfeed.png",
+    "icon": "admin/rssfeed-logo.png",
     "enabled": true,
     "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.rssfeed/master/admin/rssfeed-logo.png",
     "readme": "https://github.com/oweitman/ioBroker.rssfeed/blob/master/README.md",
@@ -110,7 +110,6 @@
         "dsn": "https://abfab39a66054631bef76b3e92979c43@o1335795.ingest.sentry.io/6603729"
       }
     },
-    "jsonConfig": true,
     "adminUI": {
       "config": "json"
     },
@@ -123,7 +122,7 @@
       {
         "admin": ">=5.1.13"
       }
-    ],
+    ]
   },
   "native": {
     "refresh": 60,
