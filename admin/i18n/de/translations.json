@@ -1,0 +1,13 @@
+{
+    "rssfeed1 adapter settings": "Adaptereinstellungen für rssfeed1",
+    "option1": "Option 1",
+    "option2": "Option 2",
+    "Default Refresh (min)": "Standardaktualisierung (Min.)",
+    "Default Max articles": "Standard-Max-Artikel",
+    "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service": "Warnung: Bitte stellen Sie die Bildwiederholfrequenz nicht zu niedrig ein. Möglicherweise wird der Anbieter Sie sperren oder den Dienst einstellen",
+    "Name": "Name",
+    "Category": "Kategorie",
+    "URL": "URL",
+    "Refresh (min)": "Aktualisieren (Min.)",
+    "Max Articles": "Maximale Artikel"
+}
