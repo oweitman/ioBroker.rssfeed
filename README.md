@@ -169,7 +169,7 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 2.9.2 (2024-06-04)
 
 * add some translations
 * fix warning from adapter checker

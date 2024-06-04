@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "2.9.1",
+    "version": "2.9.2",
     "news": {
+      "2.9.2": {
+        "en": "add some translations\nfix warning from adapter checker",
+        "de": "einige übersetzungen hinzufügen\nwarnung vor adapter-checker",
+        "ru": "добавить некоторые переводы\nпредостережение от адаптера",
+        "pt": "adicionar algumas traduções\ncorrigir aviso do verificador do adaptador",
+        "nl": "enkele vertalingen toevoegen\nrepareren waarschuwing van adaptercontrole",
+        "fr": "ajouter quelques traductions\ncorrection de l'avertissement du vérificateur d'adaptateur",
+        "it": "aggiungere alcune traduzioni\nfissare l'avvertimento da adattatore",
+        "es": "añadir algunas traducciones\naviso de fijación del adaptador",
+        "pl": "dodaj kilka tłumaczeń\nnaprawić ostrzeżenie z kontrolera adaptera",
+        "uk": "додати деякі переклади\nфіксувати попередження від перевірки адаптера",
+        "zh-cn": "添加一些翻译\n从适配器检查器中修补警告"
+      },
       "2.9.1": {
         "en": "update iobroker files and settings",
         "de": "iobroker dateien und einstellungen aktualisieren",
@@ -80,19 +93,6 @@
         "pl": "dodaj wartownika",
         "uk": "додати вартового",
         "zh-cn": "添加哨兵"
-      },
-      "2.5.0": {
-        "en": "add name option to widget marquee",
-        "de": "Namensoption zum Widget-Laufrahmen hinzufügen",
-        "ru": "добавить опцию имени в область виджета",
-        "pt": "adicionar opção de nome ao letreiro do widget",
-        "nl": "voeg een naamoptie toe aan het widgetselectiekader",
-        "fr": "ajouter une option de nom au rectangle de sélection du widget",
-        "it": "aggiungi l'opzione del nome al riquadro del widget",
-        "es": "agregar opción de nombre a la marquesina del widget",
-        "pl": "dodaj opcję nazwy do markizy widżetu",
-        "uk": "додати опцію назви до рамки віджета",
-        "zh-cn": "将名称选项添加到小部件选框"
       }
     },
     "titleLang": {
