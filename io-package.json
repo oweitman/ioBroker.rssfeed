@@ -136,7 +136,7 @@
     },
     "platform": "Javascript/Node.js",
     "main": "main.js",
-    "icon": "admin/rssfeed.png",
+    "icon": "rssfeed.png",
     "enabled": true,
     "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.rssfeed/master/admin/rssfeed.png",
     "readme": "https://github.com/oweitman/ioBroker.rssfeed/blob/master/README.md",
