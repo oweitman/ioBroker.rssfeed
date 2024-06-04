@@ -23,7 +23,7 @@ fetch("widgets/rssfeed/js/words.js")
 
 // this code can be placed directly in rssfeed.html
 vis.binds["rssfeed"] = {
-    version: "0.0.1",
+    version: "2.9.2",
     showVersion: function () {
         if (vis.binds["rssfeed"].version) {
             console.log("Version rssfeed: " + vis.binds["rssfeed"].version);

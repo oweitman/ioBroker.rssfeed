@@ -43,16 +43,56 @@
         "zh-cn": "A. 殴打妻子\n降到目前降水的丛金。"
       },
       "2.7.0": {
-        "en": "admin changed to jsonConfig, dev-environment now devcontainer"
+        "en": "admin changed to jsonConfig, dev-environment now devcontainer",
+        "de": "Admin wurde zu jsonConfig geändert, Dev-Environment jetzt Devcontainer",
+        "ru": "администратор изменен на jsonConfig, dev-environment теперь devcontainer",
+        "pt": "admin mudou para jsonConfig, dev-environment agora devcontainer",
+        "nl": "admin gewijzigd in jsonConfig, dev-omgeving nu devcontainer",
+        "fr": "admin est devenu jsonConfig, dev-environment maintenant devcontainer",
+        "it": "l'amministratore è stato modificato in jsonConfig, dev-environment ora devcontainer",
+        "es": "El administrador cambió a jsonConfig, dev-environment ahora devcontainer",
+        "pl": "admin zmieniony na jsonConfig, środowisko deweloperskie teraz devcontainer",
+        "uk": "admin змінено на jsonConfig, середовище розробника тепер devcontainer",
+        "zh-cn": "admin 更改为 jsonConfig，开发环境现在为 devcontainer"
       },
       "2.6.1": {
-        "en": "add more informations to sentry"
+        "en": "add more informations to sentry",
+        "de": "Fügen Sie Sentry weitere Informationen hinzu",
+        "ru": "добавить больше информации в Sentry",
+        "pt": "adicione mais informações ao sentinela",
+        "nl": "voeg meer informatie toe aan de schildwacht",
+        "fr": "ajouter plus d'informations à la sentinelle",
+        "it": "aggiungi ulteriori informazioni a sentinella",
+        "es": "agregar más información a centinela",
+        "pl": "dodaj więcej informacji do wartownika",
+        "uk": "додати більше інформації до вартового",
+        "zh-cn": "向哨兵添加更多信息"
       },
       "2.6.0": {
-        "en": "add sentry"
+        "en": "add sentry",
+        "de": "Wachposten hinzufügen",
+        "ru": "добавить часового",
+        "pt": "adicionar sentinela",
+        "nl": "schildwacht toevoegen",
+        "fr": "ajouter une sentinelle",
+        "it": "aggiungi sentinella",
+        "es": "agregar centinela",
+        "pl": "dodaj wartownika",
+        "uk": "додати вартового",
+        "zh-cn": "添加哨兵"
       },
       "2.5.0": {
-        "en": "add name option to widget marquee"
+        "en": "add name option to widget marquee",
+        "de": "Namensoption zum Widget-Laufrahmen hinzufügen",
+        "ru": "добавить опцию имени в область виджета",
+        "pt": "adicionar opção de nome ao letreiro do widget",
+        "nl": "voeg een naamoptie toe aan het widgetselectiekader",
+        "fr": "ajouter une option de nom au rectangle de sélection du widget",
+        "it": "aggiungi l'opzione del nome al riquadro del widget",
+        "es": "agregar opción de nombre a la marquesina del widget",
+        "pl": "dodaj opcję nazwy do markizy widżetu",
+        "uk": "додати опцію назви до рамки віджета",
+        "zh-cn": "将名称选项添加到小部件选框"
       }
     },
     "titleLang": {
@@ -65,7 +105,8 @@
       "it": "RSS Feed",
       "es": "RSS Feed",
       "pl": "Kanał RSS",
-      "zh-cn": "RSS订阅"
+      "zh-cn": "RSS订阅",
+      "uk": "RSS-канал"
     },
     "desc": {
       "en": "Adapter and vis widget for rss feeds",
@@ -77,7 +118,8 @@
       "it": "Adattatore e widget vis per feed rss",
       "es": "Adaptador y widget de visualización para feeds rss",
       "pl": "Adapter i widżet Vis dla kanałów RSS",
-      "zh-cn": "rss提要的适配器和可见小部件"
+      "zh-cn": "rss提要的适配器和可见小部件",
+      "uk": "Адаптер і віджет vis для RSS-каналів"
     },
     "authors": [
       "oweitman <oweitman@gmx.de>"
