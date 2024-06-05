@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "2.9.3",
+    "version": "2.9.4",
     "news": {
+      "2.9.4": {
+        "en": "test release after rename branch from master to main",
+        "de": "testfreigabe nach umbenennen von stamm zu haupt",
+        "ru": "тест-релиз после переименования филиала от мастера до основного",
+        "pt": "versão de teste após o renomear ramo de mestre para principal",
+        "nl": "test release na hernoemen van master naar main",
+        "fr": "test release après renommer branche de master à main",
+        "it": "rilascio del test dopo rinomina ramo da master a main",
+        "es": "prueba de liberación después de renombre rama de master a principal",
+        "pl": "zwolnienie testu po zmianie nazwy gałęzi od master do main",
+        "uk": "тест-реліз після перейменування гілки від майстра до основного",
+        "zh-cn": "将分支从主机重命名为主机后测试释放"
+      },
       "2.9.3": {
         "en": "switch branchname from master to main\nadd node 22 to tests",
         "de": "zweigname von master nach haupt wechseln\nknoten 22 zu tests hinzufügen",
@@ -80,19 +93,6 @@
         "pl": "admin zmieniony na jsonConfig, środowisko deweloperskie teraz devcontainer",
         "uk": "admin змінено на jsonConfig, середовище розробника тепер devcontainer",
         "zh-cn": "admin 更改为 jsonConfig，开发环境现在为 devcontainer"
-      },
-      "2.6.1": {
-        "en": "add more informations to sentry",
-        "de": "Fügen Sie Sentry weitere Informationen hinzu",
-        "ru": "добавить больше информации в Sentry",
-        "pt": "adicione mais informações ao sentinela",
-        "nl": "voeg meer informatie toe aan de schildwacht",
-        "fr": "ajouter plus d'informations à la sentinelle",
-        "it": "aggiungi ulteriori informazioni a sentinella",
-        "es": "agregar más información a centinela",
-        "pl": "dodaj więcej informacji do wartownika",
-        "uk": "додати більше інформації до вартового",
-        "zh-cn": "向哨兵添加更多信息"
       }
     },
     "titleLang": {
