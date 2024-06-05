@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "2.9.2",
+    "version": "2.9.3",
     "news": {
+      "2.9.3": {
+        "en": "switch branchname from master to main\nadd node 22 to tests",
+        "de": "zweigname von master nach haupt wechseln\nknoten 22 zu tests hinzufügen",
+        "ru": "имя переключателя от мастера до главного\nдобавить узел 22 к испытаниям",
+        "pt": "mudar o nome do ramo de mestre para principal\nadicionar nó 22 para testes",
+        "nl": "schakelt branchnaam van master naar main\nnode 22 toevoegen aan tests",
+        "fr": "changer le nom de branche de master vers main\najouter le noeud 22 aux essais",
+        "it": "cambiare nome di ramo da master a main\naggiungere nodo 22 ai test",
+        "es": "cambiar el nombre de la rama de master a principal\nañadir nodo 22 a las pruebas",
+        "pl": "przełącz nazwę marki z master na main\ndodać węzeł 22 do testów",
+        "uk": "переключити назву від майстра до основного\nдодати вузол 22 для тестів",
+        "zh-cn": "从主机切换到主机\n在测试中添加节点 22"
+      },
       "2.9.2": {
         "en": "add some translations\nfix warning from adapter checker",
         "de": "einige übersetzungen hinzufügen\nwarnung vor adapter-checker",
@@ -80,19 +93,6 @@
         "pl": "dodaj więcej informacji do wartownika",
         "uk": "додати більше інформації до вартового",
         "zh-cn": "向哨兵添加更多信息"
-      },
-      "2.6.0": {
-        "en": "add sentry",
-        "de": "Wachposten hinzufügen",
-        "ru": "добавить часового",
-        "pt": "adicionar sentinela",
-        "nl": "schildwacht toevoegen",
-        "fr": "ajouter une sentinelle",
-        "it": "aggiungi sentinella",
-        "es": "agregar centinela",
-        "pl": "dodaj wartownika",
-        "uk": "додати вартового",
-        "zh-cn": "添加哨兵"
       }
     },
     "titleLang": {
