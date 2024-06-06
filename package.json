@@ -22,8 +22,8 @@
     "node": ">=18"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^3.1.4",
-    "chardet": "^1.6.1",
+    "@iobroker/adapter-core": "^3.1.6",
+    "chardet": "^2.0.0",
     "ejs": "^3.1.10",
     "feedparser": "^2.2.10",
     "iconv-lite": "^0.6.3",
