@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "2.9.4",
+    "version": "2.9.5",
     "news": {
+      "2.9.5": {
+        "en": "fix branch name in link",
+        "de": "filialnamen in link fix",
+        "ru": "исправить имя филиала в ссылке",
+        "pt": "corrigir nome do ramo no link",
+        "nl": "fix branch name in link",
+        "fr": "correction du nom de la branche dans le lien",
+        "it": "correggere il nome del ramo nel link",
+        "es": "fijar nombre de rama en el enlace",
+        "pl": "fix branch name in link",
+        "uk": "виправлено назву гілки за посиланням",
+        "zh-cn": "在链接中固定分支名称"
+      },
       "2.9.4": {
         "en": "test release after rename branch from master to main",
         "de": "testfreigabe nach umbenennen von stamm zu haupt",
@@ -80,19 +93,6 @@
         "pl": "Wyklęty widget\nadmin zmienił się na jsonConfig, dev-environment",
         "uk": "Виправлено vis віджет\nadmin змінився на jsonConfig, dev-environment now devcontainer",
         "zh-cn": "A. 殴打妻子\n降到目前降水的丛金。"
-      },
-      "2.7.0": {
-        "en": "admin changed to jsonConfig, dev-environment now devcontainer",
-        "de": "Admin wurde zu jsonConfig geändert, Dev-Environment jetzt Devcontainer",
-        "ru": "администратор изменен на jsonConfig, dev-environment теперь devcontainer",
-        "pt": "admin mudou para jsonConfig, dev-environment agora devcontainer",
-        "nl": "admin gewijzigd in jsonConfig, dev-omgeving nu devcontainer",
-        "fr": "admin est devenu jsonConfig, dev-environment maintenant devcontainer",
-        "it": "l'amministratore è stato modificato in jsonConfig, dev-environment ora devcontainer",
-        "es": "El administrador cambió a jsonConfig, dev-environment ahora devcontainer",
-        "pl": "admin zmieniony na jsonConfig, środowisko deweloperskie teraz devcontainer",
-        "uk": "admin змінено на jsonConfig, середовище розробника тепер devcontainer",
-        "zh-cn": "admin 更改为 jsonConfig，开发环境现在为 devcontainer"
       }
     },
     "titleLang": {
