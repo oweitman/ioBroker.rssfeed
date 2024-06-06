@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "2.9.5",
+    "version": "2.9.6",
     "news": {
+      "2.9.6": {
+        "en": "fix branch name in link",
+        "de": "filialnamen in link fix",
+        "ru": "исправить имя филиала в ссылке",
+        "pt": "corrigir nome do ramo no link",
+        "nl": "fix branch name in link",
+        "fr": "correction du nom de la branche dans le lien",
+        "it": "correggere il nome del ramo nel link",
+        "es": "fijar nombre de rama en el enlace",
+        "pl": "fix branch name in link",
+        "uk": "виправлено назву гілки за посиланням",
+        "zh-cn": "在链接中固定分支名称"
+      },
       "2.9.5": {
         "en": "fix branch name in link",
         "de": "filialnamen in link fix",
@@ -80,19 +93,6 @@
         "pl": "Naprawiono ładowanie słów. js in vis",
         "uk": "Фіксоване завантаження слів. js в vis",
         "zh-cn": "固定装填文字. js 相对"
-      },
-      "2.8.1": {
-        "en": "Corrected vis widget\nadmin changed to jsonConfig, dev-environment now devcontainer",
-        "de": "Korrigiert vis Widget\nadmin geändert in jsonConfig, dev-environment jetzt devcontainer",
-        "ru": "Исправленный виджет vis\nadmin изменился к jsonConfig, dev-environment теперь devcontainer",
-        "pt": "Widget de vis corrigido\nadmin mudou para jsonConfig, dev-ambiente agora devcontainer",
-        "nl": "Vertaling:\nadministratie veranderd in JsonConfig, dev-environment nu devcontainer",
-        "fr": "Corrigé vis widget\nadministrateur a changé en jsonConfig, dev-environment maintenant devcontainer",
-        "it": "Corretto vis widget\nadmin cambiato in jsonConfig, dev-environment ora devcontainer",
-        "es": "Corregido vis widget\nadmin cambió a jsonConfig, dev-environment ahora devcontainer",
-        "pl": "Wyklęty widget\nadmin zmienił się na jsonConfig, dev-environment",
-        "uk": "Виправлено vis віджет\nadmin змінився на jsonConfig, dev-environment now devcontainer",
-        "zh-cn": "A. 殴打妻子\n降到目前降水的丛金。"
       }
     },
     "titleLang": {
