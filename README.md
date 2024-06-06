@@ -169,7 +169,7 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-### 2.9.5 (2024-06-06)
+### **WORK IN PROGRESS**
 
 * fix branch name in link
 
