@@ -46,30 +46,30 @@ vis.binds["rssfeed"] = {
             const bound = [];
 
             for (let i1 = 1; i1 <= dpCount; i1++) {
-                if (data["rss_dp"+i1]) {
-                    bound.push(data["rss_dp"+i1]);
+                if (data["rss_dp" + i1]) {
+                    bound.push(data["rss_dp" + i1]);
                     console.debug("bound");
                 }
             }
             for (let i = 1; i <= feedCount; i++) {
-                const rss  = data["rss_oid"+i] ? JSON.parse(vis.states.attr(data["rss_oid"+i] + ".val")) : {};
-                if (! Object.prototype.hasOwnProperty.call(rss,"articles")) continue;
-                bound.push(data["rss_oid"+i]);
+                const rss = data["rss_oid" + i] ? JSON.parse(vis.states.attr(data["rss_oid" + i] + ".val")) : {};
+                if (!Object.prototype.hasOwnProperty.call(rss, "articles")) continue;
+                bound.push(data["rss_oid" + i]);
             }
             const that = this;
             // eslint-disable-next-line no-unused-vars
             function onChange(e, newVal, oldVal) {
                 if (newVal) that.render(widgetID, data);
             }
-            if (bound.length>0 ) {
+            if (bound.length > 0) {
                 // eslint-disable-next-line no-constant-condition
                 if (1 || !vis.editMode) {
-                    vis.binds["rssfeed"].bindStates($div,bound,onChange);
+                    vis.binds["rssfeed"].bindStates($div, bound, onChange);
                 }
             }
-            this.render(widgetID,data);
+            this.render(widgetID, data);
         },
-        render: function(widgetID,data) {
+        render: function (widgetID, data) {
 
             const articles = [];
             const datapoints = [];
@@ -77,8 +77,8 @@ vis.binds["rssfeed"] = {
             const dpCount = data.rss_dpCount ? data.rss_dpCount : 1;
 
             for (let i1 = 1; i1 <= dpCount; i1++) {
-                if (data["rss_dp"+i1]) {
-                    datapoints[data["rss_dp"+i1]] = vis.states.attr(data["rss_dp"+i1] + ".val");
+                if (data["rss_dp" + i1]) {
+                    datapoints[data["rss_dp" + i1]] = vis.states.attr(data["rss_dp" + i1] + ".val");
                 }
             }
 
@@ -91,26 +91,26 @@ vis.binds["rssfeed"] = {
                 <div style="clear:both;" />
                 <% }); %>
                             `;
-            const template  = (data["rss_template"] ? ( data["rss_template"].trim() ? data["rss_template"].trim() : defaulttemplate) : defaulttemplate);
+            const template = (data["rss_template"] ? (data["rss_template"].trim() ? data["rss_template"].trim() : defaulttemplate) : defaulttemplate);
 
             for (let i = 1; i <= feedCount; i++) {
-                const rss  = data["rss_oid"+i] ? JSON.parse(vis.states.attr(data["rss_oid"+i] + ".val")) : {};
-                if (!Object.prototype.hasOwnProperty.call(rss,"articles")) continue;
+                const rss = data["rss_oid" + i] ? JSON.parse(vis.states.attr(data["rss_oid" + i] + ".val")) : {};
+                if (!Object.prototype.hasOwnProperty.call(rss, "articles")) continue;
 
-                const filter  = data["rss_filter"+i] ? data["rss_filter"+i] : "";
-                let maxarticles = data["rss_maxarticles"+i] ? data["rss_maxarticles"+i] : 999;
+                const filter = data["rss_filter" + i] ? data["rss_filter" + i] : "";
+                let maxarticles = data["rss_maxarticles" + i] ? data["rss_maxarticles" + i] : 999;
                 maxarticles = maxarticles > 0 ? maxarticles : 1;
-                const name  = data["rss_name"+i] ? data["rss_name"+i] : "";
+                const name = data["rss_name" + i] ? data["rss_name" + i] : "";
 
-                if (rss && rss.articles && rss.articles.length > maxarticles) rss.articles = rss.articles.slice(0,maxarticles);
+                if (rss && rss.articles && rss.articles.length > maxarticles) rss.articles = rss.articles.slice(0, maxarticles);
 
-                if (filter!="") {
-                    rss.articles = rss.articles.filter((item)=>{
-                        return vis.binds["rssfeed"].checkHighlite(item.title+item.description+item.categories.toString(),filter);
+                if (filter != "") {
+                    rss.articles = rss.articles.filter((item) => {
+                        return vis.binds["rssfeed"].checkHighlite(item.title + item.description + item.categories.toString(), filter);
                     });
                 }
 
-                rss.articles = rss.articles.map((item)=>{
+                rss.articles = rss.articles.map((item) => {
                     item["meta_title"] = rss.meta.title;
                     item["meta_description"] = rss.meta.description;
                     item["meta_name"] = name;
@@ -120,31 +120,33 @@ vis.binds["rssfeed"] = {
             }
 
             let collect = [];
-            articles.forEach(function(item){
-                collect=collect.concat(item);
+            articles.forEach(function (item) {
+                collect = collect.concat(item);
             }
             );
 
-            collect.sort(function(a,b){
+            collect.sort(function (a, b) {
                 // Turn your strings into dates, and then subtract them
                 // to get a value that is either negative, positive, or zero.
                 return new Date(b.date) - new Date(a.date);
             });
-            const meta = new Proxy({},{get(target,name) {
-                if (name=="title" || name=="description") {
-                    return "meta."+ name +" is not available please use RSS Feed widget. Read the widget help";
-                } else {
-                    return "meta is not available please use RSS Feed widget. Read the widget help.";
+            const meta = new Proxy({}, {
+                get(target, name) {
+                    if (name == "title" || name == "description") {
+                        return "meta." + name + " is not available please use RSS Feed widget. Read the widget help";
+                    } else {
+                        return "meta is not available please use RSS Feed widget. Read the widget help.";
+                    }
                 }
-            }});
+            });
 
-            let text="";
+            let text = "";
             try {
-                text = ejs.render(template, {"articles": collect,"meta":meta,"dp":datapoints});
+                text = ejs.render(template, { "articles": collect, "meta": meta, "dp": datapoints });
             }
             catch (e) {
                 text = vis.binds["rssfeed"].escapeHTML(e.message).replace(/(?:\r\n|\r|\n)/g, "<br>");
-                text = text.replace(/ /gm,"&nbsp;");
+                text = text.replace(/ /gm, "&nbsp;");
                 text = '<code style="color:red;">' + text + "</code>";
             }
 
@@ -168,21 +170,21 @@ vis.binds["rssfeed"] = {
             const backcolor = style["background-color"] ? style["background-color"] : undefined;
 
             for (let i = 1; i <= feedCount; i++) {
-                const rss  = data["rss_oid"+i] ? JSON.parse(vis.states.attr(data["rss_oid"+i] + ".val")) : {};
-                if (!Object.prototype.hasOwnProperty.call(rss,"articles")) continue;
-                bound.push(data["rss_oid"+i]);
+                const rss = data["rss_oid" + i] ? JSON.parse(vis.states.attr(data["rss_oid" + i] + ".val")) : {};
+                if (!Object.prototype.hasOwnProperty.call(rss, "articles")) continue;
+                bound.push(data["rss_oid" + i]);
             }
-            const that=this;
+            const that = this;
             // eslint-disable-next-line no-unused-vars
             function onChange(e, newVal, oldVal) {
-                if (newVal) that.render(widgetID,data);
+                if (newVal) that.render(widgetID, data);
             }
 
-            if (bound.length>0 ) {
+            if (bound.length > 0) {
                 // eslint-disable-next-line no-constant-condition
                 if (1 || !vis.editMode) {
                     console.debug("bound");
-                    vis.binds["rssfeed"].bindStates($div,bound,onChange);
+                    vis.binds["rssfeed"].bindStates($div, bound, onChange);
                 }
             }
 
@@ -192,7 +194,7 @@ vis.binds["rssfeed"] = {
             text += "    max-width: 100vw; /* iOS braucht das */\n";
             text += "    white-space: nowrap;\n";
             text += "    overflow: hidden;\n";
-            if (backcolor) text += "    background-color: " + backcolor +"; /* Hintergrundfarbe des Lauftextes. Auskommentieren, um Transparent zu erhalten */\n";
+            if (backcolor) text += "    background-color: " + backcolor + "; /* Hintergrundfarbe des Lauftextes. Auskommentieren, um Transparent zu erhalten */\n";
             text += "    font-size:20px;\n";
             text += "}\n";
             text += "#" + widgetID + " .marquee span {\n";
@@ -208,7 +210,7 @@ vis.binds["rssfeed"] = {
                 text += "}\n";
             }
             text += "/* Make it move */\n";
-            text += "@keyframes "+ widgetID + "marquee {\n";
+            text += "@keyframes " + widgetID + "marquee {\n";
             text += "    0%   { transform: translateX(0); }\n";
             text += "    100% { transform: translateX(-100%); }\n";
             text += "}\n";
@@ -220,52 +222,52 @@ vis.binds["rssfeed"] = {
             text += '<div class="' + widgetID + ' marquee"><span>test test test</span></div>';
 
             $("#" + widgetID).html(text);
-            for(const attr in style){
-                if ("left,top,width,height".indexOf(attr)<0 && style[attr]!="") $("#" + widgetID+" span").css(attr,style[attr]);
+            for (const attr in style) {
+                if ("left,top,width,height".indexOf(attr) < 0 && style[attr] != "") $("#" + widgetID + " span").css(attr, style[attr]);
             }
-            this.render(widgetID,data);
+            this.render(widgetID, data);
         },
-        render: function(widgetID,data){
+        render: function (widgetID, data) {
             const articles = [];
             const feedCount = data.rss_feedCount ? data.rss_feedCount : 1;
-            const rss_withtime  = (data.rss_withtime)  ? data.rss_withtime  : false;
-            const rss_withdate  = (data.rss_withdate)  ? data.rss_withdate  : false;
-            const rss_withyear  = (data.rss_withyear)  ? data.rss_withyear  : false;
-            const rss_withname  = (data.rss_withname)  ? data.rss_withname  : false;
-            const divider  = data.rss_divider ? data.rss_divider : "+++";
+            const rss_withtime = (data.rss_withtime) ? data.rss_withtime : false;
+            const rss_withdate = (data.rss_withdate) ? data.rss_withdate : false;
+            const rss_withyear = (data.rss_withyear) ? data.rss_withyear : false;
+            const rss_withname = (data.rss_withname) ? data.rss_withname : false;
+            const divider = data.rss_divider ? data.rss_divider : "+++";
             const link = (data.rss_link) ? data.rss_link : false;
-            const speed  = data.rss_speed ? data.rss_speed : 6;
+            const speed = data.rss_speed ? data.rss_speed : 6;
 
             for (let i = 1; i <= feedCount; i++) {
-                const filter  = data["rss_filter"+i] ? data["rss_filter"+i] : "";
-                const rss  = data["rss_oid"+i] ? JSON.parse(vis.states.attr(data["rss_oid"+i] + ".val")) : {};
-                if (!Object.prototype.hasOwnProperty.call(rss,"articles")) continue;
+                const filter = data["rss_filter" + i] ? data["rss_filter" + i] : "";
+                const rss = data["rss_oid" + i] ? JSON.parse(vis.states.attr(data["rss_oid" + i] + ".val")) : {};
+                if (!Object.prototype.hasOwnProperty.call(rss, "articles")) continue;
 
-                let maxarticles = data["rss_maxarticles"+i] ? data["rss_maxarticles"+i] : 999;
+                let maxarticles = data["rss_maxarticles" + i] ? data["rss_maxarticles" + i] : 999;
                 maxarticles = maxarticles > 0 ? maxarticles : 1;
-                const name  = data["rss_name"+i] ? data["rss_name"+i] : "";
+                const name = data["rss_name" + i] ? data["rss_name" + i] : "";
                 if (filter) {
-                    rss.articles = rss.articles.filter((item)=>{
-                        return vis.binds["rssfeed"].checkHighlite(item.title+item.description+item.categories.toString(),filter);
+                    rss.articles = rss.articles.filter((item) => {
+                        return vis.binds["rssfeed"].checkHighlite(item.title + item.description + item.categories.toString(), filter);
                     });
                 }
-                if (rss && rss.articles && rss.articles.length > maxarticles) rss.articles = rss.articles.slice(0,maxarticles);
-                rss.articles = rss.articles.map((item)=>{
+                if (rss && rss.articles && rss.articles.length > maxarticles) rss.articles = rss.articles.slice(0, maxarticles);
+                rss.articles = rss.articles.map((item) => {
                     item["meta_title"] = rss.meta.title;
                     item["meta_description"] = rss.meta.description;
                     item["meta_name"] = name;
-                    item["meta_image"] = (rss.meta.image.url?rss.meta.image.url:"");
+                    item["meta_image"] = (rss.meta.image.url ? rss.meta.image.url : "");
 
                     return item;
                 });
                 articles.push(rss.articles);
             }
             let collect = [];
-            articles.forEach(function(item){
-                collect=collect.concat(item);
+            articles.forEach(function (item) {
+                collect = collect.concat(item);
             });
 
-            collect.sort(function(a,b){
+            collect.sort(function (a, b) {
                 // Turn your strings into dates, and then subtract them
                 // to get a value that is either negative, positive, or zero.
                 return new Date(b.date) - new Date(a.date);
@@ -274,22 +276,22 @@ vis.binds["rssfeed"] = {
             let titles = "";
             let titleslength = 0;
             if (collect && collect.length > 0) {
-                titles = collect.reduce(function(t,item){
+                titles = collect.reduce(function (t, item) {
                     let time = "";
-                    titleslength+=item.title.length;
-                    if (rss_withtime) time = vis.formatDate(item.date,"hh:mm");
-                    if (rss_withdate) time = vis.formatDate(item.date,"DD.MM/hh:mm");
-                    if (rss_withyear) time = vis.formatDate(item.date,"DD.MM.YY/hh:mm");
+                    titleslength += item.title.length;
+                    if (rss_withtime) time = vis.formatDate(item.date, "hh:mm");
+                    if (rss_withdate) time = vis.formatDate(item.date, "DD.MM/hh:mm");
+                    if (rss_withyear) time = vis.formatDate(item.date, "DD.MM.YY/hh:mm");
                     if (link) {
-                        t += " " + divider + " " + time + " " + (rss_withname?(item.meta_name||item.meta_title)+": ":"") + '<a href="' + item.link + '" target="rssarticle">' + time + " " + item.title + "</a>";
+                        t += " " + divider + " " + time + " " + (rss_withname ? (item.meta_name || item.meta_title) + ": " : "") + '<a href="' + item.link + '" target="rssarticle">' + time + " " + item.title + "</a>";
                     } else {
-                        t += " " + divider + " " + time + " " + (rss_withname?(item.meta_name||item.meta_title)+": ":"") + item.title;
+                        t += " " + divider + " " + time + " " + (rss_withname ? (item.meta_name || item.meta_title) + ": " : "") + item.title;
                     }
                     return t;
-                },titles);
-                const duration = (titleslength/speed).toFixed();
-                $("#"+widgetID+" .marquee span").css("animation-duration",duration+"s");
-                $("#"+widgetID+" .marquee span").html(titles);
+                }, titles);
+                const duration = (titleslength / speed).toFixed();
+                $("#" + widgetID + " .marquee span").css("animation-duration", duration + "s");
+                $("#" + widgetID + " .marquee span").html(titles);
             }
         }
     },
@@ -303,7 +305,7 @@ vis.binds["rssfeed"] = {
                     vis.binds["rssfeed"].rssfeedwidget2.createWidget(widgetID, view, data, style);
                 }, 100);
             }
-            const rss  = data.rss_oid ? JSON.parse(vis.states.attr(data.rss_oid + ".val")) : {};
+            const rss = data.rss_oid ? JSON.parse(vis.states.attr(data.rss_oid + ".val")) : {};
             const defaulttemplate = `
                 <p><%- meta.title %> </p>
                 <img src="<%- meta.image.url %>">
@@ -318,15 +320,15 @@ vis.binds["rssfeed"] = {
             No Object ID set
             `;
 
-            const template  = data.rss_template ? data.rss_template : defaulttemplate;
-            const filter  = data.rss_filter ? data.rss_filter : "";
+            const template = data.rss_template ? data.rss_template : defaulttemplate;
+            const filter = data.rss_filter ? data.rss_filter : "";
             let maxarticles = data.rss_maxarticles ? data.rss_maxarticles : 999;
             maxarticles = maxarticles > 0 ? maxarticles : 1;
-            if (rss && rss.articles && rss.articles.length > maxarticles) rss.articles = rss.articles.slice(0,maxarticles);
+            if (rss && rss.articles && rss.articles.length > maxarticles) rss.articles = rss.articles.slice(0, maxarticles);
 
-            if (filter!="") {
-                rss.articles = rss.articles.filter(function(item){
-                    return vis.binds["rssfeed"].checkHighlite(item.title+item.description+item.categories.toString(),filter);
+            if (filter != "") {
+                rss.articles = rss.articles.filter(function (item) {
+                    return vis.binds["rssfeed"].checkHighlite(item.title + item.description + item.categories.toString(), filter);
                 });
             }
 
@@ -335,16 +337,16 @@ vis.binds["rssfeed"] = {
                 if (newVal) vis.binds["rssfeed"].rssfeedwidget2.createWidget(widgetID, view, data, style);
             }
 
-            if (data.rss_oid ) {
+            if (data.rss_oid) {
                 // eslint-disable-next-line no-constant-condition
                 if (1 || !vis.editMode) {
-                    vis.binds["rssfeed"].bindStates($div,[data.rss_oid],onChange);
+                    vis.binds["rssfeed"].bindStates($div, [data.rss_oid], onChange);
                 }
             }
 
-            let text="";
+            let text = "";
             try {
-                if (typeof rss.meta=="undefined") {
+                if (typeof rss.meta == "undefined") {
                     text = ejs.render(errortemplate, rss);
                 } else {
                     text = ejs.render(template, rss);
@@ -352,7 +354,7 @@ vis.binds["rssfeed"] = {
             }
             catch (e) {
                 text = vis.binds["rssfeed"].escapeHTML(e.message).replace(/(?:\r\n|\r|\n)/g, "<br>");
-                text = text.replace(/ /gm,"&nbsp;");
+                text = text.replace(/ /gm, "&nbsp;");
                 text = '<code style="color:red;">' + text + "</code>";
             }
 
@@ -370,17 +372,17 @@ vis.binds["rssfeed"] = {
                 }, 100);
             }
             const bound = [];
-            const oiddata  = data.json_oid ? JSON.parse(vis.states.attr(data.json_oid + ".val")) : {};
-            const template  = data.json_template ? data.json_template : "";
+            const oiddata = data.json_oid ? JSON.parse(vis.states.attr(data.json_oid + ".val")) : {};
+            const template = data.json_template ? data.json_template : "";
             if (data.json_oid) bound.push(data.json_oid);
 
             const dpCount = data.rss_dpCount ? data.rss_dpCount : 1;
             const datapoints = [];
 
             for (let i = 1; i <= dpCount; i++) {
-                if (data["rss_dp"+i]) {
-                    datapoints[data["rss_dp"+i]] = vis.states.attr(data["rss_dp"+i] + ".val");
-                    bound.push(data["rss_dp"+i]);
+                if (data["rss_dp" + i]) {
+                    datapoints[data["rss_dp" + i]] = vis.states.attr(data["rss_dp" + i] + ".val");
+                    bound.push(data["rss_dp" + i]);
                 }
             }
 
@@ -390,46 +392,46 @@ vis.binds["rssfeed"] = {
                 if (newVal) vis.binds["rssfeed"].jsontemplate2.createWidget(widgetID, view, data, style);
             }
 
-            if (bound ) {
+            if (bound) {
                 // eslint-disable-next-line no-constant-condition
                 if (1 || !vis.editMode) {
-                    vis.binds["rssfeed"].bindStates($div,bound,vis.binds["rssfeed"].jsontemplate2.onChange.bind({widgetID:widgetID, view:view, data:data, style:style}));
+                    vis.binds["rssfeed"].bindStates($div, bound, vis.binds["rssfeed"].jsontemplate2.onChange.bind({ widgetID: widgetID, view: view, data: data, style: style }));
                 }
             }
-            let text="";
+            let text = "";
             try {
-                text = ejs.render(template, {"widgetID":widgetID,"data":oiddata,"dp":datapoints});
+                text = ejs.render(template, { "widgetID": widgetID, "data": oiddata, "dp": datapoints });
             }
             catch (e) {
                 text = vis.binds["rssfeed"].escapeHTML(e.message).replace(/(?:\r\n|\r|\n)/g, "<br>");
-                text = text.replace(/ /gm,"&nbsp;");
+                text = text.replace(/ /gm, "&nbsp;");
                 text = '<code style="color:red;">' + text + "</code>";
             }
             $("#" + widgetID).html(text);
         },
         // eslint-disable-next-line no-unused-vars
-        onChange: function(e, newVal, oldVal) {
+        onChange: function (e, newVal, oldVal) {
             if (newVal) vis.binds["rssfeed"].jsontemplate2.render(this.widgetID, this.view, this.data, this.style);
         },
         // eslint-disable-next-line no-unused-vars
-        render: function(widgetID, view, data, style) {
-            const oiddata  = data.json_oid ? JSON.parse(vis.states.attr(data.json_oid + ".val")) : {};
+        render: function (widgetID, view, data, style) {
+            const oiddata = data.json_oid ? JSON.parse(vis.states.attr(data.json_oid + ".val")) : {};
             const dpCount = data.rss_dpCount ? data.rss_dpCount : 1;
-            const template  = data.json_template ? data.json_template : "";
+            const template = data.json_template ? data.json_template : "";
             const datapoints = [];
 
             for (let i = 1; i <= dpCount; i++) {
-                if (data["rss_dp"+i]) {
-                    datapoints[data["rss_dp"+i]] = vis.states.attr(data["rss_dp"+i] + ".val");
+                if (data["rss_dp" + i]) {
+                    datapoints[data["rss_dp" + i]] = vis.states.attr(data["rss_dp" + i] + ".val");
                 }
             }
-            let text="";
+            let text = "";
             try {
-                text = ejs.render(template, {"widgetID":widgetID,"data":oiddata,"dp":datapoints});
+                text = ejs.render(template, { "widgetID": widgetID, "data": oiddata, "dp": datapoints });
             }
             catch (e) {
                 text = vis.binds["rssfeed"].escapeHTML(e.message).replace(/(?:\r\n|\r|\n)/g, "<br>");
-                text = text.replace(/ /gm,"&nbsp;");
+                text = text.replace(/ /gm, "&nbsp;");
                 text = '<code style="color:red;">' + text + "</code>";
             }
             $("#" + widgetID).html(text);
@@ -445,24 +447,24 @@ vis.binds["rssfeed"] = {
                     vis.binds["rssfeed"].metahelper.createWidget(widgetID, view, data, style);
                 }, 100);
             }
-            const rss  = data.rss_oid ? JSON.parse(vis.states.attr(data.rss_oid + ".val")) : {};
+            const rss = data.rss_oid ? JSON.parse(vis.states.attr(data.rss_oid + ".val")) : {};
 
             // eslint-disable-next-line no-unused-vars
             function onChange(e, newVal, oldVal) {
                 if (newVal) vis.binds["rssfeed"].metahelper.createWidget(widgetID, view, data, style);
             }
 
-            if (data.rss_oid ) {
+            if (data.rss_oid) {
                 // eslint-disable-next-line no-constant-condition
                 if (1 || !vis.editMode) {
-                    vis.binds["rssfeed"].bindStates($div,[data.rss_oid],onChange);
+                    vis.binds["rssfeed"].bindStates($div, [data.rss_oid], onChange);
                 }
             }
 
             let text = "";
 
             text += "<style> \n";
-            text += "#"+widgetID + " .rssfeed th {\n";
+            text += "#" + widgetID + " .rssfeed th {\n";
             text += "   white-space: nowrap;\n";
             text += "   text-align: left;\n";
             text += "   vertical-align: top;\n";
@@ -470,20 +472,20 @@ vis.binds["rssfeed"] = {
             text += "</style> \n";
 
             text += '<table class="rssfeed attributes">';
-            text += "<tr><th>meta.title</th><td>"+rss.meta.title+"</td></tr>";
-            text += "<tr><th>meta.description</th><td>"+rss.meta.description+"</td></tr>";
-            text += "<tr><th>meta.link</th><td>"+rss.meta.link+"</td></tr>";
-            text += "<tr><th>meta.xmlurl</th><td>"+rss.meta.xmlurl+"</td></tr>";
-            text += "<tr><th>meta.date</th><td>"+rss.meta.date+"</td></tr>";
-            text += "<tr><th>meta.pubdate</th><td>"+rss.meta.pubdate+"</td></tr>";
-            text += "<tr><th>meta.author</th><td>"+rss.meta.author+"</td></tr>";
-            text += "<tr><th>meta.language</th><td>"+rss.meta.language+"</td></tr>";
-            text += "<tr><th>meta.image.url</th><td>"+rss.meta.image.url+"</td></tr>";
-            text += "<tr><th>meta.image.title</th><td>"+rss.meta.image.title+"</td></tr>";
-            text += "<tr><th>meta.favicon</th><td>"+rss.meta.favicon+"</td></tr>";
-            text += "<tr><th>meta.copyright</th><td>"+rss.meta.copyright+"</td></tr>";
-            text += "<tr><th>meta.generator</th><td>"+rss.meta.generator+"</td></tr>";
-            text += "<tr><th>meta.categories</th><td>"+rss.meta.categories.toString()+"</td></tr>";
+            text += "<tr><th>meta.title</th><td>" + rss.meta.title + "</td></tr>";
+            text += "<tr><th>meta.description</th><td>" + rss.meta.description + "</td></tr>";
+            text += "<tr><th>meta.link</th><td>" + rss.meta.link + "</td></tr>";
+            text += "<tr><th>meta.xmlurl</th><td>" + rss.meta.xmlurl + "</td></tr>";
+            text += "<tr><th>meta.date</th><td>" + rss.meta.date + "</td></tr>";
+            text += "<tr><th>meta.pubdate</th><td>" + rss.meta.pubdate + "</td></tr>";
+            text += "<tr><th>meta.author</th><td>" + rss.meta.author + "</td></tr>";
+            text += "<tr><th>meta.language</th><td>" + rss.meta.language + "</td></tr>";
+            text += "<tr><th>meta.image.url</th><td>" + rss.meta.image.url + "</td></tr>";
+            text += "<tr><th>meta.image.title</th><td>" + rss.meta.image.title + "</td></tr>";
+            text += "<tr><th>meta.favicon</th><td>" + rss.meta.favicon + "</td></tr>";
+            text += "<tr><th>meta.copyright</th><td>" + rss.meta.copyright + "</td></tr>";
+            text += "<tr><th>meta.generator</th><td>" + rss.meta.generator + "</td></tr>";
+            text += "<tr><th>meta.categories</th><td>" + rss.meta.categories.toString() + "</td></tr>";
             text += "</table>";
 
             $("#" + widgetID).html(text);
@@ -499,7 +501,7 @@ vis.binds["rssfeed"] = {
                     vis.binds["rssfeed"].articlehelper2.createWidget(widgetID, view, data, style);
                 }, 100);
             }
-            const rss  = data.rss_oid ? JSON.parse(vis.states.attr(data.rss_oid + ".val")) : {};
+            const rss = data.rss_oid ? JSON.parse(vis.states.attr(data.rss_oid + ".val")) : {};
             const prefix = data.rss_prefix ? data.rss_prefix : "item";
             let article = data.rss_article ? data.rss_article : 1;
             article = article > 0 ? article : 1;
@@ -509,21 +511,21 @@ vis.binds["rssfeed"] = {
                 if (newVal) vis.binds["rssfeed"].articlehelper2.createWidget(widgetID, view, data, style);
             }
 
-            if (data.rss_oid ) {
+            if (data.rss_oid) {
                 // eslint-disable-next-line no-constant-condition
                 if (1 || !vis.editMode) {
-                    vis.binds["rssfeed"].bindStates($div,[data.rss_oid],onChange);
+                    vis.binds["rssfeed"].bindStates($div, [data.rss_oid], onChange);
                 }
             }
 
-            const item = rss.articles[article-1];
+            const item = rss.articles[article - 1];
 
             let text = "";
 
             if (item) {
 
                 text += "<style> \n";
-                text += "#"+widgetID + " .rssfeed th {\n";
+                text += "#" + widgetID + " .rssfeed th {\n";
                 text += "   white-space: nowrap;\n";
                 text += "   text-align: left;\n";
                 text += "   vertical-align: top;\n";
@@ -531,26 +533,26 @@ vis.binds["rssfeed"] = {
                 text += "</style> \n";
 
                 text += '<table class="rssfeed attributes">';
-                text += "<tr><th>"+prefix+".title</th><td>"+item.title+"</td></tr>";
-                text += "<tr><th>"+prefix+".description</th><td>"+item.description+"</td></tr>";
-                text += "<tr><th>"+prefix+".summary</th><td>"+item.summary+"</td></tr>";
-                text += "<tr><th>"+prefix+".link</th><td>"+item.link+"</td></tr>";
-                text += "<tr><th>"+prefix+".origlink</th><td>"+item.origlink+"</td></tr>";
-                text += "<tr><th>"+prefix+".permalink</th><td>"+item.permalink+"</td></tr>";
-                text += "<tr><th>"+prefix+".date</th><td>"+item.date+"</td></tr>";
-                text += "<tr><th>"+prefix+".pubdate</th><td>"+item.pubdate+"</td></tr>";
-                text += "<tr><th>"+prefix+".author</th><td>"+item.author+"</td></tr>";
-                text += "<tr><th>"+prefix+".guid</th><td>"+item.guid+"</td></tr>";
-                text += "<tr><th>"+prefix+".comments</th><td>"+item.comments+"</td></tr>";
-                text += "<tr><th>"+prefix+".image.url</th><td>"+item.image.url+"</td></tr>";
-                text += "<tr><th>"+prefix+".image.title</th><td>"+item.image.title+"</td></tr>";
-                text += "<tr><th>"+prefix+".categories</th><td>"+item.categories+"</td></tr>";
-                text += "<tr><th>"+prefix+".source</th><td>"+JSON.stringify(item.source)+"</td></tr>";
-                text += "<tr><th>"+prefix+".enclosures</th><td>"+JSON.stringify(item.enclosures)+"</td></tr>";
+                text += "<tr><th>" + prefix + ".title</th><td>" + item.title + "</td></tr>";
+                text += "<tr><th>" + prefix + ".description</th><td>" + item.description + "</td></tr>";
+                text += "<tr><th>" + prefix + ".summary</th><td>" + item.summary + "</td></tr>";
+                text += "<tr><th>" + prefix + ".link</th><td>" + item.link + "</td></tr>";
+                text += "<tr><th>" + prefix + ".origlink</th><td>" + item.origlink + "</td></tr>";
+                text += "<tr><th>" + prefix + ".permalink</th><td>" + item.permalink + "</td></tr>";
+                text += "<tr><th>" + prefix + ".date</th><td>" + item.date + "</td></tr>";
+                text += "<tr><th>" + prefix + ".pubdate</th><td>" + item.pubdate + "</td></tr>";
+                text += "<tr><th>" + prefix + ".author</th><td>" + item.author + "</td></tr>";
+                text += "<tr><th>" + prefix + ".guid</th><td>" + item.guid + "</td></tr>";
+                text += "<tr><th>" + prefix + ".comments</th><td>" + item.comments + "</td></tr>";
+                text += "<tr><th>" + prefix + ".image.url</th><td>" + item.image.url + "</td></tr>";
+                text += "<tr><th>" + prefix + ".image.title</th><td>" + item.image.title + "</td></tr>";
+                text += "<tr><th>" + prefix + ".categories</th><td>" + item.categories + "</td></tr>";
+                text += "<tr><th>" + prefix + ".source</th><td>" + JSON.stringify(item.source) + "</td></tr>";
+                text += "<tr><th>" + prefix + ".enclosures</th><td>" + JSON.stringify(item.enclosures) + "</td></tr>";
                 text += "</table>";
             } else {
                 text += '<table class="rssfeed attributes">';
-                text += "<tr><th>No Data. End of List of "+ rss.articles.length +" Articles</th></tr>";
+                text += "<tr><th>No Data. End of List of " + rss.articles.length + " Articles</th></tr>";
                 text += "</table>";
             }
 
@@ -558,15 +560,15 @@ vis.binds["rssfeed"] = {
             $("#" + widgetID).html(text);
         },
     },
-    checkHighlite: function(value,highlights,sep) {
+    checkHighlite: function (value, highlights, sep) {
         sep = typeof sep !== "undefined" ? sep : ";";
         const highlight = highlights.split(sep);
-        return highlight.reduce(function(acc,cur){
-            if (cur=="") return acc;
-            return acc || value.toLowerCase().indexOf(cur.toLowerCase())>=0;
-        },false);
+        return highlight.reduce(function (acc, cur) {
+            if (cur == "") return acc;
+            return acc || value.toLowerCase().indexOf(cur.toLowerCase()) >= 0;
+        }, false);
     },
-    bindStates: function(elem, bound, change_callback) {
+    bindStates: function (elem, bound, change_callback) {
         const $div = $(elem);
         const boundstates = $div.data("bound");
         if (boundstates) {
@@ -582,12 +584,12 @@ vis.binds["rssfeed"] = {
             vis.conn.subscribe(bound);
             $div.data("bound", bound);
             $div.data("bindHandler", change_callback);
-            for (let i=0;i<bound.length;i++) {
-                bound[i]=bound[i]+".val";
-                vis.states.bind(bound[i] , change_callback);
+            for (let i = 0; i < bound.length; i++) {
+                bound[i] = bound[i] + ".val";
+                vis.states.bind(bound[i], change_callback);
             }
             vis.updateStates(states);
-        }.bind({change_callback}));
+        }.bind({ change_callback }));
     },
     escapeHTML: function (html) {
         let escapeEl = document.createElement("textarea");
@@ -617,40 +619,40 @@ vis.binds["rssfeed"] = {
                 let changed = false;
                 $("#dialog-edit-text").dialog({
                     autoOpen: true,
-                    width:    data.width  || 800,
-                    height:   data.height || 600,
-                    modal:    true,
-                    resize:   function () {
+                    width: data.width || 800,
+                    height: data.height || 600,
+                    modal: true,
+                    resize: function () {
                         editor.resize();
                     },
                     open: function (event) {
                         $(event.target).parent().find(".ui-dialog-titlebar-close .ui-button-text").html("");
-                        $(this).parent().css({"z-index": 1000});
+                        $(this).parent().css({ "z-index": 1000 });
                         if (data.top !== undefined) {
                             if (data.top >= 0) {
-                                $(this).parent().css({top:  data.top});
+                                $(this).parent().css({ top: data.top });
                             } else {
-                                $(this).parent().css({top:  0});
+                                $(this).parent().css({ top: 0 });
                             }
                         }
                         if (data.left !== undefined) {
                             if (data.left >= 0) {
-                                $(this).parent().css({left: data.left});
+                                $(this).parent().css({ left: data.left });
                             } else {
-                                $(this).parent().css({left: 0});
+                                $(this).parent().css({ left: 0 });
                             }
                         }
                         editor.getSession().setMode("ace/mode/ejs");
                         editor.setOptions({
                             enableBasicAutocompletion: true,
-                            enableLiveAutocompletion:  true
+                            enableLiveAutocompletion: true
                         });
                         editor.$blockScrolling = Infinity;
                         editor.getSession().setUseWrapMode(true);
                         editor.setValue($("#inspect_" + wdata.attr).val());
                         editor.navigateFileEnd();
                         editor.focus();
-                        editor.getSession().on("change", function() {
+                        editor.getSession().on("change", function () {
                             changed = true;
                         });
                     },
@@ -658,9 +660,9 @@ vis.binds["rssfeed"] = {
                         const $parent = $("#dialog-edit-text").parent();
                         const pos = $parent.position();
                         that.editSaveConfig("dialog-edit-text", JSON.stringify({
-                            top:    pos.top  > 0 ? pos.top  : 0,
-                            left:   pos.left > 0 ? pos.left : 0,
-                            width:  $parent.width(),
+                            top: pos.top > 0 ? pos.top : 0,
+                            left: pos.left > 0 ? pos.left : 0,
+                            width: $parent.width(),
                             height: $parent.height() + 9
                         }));
 
@@ -670,7 +672,7 @@ vis.binds["rssfeed"] = {
                             }
                         }
                     },
-                    buttons:  [
+                    buttons: [
                         {
                             text: _("Ok"),
                             click: function () {
