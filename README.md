@@ -171,6 +171,7 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 ### **WORK IN PROGRESS**
 
 -   formating code
+-   remove common.main from io-package.json
 
 ### 2.9.6 (2024-06-06)
 

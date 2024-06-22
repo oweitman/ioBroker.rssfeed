@@ -1,199 +1,191 @@
 {
-  "common": {
-    "name": "rssfeed",
-    "version": "2.9.6",
-    "news": {
-      "2.9.6": {
-        "en": "fix branch name in link",
-        "de": "filialnamen in link fix",
-        "ru": "исправить имя филиала в ссылке",
-        "pt": "corrigir nome do ramo no link",
-        "nl": "fix branch name in link",
-        "fr": "correction du nom de la branche dans le lien",
-        "it": "correggere il nome del ramo nel link",
-        "es": "fijar nombre de rama en el enlace",
-        "pl": "fix branch name in link",
-        "uk": "виправлено назву гілки за посиланням",
-        "zh-cn": "在链接中固定分支名称"
-      },
-      "2.9.5": {
-        "en": "fix branch name in link",
-        "de": "filialnamen in link fix",
-        "ru": "исправить имя филиала в ссылке",
-        "pt": "corrigir nome do ramo no link",
-        "nl": "fix branch name in link",
-        "fr": "correction du nom de la branche dans le lien",
-        "it": "correggere il nome del ramo nel link",
-        "es": "fijar nombre de rama en el enlace",
-        "pl": "fix branch name in link",
-        "uk": "виправлено назву гілки за посиланням",
-        "zh-cn": "在链接中固定分支名称"
-      },
-      "2.9.4": {
-        "en": "test release after rename branch from master to main",
-        "de": "testfreigabe nach umbenennen von stamm zu haupt",
-        "ru": "тест-релиз после переименования филиала от мастера до основного",
-        "pt": "versão de teste após o renomear ramo de mestre para principal",
-        "nl": "test release na hernoemen van master naar main",
-        "fr": "test release après renommer branche de master à main",
-        "it": "rilascio del test dopo rinomina ramo da master a main",
-        "es": "prueba de liberación después de renombre rama de master a principal",
-        "pl": "zwolnienie testu po zmianie nazwy gałęzi od master do main",
-        "uk": "тест-реліз після перейменування гілки від майстра до основного",
-        "zh-cn": "将分支从主机重命名为主机后测试释放"
-      },
-      "2.9.3": {
-        "en": "switch branchname from master to main\nadd node 22 to tests",
-        "de": "zweigname von master nach haupt wechseln\nknoten 22 zu tests hinzufügen",
-        "ru": "имя переключателя от мастера до главного\nдобавить узел 22 к испытаниям",
-        "pt": "mudar o nome do ramo de mestre para principal\nadicionar nó 22 para testes",
-        "nl": "schakelt branchnaam van master naar main\nnode 22 toevoegen aan tests",
-        "fr": "changer le nom de branche de master vers main\najouter le noeud 22 aux essais",
-        "it": "cambiare nome di ramo da master a main\naggiungere nodo 22 ai test",
-        "es": "cambiar el nombre de la rama de master a principal\nañadir nodo 22 a las pruebas",
-        "pl": "przełącz nazwę marki z master na main\ndodać węzeł 22 do testów",
-        "uk": "переключити назву від майстра до основного\nдодати вузол 22 для тестів",
-        "zh-cn": "从主机切换到主机\n在测试中添加节点 22"
-      },
-      "2.9.2": {
-        "en": "add some translations\nfix warning from adapter checker",
-        "de": "einige übersetzungen hinzufügen\nwarnung vor adapter-checker",
-        "ru": "добавить некоторые переводы\nпредостережение от адаптера",
-        "pt": "adicionar algumas traduções\ncorrigir aviso do verificador do adaptador",
-        "nl": "enkele vertalingen toevoegen\nrepareren waarschuwing van adaptercontrole",
-        "fr": "ajouter quelques traductions\ncorrection de l'avertissement du vérificateur d'adaptateur",
-        "it": "aggiungere alcune traduzioni\nfissare l'avvertimento da adattatore",
-        "es": "añadir algunas traducciones\naviso de fijación del adaptador",
-        "pl": "dodaj kilka tłumaczeń\nnaprawić ostrzeżenie z kontrolera adaptera",
-        "uk": "додати деякі переклади\nфіксувати попередження від перевірки адаптера",
-        "zh-cn": "添加一些翻译\n从适配器检查器中修补警告"
-      },
-      "2.9.1": {
-        "en": "update iobroker files and settings",
-        "de": "iobroker dateien und einstellungen aktualisieren",
-        "ru": "обновление iobroker файлов и настроек",
-        "pt": "atualizar arquivos e configurações do iobroker",
-        "nl": "iobroker bestanden en instellingen bijwerken",
-        "fr": "mettre à jour les fichiers et les paramètres d'iobroker",
-        "it": "aggiornare i file e le impostazioni di ibroker",
-        "es": "actualizar archivos y ajustes de iobroker",
-        "pl": "aktualizacja plików iobroker i ustawień",
-        "uk": "оновлення файлів і налаштувань iobroker",
-        "zh-cn": "更新 iobroduc 文件与设置"
-      },
-      "2.8.2": {
-        "en": "Fixed loading of words.js in vis",
-        "de": "Feste Beladung von Wörtern. in den Warenkorb",
-        "ru": "Фиксированная загрузка слов. js in vis",
-        "pt": "Carga fixa de palavras. O que se passa",
-        "nl": "Vast laden van woorden. js in vis",
-        "fr": "Chargement fixe de mots. js en vis",
-        "it": "Caricamento fisso delle parole. js in vis",
-        "es": "Carga fija de palabras. js in vis",
-        "pl": "Naprawiono ładowanie słów. js in vis",
-        "uk": "Фіксоване завантаження слів. js в vis",
-        "zh-cn": "固定装填文字. js 相对"
-      }
+    "common": {
+        "name": "rssfeed",
+        "version": "2.9.6",
+        "news": {
+            "2.9.6": {
+                "en": "fix branch name in link",
+                "de": "filialnamen in link fix",
+                "ru": "исправить имя филиала в ссылке",
+                "pt": "corrigir nome do ramo no link",
+                "nl": "fix branch name in link",
+                "fr": "correction du nom de la branche dans le lien",
+                "it": "correggere il nome del ramo nel link",
+                "es": "fijar nombre de rama en el enlace",
+                "pl": "fix branch name in link",
+                "uk": "виправлено назву гілки за посиланням",
+                "zh-cn": "在链接中固定分支名称"
+            },
+            "2.9.5": {
+                "en": "fix branch name in link",
+                "de": "filialnamen in link fix",
+                "ru": "исправить имя филиала в ссылке",
+                "pt": "corrigir nome do ramo no link",
+                "nl": "fix branch name in link",
+                "fr": "correction du nom de la branche dans le lien",
+                "it": "correggere il nome del ramo nel link",
+                "es": "fijar nombre de rama en el enlace",
+                "pl": "fix branch name in link",
+                "uk": "виправлено назву гілки за посиланням",
+                "zh-cn": "在链接中固定分支名称"
+            },
+            "2.9.4": {
+                "en": "test release after rename branch from master to main",
+                "de": "testfreigabe nach umbenennen von stamm zu haupt",
+                "ru": "тест-релиз после переименования филиала от мастера до основного",
+                "pt": "versão de teste após o renomear ramo de mestre para principal",
+                "nl": "test release na hernoemen van master naar main",
+                "fr": "test release après renommer branche de master à main",
+                "it": "rilascio del test dopo rinomina ramo da master a main",
+                "es": "prueba de liberación después de renombre rama de master a principal",
+                "pl": "zwolnienie testu po zmianie nazwy gałęzi od master do main",
+                "uk": "тест-реліз після перейменування гілки від майстра до основного",
+                "zh-cn": "将分支从主机重命名为主机后测试释放"
+            },
+            "2.9.3": {
+                "en": "switch branchname from master to main\nadd node 22 to tests",
+                "de": "zweigname von master nach haupt wechseln\nknoten 22 zu tests hinzufügen",
+                "ru": "имя переключателя от мастера до главного\nдобавить узел 22 к испытаниям",
+                "pt": "mudar o nome do ramo de mestre para principal\nadicionar nó 22 para testes",
+                "nl": "schakelt branchnaam van master naar main\nnode 22 toevoegen aan tests",
+                "fr": "changer le nom de branche de master vers main\najouter le noeud 22 aux essais",
+                "it": "cambiare nome di ramo da master a main\naggiungere nodo 22 ai test",
+                "es": "cambiar el nombre de la rama de master a principal\nañadir nodo 22 a las pruebas",
+                "pl": "przełącz nazwę marki z master na main\ndodać węzeł 22 do testów",
+                "uk": "переключити назву від майстра до основного\nдодати вузол 22 для тестів",
+                "zh-cn": "从主机切换到主机\n在测试中添加节点 22"
+            },
+            "2.9.2": {
+                "en": "add some translations\nfix warning from adapter checker",
+                "de": "einige übersetzungen hinzufügen\nwarnung vor adapter-checker",
+                "ru": "добавить некоторые переводы\nпредостережение от адаптера",
+                "pt": "adicionar algumas traduções\ncorrigir aviso do verificador do adaptador",
+                "nl": "enkele vertalingen toevoegen\nrepareren waarschuwing van adaptercontrole",
+                "fr": "ajouter quelques traductions\ncorrection de l'avertissement du vérificateur d'adaptateur",
+                "it": "aggiungere alcune traduzioni\nfissare l'avvertimento da adattatore",
+                "es": "añadir algunas traducciones\naviso de fijación del adaptador",
+                "pl": "dodaj kilka tłumaczeń\nnaprawić ostrzeżenie z kontrolera adaptera",
+                "uk": "додати деякі переклади\nфіксувати попередження від перевірки адаптера",
+                "zh-cn": "添加一些翻译\n从适配器检查器中修补警告"
+            },
+            "2.9.1": {
+                "en": "update iobroker files and settings",
+                "de": "iobroker dateien und einstellungen aktualisieren",
+                "ru": "обновление iobroker файлов и настроек",
+                "pt": "atualizar arquivos e configurações do iobroker",
+                "nl": "iobroker bestanden en instellingen bijwerken",
+                "fr": "mettre à jour les fichiers et les paramètres d'iobroker",
+                "it": "aggiornare i file e le impostazioni di ibroker",
+                "es": "actualizar archivos y ajustes de iobroker",
+                "pl": "aktualizacja plików iobroker i ustawień",
+                "uk": "оновлення файлів і налаштувань iobroker",
+                "zh-cn": "更新 iobroduc 文件与设置"
+            },
+            "2.8.2": {
+                "en": "Fixed loading of words.js in vis",
+                "de": "Feste Beladung von Wörtern. in den Warenkorb",
+                "ru": "Фиксированная загрузка слов. js in vis",
+                "pt": "Carga fixa de palavras. O que se passa",
+                "nl": "Vast laden van woorden. js in vis",
+                "fr": "Chargement fixe de mots. js en vis",
+                "it": "Caricamento fisso delle parole. js in vis",
+                "es": "Carga fija de palabras. js in vis",
+                "pl": "Naprawiono ładowanie słów. js in vis",
+                "uk": "Фіксоване завантаження слів. js в vis",
+                "zh-cn": "固定装填文字. js 相对"
+            }
+        },
+        "titleLang": {
+            "en": "RSS Feed",
+            "de": "rssfeed",
+            "ru": "Новостная лента",
+            "pt": "Feed RSS",
+            "nl": "rssfeed",
+            "fr": "Flux RSS",
+            "it": "RSS Feed",
+            "es": "RSS Feed",
+            "pl": "Kanał RSS",
+            "zh-cn": "RSS订阅",
+            "uk": "RSS-канал"
+        },
+        "desc": {
+            "en": "Adapter and vis widget for rss feeds",
+            "de": "Adapter und Vis-Widget für rssfeeds",
+            "ru": "Адаптер и виджет vis для каналов RSS",
+            "pt": "Adaptador e widget vis para feeds RSS",
+            "nl": "Adapter en vis widget voor rssfeeds",
+            "fr": "Adaptateur et widget vis pour les flux rss",
+            "it": "Adattatore e widget vis per feed rss",
+            "es": "Adaptador y widget de visualización para feeds rss",
+            "pl": "Adapter i widżet Vis dla kanałów RSS",
+            "zh-cn": "rss提要的适配器和可见小部件",
+            "uk": "Адаптер і віджет vis для RSS-каналів"
+        },
+        "authors": ["oweitman <oweitman@gmx.de>"],
+        "keywords": ["rss", "atom", "rdf", "feed"],
+        "licenseInformation": {
+            "type": "free",
+            "license": "MIT"
+        },
+        "platform": "Javascript/Node.js",
+        "icon": "rssfeed.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.rssfeed/main/admin/rssfeed.png",
+        "readme": "https://github.com/oweitman/ioBroker.rssfeed/blob/main/README.md",
+        "loglevel": "info",
+        "tier": 3,
+        "restartAdapters": [],
+        "mode": "daemon",
+        "type": "misc-data",
+        "compact": true,
+        "connectionType": "cloud",
+        "dataSource": "poll",
+        "plugins": {
+            "sentry": {
+                "dsn": "https://abfab39a66054631bef76b3e92979c43@o1335795.ingest.sentry.io/6603729"
+            }
+        },
+        "adminUI": {
+            "config": "json"
+        },
+        "dependencies": [
+            {
+                "js-controller": ">=3.3.22"
+            }
+        ],
+        "globalDependencies": [
+            {
+                "admin": ">=5.1.13"
+            }
+        ]
     },
-    "titleLang": {
-      "en": "RSS Feed",
-      "de": "rssfeed",
-      "ru": "Новостная лента",
-      "pt": "Feed RSS",
-      "nl": "rssfeed",
-      "fr": "Flux RSS",
-      "it": "RSS Feed",
-      "es": "RSS Feed",
-      "pl": "Kanał RSS",
-      "zh-cn": "RSS订阅",
-      "uk": "RSS-канал"
+    "native": {
+        "refresh": 60,
+        "maxarticles": 100,
+        "rss": []
     },
-    "desc": {
-      "en": "Adapter and vis widget for rss feeds",
-      "de": "Adapter und Vis-Widget für rssfeeds",
-      "ru": "Адаптер и виджет vis для каналов RSS",
-      "pt": "Adaptador e widget vis para feeds RSS",
-      "nl": "Adapter en vis widget voor rssfeeds",
-      "fr": "Adaptateur et widget vis pour les flux rss",
-      "it": "Adattatore e widget vis per feed rss",
-      "es": "Adaptador y widget de visualización para feeds rss",
-      "pl": "Adapter i widżet Vis dla kanałów RSS",
-      "zh-cn": "rss提要的适配器和可见小部件",
-      "uk": "Адаптер і віджет vis для RSS-каналів"
-    },
-    "authors": [
-      "oweitman <oweitman@gmx.de>"
-    ],
-    "keywords": [
-      "rss",
-      "atom",
-      "rdf",
-      "feed"
-    ],
-    "licenseInformation": {
-      "type": "free",
-      "license": "MIT"
-    },
-    "platform": "Javascript/Node.js",
-    "main": "main.js",
-    "icon": "rssfeed.png",
-    "enabled": true,
-    "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.rssfeed/main/admin/rssfeed.png",
-    "readme": "https://github.com/oweitman/ioBroker.rssfeed/blob/main/README.md",
-    "loglevel": "info",
-    "tier": 3,
-    "restartAdapters": [],
-    "mode": "daemon",
-    "type": "misc-data",
-    "compact": true,
-    "connectionType": "cloud",
-    "dataSource": "poll",
-    "plugins": {
-      "sentry": {
-        "dsn": "https://abfab39a66054631bef76b3e92979c43@o1335795.ingest.sentry.io/6603729"
-      }
-    },
-    "adminUI": {
-      "config": "json"
-    },
-    "dependencies": [
-      {
-        "js-controller": ">=3.3.22"
-      }
-    ],
-    "globalDependencies": [
-      {
-        "admin": ">=5.1.13"
-      }
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "role": "indicator.connected",
+                "name": "Device or service connected",
+                "type": "boolean",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        }
     ]
-  },
-  "native": {
-    "refresh": 60,
-    "maxarticles": 100,
-    "rss": []
-  },
-  "objects": [],
-  "instanceObjects": [
-    {
-      "_id": "info",
-      "type": "channel",
-      "common": {
-        "name": "Information"
-      },
-      "native": {}
-    },
-    {
-      "_id": "info.connection",
-      "type": "state",
-      "common": {
-        "role": "indicator.connected",
-        "name": "Device or service connected",
-        "type": "boolean",
-        "read": true,
-        "write": false,
-        "def": false
-      },
-      "native": {}
-    }
-  ]
 }
