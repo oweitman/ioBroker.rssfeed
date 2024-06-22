@@ -167,8 +167,7 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 2.9.7 (2024-06-22)
 
 -   formating code
 -   remove common.main from io-package.json
