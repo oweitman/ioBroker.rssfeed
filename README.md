@@ -1,4 +1,4 @@
-![Logo](admin/rssfeed-logo.png)
+![Logo](admin/rssfeed.png)
 
 # ioBroker Adapter to request and show RSS Feeds of different standards (Atom, RSS, RDF)
 
