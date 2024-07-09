@@ -171,6 +171,7 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 ### **WORK IN PROGRESS**
 
 - ignore widgets in vis-2
+- add restart vis/vis2
 
 ### 2.9.7 (2024-06-22)
 

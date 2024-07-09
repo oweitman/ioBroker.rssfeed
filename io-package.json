@@ -134,7 +134,7 @@
         "readme": "https://github.com/oweitman/ioBroker.rssfeed/blob/main/README.md",
         "loglevel": "info",
         "tier": 3,
-        "restartAdapters": [],
+        "restartAdapters": ["vis", "vis-2"],
         "mode": "daemon",
         "type": "misc-data",
         "compact": true,
