@@ -67,9 +67,9 @@ vis.binds["rssfeed"] = {
                     vis.binds["rssfeed"].bindStates($div, bound, onChange);
                 }
             }
-            this.render(widgetID, data);
+            this.render(widgetID, data, style);
         },
-        render: function (widgetID, data) {
+        render: function (widgetID, data, style) {
 
             const articles = [];
             const datapoints = [];
@@ -83,13 +83,23 @@ vis.binds["rssfeed"] = {
             }
 
             const defaulttemplate = `
-                <% articles.forEach(function(item){ %>
-                <p><%- item.meta_name || item.meta_title || '' %></p>
-                <p><small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small></p>
-                <h3><%- item.title %></h3>
-                <p><%- item.description %></p>
-                <div style="clear:both;" />
-                <% }); %>
+<style> 
+#<%- widgetid %> img {
+    width: calc(<%- style.width || "230px" %> - 15px);
+    height: auto;
+}
+#<%- widgetid %> img.rssfeed  {
+    width: auto;
+    height: auto;
+}
+</style> 
+<% articles.forEach(function(item){ %>
+    <p><%- item.meta_name || item.meta_title || '' %></p>
+    <p><small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small></p>
+    <h3><%- item.title %></h3>
+    <p><%- item.description %></p>
+    <div style="clear:both;" />
+<% }); %>
                             `;
             const template = (data["rss_template"] ? (data["rss_template"].trim() ? data["rss_template"].trim() : defaulttemplate) : defaulttemplate);
 
@@ -142,7 +152,11 @@ vis.binds["rssfeed"] = {
 
             let text = "";
             try {
-                text = ejs.render(template, { "articles": collect, "meta": meta, "dp": datapoints });
+                if (collect.length == 0) {
+                    text = "articles is empty, please select a RSS feed datapoint.";
+                } else {
+                    text = ejs.render(template, { "articles": collect, "meta": meta, "dp": datapoints, widgetid: widgetID, style: style });
+                }
             }
             catch (e) {
                 text = vis.binds["rssfeed"].escapeHTML(e.message).replace(/(?:\r\n|\r|\n)/g, "<br>");
@@ -307,15 +321,36 @@ vis.binds["rssfeed"] = {
             }
             const rss = data.rss_oid ? JSON.parse(vis.states.attr(data.rss_oid + ".val")) : {};
             const defaulttemplate = `
-                <p><%- meta.title %> </p>
-                <img src="<%- meta.image.url %>">
-                <% articles.forEach(function(item){ %>
-                <p><small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small></p>
-                <h3><%- item.title %></h3>
-                <p><%- item.description %></p>
-                <div style="clear:both;" />
-                <% }); %>
-                            `;
+<!--
+ available variables:
+ widgetid      ->  id of the widget 
+ rss.meta      ->  all meta informations of an feed, details see Meta Helper widget 
+ rss.articles  ->  all articles as array, details see Article Helper widget 
+ style         ->  all style settings for the widget
+ 
+ all variables are read only
+-->
+<style>
+#<%- widgetid %> img {
+    width: calc(<%- style.width || "230px" %> - 15px);
+    height: auto;
+}
+#<%- widgetid %> img.rssfeed  {
+    width: auto;
+    height: auto;
+}
+
+</style>
+<p><%- rss.meta.title %> </p>
+<% rss.articles.forEach(function(item){ %>
+    <div class="article">
+    <p><small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small></p>    
+    <h3><%- item.title %></h3>
+    <p><%- item.description %></p>
+    <div style="clear:both;"></div>
+</div>
+<% }); %> 
+        `;
             const errortemplate = `
             No Object ID set
             `;
@@ -349,7 +384,7 @@ vis.binds["rssfeed"] = {
                 if (typeof rss.meta == "undefined") {
                     text = ejs.render(errortemplate, rss);
                 } else {
-                    text = ejs.render(template, rss);
+                    text = ejs.render(template, { rss: rss, widgetid: widgetID, style: style });
                 }
             }
             catch (e) {
