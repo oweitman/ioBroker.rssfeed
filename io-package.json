@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "2.9.8",
+    "version": "2.9.9",
     "news": {
+      "2.9.9": {
+        "en": "update packages\nupdate formating and improve error logging\nremove detailed sentry status reporting\nfix subscribing states",
+        "de": "update-pakete\naktualisierung der formatierung und verbesserung der fehlerprotokollierung\ndie ausführliche meldung über den status der sendungen\nfixe anmeldezustände",
+        "ru": "обновления пакетов\nформатирование обновлений и улучшение регистрации ошибок\nудалить подробную информацию о состоянии отправки\nисправления состояния",
+        "pt": "pacotes de atualização\natualizar a formatação e melhorar o registro de erros\nremover relatórios detalhados de status de sentinela\ncorrigir estados de inscrição",
+        "nl": "pakketten bijwerken\nformatteren bijwerken en foutloggen verbeteren\nverwijderen gedetailleerde wachtstatus rapportage\nfix abonnement staten",
+        "fr": "mettre à jour les paquets\nmettre à jour le formatage et améliorer l'enregistrement des erreurs\nsupprimer les rapports détaillés sur l'état des sentinelles\nfixer les états d'abonnement",
+        "it": "pacchetti di aggiornamento\naggiornamento formattazione e migliorare la registrazione degli errori\nrimuovere la segnalazione dettagliata dello stato di invio\ncorreggere gli stati di sottoscrizione",
+        "es": "actualizar paquetes\nactualización formando y mejorando el registro de errores\neliminar información detallada sobre el estado del centinela\nfijar estados de suscripción",
+        "pl": "aktualizacja pakietów\naktualizacja formatowania i ulepszania logowania błędów\nusunąć szczegółowe raportowanie stanu wartownika\nustaw stany subskrypcji",
+        "uk": "оновлення пакетів\nоновлення форматування та поліпшення реєстрації помилок\nвидалення докладної звітності про статус відправника\nфіксувати підсрібні стани",
+        "zh-cn": "更新软件包\n更新格式和改进错误记录\n删除详细的哨兵状态报告\n固定签名状态"
+      },
       "2.9.8": {
         "en": "ignore widgets in vis-2\nadd restart vis/vis2",
         "de": "ignorieren widgets in vis-2\nneustart vis/vis2 hinzufügen",
@@ -80,19 +93,6 @@
         "pl": "przełącz nazwę marki z master na main\ndodać węzeł 22 do testów",
         "uk": "переключити назву від майстра до основного\nдодати вузол 22 для тестів",
         "zh-cn": "从主机切换到主机\n在测试中添加节点 22"
-      },
-      "2.9.2": {
-        "en": "add some translations\nfix warning from adapter checker",
-        "de": "einige übersetzungen hinzufügen\nwarnung vor adapter-checker",
-        "ru": "добавить некоторые переводы\nпредостережение от адаптера",
-        "pt": "adicionar algumas traduções\ncorrigir aviso do verificador do adaptador",
-        "nl": "enkele vertalingen toevoegen\nrepareren waarschuwing van adaptercontrole",
-        "fr": "ajouter quelques traductions\ncorrection de l'avertissement du vérificateur d'adaptateur",
-        "it": "aggiungere alcune traduzioni\nfissare l'avvertimento da adattatore",
-        "es": "añadir algunas traducciones\naviso de fijación del adaptador",
-        "pl": "dodaj kilka tłumaczeń\nnaprawić ostrzeżenie z kontrolera adaptera",
-        "uk": "додати деякі переклади\nфіксувати попередження від перевірки адаптера",
-        "zh-cn": "添加一些翻译\n从适配器检查器中修补警告"
       }
     },
     "titleLang": {

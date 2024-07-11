@@ -167,8 +167,7 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 2.9.9 (2024-07-11)
 
 - update packages
 - update formating and improve error logging
