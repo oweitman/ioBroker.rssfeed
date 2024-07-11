@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "2.9.10",
+    "version": "2.10.0",
     "news": {
+      "2.10.0": {
+        "en": "fine tuning on templates and available variables\nfine tuning on format and translation\nmove widget documentation form doc.html to readme",
+        "de": "feinabstimmung auf vorlagen und verfügbaren variablen\nfeinabstimmung auf format und übersetzung\nwidget dokumentationsformular doc.html zu readme",
+        "ru": "тонкая настройка на шаблоны и доступные переменные\nтонкая настройка на формат и перевод\nпереместить виджет документировать форму doc.html, чтобы читать",
+        "pt": "ajuste fino em modelos e variáveis disponíveis\najuste fino no formato e tradução\nmover formulário de documentação do widget doc.html para readme",
+        "nl": "finetuning op templates en beschikbare variabelen\nfine tuning op formaat en vertaling\nmove widget documentation form doc.html to readme",
+        "fr": "réglage fin sur les modèles et les variables disponibles\nréglage fin sur le format et la traduction\nmove widget documentation form doc.html to readme",
+        "it": "fine tuning su modelli e variabili disponibili\nfine tuning su formato e traduzione\nspostare il widget documentazione forma doc.html per leggere",
+        "es": "ajuste fino en plantillas y variables disponibles\najuste fino en formato y traducción\nmove widget documentation form doc.html to readme",
+        "pl": "dostrajanie szablonów i dostępnych zmiennych\ndostrojenie formatu i tłumaczenia\nprzenieś dokumentację widget formularz doc.html do readme",
+        "uk": "тонка настройка на шаблони і доступні змінні\nтонке тюнінг у форматі та перекладі\njavascript licenses api веб-сайт go1.13.8",
+        "zh-cn": "对模板和可用变量进行微调\n格式和翻译的微调\n移动部件文档格式 doc.html以读取"
+      },
       "2.9.10": {
         "en": "update images for dark and light theme",
         "de": "bilder für dunkles und helles thema aktualisieren",
@@ -80,19 +93,6 @@
         "pl": "fix branch name in link",
         "uk": "виправлено назву гілки за посиланням",
         "zh-cn": "在链接中固定分支名称"
-      },
-      "2.9.4": {
-        "en": "test release after rename branch from master to main",
-        "de": "testfreigabe nach umbenennen von stamm zu haupt",
-        "ru": "тест-релиз после переименования филиала от мастера до основного",
-        "pt": "versão de teste após o renomear ramo de mestre para principal",
-        "nl": "test release na hernoemen van master naar main",
-        "fr": "test release après renommer branche de master à main",
-        "it": "rilascio del test dopo rinomina ramo da master a main",
-        "es": "prueba de liberación después de renombre rama de master a principal",
-        "pl": "zwolnienie testu po zmianie nazwy gałęzi od master do main",
-        "uk": "тест-реліз після перейменування гілки від майстра до основного",
-        "zh-cn": "将分支从主机重命名为主机后测试释放"
       }
     },
     "titleLang": {

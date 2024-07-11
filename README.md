@@ -521,6 +521,11 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### 2.10.0 (2024-07-11)
+
+- fine tuning on templates and available variables
+- fine tuning on format and translation
+- move widget documentation form doc.html to readme
 
 ### 2.9.10 (2024-07-11)
 
