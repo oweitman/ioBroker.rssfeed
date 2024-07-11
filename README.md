@@ -167,6 +167,14 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
+**WORK IN PROGRESS**
+
+- update packages
+- update formating and improve error logging
+- remove detailed sentry status reporting
+- fix subscribing states
+
 ### 2.9.8 (2024-07-09)
 
 - ignore widgets in vis-2
