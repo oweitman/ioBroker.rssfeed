@@ -38,6 +38,7 @@ class RssFeed extends utils.Adapter {
         if (!rssFeedServer) {
             this.log.debug("main onReady open rssfeed");
             rssFeedServer = new RssFeedRequire(this);
+            this.subscribeStates("*");
         }
     }
 
