@@ -1,6 +1,6 @@
 {
   "name": "iobroker.rssfeed",
-  "version": "2.9.9",
+  "version": "2.9.10",
   "description": "Adapter and vis widget for rss feeds",
   "author": {
     "name": "oweitman",
@@ -77,10 +77,10 @@
     "check": "tsc --noEmit -p tsconfig.check.json",
     "lint": "eslint .",
     "translate": "translate-adapter",
-    "release": "release-script",
-    "release-patch": "release-script patch --yes --no-update-lockfile",
-    "release-minor": "release-script minor --yes --no-update-lockfile",
-    "release-major": "release-script major --yes --no-update-lockfile",
+    "release": "release-script --all",
+    "release-patch": "release-script patch --yes --no-update-lockfile --all",
+    "release-minor": "release-script minor --yes --no-update-lockfile --all",
+    "release-major": "release-script major --yes --no-update-lockfile --all",
     "upload": "NPM_PACK=$(npm pack) && iob url \"$(pwd)/$NPM_PACK\" --debug && rm \"$NPM_PACK\""
   },
   "bugs": {
