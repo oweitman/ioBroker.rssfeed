@@ -11,88 +11,56 @@
 <script type="text/javascript" src="widgets/rssfeed/js/rssfeed.js"></script>
 <script type="text/javascript" src="widgets/rssfeed/js/ejs.js"></script>
 
-<script id="tplrssfeedWidget2"
-        type="text/ejs"
-        class="vis-tpl"
-		data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/rssfeed/img/rssfeed-vis.png"></img>'
-        data-vis-attrs="rss_oid/id;rss_template/custom,rssfeed.editEjs;rss_maxarticles/number,1;rss_filter;"
-        data-vis-set="rssfeed"
-        data-vis-type="val"
-        data-vis-beta="false"
-        data-vis-update-style="true"
-        data-vis-name="RSS Feed Widget 2">
+<script id="tplrssfeedWidget2" type="text/ejs" class="vis-tpl"
+    data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/rssfeed/img/rssfeed-vis.png"></img>'
+    data-vis-attrs="rss_oid/id;rss_template/custom,rssfeed.editEjs;rss_maxarticles/number,1;rss_filter;"
+    data-vis-set="rssfeed" data-vis-type="val" data-vis-beta="false" data-vis-update-style="true"
+    data-vis-name="RSS Feed Widget 2">
     <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 230px; height: 210px" id="<%= this.data.attr('wid') %>"><%
         vis.binds.rssfeed.rssfeedwidget2.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>
-<script id="tplrssfeedMultiWidget2"
-        type="text/ejs"
-        class="vis-tpl"
-		data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/rssfeed/img/rssfeed-vis.png"></img>'
-        data-vis-attrs="rss_feedCount[1]/number,1;rss_template/custom,rssfeed.editEjs;rss_dpCount[1]/number,1;rss_dp(1-rss_dpCount)/id;"
-        data-vis-attrs0="group.feeds/byindex;rss_oid(1-rss_feedCount)/id;rss_name(1-rss_feedCount);rss_maxarticles(1-rss_feedCount)/number,1;rss_filter(1-rss_feedCount);"
-        data-vis-set="rssfeed"
-        data-vis-type="val"
-        data-vis-beta="false"
-        data-vis-update-style="true"
-        data-vis-name="RSS Feed Multi Widget 2">
+<script id="tplrssfeedMultiWidget2" type="text/ejs" class="vis-tpl"
+    data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/rssfeed/img/rssfeed-vis.png"></img>'
+    data-vis-attrs="rss_feedCount[1]/number,1;rss_template/custom,rssfeed.editEjs;rss_dpCount[1]/number,1;rss_dp(1-rss_dpCount)/id;"
+    data-vis-attrs0="group.feeds/byindex;rss_oid(1-rss_feedCount)/id;rss_name(1-rss_feedCount);rss_maxarticles(1-rss_feedCount)/number,1;rss_filter(1-rss_feedCount);"
+    data-vis-set="rssfeed" data-vis-type="val" data-vis-beta="false" data-vis-update-style="true"
+    data-vis-name="RSS Feed Multi Widget 2">
     <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 230px; height: 210px" id="<%= this.data.attr('wid') %>"><%
         vis.binds.rssfeed.rssfeedmultiwidget2.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>
-<script id="tplrssfeedMetaHelper"
-        type="text/ejs"
-        class="vis-tpl"
-		data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/rssfeed/img/rssfeed-meta.png"></img>'
-        data-vis-attrs="rss_oid/id;"
-        data-vis-set="rssfeed"
-        data-vis-type="val"
-        data-vis-beta="false"
-        data-vis-update-style="true"
-        data-vis-name="RSS Feed Meta Helper">
+<script id="tplrssfeedMetaHelper" type="text/ejs" class="vis-tpl"
+    data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/rssfeed/img/rssfeed-meta.png"></img>'
+    data-vis-attrs="rss_oid/id;" data-vis-set="rssfeed" data-vis-type="val" data-vis-beta="false"
+    data-vis-update-style="true" data-vis-name="RSS Feed Meta Helper">
     <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 230px; height: 210px" id="<%= this.data.attr('wid') %>"><%
         vis.binds.rssfeed.metahelper.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>
-<script id="tplrssfeedArticleHelper2"
-        type="text/ejs"
-        class="vis-tpl"
-		data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/rssfeed/img/rssfeed-item.png"></img>'
-        data-vis-attrs="rss_oid/id;rss_prefix[item] ;rss_article[1]/number,1;"
-        data-vis-set="rssfeed"
-        data-vis-type="val"
-        data-vis-beta="false"
-        data-vis-update-style="true"
-        data-vis-name="RSS Feed Article Helper 2">
+<script id="tplrssfeedArticleHelper2" type="text/ejs" class="vis-tpl"
+    data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/rssfeed/img/rssfeed-item.png"></img>'
+    data-vis-attrs="rss_oid/id;rss_prefix[item] ;rss_article[1]/number,1;" data-vis-set="rssfeed" data-vis-type="val"
+    data-vis-beta="false" data-vis-update-style="true" data-vis-name="RSS Feed Article Helper 2">
     <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 230px; height: 210px" id="<%= this.data.attr('wid') %>"><%
         vis.binds.rssfeed.articlehelper2.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>
-<script id="tplrssfeedMarquee4"
-        type="text/ejs"
-        class="vis-tpl"
-		data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/rssfeed/img/rssfeed-mrqe.png"></img>'
-        data-vis-attrs="rss_feedCount[1]/number,1;rss_speed/number,1;rss_divider[+++];rss_pauseonhover[true]/checkbox;rss_link/checkbox;rss_withtime/checkbox;rss_withdate/checkbox;rss_withyear/checkbox;rss_withname/checkbox;"
-        data-vis-attrs0="group.feeds/byindex;rss_oid(1-rss_feedCount)/id;rss_name(1-rss_feedCount);rss_maxarticles(1-rss_feedCount)/number,1;rss_filter(1-rss_feedCount);"
-        data-vis-set="rssfeed"
-        data-vis-type="val"
-        data-vis-beta="false"
-        data-vis-update-style="true"
-        data-vis-name="RSS Feed Title marquee 4">
+<script id="tplrssfeedMarquee4" type="text/ejs" class="vis-tpl"
+    data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/rssfeed/img/rssfeed-mrqe.png"></img>'
+    data-vis-attrs="rss_feedCount[1]/number,1;rss_speed/number,1;rss_divider[+++];rss_pauseonhover[true]/checkbox;rss_link/checkbox;rss_withtime/checkbox;rss_withdate/checkbox;rss_withyear/checkbox;rss_withname/checkbox;"
+    data-vis-attrs0="group.feeds/byindex;rss_oid(1-rss_feedCount)/id;rss_name(1-rss_feedCount);rss_maxarticles(1-rss_feedCount)/number,1;rss_filter(1-rss_feedCount);"
+    data-vis-set="rssfeed" data-vis-type="val" data-vis-beta="false" data-vis-update-style="true"
+    data-vis-name="RSS Feed Title marquee 4">
     <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 230px; height: 20px" id="<%= this.data.attr('wid') %>"><%
         vis.binds.rssfeed.marquee4.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>
-<script id="tplJSONTemplate2"
-        type="text/ejs"
-        class="vis-tpl"
-		data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/rssfeed/img/jsontemplate.png"></img>'
-        data-vis-attrs="json_oid/id;json_template/custom,rssfeed.editEjs;rss_dpCount[1]/number,1;rss_dp(1-rss_dpCount)/id;"
-        data-vis-set="rssfeed"
-        data-vis-type="val"
-        data-vis-beta="false"
-        data-vis-update-style="true"
-        data-vis-name="JSON Template2">
+<script id="tplJSONTemplate2" type="text/ejs" class="vis-tpl"
+    data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/rssfeed/img/jsontemplate.png"></img>'
+    data-vis-attrs="json_oid/id;json_template/custom,rssfeed.editEjs;rss_dpCount[1]/number,1;rss_dp(1-rss_dpCount)/id;"
+    data-vis-set="rssfeed" data-vis-type="val" data-vis-beta="false" data-vis-update-style="true"
+    data-vis-name="JSON Template2">
     <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 230px; height: 20px" id="<%= this.data.attr('wid') %>"><%
         vis.binds.rssfeed.jsontemplate2.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
