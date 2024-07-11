@@ -10,7 +10,7 @@
             "program": "node_modules/iobroker.rssfeed/main.js",
             "cwd": "${workspaceFolder}/.dev-server/default",
             "runtimeExecutable": "c:/Users/oweit/AppData/Roaming/fnm/aliases/default/node.exe",
-            "stopOnEntry": false,
+            "stopOnEntry": true,
             "sourceMaps": true,
             "resolveSourceMapLocations": ["${workspaceFolder}/**", "!**/node_modules/**"]
         },
@@ -37,12 +37,10 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Launch my cool app",
+            "name": "vis runtime",
             "url": "http://127.0.0.1:8082/vis/index.html#main",
             "trace": true,
-            "skipFiles": [
-                "socket.io.js",
-              ]            
+            "skipFiles": ["socket.io.js"]
         },
         {
             "type": "chrome",
@@ -50,28 +48,23 @@
             "name": "vis2 Launch Edit",
             "url": "http://127.0.0.1:8082/vis-2/edit.html#default",
             "trace": true,
-            "skipFiles": [
-                "socket.io.js",
-              ]            
-        },            {
+            "skipFiles": ["socket.io.js"]
+        },
+        {
             "type": "chrome",
             "request": "launch",
-            "name": "vis2 Launch my cool app",
+            "name": "vis2 Launch runtime",
             "url": "http://localhost:8082/vis-2/?main#default",
             "trace": true,
-            "skipFiles": [
-                "socket.io.js",
-              ]            
-        },        
-		{
-			"name": "Debug TS adapter",
-			"port": 9229,
-			"request": "attach",
-			"skipFiles": [
-				"<node_internals>/**"
-			],
-			"type": "node"
-		}
+            "skipFiles": ["socket.io.js"]
+        },
+        {
+            "name": "Debug TS adapter",
+            "port": 9229,
+            "request": "attach",
+            "skipFiles": ["<node_internals>/**"],
+            "type": "node"
+        }
     ]
 }
 //node --inspect-brk=localhost:9229 .\node_modules\iobroker.rssfeed\main.js
