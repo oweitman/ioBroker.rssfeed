@@ -151,9 +151,13 @@
     "connectionType": "cloud",
     "dataSource": "poll",
     "visWidgets": {
-      "ignoreInVersions": [
-        2
-      ]
+            "ignoreInVersions": [2],
+            "rssfeed": {
+                "ignoreInVersions": [2],
+                "components": [],
+                "i18n": true,
+                "url": ""
+            }
     },
     "plugins": {
       "sentry": {
