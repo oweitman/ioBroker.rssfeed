@@ -521,8 +521,7 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 3.0.0 (2024-07-24)
 
 - update multifeed widget 3 and deprecate multifeed widget 2
 - breaking change: in rssfeed widget 2: articles and meta have to be changed to rss.articles and rss.meta
