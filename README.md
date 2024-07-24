@@ -56,7 +56,7 @@ If you delete an entry, the datapoints aren't deleted.
 The following widgets actually exists
 
 - `RSS Feed widget 2` - to show a single feed
-- `RSS Feed Multi widget` - to show several aggregated feeds in one widget.
+- `RSS Feed Multi widget 3` - to show several aggregated feeds in one widget.
 - `RSS Feed Meta Helper` - a helper widget to inspect the metadata of a feed
 - `RSS Feed Article Helper 2` - a helper widget to inspect the article data of a feed
 - `RSS Feed Title marquee 3` - a widget to show the Headlines of a feed as a marquee
@@ -96,9 +96,9 @@ For the filter function, one or more filter criteria can be entered in the field
 The following article attributes are searched for the search: title, description, categories.
 Only articles that contain one of these terms are displayed.
 
-### RSS Feed Multi widget
+### RSS Feed Multi widget 3
 
-With this widget, several feeds can be aggregated in one widget.
+With this widget, several feeds can be aggregated in one feed.
 Due to the multiple feeds, there are a few differences in the data availability in the template compared to the normal RSS feed widget.
 The meta variable is not available in the template. However, 3 meta attributes title and description are available in each individual article under the names meta_title and meta_description.
 In addition, a general name can be assigned to each feed in the settings, which is available within the template under the name meta_name in each article so that the origin of an article can be identified.
@@ -117,7 +117,7 @@ For details on the template system, see chapter Template based on examples
 
 **Availability of variable:**
 
-- articles: an array of all articles.
+- rss.articles: an array of all articles.
 
 - A subset of the the meta information of an item is available in the article as **meta_name**, **meta_title** and **meta_description**
 
@@ -377,7 +377,7 @@ The usage in the template see in **Template based on example**
 Is an array with individual elements (javascript array). Each element has the following properties.
 So that it fits, for example, I will do the prefix item in front of it. But if you want you can choose that yourself. It only has to be named accordingly in the loop (forEach). Here, too, the identifiers are self-explanatory. Not all attributes are filled in every feed. The most important ones are already included in the template above.
 
-The articles are available as rss.articles in RSS feed widget 2 and as articles in RSS feed multi widget 2
+The articles are available as rss.articles in RSS feed widget 2 and as articles in RSS feed multi widget 3
 
 The usage in the template see in **Template based on example**
 
@@ -436,7 +436,7 @@ It has been tested with the following feeds
 <% }); %>
 ```
 
-The following template is currently used as standard in the RSS feed multi widget 2.
+The following template is currently used as standard in the RSS feed multi widget 3.
 Please note little differences in the usage of the variables
 It has been tested with the following feeds
 
@@ -464,7 +464,7 @@ It has been tested with the following feeds
     height: auto;
   }
 </style>
-<% articles.forEach(function(item){ %>
+<% rss.articles.forEach(function(item){ %>
     <p><%- item.meta_name || item.meta_title || '' %></p>
     <p><small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small></p>
     <h3><%- item.title %></h3>
@@ -521,6 +521,12 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+- update multifeed widget 3 and deprecate multifeed widget 2
+- breaking change: in rssfeed widget 2: articles and meta have to be changed to rss.articles and rss.meta
+
 ### 2.10.0 (2024-07-11)
 
 - fine tuning on templates and available variables

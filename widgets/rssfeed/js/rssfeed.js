@@ -167,6 +167,143 @@ vis.binds["rssfeed"] = {
             $("#" + widgetID).html(text);
         }
     },
+    rssfeedmultiwidget3: {
+        createWidget: function (widgetID, view, data, style) {
+
+            const $div = $("#" + widgetID);
+            // if nothing found => wait
+            if (!$div.length) {
+                return setTimeout(function () {
+                    vis.binds["rssfeed"].rssfeedmultiwidget3.createWidget(widgetID, view, data, style);
+                }, 100);
+            }
+
+            const feedCount = data.rss_feedCount ? data.rss_feedCount : 1;
+            const dpCount = data.rss_dpCount ? data.rss_dpCount : 1;
+            const bound = [];
+
+            for (let i1 = 1; i1 <= dpCount; i1++) {
+                if (data["rss_dp" + i1]) {
+                    bound.push(data["rss_dp" + i1]);
+                    console.debug("bound");
+                }
+            }
+            for (let i = 1; i <= feedCount; i++) {
+                const rss = data["rss_oid" + i] ? JSON.parse(vis.states.attr(data["rss_oid" + i] + ".val")) : {};
+                if (!Object.prototype.hasOwnProperty.call(rss, "articles")) continue;
+                bound.push(data["rss_oid" + i]);
+            }
+            const that = this;
+            // eslint-disable-next-line no-unused-vars
+            function onChange(e, newVal, oldVal) {
+                if (newVal) that.render(widgetID, data);
+            }
+            if (bound.length > 0) {
+                // eslint-disable-next-line no-constant-condition
+                if (1 || !vis.editMode) {
+                    vis.binds["rssfeed"].bindStates($div, bound, onChange);
+                }
+            }
+            this.render(widgetID, data, style);
+        },
+        render: function (widgetID, data, style) {
+
+            const articles = [];
+            const datapoints = [];
+            const feedCount = data.rss_feedCount ? data.rss_feedCount : 1;
+            const dpCount = data.rss_dpCount ? data.rss_dpCount : 1;
+
+            for (let i1 = 1; i1 <= dpCount; i1++) {
+                if (data["rss_dp" + i1]) {
+                    datapoints[data["rss_dp" + i1]] = vis.states.attr(data["rss_dp" + i1] + ".val");
+                }
+            }
+
+            const defaulttemplate = `
+<style> 
+#<%- widgetid %> img {
+    width: calc(<%- style.width || "230px" %> - 15px);
+    height: auto;
+}
+#<%- widgetid %> img.rssfeed  {
+    width: auto;
+    height: auto;
+}
+</style> 
+<% articles.forEach(function(item){ %>
+    <p><%- item.meta_name || item.meta_title || '' %></p>
+    <p><small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small></p>
+    <h3><%- item.title %></h3>
+    <p><%- item.description %></p>
+    <div style="clear:both;" />
+<% }); %>
+                            `;
+            const template = (data["rss_template"] ? (data["rss_template"].trim() ? data["rss_template"].trim() : defaulttemplate) : defaulttemplate);
+
+            for (let i = 1; i <= feedCount; i++) {
+                const rss = data["rss_oid" + i] ? JSON.parse(vis.states.attr(data["rss_oid" + i] + ".val")) : {};
+                if (!Object.prototype.hasOwnProperty.call(rss, "articles")) continue;
+
+                const filter = data["rss_filter" + i] ? data["rss_filter" + i] : "";
+                let maxarticles = data["rss_maxarticles" + i] ? data["rss_maxarticles" + i] : 999;
+                maxarticles = maxarticles > 0 ? maxarticles : 1;
+                const name = data["rss_name" + i] ? data["rss_name" + i] : "";
+
+                if (rss && rss.articles && rss.articles.length > maxarticles) rss.articles = rss.articles.slice(0, maxarticles);
+
+                if (filter != "") {
+                    rss.articles = rss.articles.filter((item) => {
+                        return vis.binds["rssfeed"].checkHighlite(item.title + item.description + item.categories.toString(), filter);
+                    });
+                }
+
+                rss.articles = rss.articles.map((item) => {
+                    item["meta_title"] = rss.meta.title;
+                    item["meta_description"] = rss.meta.description;
+                    item["meta_name"] = name;
+                    return item;
+                });
+                articles.push(rss.articles);
+            }
+
+            let collect = [];
+            articles.forEach(function (item) {
+                collect = collect.concat(item);
+            }
+            );
+
+            collect.sort(function (a, b) {
+                // Turn your strings into dates, and then subtract them
+                // to get a value that is either negative, positive, or zero.
+                return new Date(b.date) - new Date(a.date);
+            });
+            const meta = new Proxy({}, {
+                get(target, name) {
+                    if (name == "title" || name == "description") {
+                        return "meta." + name + " is not available please use RSS Feed widget. Read the widget help";
+                    } else {
+                        return "meta is not available please use RSS Feed widget. Read the widget help.";
+                    }
+                }
+            });
+
+            let text = "";
+            try {
+                if (collect.length == 0) {
+                    text = "articles is empty, please select a RSS feed datapoint.";
+                } else {
+                    text = ejs.render(template, { rss: { "articles": collect, "meta": meta }, "dp": datapoints, widgetid: widgetID, style: style });
+                }
+            }
+            catch (e) {
+                text = vis.binds["rssfeed"].escapeHTML(e.message).replace(/(?:\r\n|\r|\n)/g, "<br>");
+                text = text.replace(/ /gm, "&nbsp;");
+                text = '<code style="color:red;">' + text + "</code>";
+            }
+
+            $("#" + widgetID).html(text);
+        }
+    },
     marquee4: {
         createWidget: function (widgetID, view, data, style) {
             const $div = $("#" + widgetID);
