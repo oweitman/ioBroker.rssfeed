@@ -399,6 +399,8 @@ The usage in the template see in **Template based on example**
 
 ## Template based on examples
 
+### Base Template RSS-Feed widget 2
+
 The following template is currently used as standard in the RSS feed widget 2.
 It has been tested with the following feeds
 
@@ -436,6 +438,8 @@ It has been tested with the following feeds
 <% }); %>
 ```
 
+### Base Template RSS-Feed multi widget 3
+
 The following template is currently used as standard in the RSS feed multi widget 3.
 Please note little differences in the usage of the variables
 It has been tested with the following feeds
@@ -471,6 +475,98 @@ It has been tested with the following feeds
     <p><%- item.description %></p>
     <div style="clear:both;" />
 <% }); %>
+```
+
+### Example Template for RSS-Feed multi widget 3 with articles as a slide show and Prev/Next-Buttons
+
+```
+<!--
+ available variables:
+ widgetid      ->  id of the widget
+ rss.articles  ->  all articles as array, details see Article Helper widget
+ style         ->  all style settings for the widget
+
+ all variables are read only
+-->
+
+<style>
+#<%- widgetid %> img {
+    width: calc(<%- style.width || "230px" %> - 15px);
+    height: auto;
+}
+#<%- widgetid %> img.rssfeed  {
+    width: auto;
+    height: auto;
+}
+
+.container {
+    overflow: hidden;
+    height: 100%;
+}
+.content {
+    position: relative;
+    border: 1px solid #ccc;
+    overflow: scroll;
+    height: 90%;
+}
+
+.slide {
+    position: absolute;
+    display: none;
+}
+
+.slide.active {
+    display: contents;
+}
+
+.controls {
+    margin-top: 10px;
+}
+</style>
+
+<div class="container">
+    <div class="content">
+        <% rss.articles.forEach(function(item){ %>
+        <div class="article slide">
+          <p><small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small></p>
+          <h3><%- item.title %></h3>
+          <p><%- item.description %></p>
+          <div style="clear:both;"></div>
+        </div>
+        <% }); %>
+    </div>
+    <div class="controls">
+        <button onclick="prevSlide()">Zurück</button>
+        <button onclick="nextSlide()">Weiter</button>
+    </div>
+</div>
+
+<script>
+currentSlide = 0;
+slides = document.querySelectorAll('.slide');
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        if (i === index) {
+            slide.classList.add('active');
+        } else {
+            slide.classList.remove('active');
+        }
+    });
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide > 0) ? currentSlide - 1 : slides.length - 1;
+    showSlide(currentSlide);
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
+    showSlide(currentSlide);
+}
+showSlide(currentSlide);
+
+</script>
 ```
 
 The template system works with certain tags.
@@ -521,6 +617,7 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
 ### 3.0.0 (2024-07-24)
 
 - update multifeed widget 3 and deprecate multifeed widget 2
