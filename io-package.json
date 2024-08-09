@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "3.0.0",
+    "version": "3.0.1",
     "news": {
+      "3.0.1": {
+        "en": "add template example for articles as a Diashow\nadjust dependency to js-controller",
+        "de": "vorlagenbeispiel für Artikel als Diashow hinzufügen\nabhängigkeit von js-controller einstellen",
+        "ru": "добавить пример шаблона для статей как Diashow\nнастроить зависимость от js-контроллера",
+        "pt": "adicionar exemplo de modelo para artigos como Diashow\najustar a dependência ao js-controller",
+        "nl": "sjabloon bijvoorbeeld toevoegen voor artikelen als Diashow\nafhankelijkheid aanpassen aan js-controller",
+        "fr": "ajouter un exemple de modèle pour les articles comme Diashow\najuster la dépendance à js-controller",
+        "it": "aggiungi esempio di modello per gli articoli come Diashow\nregolare la dipendenza da js-controller",
+        "es": "añadir ejemplo de plantilla para artículos como Diashow\najustar la dependencia a js-controller",
+        "pl": "dodaj przykład szablonu dla artykułów jako diashow\ndostosować zależność do sterownika js-",
+        "uk": "приклад шаблону для статей як Diashow\nрегулювання залежності від js-controller",
+        "zh-cn": "作为 Diashow 文章添加模板示例\n将依赖调整到 js 控制器"
+      },
       "3.0.0": {
         "en": "update multifeed widget 3 and deprecate multifeed widget 2\nbreaking change: in rssfeed widget 2: articles and meta have to be changed to rss.articles and rss.meta",
         "de": "multifeed widget 3 aktualisieren und multifeed widget 2 deprecate\nbrechen änderung: in rssfeed widget 2: artikel und meta müssen in rss.articles and rss.meta geändert werden",
@@ -80,19 +93,6 @@
         "pl": "kod formatujący\nusunąć common.main z io- package.json",
         "uk": "форматування коду\nвидалити загальний.main від io-package.json",
         "zh-cn": "格式化代码\n从 io- package.json 中去除常见的.main"
-      },
-      "2.9.6": {
-        "en": "fix branch name in link",
-        "de": "filialnamen in link fix",
-        "ru": "исправить имя филиала в ссылке",
-        "pt": "corrigir nome do ramo no link",
-        "nl": "fix branch name in link",
-        "fr": "correction du nom de la branche dans le lien",
-        "it": "correggere il nome del ramo nel link",
-        "es": "fijar nombre de rama en el enlace",
-        "pl": "fix branch name in link",
-        "uk": "виправлено назву гілки за посиланням",
-        "zh-cn": "在链接中固定分支名称"
       }
     },
     "titleLang": {
@@ -173,7 +173,7 @@
     },
     "dependencies": [
       {
-        "js-controller": ">=3.3.22"
+        "js-controller": ">=4.0.24"
       }
     ],
     "globalDependencies": [
