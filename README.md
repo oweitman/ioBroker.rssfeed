@@ -617,6 +617,10 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### 3.0.2 (2024-08-09)
+
+- add keyword in package.json
+
 ### 3.0.1 (2024-08-09)
 
 - add template example for articles as a Diashow

@@ -1,6 +1,6 @@
 {
   "name": "iobroker.rssfeed",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Adapter and vis widget for rss feeds",
   "author": {
     "name": "oweitman",
@@ -9,6 +9,7 @@
   "homepage": "https://github.com/oweitman/ioBroker.rssfeed",
   "license": "MIT",
   "keywords": [
+    "ioBroker",
     "rss",
     "atom",
     "rdf",

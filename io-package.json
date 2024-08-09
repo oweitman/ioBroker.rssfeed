@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "3.0.1",
+    "version": "3.0.2",
     "news": {
+      "3.0.2": {
+        "en": "add keyword in package.json",
+        "de": "keyword im paket hinzufügen. json",
+        "ru": "добавить ключевое слово в пакет. json",
+        "pt": "adicionar palavra-chave no pacote. o que foi",
+        "nl": "sleutelwoord toevoegen in pakket. json",
+        "fr": "ajouter un mot-clé dans le paquet. json",
+        "it": "aggiungere la parola chiave nel pacchetto. j",
+        "es": "añadir la palabra clave en el paquete. json",
+        "pl": "dodaj słowo kluczowe w pakiecie. json",
+        "uk": "додати слово в пакет. свінгери",
+        "zh-cn": "在软件包中添加关键字。 贾森"
+      },
       "3.0.1": {
         "en": "add template example for articles as a Diashow\nadjust dependency to js-controller",
         "de": "vorlagenbeispiel für Artikel als Diashow hinzufügen\nabhängigkeit von js-controller einstellen",
@@ -80,19 +93,6 @@
         "pl": "ignoruj widżety w vis-2\ndodaj restart vis / vis2",
         "uk": "ігнорувати віджети в vis-2\nдодати решту віск/віз2",
         "zh-cn": "忽略相对 2 中的部件\n向/ 相对2 添加重新启动"
-      },
-      "2.9.7": {
-        "en": "formating code\nremove common.main from io-package.json",
-        "de": "formatierungscode\nio-package.json entfernen",
-        "ru": "форматирование кода\nудалить common.main из io-package.json",
-        "pt": "código de formação\nremover common.main de io-package.json",
-        "nl": "opmaakcode\ncommon.main uit io-package.json verwijderen",
-        "fr": "code de formatage\nenlever common.main de io-package.json",
-        "it": "codice di formattazione\nrimuovere common.main da io-package.json",
-        "es": "formando código\nremove common.main from io-package.json",
-        "pl": "kod formatujący\nusunąć common.main z io- package.json",
-        "uk": "форматування коду\nвидалити загальний.main від io-package.json",
-        "zh-cn": "格式化代码\n从 io- package.json 中去除常见的.main"
       }
     },
     "titleLang": {
