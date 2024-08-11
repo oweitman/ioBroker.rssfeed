@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "3.0.2",
+    "version": "3.1.0",
     "news": {
+      "3.1.0": {
+        "en": "adjust dependency to js-controller in a minor release",
+        "de": "abhängigkeit von js-controller in einem kleinen release einstellen",
+        "ru": "настроить зависимость от js-контроллера в незначительном выпуске",
+        "pt": "ajustar a dependência ao js-controller em uma versão menor",
+        "nl": "de afhankelijkheid aan te passen aan js-controller in een kleine release",
+        "fr": "ajuster la dépendance à js-controller dans une libération mineure",
+        "it": "regolare la dipendenza da js-controller in un rilascio minore",
+        "es": "ajustar la dependencia a js-controller en una liberación menor",
+        "pl": "dostosować zależność do sterownika js- w nieznacznym wydaniu",
+        "uk": "коригувати залежність до js-контролера в неповному релізі",
+        "zh-cn": "在小释放中将依赖调整为 js 控制器"
+      },
       "3.0.2": {
         "en": "add keyword in package.json",
         "de": "keyword im paket hinzufügen. json",
@@ -80,19 +93,6 @@
         "pl": "aktualizacja pakietów\naktualizacja formatowania i ulepszania logowania błędów\nusunąć szczegółowe raportowanie stanu wartownika\nustaw stany subskrypcji",
         "uk": "оновлення пакетів\nоновлення форматування та поліпшення реєстрації помилок\nвидалення докладної звітності про статус відправника\nфіксувати підсрібні стани",
         "zh-cn": "更新软件包\n更新格式和改进错误记录\n删除详细的哨兵状态报告\n固定签名状态"
-      },
-      "2.9.8": {
-        "en": "ignore widgets in vis-2\nadd restart vis/vis2",
-        "de": "ignorieren widgets in vis-2\nneustart vis/vis2 hinzufügen",
-        "ru": "игнорировать виджеты в vis-2\nдобавить перезапуск vis/vis2",
-        "pt": "ignorar widgets em vis-2\nadicionar vis/vis2",
-        "nl": "widgets negeren in vis-2\nherstart vis/vis2 toevoegen",
-        "fr": "ignorer les widgets vis-2\najouter redémarrage vis/vis2",
-        "it": "ignorare i widget in vis-2\naggiungere riavvio vis/vis2",
-        "es": "ignorar los widgets en vis-2\nañadir restart vis/vis2",
-        "pl": "ignoruj widżety w vis-2\ndodaj restart vis / vis2",
-        "uk": "ігнорувати віджети в vis-2\nдодати решту віск/віз2",
-        "zh-cn": "忽略相对 2 中的部件\n向/ 相对2 添加重新启动"
       }
     },
     "titleLang": {
