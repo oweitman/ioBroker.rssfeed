@@ -38,7 +38,11 @@
                 },
                 "rss": {
                     "newLine": true,
+                    "xs": 12,
                     "sm": 12,
+                    "md": 6,
+                    "lg": 4,
+                    "xl": 4,
                     "noDelete": false,
                     "type": "table",
                     "items": [
