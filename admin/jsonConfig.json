@@ -34,6 +34,11 @@
                 "_warning": {
                     "newLine": true,
                     "type": "staticText",
+                    "xs": 12,
+                    "sm": 12,
+                    "md": 6,
+                    "lg": 4,
+                    "xl": 4,
                     "label": "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service"
                 },
                 "rss": {
