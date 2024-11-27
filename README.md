@@ -1,6 +1,6 @@
-![Logo](admin/rssfeed.png)
-
 # ioBroker Adapter to request and show RSS Feeds of different standards (Atom, RSS, RDF)
+
+![Logo](admin/rssfeed.png)
 
 [![NPM version](https://img.shields.io/npm/v/iobroker.rssfeed.svg)](https://www.npmjs.com/package/iobroker.rssfeed)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.rssfeed.svg)](https://www.npmjs.com/package/iobroker.rssfeed)
