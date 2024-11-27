@@ -12,7 +12,9 @@
             "runtimeExecutable": "c:/Users/oweit/AppData/Roaming/fnm/aliases/default/node.exe",
             "stopOnEntry": true,
             "sourceMaps": true,
-            "resolveSourceMapLocations": ["${workspaceFolder}/**", "!**/node_modules/**"]
+            "console": "internalConsole",
+            "outputCapture": "std",
+            "resolveSourceMapLocations": ["${workspaceFolder}/**", "**/node_modules/**"]
         },
         {
             "type": "node",

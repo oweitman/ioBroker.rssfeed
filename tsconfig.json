@@ -26,6 +26,7 @@
         "useUnknownInCatchVariables": false,
         "sourceMap": true
     },
-    "include": ["**/*.js", "**/*.d.ts"],
+    "include": ["lib/**/*.js", "lib/**/*.d.ts", "main.js"],
     "exclude": ["node_modules/**", "widgets/**"]
+  
 }

@@ -1,0 +1,12 @@
+{
+  "name": "rssfeed-vis1-widget",
+  "version": "1.0.0",
+  "main": "rssfeed/js/rssfeed.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild rssfeed/js/bundle.js --minify --bundle --outfile=rssfeed/js/rssfeed-dist.js --target=es6 --sourcemap"
+  },
+  "author": "",
+  "license": "MIT",
+  "description": ""
+}

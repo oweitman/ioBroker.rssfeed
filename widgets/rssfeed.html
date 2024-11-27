@@ -1,15 +1,12 @@
 <!--
     ioBroker.vis rssfeed Widget-Set
 
-    version: "0.0.1"
-
     Copyright 2020 oweitman oweitman@gmx.de
 -->
 <!-- here you can include so many css as you want -->
 <link rel="stylesheet" href="widgets/rssfeed/css/style.css" />
 <!-- here you can include so many js-files as you want -->
-<script type="text/javascript" src="widgets/rssfeed/js/rssfeed.js"></script>
-<script type="text/javascript" src="widgets/rssfeed/js/ejs.js"></script>
+<script type="text/javascript" src="widgets/rssfeed/js/rssfeed-dist.js"></script>
 
 <script id="tplrssfeedWidget2" type="text/ejs" class="vis-tpl"
     data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/rssfeed/img/rssfeed-vis.png"></img>'
@@ -18,16 +15,6 @@
     data-vis-name="RSS Feed Widget 2">
     <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 230px; height: 210px" id="<%= this.data.attr('wid') %>"><%
         vis.binds.rssfeed.rssfeedwidget2.createWidget(this.data.wid, this.view, this.data, this.style);
-    %></div>
-</script>
-<script id="tplrssfeedMultiWidget2" type="text/ejs" class="vis-tpl"
-    data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/rssfeed/img/rssfeed-vis.png"></img>'
-    data-vis-attrs="rss_feedCount[1]/number,1;rss_template/custom,rssfeed.editEjs;rss_dpCount[1]/number,1;rss_dp(1-rss_dpCount)/id;"
-    data-vis-attrs0="group.feeds/byindex;rss_oid(1-rss_feedCount)/id;rss_name(1-rss_feedCount);rss_maxarticles(1-rss_feedCount)/number,1;rss_filter(1-rss_feedCount);"
-    data-vis-set="rssfeed" data-vis-type="val" data-vis-beta="false" data-vis-update-style="true"
-    data-vis-name="deprecated RSS Feed Multi Widget 2">
-    <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 230px; height: 210px" id="<%= this.data.attr('wid') %>"><%
-        vis.binds.rssfeed.rssfeedmultiwidget2.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>
 <script id="tplrssfeedMultiWidget3" type="text/ejs" class="vis-tpl"

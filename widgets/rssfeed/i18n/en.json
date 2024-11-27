@@ -1,0 +1,21 @@
+{
+    "rssfeed adapter settings": "Adapter settings for rssfeed",
+    "rss_oid": "RSS feed data point",
+    "rss_template": "RSS Template",
+    "rss_maxarticles": "RSS max. articles",
+    "rss_filter": "RSS Filter",
+    "rss_feedCount": "RSS Feed Number",
+    "rss_dpCount": "Additional datapoint Count",
+    "rss_dp": "data point",
+    "rss_name": "RSS Name",
+    "group_feeds": "RSS Feed Group",
+    "rss_prefix": "RSS Prefix",
+    "rss_article": "RSS Article count",
+    "rss_speed": "RSS Speed",
+    "rss_divider": "RSS Seperator",
+    "rss_pauseonhover": "RSS Pause on hover",
+    "rss_link": "RSS Link",
+    "rss_withtime": "RSS with time",
+    "json_oid": "JSON data point",
+    "json_template": "JSON Template"
+}

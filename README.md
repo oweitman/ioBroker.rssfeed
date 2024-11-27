@@ -442,11 +442,11 @@ It has been tested with the following feeds
     all variables are read only
     -->
 <style>
-  #<%- widgetid % > img {
+  #<%- widgetid %> img {
     width: calc(<%- style.width || "230px" %> - 15px);
     height: auto;
   }
-  #<%- widgetid % > img.rssfeed {
+  #<%- widgetid %> img.rssfeed {
     width: auto;
     height: auto;
   }
@@ -473,11 +473,11 @@ It has been tested with the following feeds
 -->
 
 <style>
-  #<%- widgetid % > img {
+  #<%- widgetid %> img {
     width: calc(<%- style.width || "230px" %> - 15px);
     height: auto;
   }
-  #<%- widgetid % > img.rssfeed {
+  #<%- widgetid %> img.rssfeed {
     width: auto;
     height: auto;
   }
@@ -592,6 +592,9 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 ### **WORK IN PROGRESS**
 
 - update jsonconfig responsive
+- switch to iobroker/eslint
+- improver adapter code
+- improve widget code
 
 ### 3.1.0 (2024-08-11)
 
