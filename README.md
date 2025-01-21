@@ -591,6 +591,7 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 ### **WORK IN PROGRESS**
 
 - upgrade version js-controller
+- switch from request to axios
 
 ### 3.2.0 (2024-11-27)
 
