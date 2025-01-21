@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "3.2.0",
+    "version": "3.3.0",
     "news": {
+      "3.3.0": {
+        "en": "upgrade version js-controller\nswitch from request to axios",
+        "de": "upgrade-version js-controller\nwechsel von anfrage nach axios",
+        "ru": "обновление версии js-controller\nпереход от запроса к axios",
+        "pt": "atualização versão js-controller\nmudar de pedido para axios",
+        "nl": "upgrade versie js-controller\nschakelen van verzoek naar axios",
+        "fr": "upgrade version js-controller\npasser de la demande à l'axios",
+        "it": "aggiornamento versione js-controller\npassare da richiesta a assios",
+        "es": "versión de actualización js-controller\ncambiar de solicitud a axios",
+        "pl": "upgrade version js- kontroler\nprzełączanie z prośby na aksjos",
+        "uk": "оновлення версії js-controller\nвимикач від запиту до осей",
+        "zh-cn": "升级版本 js 控制器\n从请求切换到轴"
+      },
       "3.2.0": {
         "en": "update jsonconfig responsive\nswitch to iobroker/eslint\nimprover adapter code\nimprove widget code",
         "de": "jsonconfig responsive aktualisieren\niobroker/eslint wechseln\nverbesserer adaptercode\nwidget-code verbessern",
@@ -80,19 +93,6 @@
         "pl": "dostrajanie szablonów i dostępnych zmiennych\ndostrojenie formatu i tłumaczenia\nprzenieś dokumentację widget formularz doc.html do readme",
         "uk": "тонка настройка на шаблони і доступні змінні\nтонке тюнінг у форматі та перекладі\njavascript licenses api веб-сайт go1.13.8",
         "zh-cn": "对模板和可用变量进行微调\n格式和翻译的微调\n移动部件文档格式 doc.html以读取"
-      },
-      "2.9.10": {
-        "en": "update images for dark and light theme",
-        "de": "bilder für dunkles und helles thema aktualisieren",
-        "ru": "обновление изображений для темной и светлой темы",
-        "pt": "atualizar imagens para o tema escuro e leve",
-        "nl": "afbeeldingen bijwerken voor donker en licht thema",
-        "fr": "mettre à jour les images pour le thème sombre et lumineux",
-        "it": "aggiornare le immagini per tema scuro e chiaro",
-        "es": "actualizar imágenes para tema oscuro y ligero",
-        "pl": "aktualizacja obrazów dla motywu ciemny i lekki",
-        "uk": "оновлення зображень для темної і легкої теми",
-        "zh-cn": "更新暗淡主题的图像"
       }
     },
     "titleLang": {
