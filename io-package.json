@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "3.3.0",
+    "version": "3.3.1",
     "news": {
+      "3.3.1": {
+        "en": "add an accept request header, because axios send only application/json",
+        "de": "einen akzeptieranfragen-header hinzufügen, weil axios nur anwendung senden/json",
+        "ru": "добавьте заголовок приемного запроса, потому что axios отправляет только приложение / json",
+        "pt": "adicionar um cabeçalho de solicitação aceita, porque o axios envia apenas aplicativo/json",
+        "nl": "voeg een accept request header toe, omdat axios alleen applicatie/json versturen",
+        "fr": "ajouter un en-tête de requête accepté, car axios n'envoie que application/json",
+        "it": "aggiungere un intestazione di richiesta di accettare, perché gli assi inviano solo applicazione/json",
+        "es": "añadir un encabezado de solicitud de aceptación, porque axios enviar sólo aplicación / json",
+        "pl": "dodaj nagłówek prośby o zgodę, ponieważ axios wysyła tylko aplikację / json",
+        "uk": "додати коментар, тому що axios надсилати тільки додаток / json",
+        "zh-cn": "添加一个接受请求头, 因为 轴只发送应用程序/ json"
+      },
       "3.3.0": {
         "en": "upgrade version js-controller\nswitch from request to axios",
         "de": "upgrade-version js-controller\nwechsel von anfrage nach axios",
@@ -80,19 +93,6 @@
         "pl": "aktualizacji widget multifeed 3 i deprecate widget multifeed 2\nzmiana łamania: w widżecie rssfeed 2: artykuły i meta muszą zostać zmienione na rss.articles i rss.meta",
         "uk": "оновлення мультиfeed віджет 3 і deprecate багатоfeed віджет 2\nзміна розриву: в rssfeed віджет 2: статті і мета повинні бути змінені до rss.articles і rss.meta",
         "zh-cn": "更新多种子部件 3, 并折旧多种子部件 2\n打破更改: 在 rssfeed 部件2: 文章和元必须更改为 rs. articles and rs.meta"
-      },
-      "2.10.0": {
-        "en": "fine tuning on templates and available variables\nfine tuning on format and translation\nmove widget documentation form doc.html to readme",
-        "de": "feinabstimmung auf vorlagen und verfügbaren variablen\nfeinabstimmung auf format und übersetzung\nwidget dokumentationsformular doc.html zu readme",
-        "ru": "тонкая настройка на шаблоны и доступные переменные\nтонкая настройка на формат и перевод\nпереместить виджет документировать форму doc.html, чтобы читать",
-        "pt": "ajuste fino em modelos e variáveis disponíveis\najuste fino no formato e tradução\nmover formulário de documentação do widget doc.html para readme",
-        "nl": "finetuning op templates en beschikbare variabelen\nfine tuning op formaat en vertaling\nmove widget documentation form doc.html to readme",
-        "fr": "réglage fin sur les modèles et les variables disponibles\nréglage fin sur le format et la traduction\nmove widget documentation form doc.html to readme",
-        "it": "fine tuning su modelli e variabili disponibili\nfine tuning su formato e traduzione\nspostare il widget documentazione forma doc.html per leggere",
-        "es": "ajuste fino en plantillas y variables disponibles\najuste fino en formato y traducción\nmove widget documentation form doc.html to readme",
-        "pl": "dostrajanie szablonów i dostępnych zmiennych\ndostrojenie formatu i tłumaczenia\nprzenieś dokumentację widget formularz doc.html do readme",
-        "uk": "тонка настройка на шаблони і доступні змінні\nтонке тюнінг у форматі та перекладі\njavascript licenses api веб-сайт go1.13.8",
-        "zh-cn": "对模板和可用变量进行微调\n格式和翻译的微调\n移动部件文档格式 doc.html以读取"
       }
     },
     "titleLang": {
