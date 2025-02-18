@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "3.4.0",
+    "version": "3.4.1",
     "news": {
+      "3.4.1": {
+        "en": "fix eslint",
+        "de": "eslint reparieren",
+        "ru": "исправить eslint",
+        "pt": "corrigir o eslint",
+        "nl": "repareren eslint",
+        "fr": "fix eslint",
+        "it": "fissare eslint",
+        "es": "fix eslint",
+        "pl": "fix eslint",
+        "uk": "фіксувати eslint",
+        "zh-cn": "修复 eslint 系统"
+      },
       "3.4.0": {
         "en": "introducing a new attribute opentype to open the links in the marquee widget",
         "de": "einführung eines neuen attributes opentype, um die links im marquee widget zu öffnen",
@@ -80,19 +93,6 @@
         "pl": "dodaj słowo kluczowe w pakiecie. json",
         "uk": "додати слово в пакет. свінгери",
         "zh-cn": "在软件包中添加关键字。 贾森"
-      },
-      "3.0.1": {
-        "en": "add template example for articles as a Diashow\nadjust dependency to js-controller",
-        "de": "vorlagenbeispiel für Artikel als Diashow hinzufügen\nabhängigkeit von js-controller einstellen",
-        "ru": "добавить пример шаблона для статей как Diashow\nнастроить зависимость от js-контроллера",
-        "pt": "adicionar exemplo de modelo para artigos como Diashow\najustar a dependência ao js-controller",
-        "nl": "sjabloon bijvoorbeeld toevoegen voor artikelen als Diashow\nafhankelijkheid aanpassen aan js-controller",
-        "fr": "ajouter un exemple de modèle pour les articles comme Diashow\najuster la dépendance à js-controller",
-        "it": "aggiungi esempio di modello per gli articoli come Diashow\nregolare la dipendenza da js-controller",
-        "es": "añadir ejemplo de plantilla para artículos como Diashow\najustar la dependencia a js-controller",
-        "pl": "dodaj przykład szablonu dla artykułów jako diashow\ndostosować zależność do sterownika js-",
-        "uk": "приклад шаблону для статей як Diashow\nрегулювання залежності від js-controller",
-        "zh-cn": "作为 Diashow 文章添加模板示例\n将依赖调整到 js 控制器"
       }
     },
     "titleLang": {

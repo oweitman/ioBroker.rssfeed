@@ -8,12 +8,9 @@ export default [
     {
         // specify files to exclude from linting here
         ignores: [
-            'widgets/rssfeed/js/rssfeed-dist.js',
+            'widgets/rssfeed/dist/rssfeed-dist.js',
             'widgets/rssfeed/js/ejs.js',
             'widgets/rssfeed/js/mode-ejs.js',
-            'widgets/rssfeed/js/xxxjquery-3.2.1.min.js',
-            'widgets/rssfeed/js/xxxhighlight.pack.js',
-            'widgets/rssfeed/js/xxxwords.js',
             '.dev-server/**',
             'backup/**',
             '*.test.js',

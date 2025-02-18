@@ -604,6 +604,10 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### 3.4.1 (2025-02-18)
+
+- fix eslint
+
 ### 3.4.0 (2025-02-18)
 
 - introducing a new attribute opentype to open the links in the marquee widget
