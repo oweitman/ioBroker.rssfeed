@@ -61,7 +61,8 @@ The following widgets actually exists
 - [`RSS Feed Multi widget 3`](#rss-feed-multi-widget-3) - to show several aggregated feeds in one widget.
 - [`RSS Feed Meta Helper`](#rss-feed-meta-helper) - a helper widget to inspect the metadata of a feed
 - [`RSS Feed Article Helper 2`](#rss-feed-article-helper) - a helper widget to inspect the article data of a feed
-- [`RSS Feed Title marquee 3`](#rss-feed-title-marquee-3) - a widget to show the Headlines of a feed as a marquee
+- [`RSS Feed Title marquee 4 (deprecated)`](#rss-feed-title-marquee-4-deprecated) - a widget to show the Headlines of a feed as a marquee
+- [`RSS Feed Title marquee 5`](#rss-feed-title-marquee-5) - a widget to show the Headlines of a feed as a marquee
 - [`JSON Template`(#json-template)] - a widget that have nothing todo with RSS Feeds, but uses the same technology, and you can define a custom template to show any JSON-Data in vis.
 
 ### RSS Feed widget 2
@@ -161,7 +162,7 @@ With this widget, all title attributes will be displayed as a scrolling text. As
 | rss_feedCount    | General group       | Here you can set the number of feeds to be configured. A separate group is created in vis for each feed to be configured.                                                                                                                                                 |
 | rss_speed        | General group       | The scrolling speed of the scrolling text Attribute rss_divider - General group Here you can enter the characters used to separate the headlines. The default value is +++.                                                                                               |
 | rss_pauseonhover | General group       | If this option is switched on, the scrolling text stops as soon as you hover the mouse over the text.                                                                                                                                                                     |
-| rss_opentype     | General group       | Selection of how the link is opened: none, link, popup                                                                                                                                                                                                                    |
+| rss_opentype     | General group       | Selection of how the link is opened: `none`, `link`, `popup`                                                                                                                                                                                                                    |
 | rss_withtime     | General group       | If this option is switched on, the time is displayed before the respective headline. Attribute rss_withdate - General group If this option is enabled, the date without the year and the time are displayed before the respective headline.                               |
 | rss_withyear     | General group       | If this option is enabled, the date with the year and the time are displayed before the respective headline.                                                                                                                                                              |
 | rss_oid          | Feeds[number] group | Select the data point with the corresponding RSS feed.                                                                                                                                                                                                                    |
