@@ -6,7 +6,7 @@
 <!-- here you can include so many css as you want -->
 <link rel="stylesheet" href="widgets/rssfeed/css/style.css" />
 <!-- here you can include so many js-files as you want -->
-<script type="text/javascript" src="widgets/rssfeed/js/rssfeed-dist.js"></script>
+<script type="text/javascript" src="widgets/rssfeed/dist/rssfeed-dist.js"></script>
 
 <script id="tplrssfeedWidget2" type="text/ejs" class="vis-tpl"
     data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/rssfeed/img/rssfeed-vis.png"></img>'
@@ -51,6 +51,16 @@
     data-vis-name="RSS Feed Title marquee 4">
     <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 230px; height: 20px" id="<%= this.data.attr('wid') %>"><%
         vis.binds.rssfeed.marquee4.createWidget(this.data.wid, this.view, this.data, this.style);
+    %></div>
+</script>
+<script id="tplrssfeedMarquee5" type="text/ejs" class="vis-tpl"
+    data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/rssfeed/img/rssfeed-mrqe.png"></img>'
+    data-vis-attrs="rss_feedCount[1]/number,1;rss_speed/number,1;rss_divider[+++];rss_pauseonhover[true]/checkbox;rss_opentype[none]/nselect,none,link,popup;rss_withtime/checkbox;rss_withdate/checkbox;rss_withyear/checkbox;rss_withname/checkbox;"
+    data-vis-attrs0="group.feeds/byindex;rss_oid(1-rss_feedCount)/id;rss_name(1-rss_feedCount);rss_maxarticles(1-rss_feedCount)/number,1;rss_filter(1-rss_feedCount);"
+    data-vis-set="rssfeed" data-vis-type="val" data-vis-beta="false" data-vis-update-style="true"
+    data-vis-name="RSS Feed Title marquee 5">
+    <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 230px; height: 20px" id="<%= this.data.attr('wid') %>"><%
+        vis.binds.rssfeed.marquee5.createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>
 <script id="tplJSONTemplate2" type="text/ejs" class="vis-tpl"

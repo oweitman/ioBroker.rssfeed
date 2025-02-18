@@ -4,7 +4,8 @@
   "main": "rssfeed/js/rssfeed.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "esbuild rssfeed/js/bundle.js --minify --bundle --outfile=rssfeed/js/rssfeed-dist.js --target=es6 --sourcemap"
+    "buildmin": "esbuild rssfeed/js/bundle.js --minify --bundle --outfile=rssfeed/dist/rssfeed-dist.js --target=es6 --sourcemap",
+    "build": "esbuild rssfeed/js/bundle.js --bundle --outfile=rssfeed/dist/rssfeed-dist.js --target=es6 --sourcemap"
   },
   "author": "",
   "license": "MIT",
