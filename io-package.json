@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "3.3.1",
+    "version": "3.4.0",
     "news": {
+      "3.4.0": {
+        "en": "introducing a new attribute opentype to open the links in the marquee widget",
+        "de": "einführung eines neuen attributes opentype, um die links im marquee widget zu öffnen",
+        "ru": "введение нового атрибута opentype для открытия ссылок в widget",
+        "pt": "introduzindo um novo atributo opentype para abrir os links no widget de marquee",
+        "nl": "het invoeren van een nieuw attribuut opentype om de links in de maquee widget te openen",
+        "fr": "introduction d'un nouvel attribut opentype pour ouvrir les liens dans le widget marquee",
+        "it": "introdurre un nuovo attributo opentype per aprire i link nel widget di marquee",
+        "es": "introduciendo un nuevo atributo abierto para abrir los enlaces en el widget marquee",
+        "pl": "wprowadzenie nowego atrybutu opentype do otwarcia linków w widgecie marquee",
+        "uk": "введення нового атрибуту відкритоготипу для відкриття посилань в віджеті marquee",
+        "zh-cn": "引入新的属性打开类型打开 marquee 部件中的链接"
+      },
       "3.3.1": {
         "en": "add an accept request header, because axios send only application/json",
         "de": "einen akzeptieranfragen-header hinzufügen, weil axios nur anwendung senden/json",
@@ -80,19 +93,6 @@
         "pl": "dodaj przykład szablonu dla artykułów jako diashow\ndostosować zależność do sterownika js-",
         "uk": "приклад шаблону для статей як Diashow\nрегулювання залежності від js-controller",
         "zh-cn": "作为 Diashow 文章添加模板示例\n将依赖调整到 js 控制器"
-      },
-      "3.0.0": {
-        "en": "update multifeed widget 3 and deprecate multifeed widget 2\nbreaking change: in rssfeed widget 2: articles and meta have to be changed to rss.articles and rss.meta",
-        "de": "multifeed widget 3 aktualisieren und multifeed widget 2 deprecate\nbrechen änderung: in rssfeed widget 2: artikel und meta müssen in rss.articles and rss.meta geändert werden",
-        "ru": "обновление многоплодного виджета 3 и депрекат многокормового виджета 2\nrssfeed widget 2: статьи и мета должны быть изменены на rss.articles и rss.meta",
-        "pt": "atualização widget multifeed 3 e deprecate widget multifeed 2\nbreak change: in rssfeed widget 2: artigos e meta devem ser alterados para rss.articles e rss.meta",
-        "nl": "update multifeed widget 3 en deprecate multifeed widget 2\nbreek verandering: in rssfeed widget 2: artikelen en meta moeten worden veranderd in rss.articles en rss.meta",
-        "fr": "mettre à jour le widget multifeed 3 et déprécier le widget multifeed 2\nrupture de changement: dans rssfeed widget 2: articles et méta doivent être changés en rss.articles et rss.meta",
-        "it": "aggiornamento widget multifeed 3 e deprecate widget multifeed 2\ncambiamento di rottura: in rssfeed widget 2: articoli e meta devono essere modificati in rss.articles e rss.meta",
-        "es": "actualización widget multifeed 3 y deprecate widget multifeed 2\ncambio de ruptura: en el widget rsfeed 2: artículos y meta tienen que ser cambiados a rss.articles y rss.meta",
-        "pl": "aktualizacji widget multifeed 3 i deprecate widget multifeed 2\nzmiana łamania: w widżecie rssfeed 2: artykuły i meta muszą zostać zmienione na rss.articles i rss.meta",
-        "uk": "оновлення мультиfeed віджет 3 і deprecate багатоfeed віджет 2\nзміна розриву: в rssfeed віджет 2: статті і мета повинні бути змінені до rss.articles і rss.meta",
-        "zh-cn": "更新多种子部件 3, 并折旧多种子部件 2\n打破更改: 在 rssfeed 部件2: 文章和元必须更改为 rs. articles and rs.meta"
       }
     },
     "titleLang": {
