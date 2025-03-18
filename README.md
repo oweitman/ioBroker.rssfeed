@@ -184,7 +184,7 @@ For details on the template system, see chapter Template based on examples
 
 The JSON data is passed to the template with the prefix data. In addition, the current widgetID is also available as a variable so that it can be specified in individual CSS instructions.
 
-**Advanced use case:**
+#### Advanced use case
 
 In the examples above, only the pure output was covered. The template can now also be enriched with HTML tags to achieve a specific layout. Here is an example:
 
@@ -217,7 +217,7 @@ In the examples above, only the pure output was covered. The template can now al
 
 (In Markdown colors arent visible)
 
-**Use case for async calls:**
+#### Use case for async calls
 
 **Block 1:**
 
