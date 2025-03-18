@@ -169,10 +169,11 @@ With this widget, all title attributes will be displayed as a scrolling text. As
 | rss_maxarticles  | Feeds[number] group | The maximum number of individual articles displayed from the RSS feed                                                                                                                                                                                                     |
 | rss_filter       | Feeds[number] group | For the filter function, one or more filter criteria can be entered in the field, separated by semicolons (;). The following article attributes are searched for the search: title, description, categories. Only articles that contain one of these terms are displayed. |
 
-### JSON Template2
+### JSON Template3
 
 Using this widget, any data point with JSON data can be displayed as desired.
 The display is done using a template format, which can be thought of as a combined form of HTML code + JavaScript + special tags that control the display of the JSON attributes.
+JSON Template3 now supports async calls with await. JSON Template 2 is going to be deprecated in the future.
 
 | Setting      | description                                                                                                                                                                                                                                                                       |
 | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -215,6 +216,45 @@ In the examples above, only the pure output was covered. The template can now al
 ```
 
 (In Markdown colors arent visible)
+
+**Use case for async calls:**
+
+**Block 1:**
+
+call sendToAsync Function with await. This example calls a test function in the admin adapter.
+
+**Block 2:**
+
+stringify the result and output to html
+
+**Block 3:**
+
+definition of the sendToAsync function
+
+```html
+<% req = await sendToAsync("admin.0","selectSendTo",{test:"test"}); %>
+<%- JSON.stringify(req) %>
+<%
+async function sendToAsync(instance, command, sendData) {
+    console.log(`sendToAsync ${command} ${sendData}`);
+    return new Promise((resolve, reject) => {
+        try {
+            vis.conn.sendTo(instance, command, sendData, function (receiveData) {
+                resolve(receiveData);
+            });
+        } catch (error) {
+            reject(error);
+        }
+    });
+}
+%>  
+```
+
+**Result:**
+
+```text
+[{"label":"Afghanistan","value":"AF"},{"label":"Åland Islands","value":"AX"},{"label":"Albania","value":"AL"}]
+```
 
 ## Templatesystem
 
@@ -605,6 +645,10 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+
+- make async function calls available in templates
+
 ### 3.4.1 (2025-02-18)
 
 - fix eslint
