@@ -63,7 +63,7 @@ The following widgets actually exists
 - [`RSS Feed Article Helper 2`](#rss-feed-article-helper) - a helper widget to inspect the article data of a feed
 - [`RSS Feed Title marquee 4 (deprecated)`](#rss-feed-title-marquee-4-deprecated) - a widget to show the Headlines of a feed as a marquee
 - [`RSS Feed Title marquee 5`](#rss-feed-title-marquee-5) - a widget to show the Headlines of a feed as a marquee
-- [`JSON Template`(#json-template)] - a widget that have nothing todo with RSS Feeds, but uses the same technology, and you can define a custom template to show any JSON-Data in vis.
+- [`JSON Template 3`](#json-template3) - a widget that have nothing todo with RSS Feeds, but uses the same technology, and you can define a custom template to show any JSON-Data in vis.
 
 ### RSS Feed widget 2
 
