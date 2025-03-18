@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "3.4.1",
+    "version": "3.5.0",
     "news": {
+      "3.5.0": {
+        "en": "make async function calls available in templates",
+        "de": "async-funktionsaufrufe in vorlagen verfügbar machen",
+        "ru": "сделать вызовы функции async доступными в шаблонах",
+        "pt": "fazer chamadas de função async disponíveis em modelos",
+        "nl": "async-functieoproepen beschikbaar stellen in sjablonen",
+        "fr": "rendre les appels de fonction async disponibles dans les modèles",
+        "it": "rendere disponibili le chiamate funzione asincrona nei modelli",
+        "es": "hacer llamadas de función asinc disponibles en plantillas",
+        "pl": "udostępniać w szablonach wywołania funkcji async",
+        "uk": "зробити виклики функції async, доступні в шаблонах",
+        "zh-cn": "提供模板中的async函数调用"
+      },
       "3.4.1": {
         "en": "fix eslint",
         "de": "eslint reparieren",
@@ -80,19 +93,6 @@
         "pl": "dostosować zależność do sterownika js- w nieznacznym wydaniu",
         "uk": "коригувати залежність до js-контролера в неповному релізі",
         "zh-cn": "在小释放中将依赖调整为 js 控制器"
-      },
-      "3.0.2": {
-        "en": "add keyword in package.json",
-        "de": "keyword im paket hinzufügen. json",
-        "ru": "добавить ключевое слово в пакет. json",
-        "pt": "adicionar palavra-chave no pacote. o que foi",
-        "nl": "sleutelwoord toevoegen in pakket. json",
-        "fr": "ajouter un mot-clé dans le paquet. json",
-        "it": "aggiungere la parola chiave nel pacchetto. j",
-        "es": "añadir la palabra clave en el paquete. json",
-        "pl": "dodaj słowo kluczowe w pakiecie. json",
-        "uk": "додати слово в пакет. свінгери",
-        "zh-cn": "在软件包中添加关键字。 贾森"
       }
     },
     "titleLang": {
