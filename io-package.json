@@ -17,19 +17,6 @@
         "zh-cn": "提供模板中的async函数调用"
       },
       "3.4.1": {
-        "en": "fix eslint",
-        "de": "eslint reparieren",
-        "ru": "исправить eslint",
-        "pt": "corrigir o eslint",
-        "nl": "repareren eslint",
-        "fr": "fix eslint",
-        "it": "fissare eslint",
-        "es": "fix eslint",
-        "pl": "fix eslint",
-        "uk": "фіксувати eslint",
-        "zh-cn": "修复 eslint 系统"
-      },
-      "3.4.0": {
         "en": "introducing a new attribute opentype to open the links in the marquee widget",
         "de": "einführung eines neuen attributes opentype, um die links im marquee widget zu öffnen",
         "ru": "введение нового атрибута opentype для открытия ссылок в widget",
