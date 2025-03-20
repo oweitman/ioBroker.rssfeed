@@ -839,9 +839,6 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 ### 3.4.1 (2025-02-18)
 
 - fix eslint
-
-### 3.4.0 (2025-02-18)
-
 - introducing a new attribute opentype to open the links in the marquee widget
 
 ### 3.3.1 (2025-01-23)
