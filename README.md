@@ -645,6 +645,10 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### 3.5.1 (2025-03-20)
+
+- improve build
+
 ### 3.5.0 (2025-03-18)
 
 - make async function calls available in templates

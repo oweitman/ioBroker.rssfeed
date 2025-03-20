@@ -1,3 +1,9 @@
 {
-    "plugins": ["iobroker", "license", "manual-review"]
+    "plugins": ["iobroker", "version", "license", "manual-review"],
+    "versionFiles": [
+		["widgets/package.json", "(?<=\"version\": \")(.*?)(?=\",)"]
+    ],
+    "exec": {
+		"before_commit": "cd widgets/rssfeed && npm run buildmin && cd ../.."
+	}
 }

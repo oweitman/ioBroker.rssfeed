@@ -881,12 +881,34 @@ vis.binds['rssfeed'] = {
          * @param widgetID - The ID of the widget element.
          * @param view - The view object containing widget information.
          * @param data - Contains configuration data for the widget, including JSON object ID and template.
-         * @param style - Style settings for the widget.
-         *
+         * @param style - Style settings for the widget.       *
          * The function checks for the widget element by its ID. If not found, it retries after a delay.
          * It parses the JSON data from the specified object ID, processes additional data points,
          * and binds states if necessary. It then renders the widget using the EJS template with
          * the provided data and style.
+         
+        Testtemplate:
+         
+            <%
+         
+            debugger;
+            req = await sendToAsync("admin.0","selectSendTo");
+            console.log(JSON.stringify(req));
+            %>
+            <%- JSON.stringify(req) %>
+            <%
+            async function sendToAsync(instance, command, sendData) {
+                return new Promise((resolve, reject) => {
+                    try {
+                        vis.conn.sendTo(instance, command, sendData, function (receiveData) {
+                            resolve(receiveData);
+                        });
+                    } catch (error) {
+                        reject(error);
+                    }
+                });
+            }
+            %>
          */
         createWidget: function (widgetID, view, data, style) {
             const $div = $(`#${widgetID}`);

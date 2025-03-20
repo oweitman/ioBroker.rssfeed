@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "3.5.0",
+    "version": "3.5.1",
     "news": {
+      "3.5.1": {
+        "en": "improve build",
+        "de": "verbesserung des aufbaus",
+        "ru": "улучшить строительство",
+        "pt": "melhorar a construção",
+        "nl": "bouwen verbeteren",
+        "fr": "améliorer la construction",
+        "it": "migliorare la costruzione",
+        "es": "mejorar la construcción",
+        "pl": "poprawa budowy",
+        "uk": "поліпшення будівель",
+        "zh-cn": "改进建设"
+      },
       "3.5.0": {
         "en": "make async function calls available in templates",
         "de": "async-funktionsaufrufe in vorlagen verfügbar machen",
