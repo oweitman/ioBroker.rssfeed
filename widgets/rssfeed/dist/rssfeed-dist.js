@@ -9,8 +9,7 @@
   var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, {
     get: (a, b) => (typeof require !== "undefined" ? require : a)[b]
   }) : x)(function(x) {
-    if (typeof require !== "undefined")
-      return require.apply(this, arguments);
+    if (typeof require !== "undefined") return require.apply(this, arguments);
     throw Error('Dynamic require of "' + x + '" is not supported');
   });
   var __esm = (fn, res) => function __init() {
@@ -60,7 +59,7 @@
   var version;
   var init_package = __esm({
     "../package.json"() {
-      version = "3.4.1";
+      version = "3.5.2";
     }
   });
 
@@ -855,12 +854,34 @@
            * @param widgetID - The ID of the widget element.
            * @param view - The view object containing widget information.
            * @param data - Contains configuration data for the widget, including JSON object ID and template.
-           * @param style - Style settings for the widget.
-           *
+           * @param style - Style settings for the widget.       *
            * The function checks for the widget element by its ID. If not found, it retries after a delay.
            * It parses the JSON data from the specified object ID, processes additional data points,
            * and binds states if necessary. It then renders the widget using the EJS template with
            * the provided data and style.
+           
+          Testtemplate:
+           
+              <%
+           
+              debugger;
+              req = await sendToAsync("admin.0","selectSendTo");
+              console.log(JSON.stringify(req));
+              %>
+              <%- JSON.stringify(req) %>
+              <%
+              async function sendToAsync(instance, command, sendData) {
+                  return new Promise((resolve, reject) => {
+                      try {
+                          vis.conn.sendTo(instance, command, sendData, function (receiveData) {
+                              resolve(receiveData);
+                          });
+                      } catch (error) {
+                          reject(error);
+                      }
+                  });
+              }
+              %>
            */
           createWidget: function(widgetID, view, data, style) {
             const $div = $(`#${widgetID}`);
@@ -1285,10 +1306,8 @@
               if (!n[o2]) {
                 if (!t[o2]) {
                   var a = typeof __require == "function" && __require;
-                  if (!u && a)
-                    return a(o2, true);
-                  if (i)
-                    return i(o2, true);
+                  if (!u && a) return a(o2, true);
+                  if (i) return i(o2, true);
                   var f = new Error("Cannot find module '" + o2 + "'");
                   throw f.code = "MODULE_NOT_FOUND", f;
                 }
@@ -1301,8 +1320,7 @@
               return n[o2].exports;
             }
             var i = typeof __require == "function" && __require;
-            for (var o = 0; o < r.length; o++)
-              s(r[o]);
+            for (var o = 0; o < r.length; o++) s(r[o]);
             return s;
           }
           return e;
@@ -1782,17 +1800,21 @@
                         }
                     }
                     switch (this.mode) {
+                      // Just executing code
                       case Template.modes.EVAL:
                         this.source += "    ; " + line + "\n";
                         break;
+                      // Exec, esc, and output
                       case Template.modes.ESCAPED:
                         this.source += "    ; __append(escapeFn(" + stripSemi(line) + "))\n";
                         break;
+                      // Exec and output
                       case Template.modes.RAW:
                         this.source += "    ; __append(" + stripSemi(line) + ")\n";
                         break;
                       case Template.modes.COMMENT:
                         break;
+                      // Literal <%% mode, append as raw output
                       case Template.modes.LITERAL:
                         this._addOutput(line);
                         break;
@@ -1959,16 +1981,13 @@ function encode_char(c) {
               function trim(arr) {
                 var start = 0;
                 for (; start < arr.length; start++) {
-                  if (arr[start] !== "")
-                    break;
+                  if (arr[start] !== "") break;
                 }
                 var end = arr.length - 1;
                 for (; end >= 0; end--) {
-                  if (arr[end] !== "")
-                    break;
+                  if (arr[end] !== "") break;
                 }
-                if (start > end)
-                  return [];
+                if (start > end) return [];
                 return arr.slice(start, end - start + 1);
               }
               var fromParts = trim(from.split("/"));
@@ -2011,20 +2030,17 @@ function encode_char(c) {
               return splitPath(path)[3];
             };
             function filter(xs, f) {
-              if (xs.filter)
-                return xs.filter(f);
+              if (xs.filter) return xs.filter(f);
               var res = [];
               for (var i = 0; i < xs.length; i++) {
-                if (f(xs[i], i, xs))
-                  res.push(xs[i]);
+                if (f(xs[i], i, xs)) res.push(xs[i]);
               }
               return res;
             }
             var substr = "ab".substr(-1) === "b" ? function(str, start, len) {
               return str.substr(start, len);
             } : function(str, start, len) {
-              if (start < 0)
-                start = str.length + start;
+              if (start < 0) start = str.length + start;
               return str.substr(start, len);
             };
           }).call(this, require2("_process"));

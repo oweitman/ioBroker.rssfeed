@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "3.5.1",
+    "version": "3.5.2",
     "news": {
+      "3.5.2": {
+        "en": "improve build",
+        "de": "verbesserung des aufbaus",
+        "ru": "улучшить строительство",
+        "pt": "melhorar a construção",
+        "nl": "bouwen verbeteren",
+        "fr": "améliorer la construction",
+        "it": "migliorare la costruzione",
+        "es": "mejorar la construcción",
+        "pl": "poprawa budowy",
+        "uk": "поліпшення будівель",
+        "zh-cn": "改进建设"
+      },
       "3.5.1": {
         "en": "improve build",
         "de": "verbesserung des aufbaus",
@@ -80,19 +93,6 @@
         "pl": "update jsonconfig responsive\nprzełącz na iobroker / eslint\nkod adaptera wzmacniacza\npoprawić kod widget",
         "uk": "оновлення jsonconfig responsive\nвимикач до iobroker/eslint\nкод адаптера\nполіпшення коду віджету",
         "zh-cn": "更新响应 jsonconfig\n切换到 iobus/slint\n改进适配器代码\n改进部件代码"
-      },
-      "3.1.0": {
-        "en": "adjust dependency to js-controller in a minor release",
-        "de": "abhängigkeit von js-controller in einem kleinen release einstellen",
-        "ru": "настроить зависимость от js-контроллера в незначительном выпуске",
-        "pt": "ajustar a dependência ao js-controller em uma versão menor",
-        "nl": "de afhankelijkheid aan te passen aan js-controller in een kleine release",
-        "fr": "ajuster la dépendance à js-controller dans une libération mineure",
-        "it": "regolare la dipendenza da js-controller in un rilascio minore",
-        "es": "ajustar la dependencia a js-controller en una liberación menor",
-        "pl": "dostosować zależność do sterownika js- w nieznacznym wydaniu",
-        "uk": "коригувати залежність до js-контролера в неповному релізі",
-        "zh-cn": "在小释放中将依赖调整为 js 控制器"
       }
     },
     "titleLang": {
