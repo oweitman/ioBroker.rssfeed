@@ -20,7 +20,7 @@
     "url": "https://github.com/oweitman/ioBroker.rssfeed.git"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "dependencies": {
     "@iobroker/adapter-core": "^3.2.3",
@@ -74,7 +74,7 @@
     "test": "npm run test:js && npm run test:package",
     "check": "tsc --noEmit -p tsconfig.check.json",
     "lint": "eslint -c eslint.config.mjs .",
-    "repochecker": "npx github:oweitman/ioBroker.repochecker https://github.com/oweitman/ioBroker.rssfeed --local",
+    "repochecker": "npx github:oweitman/ioBroker.repochecker https://github.com/oweitman/ioBroker.rssfeed --local --noinfo",
     "translate": "translate-adapter",
     "translate-widgets": "node ./bin/translate.js --source widgets/rssfeed/i18n/en.json --format single",
     "build": "cd widgets/rssfeed && npm run build && cd ../..",
