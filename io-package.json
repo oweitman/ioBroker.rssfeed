@@ -151,9 +151,6 @@
     "connectionType": "cloud",
     "dataSource": "poll",
     "visWidgets": {
-      "ignoreInVersions": [
-        2
-      ],
       "rssfeed": {
         "ignoreInVersions": [
           2
