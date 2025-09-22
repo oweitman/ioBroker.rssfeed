@@ -12,12 +12,8 @@
 // add translations for edit mode
 // add translations for edit mode
 import { version as pkgVersion } from '../../../package.json';
-
-fetch('widgets/rssfeed/i18n/translations.json').then(async res => {
-    const i18n = await res.json();
-
-    $.extend(true, systemDictionary, i18n);
-});
+var translations = require('../i18n/translations.json');
+$.extend(true, systemDictionary, translations);
 
 // this code can be placed directly in rssfeed.html
 vis.binds['rssfeed'] = {
