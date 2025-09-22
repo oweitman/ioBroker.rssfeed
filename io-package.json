@@ -121,6 +121,47 @@
       "zh-cn": "rss提要的适配器和可见小部件",
       "uk": "Адаптер і віджет vis для RSS-каналів"
     },
+    "messages": [
+      {
+        "condition": {
+          "operand": "and",
+          "rules": [
+            "oldVersion<3.6.0",
+            "newVersion>=3.6.0"
+          ]
+        },
+        "title": {
+          "en": "JSON template widgets deprecated",
+          "de": "JSON-Vorlagen-Widgets veraltet",
+          "ru": "Виджеты шаблонов JSON устарели",
+          "pt": "Widgets modelo JSON obsoletos",
+          "nl": "Widgets voor JSON-sjablonen zijn verouderd",
+          "fr": "Modèles de widgets JSON obsolètes",
+          "it": "widget modello JSON obsoleti",
+          "es": "Los widgets de plantillas JSON están en desuso",
+          "pl": "Widżety szablonów JSON przestarzałe",
+          "uk": "Віджети шаблонів JSON застаріли",
+          "zh-cn": "已弃用 JSON 模板控件"
+        },
+        "text": {
+          "en": "Please use adapter vis-jsontemplate.",
+          "de": "Bitte Adapter vis-jsontemplate.",
+          "ru": "Пожалуйста, используйте адаптер vis-jsontemplate.",
+          "pt": "Use o adaptador vis-jsontemplate.",
+          "nl": "Gebruik alstublieft de adapter ten opzichte van het json-sjabloon.",
+          "fr": "Utilisez l'adaptateur vis-jsontemplate.",
+          "it": "Usi adattatore vis-jsontemplate.",
+          "es": "Utilice el adaptador vis-jsontemplate.",
+          "pl": "Proszę użyć adaptera vis-jsontemplate.",
+          "uk": "Будь ласка, використовуйте адаптер vis-jsontemplate.",
+          "zh-cn": "请使用适配器 vis-jsonTemplate。"
+        },
+        "buttons": [
+          "agree"
+        ],
+        "level": "info"
+      }
+    ],
     "authors": [
       "oweitman <oweitman@gmx.de>"
     ],
@@ -152,6 +193,7 @@
     "dataSource": "poll",
     "visWidgets": {
       "rssfeed": {
+        "name": "RSS Feed",
         "ignoreInVersions": [
           2
         ],
