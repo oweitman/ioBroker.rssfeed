@@ -1,13 +1,20 @@
 {
   "name": "rssfeed-vis1-widget",
   "version": "3.5.2",
-  "main": "rssfeed/js/rssfeed.js",
+  "main": "rssfeed/dist/rssfeed.js",
+      "watch": {
+        "build": "rssfeed/**/js/*.js"
+    },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "buildmin": "esbuild rssfeed/js/bundle.js --minify --bundle --outfile=rssfeed/dist/rssfeed-dist.js --target=es6 --sourcemap",
-    "build": "esbuild rssfeed/js/bundle.js --bundle --outfile=rssfeed/dist/rssfeed-dist.js --target=es6 --sourcemap"
+    "buildmin": "esbuild rssfeed/js/bundle.js --minify --bundle --outdir=rssfeed/dist --public-path=/vis/widgets/rssfeed/dist --loader:.css=css --loader:.png=file --target=es6 --sourcemap",
+    "build": "esbuild rssfeed/js/bundle.js --bundle --outdir=rssfeed/dist  --loader:.css=css --loader:.svg=file --loader:.png=file --asset-names=images/[name] --target=es6 --sourcemap",
+    "watch": "npm-watch"
   },
   "author": "",
   "license": "MIT",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "npm-watch": "^0.13.0"
+  }
 }
