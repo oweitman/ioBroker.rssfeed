@@ -824,6 +824,10 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### 3.6.1 (2025-09-22)
+
+- remove dist/ folder from lint
+
 ### 3.6.0 (2025-09-22)
 
 - revert to node 18

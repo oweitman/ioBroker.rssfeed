@@ -331,7 +331,7 @@
         }
       })(function() {
         var define2, module2, exports2;
-        return (/* @__PURE__ */ function() {
+        return (/* @__PURE__ */ (function() {
           function e(t, n, r) {
             function s(o2, u) {
               if (!n[o2]) {
@@ -355,7 +355,7 @@
             return s;
           }
           return e;
-        }())({ 1: [function(require2, module3, exports3) {
+        })())({ 1: [function(require2, module3, exports3) {
           "use strict";
           var fs = require2("fs");
           var path = require2("path");
@@ -1276,7 +1276,7 @@ function encode_char(c) {
   });
 
   // ../package.json
-  var version = "3.6.0";
+  var version = "3.6.1";
 
   // rssfeed/js/rssfeed.js
   var translations = require_translations();

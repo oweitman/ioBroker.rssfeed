@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "3.6.0",
+    "version": "3.6.1",
     "news": {
+      "3.6.1": {
+        "en": "remove dist/ folder from lint",
+        "de": "det/ ordner aus lint entfernen",
+        "ru": "удалить диск/папку из lint",
+        "pt": "remover dist/ pasta do lint",
+        "nl": "dist/map uit pluis verwijderen",
+        "fr": "supprimer dist/ dossier de lint",
+        "it": "rimuovere dist / cartella da lint",
+        "es": "eliminar la dist/ carpeta de lint",
+        "pl": "usunąć dist / folder z lintu",
+        "uk": "видалити папку диска / з розфарбовування",
+        "zh-cn": "从 lint 中删除 dist/ 文件夹"
+      },
       "3.6.0": {
         "en": "revert to node 18\nremove deprecated marquee4 widget\nimprove widget build\nintegrate translations and css into build process\nremove unused css\ndeprecate JSON-Template widgets, please use new adapter iobroker.vis-jsontemplate\nadd message for the update to inform users",
         "de": "zurück zum knoten 183\ndeprecated marquee4 widget entfernen\nwidget-erstellung verbessern\nübersetzungen und css in den bauprozess integrieren\nungenutzte css entfernen\ndeprecate JSON-Template Widgets, bitte neue Adapter iobroker.vis-jsontemplate verwenden\nnachricht hinzufügen für das update, um benutzer zu informieren",
@@ -80,19 +93,6 @@
         "pl": "dodaj nagłówek prośby o zgodę, ponieważ axios wysyła tylko aplikację / json",
         "uk": "додати коментар, тому що axios надсилати тільки додаток / json",
         "zh-cn": "添加一个接受请求头, 因为 轴只发送应用程序/ json"
-      },
-      "3.3.0": {
-        "en": "upgrade version js-controller\nswitch from request to axios",
-        "de": "upgrade-version js-controller\nwechsel von anfrage nach axios",
-        "ru": "обновление версии js-controller\nпереход от запроса к axios",
-        "pt": "atualização versão js-controller\nmudar de pedido para axios",
-        "nl": "upgrade versie js-controller\nschakelen van verzoek naar axios",
-        "fr": "upgrade version js-controller\npasser de la demande à l'axios",
-        "it": "aggiornamento versione js-controller\npassare da richiesta a assios",
-        "es": "versión de actualización js-controller\ncambiar de solicitud a axios",
-        "pl": "upgrade version js- kontroler\nprzełączanie z prośby na aksjos",
-        "uk": "оновлення версії js-controller\nвимикач від запиту до осей",
-        "zh-cn": "升级版本 js 控制器\n从请求切换到轴"
       }
     },
     "titleLang": {
