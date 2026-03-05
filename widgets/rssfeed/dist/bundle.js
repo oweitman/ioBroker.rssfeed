@@ -31,26 +31,6 @@
     isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
     mod
   ));
-  var __async = (__this, __arguments, generator) => {
-    return new Promise((resolve, reject) => {
-      var fulfilled = (value) => {
-        try {
-          step(generator.next(value));
-        } catch (e) {
-          reject(e);
-        }
-      };
-      var rejected = (value) => {
-        try {
-          step(generator.throw(value));
-        } catch (e) {
-          reject(e);
-        }
-      };
-      var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);
-      step((generator = generator.apply(__this, __arguments)).next());
-    });
-  };
 
   // rssfeed/i18n/translations.json
   var require_translations = __commonJS({
@@ -1502,7 +1482,7 @@ function encode_char(c) {
         text += "    white-space: nowrap;\n";
         text += "    overflow: hidden;\n";
         if (backcolor) {
-          text += `    background-color: ${backcolor}; /* Hintergrundfarbe des Lauftextes. Auskommentieren, um Transparent zu erhalten */
+          text += `    background-color: ${backcolor};
 `;
         }
         text += "    font-size:20px;\n";
@@ -1668,13 +1648,16 @@ function encode_char(c) {
             if (rss_withyear) {
               time = vis.formatDate(item.date, "DD.MM.YY/hh:mm");
             }
-            if (opentype == "link") {
-              t += ` ${divider} ${time} ${rss_withname ? `${item.meta_name || item.meta_title}: ` : ""}<a href="${item.link}" target="rssarticle">${time} ${item.title}</a>`;
-            } else if (opentype == "popup") {
-              t += ` ${divider} ${time} ${rss_withname ? `${item.meta_name || item.meta_title}: ` : ""}<a onclick="vis.binds.rssfeed.marquee5.dialog(this,event,'${widgetID}','${item.link}')">${time} ${item.title}</a>`;
+            const source = rss_withname ? `${item.meta_name || item.meta_title}: ` : "";
+            let title;
+            if (opentype === "link") {
+              title = `<a href="${item.link}" target="rssarticle">${time} ${item.title}</a>`;
+            } else if (opentype === "popup") {
+              title = `<a onclick="vis.binds.rssfeed.marquee5.dialog(this,event,'${widgetID}','${item.link}')">${time} ${item.title}</a>`;
             } else {
-              t += ` ${divider} ${time} ${rss_withname ? `${item.meta_name || item.meta_title}: ` : ""}${item.title}`;
+              title = item.title;
             }
+            t += ` ${divider} ${time} ${source}${title}`;
             return t;
           }, titles);
           const duration = (titleslength / speed).toFixed();
@@ -1772,228 +1755,6 @@ function encode_char(c) {
           text = `<code style="color:red;">${text}</code>`;
         }
         $(`#${widgetID}`).html(text);
-      }
-    },
-    jsontemplate2: {
-      /**
-       * Initializes and creates a JSON template widget.
-       *
-       * @param widgetID - The ID of the widget element.
-       * @param view - The view object containing widget information.
-       * @param data - Contains configuration data for the widget, including JSON object ID and template.
-       * @param style - Style settings for the widget.
-       *
-       * The function checks for the widget element by its ID. If not found, it retries after a delay.
-       * It parses the JSON data from the specified object ID, processes additional data points,
-       * and binds states if necessary. It then renders the widget using the EJS template with
-       * the provided data and style.
-       */
-      createWidget: function(widgetID, view, data, style) {
-        const $div = $(`#${widgetID}`);
-        if (!$div.length) {
-          return setTimeout(function() {
-            vis.binds["rssfeed"].jsontemplate2.createWidget(widgetID, view, data, style);
-          }, 100);
-        }
-        const bound = [];
-        const oiddata = data.json_oid ? JSON.parse(vis.states.attr(`${data.json_oid}.val`)) : {};
-        const template = data.json_template ? data.json_template : "";
-        if (data.json_oid) {
-          bound.push(data.json_oid);
-        }
-        const dpCount = data.rss_dpCount ? data.rss_dpCount : 1;
-        const datapoints = [];
-        for (let i = 1; i <= dpCount; i++) {
-          if (data[`rss_dp${i}`]) {
-            datapoints[data[`rss_dp${i}`]] = vis.states.attr(`${data[`rss_dp${i}`]}.val`);
-            bound.push(data[`rss_dp${i}`]);
-          }
-        }
-        if (bound) {
-          if (!vis.editMode) {
-            vis.binds["rssfeed"].bindStates(
-              $div,
-              bound,
-              vis.binds["rssfeed"].jsontemplate2.onChange.bind({
-                widgetID,
-                view,
-                data,
-                style
-              })
-            );
-          }
-        }
-        let text = "";
-        try {
-          text = ejs.render(template, { widgetID, data: oiddata, dp: datapoints });
-        } catch (e) {
-          text = vis.binds["rssfeed"].escapeHTML(e.message).replace(/(?:\r\n|\r|\n)/g, "<br>");
-          text = text.replace(/ /gm, "&nbsp;");
-          text = `<code style="color:red;">${text}</code>`;
-        }
-        $(`#${widgetID}`).html(text);
-      },
-      /**
-       * Will be called if the value of the bound data point changes.
-       *
-       * @param e event object
-       * @param newVal new value of the bound data point
-       */
-      onChange: function(e, newVal) {
-        if (newVal) {
-          vis.binds["rssfeed"].jsontemplate2.render(this.widgetID, this.view, this.data, this.style);
-        }
-      },
-      /**
-       * Renders the widget using the provided EJS template.
-       *
-       * @param widgetID - The ID of the widget element to be rendered.
-       * @param view - The view object containing widget information.
-       * @param data - Contains configuration data for the widget, including JSON object ID and template.
-       *
-       * The function retrieves data associated with the JSON object ID and additional data points.
-       * It then uses EJS to render the template with the provided data and updates the widget's HTML content.
-       * In case of an error during rendering, it escapes and formats the error message to display it in the widget.
-       */
-      render: function(widgetID, view, data) {
-        const oiddata = data.json_oid ? JSON.parse(vis.states.attr(`${data.json_oid}.val`)) : {};
-        const dpCount = data.rss_dpCount ? data.rss_dpCount : 1;
-        const template = data.json_template ? data.json_template : "";
-        const datapoints = [];
-        for (let i = 1; i <= dpCount; i++) {
-          if (data[`rss_dp${i}`]) {
-            datapoints[data[`rss_dp${i}`]] = vis.states.attr(`${data[`rss_dp${i}`]}.val`);
-          }
-        }
-        let text = "";
-        try {
-          text = ejs.render(template, { widgetID, data: oiddata, dp: datapoints });
-        } catch (e) {
-          text = vis.binds["rssfeed"].escapeHTML(e.message).replace(/(?:\r\n|\r|\n)/g, "<br>");
-          text = text.replace(/ /gm, "&nbsp;");
-          text = `<code style="color:red;">${text}</code>`;
-        }
-        $(`#${widgetID}`).html(text);
-      }
-    },
-    jsontemplate3: {
-      /**
-       * Initializes and creates a JSON template widget.
-       *
-       * @param widgetID - The ID of the widget element.
-       * @param view - The view object containing widget information.
-       * @param data - Contains configuration data for the widget, including JSON object ID and template.
-       * @param style - Style settings for the widget.       *
-       * The function checks for the widget element by its ID. If not found, it retries after a delay.
-       * It parses the JSON data from the specified object ID, processes additional data points,
-       * and binds states if necessary. It then renders the widget using the EJS template with
-       * the provided data and style.
-       
-      Testtemplate:
-       
-          <%
-       
-          debugger;
-          req = await sendToAsync("admin.0","selectSendTo");
-          console.log(JSON.stringify(req));
-          %>
-          <%- JSON.stringify(req) %>
-          <%
-          async function sendToAsync(instance, command, sendData) {
-              return new Promise((resolve, reject) => {
-                  try {
-                      vis.conn.sendTo(instance, command, sendData, function (receiveData) {
-                          resolve(receiveData);
-                      });
-                  } catch (error) {
-                      reject(error);
-                  }
-              });
-          }
-          %>
-       */
-      createWidget: function(widgetID, view, data, style) {
-        const $div = $(`#${widgetID}`);
-        if (!$div.length) {
-          return setTimeout(function() {
-            vis.binds["rssfeed"].jsontemplate3.createWidget(widgetID, view, data, style);
-          }, 100);
-        }
-        const bound = [];
-        if (data.json_oid) {
-          bound.push(data.json_oid);
-        }
-        const dpCount = data.rss_dpCount ? data.rss_dpCount : 1;
-        const datapoints = [];
-        for (let i = 1; i <= dpCount; i++) {
-          if (data[`rss_dp${i}`]) {
-            datapoints[data[`rss_dp${i}`]] = vis.states.attr(`${data[`rss_dp${i}`]}.val`);
-            bound.push(data[`rss_dp${i}`]);
-          }
-        }
-        if (bound) {
-          if (!vis.editMode) {
-            vis.binds["rssfeed"].bindStates(
-              $div,
-              bound,
-              vis.binds["rssfeed"].jsontemplate3.onChange.bind({
-                widgetID,
-                view,
-                data,
-                style
-              })
-            );
-          }
-        }
-        this.render(widgetID, view, data);
-      },
-      /**
-       * Will be called if the value of the bound data point changes.
-       *
-       * @param e event object
-       * @param newVal new value of the bound data point
-       */
-      onChange: function(e, newVal) {
-        if (newVal) {
-          vis.binds["rssfeed"].jsontemplate3.render(this.widgetID, this.view, this.data, this.style);
-        }
-      },
-      /**
-       * Renders the widget using the provided EJS template.
-       *
-       * @param widgetID - The ID of the widget element to be rendered.
-       * @param view - The view object containing widget information.
-       * @param data - Contains configuration data for the widget, including JSON object ID and template.
-       *
-       * The function retrieves data associated with the JSON object ID and additional data points.
-       * It then uses EJS to render the template with the provided data and updates the widget's HTML content.
-       * In case of an error during rendering, it escapes and formats the error message to display it in the widget.
-       */
-      render: function(widgetID, view, data) {
-        return __async(this, null, function* () {
-          const oiddata = data.json_oid ? JSON.parse(vis.states.attr(`${data.json_oid}.val`)) : {};
-          const dpCount = data.rss_dpCount ? data.rss_dpCount : 1;
-          const template = data.json_template ? data.json_template : "";
-          const datapoints = [];
-          for (let i = 1; i <= dpCount; i++) {
-            if (data[`rss_dp${i}`]) {
-              datapoints[data[`rss_dp${i}`]] = vis.states.attr(`${data[`rss_dp${i}`]}.val`);
-            }
-          }
-          let text = "";
-          try {
-            text = yield ejs.render(
-              template,
-              { widgetID, data: oiddata, dp: datapoints },
-              { async: true }
-            );
-          } catch (e) {
-            text = vis.binds["rssfeed"].escapeHTML(e.message).replace(/(?:\r\n|\r|\n)/g, "<br>");
-            text = text.replace(/ /gm, "&nbsp;");
-            text = `<code style="color:red;">${text}</code>`;
-          }
-          $(`#${widgetID}`).html(text);
-        });
       }
     },
     metahelper: {
