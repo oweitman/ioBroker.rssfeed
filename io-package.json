@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "4.0.1",
+    "version": "4.0.2",
     "news": {
+      "4.0.2": {
+        "en": "fix repochecker",
+        "de": "repochecker reparieren",
+        "ru": "ремонтировать",
+        "pt": "corrigir o repochecker",
+        "nl": "repareren",
+        "fr": "réparer le repocheur",
+        "it": "correggere il repochecker",
+        "es": "arreglar repochecker",
+        "pl": "fix repochecker",
+        "uk": "виправити repochecker",
+        "zh-cn": "固定重检查器"
+      },
       "4.0.1": {
         "en": "fix repochecker",
         "de": "repochecker reparieren",
@@ -80,19 +93,6 @@
         "pl": "udostępniać w szablonach wywołania funkcji async",
         "uk": "зробити виклики функції async, доступні в шаблонах",
         "zh-cn": "提供模板中的async函数调用"
-      },
-      "3.4.1": {
-        "en": "introducing a new attribute opentype to open the links in the marquee widget",
-        "de": "einführung eines neuen attributes opentype, um die links im marquee widget zu öffnen",
-        "ru": "введение нового атрибута opentype для открытия ссылок в widget",
-        "pt": "introduzindo um novo atributo opentype para abrir os links no widget de marquee",
-        "nl": "het invoeren van een nieuw attribuut opentype om de links in de maquee widget te openen",
-        "fr": "introduction d'un nouvel attribut opentype pour ouvrir les liens dans le widget marquee",
-        "it": "introdurre un nuovo attributo opentype per aprire i link nel widget di marquee",
-        "es": "introduciendo un nuevo atributo abierto para abrir los enlaces en el widget marquee",
-        "pl": "wprowadzenie nowego atrybutu opentype do otwarcia linków w widgecie marquee",
-        "uk": "введення нового атрибуту відкритоготипу для відкриття посилань в віджеті marquee",
-        "zh-cn": "引入新的属性打开类型打开 marquee 部件中的链接"
       }
     },
     "titleLang": {

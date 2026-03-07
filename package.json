@@ -1,6 +1,6 @@
 {
   "name": "iobroker.rssfeed",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Adapter and vis widget for rss feeds",
   "author": {
     "name": "oweitman",
@@ -31,8 +31,8 @@
     "iconv-lite": "^0.7.2"
   },
   "devDependencies": {
-    "@alcalzone/release-script": "^5.0.0",
-    "@alcalzone/release-script-plugin-iobroker": "^4.0.0",
+    "@alcalzone/release-script": "^5.1.1",
+    "@alcalzone/release-script-plugin-iobroker": "^5.1.2",
     "@alcalzone/release-script-plugin-license": "^5.1.1",
     "@alcalzone/release-script-plugin-manual-review": "^5.1.1",
     "@iobroker/adapter-dev": "^1.5.0",
