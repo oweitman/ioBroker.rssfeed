@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "4.0.0",
+    "version": "4.0.1",
     "news": {
+      "4.0.1": {
+        "en": "fix repochecker",
+        "de": "repochecker reparieren",
+        "ru": "ремонтировать",
+        "pt": "corrigir o repochecker",
+        "nl": "repareren",
+        "fr": "réparer le repocheur",
+        "it": "correggere il repochecker",
+        "es": "arreglar repochecker",
+        "pl": "fix repochecker",
+        "uk": "виправити repochecker",
+        "zh-cn": "固定重检查器"
+      },
       "4.0.0": {
         "en": "update packages\nremove deprecated widgets",
         "de": "update-pakete\ndeprecated widgets entfernen",
@@ -80,19 +93,6 @@
         "pl": "wprowadzenie nowego atrybutu opentype do otwarcia linków w widgecie marquee",
         "uk": "введення нового атрибуту відкритоготипу для відкриття посилань в віджеті marquee",
         "zh-cn": "引入新的属性打开类型打开 marquee 部件中的链接"
-      },
-      "3.3.1": {
-        "en": "add an accept request header, because axios send only application/json",
-        "de": "einen akzeptieranfragen-header hinzufügen, weil axios nur anwendung senden/json",
-        "ru": "добавьте заголовок приемного запроса, потому что axios отправляет только приложение / json",
-        "pt": "adicionar um cabeçalho de solicitação aceita, porque o axios envia apenas aplicativo/json",
-        "nl": "voeg een accept request header toe, omdat axios alleen applicatie/json versturen",
-        "fr": "ajouter un en-tête de requête accepté, car axios n'envoie que application/json",
-        "it": "aggiungere un intestazione di richiesta di accettare, perché gli assi inviano solo applicazione/json",
-        "es": "añadir un encabezado de solicitud de aceptación, porque axios enviar sólo aplicación / json",
-        "pl": "dodaj nagłówek prośby o zgodę, ponieważ axios wysyła tylko aplikację / json",
-        "uk": "додати коментар, тому що axios надсилати тільки додаток / json",
-        "zh-cn": "添加一个接受请求头, 因为 轴只发送应用程序/ json"
       }
     },
     "titleLang": {
@@ -197,7 +197,9 @@
         "ignoreInVersions": [
           2
         ],
-        "components": [],
+        "components": [
+          "nocomponents"
+        ],
         "i18n": true,
         "url": ""
       }
@@ -212,12 +214,12 @@
     },
     "dependencies": [
       {
-        "js-controller": ">=5.0.19"
+        "js-controller": ">=6.0.11"
       }
     ],
     "globalDependencies": [
       {
-        "admin": ">=6.17.14"
+        "admin": ">=7.6.17"
       }
     ]
   },
