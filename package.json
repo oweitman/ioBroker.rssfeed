@@ -26,7 +26,7 @@
     "@iobroker/adapter-core": "^3.3.2",
     "axios": "^1.13.6",
     "chardet": "^2.1.1",
-    "ejs": "^4.0.1",
+    "ejs": "^5.0.1",
     "feedparser": "^2.3.0",
     "iconv-lite": "^0.7.2"
   },
