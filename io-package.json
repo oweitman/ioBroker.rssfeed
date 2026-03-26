@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "4.0.2",
+    "version": "4.0.3",
     "news": {
+      "4.0.3": {
+        "en": "Update packages\nfix repochecker",
+        "de": "Pakete aktualisieren\nrepochecker reparieren",
+        "ru": "Обновление пакетов\nремонтировать",
+        "pt": "Atualizar pacotes\ncorrigir o repochecker",
+        "nl": "Pakketten bijwerken\nrepareren",
+        "fr": "Mettre à jour les paquets\nréparer le repocheur",
+        "it": "Pacchetti di aggiornamento\ncorreggere il repochecker",
+        "es": "Paquetes de actualización\narreglar repochecker",
+        "pl": "Aktualizuj pakiety\nfix repochecker",
+        "uk": "Пакети оновлень\nвиправити repochecker",
+        "zh-cn": "更新软件包\n固定重检查器"
+      },
       "4.0.2": {
         "en": "fix repochecker",
         "de": "repochecker reparieren",
@@ -80,19 +93,6 @@
         "pl": "poprawa budowy",
         "uk": "поліпшення будівель",
         "zh-cn": "改进建设"
-      },
-      "3.5.0": {
-        "en": "make async function calls available in templates",
-        "de": "async-funktionsaufrufe in vorlagen verfügbar machen",
-        "ru": "сделать вызовы функции async доступными в шаблонах",
-        "pt": "fazer chamadas de função async disponíveis em modelos",
-        "nl": "async-functieoproepen beschikbaar stellen in sjablonen",
-        "fr": "rendre les appels de fonction async disponibles dans les modèles",
-        "it": "rendere disponibili le chiamate funzione asincrona nei modelli",
-        "es": "hacer llamadas de función asinc disponibles en plantillas",
-        "pl": "udostępniać w szablonach wywołania funkcji async",
-        "uk": "зробити виклики функції async, доступні в шаблонах",
-        "zh-cn": "提供模板中的async函数调用"
       }
     },
     "titleLang": {

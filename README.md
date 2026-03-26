@@ -18,7 +18,7 @@ You can customize the output of the feed with a template system. In the template
 
 Important: Only the english translation is valid due to bugs in automatic translations into other languages made by iobroker
 
-## Installation
+## Configuration
 
 Install the adapter as normal from the stable repository. If you want to test new features or bug fixes you can also install the adapter from the beta repository. For Features and news, please see the Test and Support thread for this adapter in the iobroker forum.
 
@@ -30,8 +30,6 @@ iobroker upload rssfeed
 ```
 
 In the right area in the line of the adapter, an instance can be added using the plus button
-
-## Configuration
 
 The configuration is easy. There are only a few fields
 
@@ -804,6 +802,11 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### 4.0.3 (2026-03-26)
+
+- Update packages
+- fix repochecker
+
 ### 4.0.2 (2026-03-07)
 
 - fix repochecker

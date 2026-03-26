@@ -1,6 +1,6 @@
 {
   "name": "rssfeed-vis1-widget",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "main": "rssfeed/dist/rssfeed.js",
       "watch": {
         "build": "rssfeed/**/js/*.js"
