@@ -9,7 +9,7 @@ updates:
           timezone: Europe/Berlin
 
     - package-ecosystem: npm
-      directory: '**/*'
+      directories: ['**/*']
       schedule:
           interval: weekly
           time: '09:00'
