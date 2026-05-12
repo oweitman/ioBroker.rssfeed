@@ -18,6 +18,26 @@ You can customize the output of the feed with a template system. In the template
 
 Important: Only the english translation is valid due to bugs in automatic translations into other languages made by iobroker
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Configuration](#configuration)
+- [vis and widgets](#vis-and-widgets)
+    - [RSS Feed widget 2](#rss-feed-widget-2)
+    - [RSS Feed Multi widget 3](#rss-feed-multi-widget-3)
+    - [RSS Feed Meta Helper](#rss-feed-meta-helper)
+    - [RSS Feed Article Helper](#rss-feed-article-helper)
+    - [RSS Feed Title marquee 4 (deprecated)](#rss-feed-title-marquee-4-deprecated)
+    - [RSS Feed Title marquee 5](#rss-feed-title-marquee-5)
+- [Templatesystem](#templatesystem)
+    - [Very Important Note for use in vis / vis-2](#very-important-note-for-use-in-vis--vis-2)
+    - [Tags](#tags)
+    - [Available variables in templates](#available-variables-in-templates)
+    - [Template based on examples](#template-based-on-examples)
+- [Todo](#todo)
+- [Changelog](#changelog)
+- [License](#license)
+
 ## Configuration
 
 Install the adapter as normal from the stable repository. If you want to test new features or bug fixes you can also install the adapter from the beta repository. For Features and news, please see the Test and Support thread for this adapter in the iobroker forum.
