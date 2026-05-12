@@ -417,6 +417,32 @@ This data point **does not need to be explicitly created**, as `local_?` data po
 
 ## Templatesystem
 
+### Very Important Note for use in vis / vis-2
+
+#### Curly braces in CSS and JSON
+
+The binding mechanism in vis / vis-2 uses the pattern `{ ... }` to detect binding expressions within HTML.
+For this reason, when specifying CSS or JSON, the curly braces must always be placed on separate lines. Otherwise, the content of the vis widget will be overwritten with `undefined`.
+
+##### Example
+
+```text
+#w_id_<%- widgetid %> { height: 100%; display: flex; flex-direction: column; overflow: hidden; }
+```
+
+must be written as follows:
+
+```text
+#w_id_<%- widgetid %> {
+    height: 100%; display: flex; flex-direction: column; overflow: hidden;
+}
+```
+
+#### Use of setInterval
+
+Please do not use `setInterval`. Since the template is re-invoked every time a data point changes, any existing `setInterval` calls cannot be properly cleared. Consequently, an increasing number of overlapping `setInterval` calls accumulate over time; this consumes RAM and can lead to unpredictable side effects. While reloading the page can resolve this issue, the code should not be implemented in this manner.
+As an alternative, such scenarios should be implemented using `setTimeout`.
+
 ## Tags
 
 The template system works with certain tags.
