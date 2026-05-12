@@ -81,7 +81,6 @@ The following widgets actually exists
 - [`RSS Feed Article Helper 2`](#rss-feed-article-helper) - a helper widget to inspect the article data of a feed
 - [`RSS Feed Title marquee 4 (deprecated)`](#rss-feed-title-marquee-4-deprecated) - a widget to show the Headlines of a feed as a marquee
 - [`RSS Feed Title marquee 5`](#rss-feed-title-marquee-5) - a widget to show the Headlines of a feed as a marquee
-- [`JSON Template 3`](#json-template3) - a widget that have nothing todo with RSS Feeds, but uses the same technology, and you can define a custom template to show any JSON-Data in vis.
 
 ### RSS Feed widget 2
 
@@ -186,21 +185,6 @@ With this widget, all title attributes will be displayed as a scrolling text. As
 | rss_oid          | Feeds[number] group | Select the data point with the corresponding RSS feed.                                                                                                                                                                                                                    |
 | rss_maxarticles  | Feeds[number] group | The maximum number of individual articles displayed from the RSS feed                                                                                                                                                                                                     |
 | rss_filter       | Feeds[number] group | For the filter function, one or more filter criteria can be entered in the field, separated by semicolons (;). The following article attributes are searched for the search: title, description, categories. Only articles that contain one of these terms are displayed. |
-
-### JSON Template3
-
-Using this widget, any data point with JSON data can be displayed as desired.
-The display is done using a template format, which can be thought of as a combined form of HTML code + JavaScript + special tags that control the display of the JSON attributes.
-JSON Template3 now supports async calls with await. JSON Template 2 is going to be deprecated in the future.
-
-| Setting      | description                                                                                                                                                                                                                                                                       |
-| ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| rss_template | The template can be used to determine the appearance of the JSON data. All valid HTML tags (including CSS attributes in style tags) can be used in the template. There are also special tags within which the JSON data is displayed and JavaScript instructions can be executed. |
-| json_oid     | Selection of the data point with the corresponding JSON data.                                                                                                                                                                                                                     |
-
-For details on the template system, see chapter Template based on examples
-
-The JSON data is passed to the template with the prefix data. In addition, the current widgetID is also available as a variable so that it can be specified in individual CSS instructions.
 
 #### Advanced use case
 
