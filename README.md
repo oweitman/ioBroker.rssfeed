@@ -604,7 +604,7 @@ It has been tested with the following feeds
 - <http://www.tagesschau.de/xml/rss2> or
 - <https://www.bild.de/rssfeeds/rss3-20745882,feed=alles.bild.html>
 
-```html
+```ejs
 <!--
     available variables:
     widgetid      ->  id of the widget
@@ -615,11 +615,11 @@ It has been tested with the following feeds
     all variables are read only
     -->
 <style>
-    #<%- widgetid % > img {
+    #<%- widgetid %> img {
         width: calc(<%- style.width %> - 15px);
         height: auto;
     }
-    #<%- widgetid % > img.rssfeed {
+    #<%- widgetid %> img.rssfeed {
         width: auto;
         height: auto;
     }
@@ -641,7 +641,7 @@ The following template is currently used as standard in the RSS feed multi widge
 Please note little differences in the usage of the variables
 It has been tested with the following feeds
 
-```html
+```ejs
 <!--
     available variables:
     widgetid      ->  id of the widget
@@ -656,11 +656,11 @@ It has been tested with the following feeds
     all variables are read only
     -->
 <style>
-    #<%- widgetid % > img {
+    #<%- widgetid %> img {
         width: calc(<%- style.width || '230px' %> - 15px);
         height: auto;
     }
-    #<%- widgetid % > img.rssfeed {
+    #<%- widgetid %> img.rssfeed {
         width: auto;
         height: auto;
     }
@@ -676,7 +676,7 @@ It has been tested with the following feeds
 
 ### Example Template for RSS-Feed multi widget 3 with articles as a slide show and Prev/Next-Buttons
 
-```html
+```ejs
 <!--
  available variables:
  widgetid      ->  id of the widget
@@ -687,11 +687,11 @@ It has been tested with the following feeds
 -->
 
 <style>
-    #<%- widgetid % > img {
+    #<%- widgetid %> img {
         width: calc(<%- style.width || '230px' %> - 15px);
         height: auto;
     }
-    #<%- widgetid % > img.rssfeed {
+    #<%- widgetid %> img.rssfeed {
         width: auto;
         height: auto;
     }
@@ -802,6 +802,7 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
 ### 4.0.3 (2026-03-26)
 
 - Update packages
