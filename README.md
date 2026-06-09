@@ -57,6 +57,13 @@ The configuration is easy. There are only a few fields
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | Default Refresh (min)  | is the general specification of how often the feed should be called up again in minutes. The default is 60 minutes |
 | Max Artikel (Standard) | The total amount of data to be processed can be limited here.                                                      |
+| User Agent             | Optional, but recommended. This is the user agent that is used when requesting the feed.                           |
+
+At the moment of release the defualt is. You maybe update this each year if some request problems of rssfeed exists.
+
+```text
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+```
 
 Then for each new feed:
 
@@ -832,6 +839,10 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+- add user agent to settings and axios request
 
 ### 4.0.3 (2026-03-26)
 
