@@ -1,256 +1,256 @@
 {
-    "common": {
-        "name": "rssfeed",
-        "version": "4.0.3",
-        "news": {
-            "4.0.3": {
-                "en": "Update packages\nfix repochecker",
-                "de": "Pakete aktualisieren\nrepochecker reparieren",
-                "ru": "Обновление пакетов\nремонтировать",
-                "pt": "Atualizar pacotes\ncorrigir o repochecker",
-                "nl": "Pakketten bijwerken\nrepareren",
-                "fr": "Mettre à jour les paquets\nréparer le repocheur",
-                "it": "Pacchetti di aggiornamento\ncorreggere il repochecker",
-                "es": "Paquetes de actualización\narreglar repochecker",
-                "pl": "Aktualizuj pakiety\nfix repochecker",
-                "uk": "Пакети оновлень\nвиправити repochecker",
-                "zh-cn": "更新软件包\n固定重检查器"
-            },
-            "4.0.2": {
-                "en": "fix repochecker",
-                "de": "repochecker reparieren",
-                "ru": "ремонтировать",
-                "pt": "corrigir o repochecker",
-                "nl": "repareren",
-                "fr": "réparer le repocheur",
-                "it": "correggere il repochecker",
-                "es": "arreglar repochecker",
-                "pl": "fix repochecker",
-                "uk": "виправити repochecker",
-                "zh-cn": "固定重检查器"
-            },
-            "4.0.1": {
-                "en": "fix repochecker",
-                "de": "repochecker reparieren",
-                "ru": "ремонтировать",
-                "pt": "corrigir o repochecker",
-                "nl": "repareren",
-                "fr": "réparer le repocheur",
-                "it": "correggere il repochecker",
-                "es": "arreglar repochecker",
-                "pl": "fix repochecker",
-                "uk": "виправити repochecker",
-                "zh-cn": "固定重检查器"
-            },
-            "4.0.0": {
-                "en": "update packages\nremove deprecated widgets",
-                "de": "update-pakete\ndeprecated widgets entfernen",
-                "ru": "обновление пакетов\nудалить устаревшие виджеты",
-                "pt": "atualizar pacotes\nremover widgets obsoletos",
-                "nl": "pakketten bijwerken\nverouderde widgets verwijderen",
-                "fr": "mettre à jour les paquets\nsupprimer les widgets obsolètes",
-                "it": "pacchetti di aggiornamento\nrimuovere widget deprecati",
-                "es": "actualizar paquetes\nremove deprecated widgets",
-                "pl": "aktualizacja pakietów\nusunąć zdepregatowane widżety",
-                "uk": "оновлення пакетів\nвидалити відхилені віджети",
-                "zh-cn": "更新软件包\n删除已贬值的部件"
-            },
-            "3.6.1": {
-                "en": "revert to node 18\nremove deprecated marquee4 widget\nimprove widget build\nintegrate translations and css into build process\nremove unused css\ndeprecate JSON-Template widgets, please use new adapter iobroker.vis-jsontemplate\nadd message for the update to inform users",
-                "de": "zurück zum knoten 183\ndeprecated marquee4 widget entfernen\nwidget-erstellung verbessern\nübersetzungen und css in den bauprozess integrieren\nungenutzte css entfernen\ndeprecate JSON-Template Widgets, bitte neue Adapter iobroker.vis-jsontemplate verwenden\nnachricht hinzufügen für das update, um benutzer zu informieren",
-                "ru": "вернуться в нод 18\nудалить устаревший виджет marquee4\nулучшить сборку виджетов\nинтеграция переводов и css в процесс сборки\nудалить неиспользованные css\nиспользуйте новый адаптер iobroker.vis-jsontemplate\nдобавить сообщение для обновления, чтобы информировать пользователей",
-                "pt": "reverter para o nó 18\nremover o widget marquee4 obsoleto\nmelhorar a compilação do widget\nintegrar traduções e css no processo de construção\nremover css não utilizado\ndeprecate widgets JSON-Template, use o novo adaptador iobroker.vis-jsontemplate\nadicionar mensagem para a atualização para informar os usuários",
-                "nl": "terug naar knooppunt 18\nverwijderde verouderde marquee4 widget\nwidget bouwen verbeteren\nvertalingen en css integreren in het bouwproces\nongebruikte css verwijderen\ndeprecate JSON-Template widgets, gebruik alstublieft nieuwe adapter iobroker.vis-jsentemplate\nbericht toevoegen voor de update om gebruikers te informeren",
-                "fr": "retour au nœud 18\nsupprimer le widget marquee4 déprécié\naméliorer la construction de widget\nintégrer les traductions et css dans le processus de construction\nenlever les css non utilisés\ndéprécate JSON-Template widgets, s'il vous plaît utiliser un nouvel adaptateur iobroker.vis-jsontemplate\najouter un message pour la mise à jour pour informer les utilisateurs",
-                "it": "tornare al nodo 18\nrimuovere deprecated marquee4 widget\nmigliorare la configurazione dei widget\nintegrare traduzioni e css nel processo di costruzione\nrimuovere css non utilizzati\ndeprecate widgets JSON-Template, si prega di utilizzare il nuovo adattatore iobroker.vis-jsontemplate\naggiungere un messaggio per l'aggiornamento per informare gli utenti",
-                "es": "revertir a los nodos 18\nremove deprecated marquee4 widget\nmejorar widget build\nintegrar traducciones y css en el proceso de construcción\neliminar css no utilizados\ndeprecate los widgets JSON-Template, por favor utilice el nuevo adaptador iobroker.vis-jsontemplate\nañadir mensaje para la actualización para informar a los usuarios",
-                "pl": "powrót do węzła 18\nusunąć deprected marquee4 widget\npoprawić budowę widget\nzintegrować tłumaczenia i css z procesem budowania\nusunąć niewykorzystane css\ndeprecate JSON- Szablon widżety, należy użyć nowego adaptera iobroker.vis- jsonszablon\ndodaj wiadomość do aktualizacji, aby poinformować użytkowników",
-                "uk": "перевернутися до вузла 18 років\nremove deprecated marquee4 віджет\nполіпшення побудови віджетів\nінтегрувати переклади та css в процес побудови\nвидалити невикористані css\ndeprecate JSON-Template віджети, будь ласка, використовуйте новий адаптер iobroker.vis-jsontemplate\nдодати повідомлення для оновлення, щоб повідомити користувачів",
-                "zh-cn": "返回节点 第 18 条\n删除已贬值的 marquee4 部件\n改进部件构建\n将翻译和css整合到构建过程中\n删除未使用的 css\n调试 JSON- Template 部件, 请使用新的适配器 iobroduc. vis- jsontemplate\n添加更新消息以通知用户"
-            },
-            "3.5.2": {
-                "en": "improve build",
-                "de": "verbesserung des aufbaus",
-                "ru": "улучшить строительство",
-                "pt": "melhorar a construção",
-                "nl": "bouwen verbeteren",
-                "fr": "améliorer la construction",
-                "it": "migliorare la costruzione",
-                "es": "mejorar la construcción",
-                "pl": "poprawa budowy",
-                "uk": "поліпшення будівель",
-                "zh-cn": "改进建设"
-            },
-            "3.5.1": {
-                "en": "improve build",
-                "de": "verbesserung des aufbaus",
-                "ru": "улучшить строительство",
-                "pt": "melhorar a construção",
-                "nl": "bouwen verbeteren",
-                "fr": "améliorer la construction",
-                "it": "migliorare la costruzione",
-                "es": "mejorar la construcción",
-                "pl": "poprawa budowy",
-                "uk": "поліпшення будівель",
-                "zh-cn": "改进建设"
-            }
-        },
-        "titleLang": {
-            "en": "RSS Feed",
-            "de": "rssfeed",
-            "ru": "Новостная лента",
-            "pt": "Feed RSS",
-            "nl": "rssfeed",
-            "fr": "Flux RSS",
-            "it": "RSS Feed",
-            "es": "RSS Feed",
-            "pl": "Kanał RSS",
-            "zh-cn": "RSS订阅",
-            "uk": "RSS-канал"
-        },
-        "desc": {
-            "en": "Adapter and vis widget for rss feeds",
-            "de": "Adapter und Vis-Widget für rssfeeds",
-            "ru": "Адаптер и виджет vis для каналов RSS",
-            "pt": "Adaptador e widget vis para feeds RSS",
-            "nl": "Adapter en vis widget voor rssfeeds",
-            "fr": "Adaptateur et widget vis pour les flux rss",
-            "it": "Adattatore e widget vis per feed rss",
-            "es": "Adaptador y widget de visualización para feeds rss",
-            "pl": "Adapter i widżet Vis dla kanałów RSS",
-            "zh-cn": "rss提要的适配器和可见小部件",
-            "uk": "Адаптер і віджет vis для RSS-каналів"
-        },
-        "messages": [
-            {
-                "condition": {
-                    "operand": "and",
-                    "rules": [
-                        "oldVersion<3.6.0",
-                        "newVersion>=3.6.0"
-                    ]
-                },
-                "title": {
-                    "en": "JSON template widgets deprecated",
-                    "de": "JSON-Vorlagen-Widgets veraltet",
-                    "ru": "Виджеты шаблонов JSON устарели",
-                    "pt": "Widgets modelo JSON obsoletos",
-                    "nl": "Widgets voor JSON-sjablonen zijn verouderd",
-                    "fr": "Modèles de widgets JSON obsolètes",
-                    "it": "widget modello JSON obsoleti",
-                    "es": "Los widgets de plantillas JSON están en desuso",
-                    "pl": "Widżety szablonów JSON przestarzałe",
-                    "uk": "Віджети шаблонів JSON застаріли",
-                    "zh-cn": "已弃用 JSON 模板控件"
-                },
-                "text": {
-                    "en": "Please use adapter vis-jsontemplate.",
-                    "de": "Bitte Adapter vis-jsontemplate.",
-                    "ru": "Пожалуйста, используйте адаптер vis-jsontemplate.",
-                    "pt": "Use o adaptador vis-jsontemplate.",
-                    "nl": "Gebruik alstublieft de adapter ten opzichte van het json-sjabloon.",
-                    "fr": "Utilisez l'adaptateur vis-jsontemplate.",
-                    "it": "Usi adattatore vis-jsontemplate.",
-                    "es": "Utilice el adaptador vis-jsontemplate.",
-                    "pl": "Proszę użyć adaptera vis-jsontemplate.",
-                    "uk": "Будь ласка, використовуйте адаптер vis-jsontemplate.",
-                    "zh-cn": "请使用适配器 vis-jsonTemplate。"
-                },
-                "buttons": [
-                    "agree"
-                ],
-                "level": "info"
-            }
-        ],
-        "authors": [
-            "oweitman <oweitman@gmx.de>"
-        ],
-        "keywords": [
-            "rss",
-            "atom",
-            "rdf",
-            "feed"
-        ],
-        "licenseInformation": {
-            "type": "free",
-            "license": "MIT"
-        },
-        "platform": "Javascript/Node.js",
-        "icon": "rssfeed.png",
-        "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.rssfeed/main/admin/rssfeed.png",
-        "readme": "https://github.com/oweitman/ioBroker.rssfeed/blob/main/README.md",
-        "loglevel": "info",
-        "tier": 3,
-        "restartAdapters": [
-            "vis",
-            "vis-2"
-        ],
-        "mode": "daemon",
-        "type": "misc-data",
-        "compact": true,
-        "connectionType": "cloud",
-        "dataSource": "poll",
-        "visWidgets": {
-            "rssfeed": {
-                "name": "RSS Feed",
-                "ignoreInVersions": [
-                    2
-                ],
-                "components": [
-                    "nocomponents"
-                ],
-                "i18n": true,
-                "url": ""
-            }
-        },
-        "plugins": {
-            "sentry": {
-                "dsn": "https://abfab39a66054631bef76b3e92979c43@o1335795.ingest.sentry.io/6603729"
-            }
-        },
-        "adminUI": {
-            "config": "json"
-        },
-        "dependencies": [
-            {
-                "js-controller": ">=6.0.11"
-            }
-        ],
-        "globalDependencies": [
-            {
-                "admin": ">=7.6.17"
-            }
-        ]
+  "common": {
+    "name": "rssfeed",
+    "version": "4.0.4-alpha.0",
+    "news": {
+      "4.0.4-alpha.0": {
+        "en": "add user agent to settings and axios request",
+        "de": "hinzufügen von user agent zu einstellungen und axios-anfrage",
+        "ru": "добавление агента пользователя в настройки и запрос axios",
+        "pt": "adicionar o agente de usuário às configurações e solicitação de axios",
+        "nl": "user agent toevoegen aan instellingen en axios verzoek",
+        "fr": "ajouter l'agent utilisateur aux paramètres et requête axios",
+        "it": "aggiungere l'agente utente alle impostazioni e alla richiesta assios",
+        "es": "añadir agente de usuario a la configuración y solicitud de axios",
+        "pl": "dodaj agenta użytkownika do ustawień i prośby axios",
+        "uk": "додати агента користувача на налаштування та запит axios",
+        "zh-cn": "将用户代理添加到设置和轴请求"
+      },
+      "4.0.3": {
+        "en": "Update packages\nfix repochecker",
+        "de": "Pakete aktualisieren\nrepochecker reparieren",
+        "ru": "Обновление пакетов\nремонтировать",
+        "pt": "Atualizar pacotes\ncorrigir o repochecker",
+        "nl": "Pakketten bijwerken\nrepareren",
+        "fr": "Mettre à jour les paquets\nréparer le repocheur",
+        "it": "Pacchetti di aggiornamento\ncorreggere il repochecker",
+        "es": "Paquetes de actualización\narreglar repochecker",
+        "pl": "Aktualizuj pakiety\nfix repochecker",
+        "uk": "Пакети оновлень\nвиправити repochecker",
+        "zh-cn": "更新软件包\n固定重检查器"
+      },
+      "4.0.2": {
+        "en": "fix repochecker",
+        "de": "repochecker reparieren",
+        "ru": "ремонтировать",
+        "pt": "corrigir o repochecker",
+        "nl": "repareren",
+        "fr": "réparer le repocheur",
+        "it": "correggere il repochecker",
+        "es": "arreglar repochecker",
+        "pl": "fix repochecker",
+        "uk": "виправити repochecker",
+        "zh-cn": "固定重检查器"
+      },
+      "4.0.1": {
+        "en": "fix repochecker",
+        "de": "repochecker reparieren",
+        "ru": "ремонтировать",
+        "pt": "corrigir o repochecker",
+        "nl": "repareren",
+        "fr": "réparer le repocheur",
+        "it": "correggere il repochecker",
+        "es": "arreglar repochecker",
+        "pl": "fix repochecker",
+        "uk": "виправити repochecker",
+        "zh-cn": "固定重检查器"
+      },
+      "4.0.0": {
+        "en": "update packages\nremove deprecated widgets",
+        "de": "update-pakete\ndeprecated widgets entfernen",
+        "ru": "обновление пакетов\nудалить устаревшие виджеты",
+        "pt": "atualizar pacotes\nremover widgets obsoletos",
+        "nl": "pakketten bijwerken\nverouderde widgets verwijderen",
+        "fr": "mettre à jour les paquets\nsupprimer les widgets obsolètes",
+        "it": "pacchetti di aggiornamento\nrimuovere widget deprecati",
+        "es": "actualizar paquetes\nremove deprecated widgets",
+        "pl": "aktualizacja pakietów\nusunąć zdepregatowane widżety",
+        "uk": "оновлення пакетів\nвидалити відхилені віджети",
+        "zh-cn": "更新软件包\n删除已贬值的部件"
+      },
+      "3.6.1": {
+        "en": "revert to node 18\nremove deprecated marquee4 widget\nimprove widget build\nintegrate translations and css into build process\nremove unused css\ndeprecate JSON-Template widgets, please use new adapter iobroker.vis-jsontemplate\nadd message for the update to inform users",
+        "de": "zurück zum knoten 183\ndeprecated marquee4 widget entfernen\nwidget-erstellung verbessern\nübersetzungen und css in den bauprozess integrieren\nungenutzte css entfernen\ndeprecate JSON-Template Widgets, bitte neue Adapter iobroker.vis-jsontemplate verwenden\nnachricht hinzufügen für das update, um benutzer zu informieren",
+        "ru": "вернуться в нод 18\nудалить устаревший виджет marquee4\nулучшить сборку виджетов\nинтеграция переводов и css в процесс сборки\nудалить неиспользованные css\nиспользуйте новый адаптер iobroker.vis-jsontemplate\nдобавить сообщение для обновления, чтобы информировать пользователей",
+        "pt": "reverter para o nó 18\nremover o widget marquee4 obsoleto\nmelhorar a compilação do widget\nintegrar traduções e css no processo de construção\nremover css não utilizado\ndeprecate widgets JSON-Template, use o novo adaptador iobroker.vis-jsontemplate\nadicionar mensagem para a atualização para informar os usuários",
+        "nl": "terug naar knooppunt 18\nverwijderde verouderde marquee4 widget\nwidget bouwen verbeteren\nvertalingen en css integreren in het bouwproces\nongebruikte css verwijderen\ndeprecate JSON-Template widgets, gebruik alstublieft nieuwe adapter iobroker.vis-jsentemplate\nbericht toevoegen voor de update om gebruikers te informeren",
+        "fr": "retour au nœud 18\nsupprimer le widget marquee4 déprécié\naméliorer la construction de widget\nintégrer les traductions et css dans le processus de construction\nenlever les css non utilisés\ndéprécate JSON-Template widgets, s'il vous plaît utiliser un nouvel adaptateur iobroker.vis-jsontemplate\najouter un message pour la mise à jour pour informer les utilisateurs",
+        "it": "tornare al nodo 18\nrimuovere deprecated marquee4 widget\nmigliorare la configurazione dei widget\nintegrare traduzioni e css nel processo di costruzione\nrimuovere css non utilizzati\ndeprecate widgets JSON-Template, si prega di utilizzare il nuovo adattatore iobroker.vis-jsontemplate\naggiungere un messaggio per l'aggiornamento per informare gli utenti",
+        "es": "revertir a los nodos 18\nremove deprecated marquee4 widget\nmejorar widget build\nintegrar traducciones y css en el proceso de construcción\neliminar css no utilizados\ndeprecate los widgets JSON-Template, por favor utilice el nuevo adaptador iobroker.vis-jsontemplate\nañadir mensaje para la actualización para informar a los usuarios",
+        "pl": "powrót do węzła 18\nusunąć deprected marquee4 widget\npoprawić budowę widget\nzintegrować tłumaczenia i css z procesem budowania\nusunąć niewykorzystane css\ndeprecate JSON- Szablon widżety, należy użyć nowego adaptera iobroker.vis- jsonszablon\ndodaj wiadomość do aktualizacji, aby poinformować użytkowników",
+        "uk": "перевернутися до вузла 18 років\nremove deprecated marquee4 віджет\nполіпшення побудови віджетів\nінтегрувати переклади та css в процес побудови\nвидалити невикористані css\ndeprecate JSON-Template віджети, будь ласка, використовуйте новий адаптер iobroker.vis-jsontemplate\nдодати повідомлення для оновлення, щоб повідомити користувачів",
+        "zh-cn": "返回节点 第 18 条\n删除已贬值的 marquee4 部件\n改进部件构建\n将翻译和css整合到构建过程中\n删除未使用的 css\n调试 JSON- Template 部件, 请使用新的适配器 iobroduc. vis- jsontemplate\n添加更新消息以通知用户"
+      },
+      "3.5.2": {
+        "en": "improve build",
+        "de": "verbesserung des aufbaus",
+        "ru": "улучшить строительство",
+        "pt": "melhorar a construção",
+        "nl": "bouwen verbeteren",
+        "fr": "améliorer la construction",
+        "it": "migliorare la costruzione",
+        "es": "mejorar la construcción",
+        "pl": "poprawa budowy",
+        "uk": "поліпшення будівель",
+        "zh-cn": "改进建设"
+      }
     },
-    "native": {
-        "refresh": 60,
-        "maxarticles": 100,
-        "rss": [],
-        "useragent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+    "titleLang": {
+      "en": "RSS Feed",
+      "de": "rssfeed",
+      "ru": "Новостная лента",
+      "pt": "Feed RSS",
+      "nl": "rssfeed",
+      "fr": "Flux RSS",
+      "it": "RSS Feed",
+      "es": "RSS Feed",
+      "pl": "Kanał RSS",
+      "zh-cn": "RSS订阅",
+      "uk": "RSS-канал"
     },
-    "objects": [],
-    "instanceObjects": [
-        {
-            "_id": "info",
-            "type": "channel",
-            "common": {
-                "name": "Information"
-            },
-            "native": {}
+    "desc": {
+      "en": "Adapter and vis widget for rss feeds",
+      "de": "Adapter und Vis-Widget für rssfeeds",
+      "ru": "Адаптер и виджет vis для каналов RSS",
+      "pt": "Adaptador e widget vis para feeds RSS",
+      "nl": "Adapter en vis widget voor rssfeeds",
+      "fr": "Adaptateur et widget vis pour les flux rss",
+      "it": "Adattatore e widget vis per feed rss",
+      "es": "Adaptador y widget de visualización para feeds rss",
+      "pl": "Adapter i widżet Vis dla kanałów RSS",
+      "zh-cn": "rss提要的适配器和可见小部件",
+      "uk": "Адаптер і віджет vis для RSS-каналів"
+    },
+    "messages": [
+      {
+        "condition": {
+          "operand": "and",
+          "rules": [
+            "oldVersion<3.6.0",
+            "newVersion>=3.6.0"
+          ]
         },
-        {
-            "_id": "info.connection",
-            "type": "state",
-            "common": {
-                "role": "indicator.connected",
-                "name": "Device or service connected",
-                "type": "boolean",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        }
+        "title": {
+          "en": "JSON template widgets deprecated",
+          "de": "JSON-Vorlagen-Widgets veraltet",
+          "ru": "Виджеты шаблонов JSON устарели",
+          "pt": "Widgets modelo JSON obsoletos",
+          "nl": "Widgets voor JSON-sjablonen zijn verouderd",
+          "fr": "Modèles de widgets JSON obsolètes",
+          "it": "widget modello JSON obsoleti",
+          "es": "Los widgets de plantillas JSON están en desuso",
+          "pl": "Widżety szablonów JSON przestarzałe",
+          "uk": "Віджети шаблонів JSON застаріли",
+          "zh-cn": "已弃用 JSON 模板控件"
+        },
+        "text": {
+          "en": "Please use adapter vis-jsontemplate.",
+          "de": "Bitte Adapter vis-jsontemplate.",
+          "ru": "Пожалуйста, используйте адаптер vis-jsontemplate.",
+          "pt": "Use o adaptador vis-jsontemplate.",
+          "nl": "Gebruik alstublieft de adapter ten opzichte van het json-sjabloon.",
+          "fr": "Utilisez l'adaptateur vis-jsontemplate.",
+          "it": "Usi adattatore vis-jsontemplate.",
+          "es": "Utilice el adaptador vis-jsontemplate.",
+          "pl": "Proszę użyć adaptera vis-jsontemplate.",
+          "uk": "Будь ласка, використовуйте адаптер vis-jsontemplate.",
+          "zh-cn": "请使用适配器 vis-jsonTemplate。"
+        },
+        "buttons": [
+          "agree"
+        ],
+        "level": "info"
+      }
+    ],
+    "authors": [
+      "oweitman <oweitman@gmx.de>"
+    ],
+    "keywords": [
+      "rss",
+      "atom",
+      "rdf",
+      "feed"
+    ],
+    "licenseInformation": {
+      "type": "free",
+      "license": "MIT"
+    },
+    "platform": "Javascript/Node.js",
+    "icon": "rssfeed.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.rssfeed/main/admin/rssfeed.png",
+    "readme": "https://github.com/oweitman/ioBroker.rssfeed/blob/main/README.md",
+    "loglevel": "info",
+    "tier": 3,
+    "restartAdapters": [
+      "vis",
+      "vis-2"
+    ],
+    "mode": "daemon",
+    "type": "misc-data",
+    "compact": true,
+    "connectionType": "cloud",
+    "dataSource": "poll",
+    "visWidgets": {
+      "rssfeed": {
+        "name": "RSS Feed",
+        "ignoreInVersions": [
+          2
+        ],
+        "components": [
+          "nocomponents"
+        ],
+        "i18n": true,
+        "url": ""
+      }
+    },
+    "plugins": {
+      "sentry": {
+        "dsn": "https://abfab39a66054631bef76b3e92979c43@o1335795.ingest.sentry.io/6603729"
+      }
+    },
+    "adminUI": {
+      "config": "json"
+    },
+    "dependencies": [
+      {
+        "js-controller": ">=6.0.11"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=7.6.17"
+      }
     ]
+  },
+  "native": {
+    "refresh": 60,
+    "maxarticles": 100,
+    "rss": [],
+    "useragent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "role": "indicator.connected",
+        "name": "Device or service connected",
+        "type": "boolean",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    }
+  ]
 }
