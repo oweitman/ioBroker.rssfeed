@@ -1,10 +1,11 @@
 {
-    "Default Refresh (min)": "Aggiornamento predefinito (min)",
-    "Default Max articles": "Numero massimo di articoli predefinito",
-    "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service": "Avvertenza: non impostare una frequenza di aggiornamento troppo bassa. ",
-    "Name": "Nome",
     "Category": "Categoria",
-    "URL": "URL",
+    "Default Max articles": "Numero massimo di articoli predefinito",
+    "Default Refresh (min)": "Aggiornamento predefinito (min)",
+    "Max Articles": "Max articoli",
+    "Name": "Nome",
     "Refresh (min)": "Aggiorna (min)",
-    "Max Articles": "Max articoli"
+    "URL": "URL",
+    "User Agent": "Agente utente",
+    "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service": "Avvertenza: non impostare una frequenza di aggiornamento troppo bassa. "
 }

@@ -1,6 +1,7 @@
 {
     "Default Refresh (min)": "Default Refresh (min)",
     "Default Max articles": "Default Max articles",
+    "User Agent": "User Agent",
     "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service": "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service",
     "Name": "Name",
     "Category": "Category",

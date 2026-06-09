@@ -1,10 +1,11 @@
 {
-    "Default Refresh (min)": "Actualisation par défaut (min)",
-    "Default Max articles": "Articles Max par défaut",
-    "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service": "Avertissement : veuillez ne pas régler le taux de rafraîchissement trop bas. ",
-    "Name": "Nom",
     "Category": "Catégorie",
-    "URL": "URL",
+    "Default Max articles": "Articles Max par défaut",
+    "Default Refresh (min)": "Actualisation par défaut (min)",
+    "Max Articles": "Nombre maximal d'articles",
+    "Name": "Nom",
     "Refresh (min)": "Actualiser (minutes)",
-    "Max Articles": "Nombre maximal d'articles"
+    "URL": "URL",
+    "User Agent": "Agent utilisateur",
+    "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service": "Avertissement : veuillez ne pas régler le taux de rafraîchissement trop bas. "
 }
