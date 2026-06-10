@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "4.0.4-alpha.0",
+    "version": "4.1.0",
     "news": {
+      "4.1.0": {
+        "en": "fix repochecker",
+        "de": "fix-repochecker",
+        "ru": "ремонтировать",
+        "pt": "corrigir o repochecker",
+        "nl": "repareren",
+        "fr": "fixer le repocheur",
+        "it": "correggere il repochecker",
+        "es": "arreglar repochecker",
+        "pl": "fix repochecker",
+        "uk": "виправити repochecker",
+        "zh-cn": "固定重检查器"
+      },
       "4.0.4-alpha.0": {
         "en": "add user agent to settings and axios request",
         "de": "hinzufügen von user agent zu einstellungen und axios-anfrage",
@@ -80,19 +93,6 @@
         "pl": "powrót do węzła 18\nusunąć deprected marquee4 widget\npoprawić budowę widget\nzintegrować tłumaczenia i css z procesem budowania\nusunąć niewykorzystane css\ndeprecate JSON- Szablon widżety, należy użyć nowego adaptera iobroker.vis- jsonszablon\ndodaj wiadomość do aktualizacji, aby poinformować użytkowników",
         "uk": "перевернутися до вузла 18 років\nremove deprecated marquee4 віджет\nполіпшення побудови віджетів\nінтегрувати переклади та css в процес побудови\nвидалити невикористані css\ndeprecate JSON-Template віджети, будь ласка, використовуйте новий адаптер iobroker.vis-jsontemplate\nдодати повідомлення для оновлення, щоб повідомити користувачів",
         "zh-cn": "返回节点 第 18 条\n删除已贬值的 marquee4 部件\n改进部件构建\n将翻译和css整合到构建过程中\n删除未使用的 css\n调试 JSON- Template 部件, 请使用新的适配器 iobroduc. vis- jsontemplate\n添加更新消息以通知用户"
-      },
-      "3.5.2": {
-        "en": "improve build",
-        "de": "verbesserung des aufbaus",
-        "ru": "улучшить строительство",
-        "pt": "melhorar a construção",
-        "nl": "bouwen verbeteren",
-        "fr": "améliorer la construction",
-        "it": "migliorare la costruzione",
-        "es": "mejorar la construcción",
-        "pl": "poprawa budowy",
-        "uk": "поліпшення будівель",
-        "zh-cn": "改进建设"
       }
     },
     "titleLang": {
