@@ -841,7 +841,7 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-### 4.1.1 (2026-06-10)
+### 4.1.2 (2026-06-10)
 
 - fix package lock
 

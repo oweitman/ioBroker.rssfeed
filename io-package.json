@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "4.1.1",
+    "version": "4.1.2",
     "news": {
+      "4.1.2": {
+        "en": "fix package lock",
+        "de": "fixpackungsschloss",
+        "ru": "фиксировать замок",
+        "pt": "corrigir bloqueio de pacote",
+        "nl": "fix pakket slot",
+        "fr": "réparer le verrouillage du paquet",
+        "it": "fix pacchetto serratura",
+        "es": "cierre del paquete",
+        "pl": "naprawić blokadę pakietu",
+        "uk": "замка для фіксації пакета",
+        "zh-cn": "固定软件包锁"
+      },
       "4.1.1": {
         "en": "fix package lock",
         "de": "fixpackungsschloss",
@@ -80,19 +93,6 @@
         "pl": "fix repochecker",
         "uk": "виправити repochecker",
         "zh-cn": "固定重检查器"
-      },
-      "4.0.0": {
-        "en": "update packages\nremove deprecated widgets",
-        "de": "update-pakete\ndeprecated widgets entfernen",
-        "ru": "обновление пакетов\nудалить устаревшие виджеты",
-        "pt": "atualizar pacotes\nremover widgets obsoletos",
-        "nl": "pakketten bijwerken\nverouderde widgets verwijderen",
-        "fr": "mettre à jour les paquets\nsupprimer les widgets obsolètes",
-        "it": "pacchetti di aggiornamento\nrimuovere widget deprecati",
-        "es": "actualizar paquetes\nremove deprecated widgets",
-        "pl": "aktualizacja pakietów\nusunąć zdepregatowane widżety",
-        "uk": "оновлення пакетів\nвидалити відхилені віджети",
-        "zh-cn": "更新软件包\n删除已贬值的部件"
       }
     },
     "titleLang": {
