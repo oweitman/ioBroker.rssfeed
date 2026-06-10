@@ -2,10 +2,12 @@
     "Category": "Categoria",
     "Default Max articles": "Máximo de artigos padrão",
     "Default Refresh (min)": "Atualização padrão (mín.)",
+    "Main settings": "Configurações principais",
     "Max Articles": "Máximo de artigos",
     "Name": "Nome",
     "Refresh (min)": "Atualizar (min)",
     "URL": "URL",
     "User Agent": "Agente do usuário",
-    "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service": "Aviso: Por favor, não defina a taxa de atualização muito baixa. "
+    "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service": "Aviso: Por favor, não defina a taxa de atualização muito baixa. ",
+    "valid characters only 0-9 A-Z a-z öäüÖÄÜß\nlength from 1 to 29": "apenas caracteres válidos 0-9 A-Z a-z öäüÖÄÜß\ncomprimento de 1 a 29"
 }

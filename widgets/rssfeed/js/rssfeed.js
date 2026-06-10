@@ -12,7 +12,7 @@
 // add translations for edit mode
 // add translations for edit mode
 import { version as pkgVersion } from '../../../package.json';
-var translations = require('../i18n/translations.json');
+var translations = require('../myi18n/translations.json');
 $.extend(true, systemDictionary, translations);
 
 // this code can be placed directly in rssfeed.html

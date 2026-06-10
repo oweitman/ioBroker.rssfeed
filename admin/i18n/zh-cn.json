@@ -2,10 +2,12 @@
     "Category": "类别",
     "Default Max articles": "默认最大文章",
     "Default Refresh (min)": "默认刷新（分钟）",
+    "Main settings": "主要设置",
     "Max Articles": "最大文章",
     "Name": "姓名",
     "Refresh (min)": "刷新（分钟）",
     "URL": "网址",
     "User Agent": "用户代理",
-    "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service": "警告：请不要将刷新率设置得太低。"
+    "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service": "警告：请不要将刷新率设置得太低。",
+    "valid characters only 0-9 A-Z a-z öäüÖÄÜß\nlength from 1 to 29": "仅有效字符 0-9 A-Z a-z öäüÖäÜß\n长度从 1 到 29"
 }

@@ -2,10 +2,12 @@
     "Category": "Категорія",
     "Default Max articles": "Максимальна кількість статей за замовчуванням",
     "Default Refresh (min)": "Оновлення за умовчанням (хв.)",
+    "Main settings": "Основні налаштування",
     "Max Articles": "Максимум статей",
     "Name": "Ім'я",
     "Refresh (min)": "Оновити (хв.)",
     "URL": "URL",
     "User Agent": "Агент користувача",
-    "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service": "Попередження: не встановлюйте занадто низьку частоту оновлення. Можливо, провайдер забанить вас або припинить послугу"
+    "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service": "Попередження: не встановлюйте занадто низьку частоту оновлення. Можливо, провайдер забанить вас або припинить послугу",
+    "valid characters only 0-9 A-Z a-z öäüÖÄÜß\nlength from 1 to 29": "лише дійсні символи 0-9 A-Z a-z öäüÖÄÜß\nдовжина від 1 до 29"
 }

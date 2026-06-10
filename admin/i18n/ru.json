@@ -2,10 +2,12 @@
     "Category": "Категория",
     "Default Max articles": "Максимальное количество статей по умолчанию",
     "Default Refresh (min)": "Обновление по умолчанию (мин)",
+    "Main settings": "Основные настройки",
     "Max Articles": "Максимальное количество статей",
     "Name": "Имя",
     "Refresh (min)": "Обновить (мин)",
     "URL": "URL-адрес",
     "User Agent": "Пользовательский агент",
-    "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service": "Предупреждение: Пожалуйста, не устанавливайте слишком низкую частоту обновления. "
+    "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service": "Предупреждение: Пожалуйста, не устанавливайте слишком низкую частоту обновления. ",
+    "valid characters only 0-9 A-Z a-z öäüÖÄÜß\nlength from 1 to 29": "допустимые символы: 0–9 A–Z a–z öäüÖÄÜß\nдлина от 1 до 29"
 }

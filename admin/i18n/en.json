@@ -1,8 +1,12 @@
 {
+    "Main settings": "Main settings",
     "Default Refresh (min)": "Default Refresh (min)",
     "Default Max articles": "Default Max articles",
     "User Agent": "User Agent",
+    "valid characters only 0-9 A-Z a-z öäüÖÄÜß\nlength from 1 to 29": "valid characters only 0-9 A-Z a-z öäüÖÄÜß\nlength from 1 to 29",
+    "valid characters only 0-9 A-Z a-z öäüÖÄÜß or \nlength from 1 to 29 or empty": "valid characters only 0-9 A-Z a-z öäüÖÄÜß or \nlength from 1 to 29 or empty",
     "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service": "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service",
+    "valid url for rss-data": "valid url for rss-data",
     "Name": "Name",
     "Category": "Category",
     "URL": "URL",
