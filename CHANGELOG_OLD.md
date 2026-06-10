@@ -1,4 +1,8 @@
 # Older changes
+## 4.0.1 (2026-03-07)
+
+- fix repochecker
+
 ## 4.0.0 (2026-03-05)
 
 - update packages

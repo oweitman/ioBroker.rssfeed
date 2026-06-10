@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "4.1.0",
+    "version": "4.1.1",
     "news": {
+      "4.1.1": {
+        "en": "fix package lock",
+        "de": "fixpackungsschloss",
+        "ru": "фиксировать замок",
+        "pt": "corrigir bloqueio de pacote",
+        "nl": "fix pakket slot",
+        "fr": "réparer le verrouillage du paquet",
+        "it": "fix pacchetto serratura",
+        "es": "cierre del paquete",
+        "pl": "naprawić blokadę pakietu",
+        "uk": "замка для фіксації пакета",
+        "zh-cn": "固定软件包锁"
+      },
       "4.1.0": {
         "en": "fix repochecker",
         "de": "fix-repochecker",
@@ -80,19 +93,6 @@
         "pl": "aktualizacja pakietów\nusunąć zdepregatowane widżety",
         "uk": "оновлення пакетів\nвидалити відхилені віджети",
         "zh-cn": "更新软件包\n删除已贬值的部件"
-      },
-      "3.6.1": {
-        "en": "revert to node 18\nremove deprecated marquee4 widget\nimprove widget build\nintegrate translations and css into build process\nremove unused css\ndeprecate JSON-Template widgets, please use new adapter iobroker.vis-jsontemplate\nadd message for the update to inform users",
-        "de": "zurück zum knoten 183\ndeprecated marquee4 widget entfernen\nwidget-erstellung verbessern\nübersetzungen und css in den bauprozess integrieren\nungenutzte css entfernen\ndeprecate JSON-Template Widgets, bitte neue Adapter iobroker.vis-jsontemplate verwenden\nnachricht hinzufügen für das update, um benutzer zu informieren",
-        "ru": "вернуться в нод 18\nудалить устаревший виджет marquee4\nулучшить сборку виджетов\nинтеграция переводов и css в процесс сборки\nудалить неиспользованные css\nиспользуйте новый адаптер iobroker.vis-jsontemplate\nдобавить сообщение для обновления, чтобы информировать пользователей",
-        "pt": "reverter para o nó 18\nremover o widget marquee4 obsoleto\nmelhorar a compilação do widget\nintegrar traduções e css no processo de construção\nremover css não utilizado\ndeprecate widgets JSON-Template, use o novo adaptador iobroker.vis-jsontemplate\nadicionar mensagem para a atualização para informar os usuários",
-        "nl": "terug naar knooppunt 18\nverwijderde verouderde marquee4 widget\nwidget bouwen verbeteren\nvertalingen en css integreren in het bouwproces\nongebruikte css verwijderen\ndeprecate JSON-Template widgets, gebruik alstublieft nieuwe adapter iobroker.vis-jsentemplate\nbericht toevoegen voor de update om gebruikers te informeren",
-        "fr": "retour au nœud 18\nsupprimer le widget marquee4 déprécié\naméliorer la construction de widget\nintégrer les traductions et css dans le processus de construction\nenlever les css non utilisés\ndéprécate JSON-Template widgets, s'il vous plaît utiliser un nouvel adaptateur iobroker.vis-jsontemplate\najouter un message pour la mise à jour pour informer les utilisateurs",
-        "it": "tornare al nodo 18\nrimuovere deprecated marquee4 widget\nmigliorare la configurazione dei widget\nintegrare traduzioni e css nel processo di costruzione\nrimuovere css non utilizzati\ndeprecate widgets JSON-Template, si prega di utilizzare il nuovo adattatore iobroker.vis-jsontemplate\naggiungere un messaggio per l'aggiornamento per informare gli utenti",
-        "es": "revertir a los nodos 18\nremove deprecated marquee4 widget\nmejorar widget build\nintegrar traducciones y css en el proceso de construcción\neliminar css no utilizados\ndeprecate los widgets JSON-Template, por favor utilice el nuevo adaptador iobroker.vis-jsontemplate\nañadir mensaje para la actualización para informar a los usuarios",
-        "pl": "powrót do węzła 18\nusunąć deprected marquee4 widget\npoprawić budowę widget\nzintegrować tłumaczenia i css z procesem budowania\nusunąć niewykorzystane css\ndeprecate JSON- Szablon widżety, należy użyć nowego adaptera iobroker.vis- jsonszablon\ndodaj wiadomość do aktualizacji, aby poinformować użytkowników",
-        "uk": "перевернутися до вузла 18 років\nremove deprecated marquee4 віджет\nполіпшення побудови віджетів\nінтегрувати переклади та css в процес побудови\nвидалити невикористані css\ndeprecate JSON-Template віджети, будь ласка, використовуйте новий адаптер iobroker.vis-jsontemplate\nдодати повідомлення для оновлення, щоб повідомити користувачів",
-        "zh-cn": "返回节点 第 18 条\n删除已贬值的 marquee4 部件\n改进部件构建\n将翻译和css整合到构建过程中\n删除未使用的 css\n调试 JSON- Template 部件, 请使用新的适配器 iobroduc. vis- jsontemplate\n添加更新消息以通知用户"
       }
     },
     "titleLang": {

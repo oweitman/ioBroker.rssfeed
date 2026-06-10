@@ -841,6 +841,10 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### 4.1.1 (2026-06-10)
+
+- fix package lock
+
 ### 4.1.0 (2026-06-10)
 
 - fix repochecker
@@ -855,10 +859,6 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 - fix repochecker
 
 ### 4.0.2 (2026-03-07)
-
-- fix repochecker
-
-### 4.0.1 (2026-03-07)
 
 - fix repochecker
 
