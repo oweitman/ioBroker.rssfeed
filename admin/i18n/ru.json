@@ -9,5 +9,7 @@
     "URL": "URL-адрес",
     "User Agent": "Пользовательский агент",
     "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service": "Предупреждение: Пожалуйста, не устанавливайте слишком низкую частоту обновления. ",
-    "valid characters only 0-9 A-Z a-z öäüÖÄÜß\nlength from 1 to 29": "допустимые символы: 0–9 A–Z a–z öäüÖÄÜß\nдлина от 1 до 29"
+    "valid characters only 0-9 A-Z a-z öäüÖÄÜß\nlength from 1 to 29": "допустимые символы: 0–9 A–Z a–z öäüÖÄÜß\nдлина от 1 до 29",
+    "valid characters only 0-9 A-Z a-z öäüÖÄÜß or \nlength from 1 to 29 or empty": "допустимые символы: 0–9 A–Z a–z öäüÖÄÜß или \nдлина от 1 до 29 или пусто",
+    "valid url for rss-data": "действительный URL для RSS-данных"
 }

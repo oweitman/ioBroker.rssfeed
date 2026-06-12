@@ -9,5 +9,7 @@
     "URL": "URL",
     "User Agent": "Агент користувача",
     "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service": "Попередження: не встановлюйте занадто низьку частоту оновлення. Можливо, провайдер забанить вас або припинить послугу",
-    "valid characters only 0-9 A-Z a-z öäüÖÄÜß\nlength from 1 to 29": "лише дійсні символи 0-9 A-Z a-z öäüÖÄÜß\nдовжина від 1 до 29"
+    "valid characters only 0-9 A-Z a-z öäüÖÄÜß\nlength from 1 to 29": "лише дійсні символи 0-9 A-Z a-z öäüÖÄÜß\nдовжина від 1 до 29",
+    "valid characters only 0-9 A-Z a-z öäüÖÄÜß or \nlength from 1 to 29 or empty": "лише дійсні символи 0-9 A-Z a-z öäüÖÄÜß або \nдовжиною від 1 до 29 або порожні",
+    "valid url for rss-data": "дійсний url для rss-даних"
 }

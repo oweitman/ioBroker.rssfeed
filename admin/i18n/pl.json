@@ -9,5 +9,7 @@
     "URL": "URL",
     "User Agent": "Agent użytkownika",
     "Warning: Please dont set the refresh rate too low. Maybe the provider will ban you or stop the service": "Ostrzeżenie: nie ustawiaj zbyt niskiej częstotliwości odświeżania. ",
-    "valid characters only 0-9 A-Z a-z öäüÖÄÜß\nlength from 1 to 29": "dozwolone tylko znaki 0-9 A-Z a-z öäüÖĘÜß\ndługość od 1 do 29"
+    "valid characters only 0-9 A-Z a-z öäüÖÄÜß\nlength from 1 to 29": "dozwolone tylko znaki 0-9 A-Z a-z öäüÖĘÜß\ndługość od 1 do 29",
+    "valid characters only 0-9 A-Z a-z öäüÖÄÜß or \nlength from 1 to 29 or empty": "dozwolone tylko znaki 0-9 A-Z a-z öäüÖĘÜß lub \ndługość od 1 do 29 lub pusta",
+    "valid url for rss-data": "prawidłowy adres URL dla danych rss"
 }

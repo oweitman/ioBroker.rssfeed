@@ -1,256 +1,206 @@
 {
-  "common": {
-    "name": "rssfeed",
-    "version": "4.1.2",
-    "news": {
-      "4.1.2": {
-        "en": "fix package lock",
-        "de": "fixpackungsschloss",
-        "ru": "фиксировать замок",
-        "pt": "corrigir bloqueio de pacote",
-        "nl": "fix pakket slot",
-        "fr": "réparer le verrouillage du paquet",
-        "it": "fix pacchetto serratura",
-        "es": "cierre del paquete",
-        "pl": "naprawić blokadę pakietu",
-        "uk": "замка для фіксації пакета",
-        "zh-cn": "固定软件包锁"
-      },
-      "4.1.1": {
-        "en": "fix package lock",
-        "de": "fixpackungsschloss",
-        "ru": "фиксировать замок",
-        "pt": "corrigir bloqueio de pacote",
-        "nl": "fix pakket slot",
-        "fr": "réparer le verrouillage du paquet",
-        "it": "fix pacchetto serratura",
-        "es": "cierre del paquete",
-        "pl": "naprawić blokadę pakietu",
-        "uk": "замка для фіксації пакета",
-        "zh-cn": "固定软件包锁"
-      },
-      "4.1.0": {
-        "en": "fix repochecker",
-        "de": "fix-repochecker",
-        "ru": "ремонтировать",
-        "pt": "corrigir o repochecker",
-        "nl": "repareren",
-        "fr": "fixer le repocheur",
-        "it": "correggere il repochecker",
-        "es": "arreglar repochecker",
-        "pl": "fix repochecker",
-        "uk": "виправити repochecker",
-        "zh-cn": "固定重检查器"
-      },
-      "4.0.4-alpha.0": {
-        "en": "add user agent to settings and axios request",
-        "de": "hinzufügen von user agent zu einstellungen und axios-anfrage",
-        "ru": "добавление агента пользователя в настройки и запрос axios",
-        "pt": "adicionar o agente de usuário às configurações e solicitação de axios",
-        "nl": "user agent toevoegen aan instellingen en axios verzoek",
-        "fr": "ajouter l'agent utilisateur aux paramètres et requête axios",
-        "it": "aggiungere l'agente utente alle impostazioni e alla richiesta assios",
-        "es": "añadir agente de usuario a la configuración y solicitud de axios",
-        "pl": "dodaj agenta użytkownika do ustawień i prośby axios",
-        "uk": "додати агента користувача на налаштування та запит axios",
-        "zh-cn": "将用户代理添加到设置和轴请求"
-      },
-      "4.0.3": {
-        "en": "Update packages\nfix repochecker",
-        "de": "Pakete aktualisieren\nrepochecker reparieren",
-        "ru": "Обновление пакетов\nремонтировать",
-        "pt": "Atualizar pacotes\ncorrigir o repochecker",
-        "nl": "Pakketten bijwerken\nrepareren",
-        "fr": "Mettre à jour les paquets\nréparer le repocheur",
-        "it": "Pacchetti di aggiornamento\ncorreggere il repochecker",
-        "es": "Paquetes de actualización\narreglar repochecker",
-        "pl": "Aktualizuj pakiety\nfix repochecker",
-        "uk": "Пакети оновлень\nвиправити repochecker",
-        "zh-cn": "更新软件包\n固定重检查器"
-      },
-      "4.0.2": {
-        "en": "fix repochecker",
-        "de": "repochecker reparieren",
-        "ru": "ремонтировать",
-        "pt": "corrigir o repochecker",
-        "nl": "repareren",
-        "fr": "réparer le repocheur",
-        "it": "correggere il repochecker",
-        "es": "arreglar repochecker",
-        "pl": "fix repochecker",
-        "uk": "виправити repochecker",
-        "zh-cn": "固定重检查器"
-      },
-      "4.0.1": {
-        "en": "fix repochecker",
-        "de": "repochecker reparieren",
-        "ru": "ремонтировать",
-        "pt": "corrigir o repochecker",
-        "nl": "repareren",
-        "fr": "réparer le repocheur",
-        "it": "correggere il repochecker",
-        "es": "arreglar repochecker",
-        "pl": "fix repochecker",
-        "uk": "виправити repochecker",
-        "zh-cn": "固定重检查器"
-      }
-    },
-    "titleLang": {
-      "en": "RSS Feed",
-      "de": "rssfeed",
-      "ru": "Новостная лента",
-      "pt": "Feed RSS",
-      "nl": "rssfeed",
-      "fr": "Flux RSS",
-      "it": "RSS Feed",
-      "es": "RSS Feed",
-      "pl": "Kanał RSS",
-      "zh-cn": "RSS订阅",
-      "uk": "RSS-канал"
-    },
-    "desc": {
-      "en": "Adapter and vis widget for rss feeds",
-      "de": "Adapter und Vis-Widget für rssfeeds",
-      "ru": "Адаптер и виджет vis для каналов RSS",
-      "pt": "Adaptador e widget vis para feeds RSS",
-      "nl": "Adapter en vis widget voor rssfeeds",
-      "fr": "Adaptateur et widget vis pour les flux rss",
-      "it": "Adattatore e widget vis per feed rss",
-      "es": "Adaptador y widget de visualización para feeds rss",
-      "pl": "Adapter i widżet Vis dla kanałów RSS",
-      "zh-cn": "rss提要的适配器和可见小部件",
-      "uk": "Адаптер і віджет vis для RSS-каналів"
-    },
-    "messages": [
-      {
-        "condition": {
-          "operand": "and",
-          "rules": [
-            "oldVersion<3.6.0",
-            "newVersion>=3.6.0"
-          ]
+    "common": {
+        "name": "rssfeed",
+        "version": "4.1.2",
+        "news": {
+            "4.1.2": {
+                "en": "fix package lock",
+                "de": "fixpackungsschloss",
+                "ru": "фиксировать замок",
+                "pt": "corrigir bloqueio de pacote",
+                "nl": "fix pakket slot",
+                "fr": "réparer le verrouillage du paquet",
+                "it": "fix pacchetto serratura",
+                "es": "cierre del paquete",
+                "pl": "naprawić blokadę pakietu",
+                "uk": "замка для фіксації пакета",
+                "zh-cn": "固定软件包锁"
+            },
+            "4.0.4-alpha.0": {
+                "en": "add user agent to settings and axios request",
+                "de": "hinzufügen von user agent zu einstellungen und axios-anfrage",
+                "ru": "добавление агента пользователя в настройки и запрос axios",
+                "pt": "adicionar o agente de usuário às configurações e solicitação de axios",
+                "nl": "user agent toevoegen aan instellingen en axios verzoek",
+                "fr": "ajouter l'agent utilisateur aux paramètres et requête axios",
+                "it": "aggiungere l'agente utente alle impostazioni e alla richiesta assios",
+                "es": "añadir agente de usuario a la configuración y solicitud de axios",
+                "pl": "dodaj agenta użytkownika do ustawień i prośby axios",
+                "uk": "додати агента користувача на налаштування та запит axios",
+                "zh-cn": "将用户代理添加到设置和轴请求"
+            },
+            "4.0.3": {
+                "en": "Update packages\nfix repochecker",
+                "de": "Pakete aktualisieren\nrepochecker reparieren",
+                "ru": "Обновление пакетов\nремонтировать",
+                "pt": "Atualizar pacotes\ncorrigir o repochecker",
+                "nl": "Pakketten bijwerken\nrepareren",
+                "fr": "Mettre à jour les paquets\nréparer le repocheur",
+                "it": "Pacchetti di aggiornamento\ncorreggere il repochecker",
+                "es": "Paquetes de actualización\narreglar repochecker",
+                "pl": "Aktualizuj pakiety\nfix repochecker",
+                "uk": "Пакети оновлень\nвиправити repochecker",
+                "zh-cn": "更新软件包\n固定重检查器"
+            },
+            "4.0.2": {
+                "en": "fix repochecker",
+                "de": "repochecker reparieren",
+                "ru": "ремонтировать",
+                "pt": "corrigir o repochecker",
+                "nl": "repareren",
+                "fr": "réparer le repocheur",
+                "it": "correggere il repochecker",
+                "es": "arreglar repochecker",
+                "pl": "fix repochecker",
+                "uk": "виправити repochecker",
+                "zh-cn": "固定重检查器"
+            },
+            "4.0.1": {
+                "en": "fix repochecker",
+                "de": "repochecker reparieren",
+                "ru": "ремонтировать",
+                "pt": "corrigir o repochecker",
+                "nl": "repareren",
+                "fr": "réparer le repocheur",
+                "it": "correggere il repochecker",
+                "es": "arreglar repochecker",
+                "pl": "fix repochecker",
+                "uk": "виправити repochecker",
+                "zh-cn": "固定重检查器"
+            }
         },
-        "title": {
-          "en": "JSON template widgets deprecated",
-          "de": "JSON-Vorlagen-Widgets veraltet",
-          "ru": "Виджеты шаблонов JSON устарели",
-          "pt": "Widgets modelo JSON obsoletos",
-          "nl": "Widgets voor JSON-sjablonen zijn verouderd",
-          "fr": "Modèles de widgets JSON obsolètes",
-          "it": "widget modello JSON obsoleti",
-          "es": "Los widgets de plantillas JSON están en desuso",
-          "pl": "Widżety szablonów JSON przestarzałe",
-          "uk": "Віджети шаблонів JSON застаріли",
-          "zh-cn": "已弃用 JSON 模板控件"
+        "titleLang": {
+            "en": "RSS Feed",
+            "de": "rssfeed",
+            "ru": "Новостная лента",
+            "pt": "Feed RSS",
+            "nl": "rssfeed",
+            "fr": "Flux RSS",
+            "it": "RSS Feed",
+            "es": "RSS Feed",
+            "pl": "Kanał RSS",
+            "zh-cn": "RSS订阅",
+            "uk": "RSS-канал"
         },
-        "text": {
-          "en": "Please use adapter vis-jsontemplate.",
-          "de": "Bitte Adapter vis-jsontemplate.",
-          "ru": "Пожалуйста, используйте адаптер vis-jsontemplate.",
-          "pt": "Use o adaptador vis-jsontemplate.",
-          "nl": "Gebruik alstublieft de adapter ten opzichte van het json-sjabloon.",
-          "fr": "Utilisez l'adaptateur vis-jsontemplate.",
-          "it": "Usi adattatore vis-jsontemplate.",
-          "es": "Utilice el adaptador vis-jsontemplate.",
-          "pl": "Proszę użyć adaptera vis-jsontemplate.",
-          "uk": "Будь ласка, використовуйте адаптер vis-jsontemplate.",
-          "zh-cn": "请使用适配器 vis-jsonTemplate。"
+        "desc": {
+            "en": "Adapter and vis widget for rss feeds",
+            "de": "Adapter und Vis-Widget für rssfeeds",
+            "ru": "Адаптер и виджет vis для каналов RSS",
+            "pt": "Adaptador e widget vis para feeds RSS",
+            "nl": "Adapter en vis widget voor rssfeeds",
+            "fr": "Adaptateur et widget vis pour les flux rss",
+            "it": "Adattatore e widget vis per feed rss",
+            "es": "Adaptador y widget de visualización para feeds rss",
+            "pl": "Adapter i widżet Vis dla kanałów RSS",
+            "zh-cn": "rss提要的适配器和可见小部件",
+            "uk": "Адаптер і віджет vis для RSS-каналів"
         },
-        "buttons": [
-          "agree"
+        "messages": [
+            {
+                "condition": {
+                    "operand": "and",
+                    "rules": ["oldVersion<3.6.0", "newVersion>=3.6.0"]
+                },
+                "title": {
+                    "en": "JSON template widgets deprecated",
+                    "de": "JSON-Vorlagen-Widgets veraltet",
+                    "ru": "Виджеты шаблонов JSON устарели",
+                    "pt": "Widgets modelo JSON obsoletos",
+                    "nl": "Widgets voor JSON-sjablonen zijn verouderd",
+                    "fr": "Modèles de widgets JSON obsolètes",
+                    "it": "widget modello JSON obsoleti",
+                    "es": "Los widgets de plantillas JSON están en desuso",
+                    "pl": "Widżety szablonów JSON przestarzałe",
+                    "uk": "Віджети шаблонів JSON застаріли",
+                    "zh-cn": "已弃用 JSON 模板控件"
+                },
+                "text": {
+                    "en": "Please use adapter vis-jsontemplate.",
+                    "de": "Bitte Adapter vis-jsontemplate.",
+                    "ru": "Пожалуйста, используйте адаптер vis-jsontemplate.",
+                    "pt": "Use o adaptador vis-jsontemplate.",
+                    "nl": "Gebruik alstublieft de adapter ten opzichte van het json-sjabloon.",
+                    "fr": "Utilisez l'adaptateur vis-jsontemplate.",
+                    "it": "Usi adattatore vis-jsontemplate.",
+                    "es": "Utilice el adaptador vis-jsontemplate.",
+                    "pl": "Proszę użyć adaptera vis-jsontemplate.",
+                    "uk": "Будь ласка, використовуйте адаптер vis-jsontemplate.",
+                    "zh-cn": "请使用适配器 vis-jsonTemplate。"
+                },
+                "buttons": ["agree"],
+                "level": "info"
+            }
         ],
-        "level": "info"
-      }
-    ],
-    "authors": [
-      "oweitman <oweitman@gmx.de>"
-    ],
-    "keywords": [
-      "rss",
-      "atom",
-      "rdf",
-      "feed"
-    ],
-    "licenseInformation": {
-      "type": "free",
-      "license": "MIT"
-    },
-    "platform": "Javascript/Node.js",
-    "icon": "rssfeed.png",
-    "enabled": true,
-    "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.rssfeed/main/admin/rssfeed.png",
-    "readme": "https://github.com/oweitman/ioBroker.rssfeed/blob/main/README.md",
-    "loglevel": "info",
-    "tier": 3,
-    "restartAdapters": [
-      "vis",
-      "vis-2"
-    ],
-    "mode": "daemon",
-    "type": "misc-data",
-    "compact": true,
-    "connectionType": "cloud",
-    "dataSource": "poll",
-    "visWidgets": {
-      "rssfeed": {
-        "name": "RSS Feed",
-        "ignoreInVersions": [
-          2
+        "authors": ["oweitman <oweitman@gmx.de>"],
+        "keywords": ["rss", "atom", "rdf", "feed"],
+        "licenseInformation": {
+            "type": "free",
+            "license": "MIT"
+        },
+        "platform": "Javascript/Node.js",
+        "icon": "rssfeed.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/oweitman/ioBroker.rssfeed/main/admin/rssfeed.png",
+        "readme": "https://github.com/oweitman/ioBroker.rssfeed/blob/main/README.md",
+        "loglevel": "info",
+        "tier": 3,
+        "restartAdapters": ["vis", "vis-2"],
+        "mode": "daemon",
+        "type": "misc-data",
+        "compact": true,
+        "connectionType": "cloud",
+        "dataSource": "poll",
+        "visWidgets": {
+            "rssfeed": {
+                "name": "RSS Feed",
+                "ignoreInVersions": [2],
+                "components": ["nocomponents"],
+                "i18n": true,
+                "url": ""
+            }
+        },
+        "adminUI": {
+            "config": "json"
+        },
+        "dependencies": [
+            {
+                "js-controller": ">=6.0.11"
+            }
         ],
-        "components": [
-          "nocomponents"
-        ],
-        "i18n": true,
-        "url": ""
-      }
+        "globalDependencies": [
+            {
+                "admin": ">=7.6.17"
+            }
+        ]
     },
-    "plugins": {
-      "sentry": {
-        "dsn": "https://abfab39a66054631bef76b3e92979c43@o1335795.ingest.sentry.io/6603729"
-      }
+    "native": {
+        "refresh": 60,
+        "maxarticles": 100,
+        "rss": [],
+        "useragent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
     },
-    "adminUI": {
-      "config": "json"
-    },
-    "dependencies": [
-      {
-        "js-controller": ">=6.0.11"
-      }
-    ],
-    "globalDependencies": [
-      {
-        "admin": ">=7.6.17"
-      }
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "role": "indicator.connected",
+                "name": "Device or service connected",
+                "type": "boolean",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        }
     ]
-  },
-  "native": {
-    "refresh": 60,
-    "maxarticles": 100,
-    "rss": [],
-    "useragent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
-  },
-  "objects": [],
-  "instanceObjects": [
-    {
-      "_id": "info",
-      "type": "channel",
-      "common": {
-        "name": "Information"
-      },
-      "native": {}
-    },
-    {
-      "_id": "info.connection",
-      "type": "state",
-      "common": {
-        "role": "indicator.connected",
-        "name": "Device or service connected",
-        "type": "boolean",
-        "read": true,
-        "write": false,
-        "def": false
-      },
-      "native": {}
-    }
-  ]
 }
