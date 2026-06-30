@@ -18,3 +18,4 @@ admin/i18n/*/flat.txt
 .vscode/info.txt
 .vscode/secrets.txt
 .commitinfo
+.env
