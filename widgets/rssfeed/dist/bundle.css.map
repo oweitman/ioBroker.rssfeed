@@ -2,6 +2,6 @@
   "version": 3,
   "sources": ["../css/style.css"],
   "sourcesContent": ["/* Style your widget here */\r\n.rssfeed-class {\r\n    font-style: italic;\r\n}"],
-  "mappings": ";AACA,CAAC;AACG,cAAY;AAChB;",
+  "mappings": "AACA,CAAC,cACG,WAAY,MAChB",
   "names": []
 }

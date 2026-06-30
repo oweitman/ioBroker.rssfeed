@@ -841,6 +841,11 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+- update ejs and update prepare mechanism
+
 ### 4.1.2 (2026-06-10)
 
 - fix package lock

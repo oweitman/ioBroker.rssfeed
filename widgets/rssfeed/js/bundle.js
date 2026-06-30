@@ -1,3 +1,4 @@
 import './rssfeed.js';
-import './ejs.js';
+//import '../../node_modules/ejs/ejs.js';
+import '../../node_modules/ejs/ejs.min.js';
 import '../css/style.css';

@@ -1,20 +1,23 @@
 {
-  "name": "rssfeed-vis1-widget",
-  "version": "4.1.2",
-  "main": "rssfeed/dist/rssfeed.js",
-      "watch": {
-        "build": "rssfeed/**/js/*.js"
+    "name": "rssfeed-vis1-widget",
+    "version": "4.1.2",
+    "main": "rssfeed/dist/rssfeed.js",
+    "watch": {
+        "build": "rssfeed/js/*.js"
     },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "buildmin": "esbuild rssfeed/js/bundle.js --minify --bundle --outdir=rssfeed/dist --public-path=/vis/widgets/rssfeed/dist --loader:.css=css --loader:.png=file --target=es6 --sourcemap",
-    "build": "esbuild rssfeed/js/bundle.js --bundle --outdir=rssfeed/dist  --loader:.css=css --loader:.svg=file --loader:.png=file --asset-names=images/[name] --target=es6 --sourcemap",
-    "watch": "npm-watch"
-  },
-  "author": "",
-  "license": "MIT",
-  "description": "",
-  "devDependencies": {
-    "npm-watch": "^0.13.0"
-  }
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "buildmin": "esbuild rssfeed/js/bundle.js --minify --bundle --outdir=rssfeed/dist --public-path=/vis/widgets/rssfeed/dist --loader:.css=css --loader:.png=file --target=es6 --sourcemap",
+        "build": "esbuild rssfeed/js/bundle.js --bundle --outdir=rssfeed/dist  --loader:.css=css --loader:.svg=file --loader:.png=file --asset-names=images/[name] --target=es6 --sourcemap",
+        "watch": "npm-watch"
+    },
+    "author": "",
+    "license": "MIT",
+    "description": "",
+    "devDependencies": {
+        "npm-watch": "^0.13.0"
+    },
+    "dependencies": {
+        "ejs": "^6.0.1"
+    }
 }
