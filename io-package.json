@@ -51,22 +51,22 @@
                 "fr": "réparer le repocheur",
                 "it": "correggere il repochecker",
                 "es": "arreglar repochecker",
-                "pl": "fix repochecker",
+                "pl": "fix repochecker xx",
                 "uk": "виправити repochecker",
                 "zh-cn": "固定重检查器"
             },
             "4.0.1": {
-                "en": "fix repocheckerx",
-                "de": "repochecker reparierenx",
-                "ru": "ремонтироватьx",
-                "pt": "corrigir o repocheckerx",
-                "nl": "reparerenx",
-                "fr": "réparer le repocheurx",
-                "it": "correggere il repocheckerx",
-                "es": "arreglar repocheckerx",
-                "pl": "fix repocheckerx",
-                "uk": "виправити repocheckerx",
-                "zh-cn": "固定重检查器x"
+                "en": "fix repochecker",
+                "de": "repochecker reparieren",
+                "ru": "ремонтировать",
+                "pt": "corrigir o repochecker",
+                "nl": "repareren",
+                "fr": "réparer le repocheur",
+                "it": "correggere il repochecker",
+                "es": "arreglar repochecker",
+                "pl": "fix repochecker xx",
+                "uk": "виправити repochecker",
+                "zh-cn": "固定重检查器"
             }
         },
         "titleLang": {

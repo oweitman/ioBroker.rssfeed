@@ -63,7 +63,6 @@
         "check": "tsc --noEmit -p tsconfig.check.json",
         "lint": "eslint -c eslint.config.mjs .",
         "npm": "npm i && cd widgets && npm i",
-        "build": "cd widgets/rssfeed && npm run build && cd ../..",
         "repochecker": "npx @iobroker/repochecker https://github.com/oweitman/ioBroker.rssfeed --local --noinfo",
         "translate": "translate-adapter",
         "translate-widgets": "node ./bin/translate.js --source widgets/rssfeed/myi18n/en.json --format single",
