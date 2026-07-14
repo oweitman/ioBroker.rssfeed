@@ -27,7 +27,7 @@
         "axios": "^1.17.0",
         "chardet": "^2.1.1",
         "feedparser": "^2.6.0",
-        "iconv-lite": "^0.7.2"
+        "iconv-lite": "^0.7.3"
     },
     "devDependencies": {
         "@alcalzone/release-script": "^5.2.1",
