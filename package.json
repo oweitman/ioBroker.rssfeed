@@ -23,7 +23,7 @@
         "node": ">=22"
     },
     "dependencies": {
-        "@iobroker/adapter-core": "^3.4.1",
+        "@iobroker/adapter-core": "^3.4.2",
         "axios": "^1.17.0",
         "chardet": "^2.1.1",
         "feedparser": "^2.6.0",
