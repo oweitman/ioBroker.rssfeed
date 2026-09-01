@@ -1,0 +1,37 @@
+{
+    "compilerOptions": {
+        "noEmit": true,
+        // check JS files
+        "allowJs": true,
+        "checkJs": true,
+
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "resolveJsonModule": true,
+
+        // Set this to false if you want to disable the very strict rules (not recommended)
+        "strict": true,
+
+        "noImplicitAny": false,
+
+        "target": "ES2020",
+        "sourceMap": true,
+
+        "forceConsistentCasingInFileNames": true,
+
+        "isolatedModules": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "skipLibCheck": true,
+        "allowImportingTsExtensions": true,
+        "jsx": "react-jsx",
+        "types": ["@iobroker/types"]
+    },
+    "include": ["src", "src/translations.js"],
+    "exclude": ["src/empty.js", "node_modules/**", "widgets/**"],
+    "references": [
+        {
+            "path": "./tsconfig.node.json"
+        }
+    ]
+}

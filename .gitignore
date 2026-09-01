@@ -5,6 +5,7 @@
 
 *.code-workspace
 node_modules
+src-widgets/build
 nbproject
 
 # npm package files

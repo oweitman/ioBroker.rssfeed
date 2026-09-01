@@ -1,0 +1,52 @@
+{
+    "name": "iobroker.vis-2-widgets-rssfeed",
+    "private": true,
+    "version": "4.1.2",
+    "type": "module",
+    "dependencies": {
+        "@emotion/react": "^11.14.0",
+        "@emotion/styled": "^11.14.0",
+        "@iobroker/adapter-react-v5": "^8.3.2",
+        "@iobroker/types-vis-2": "^2.14.4",
+        "@module-federation/vite": "1.7.2",
+        "@mui/icons-material": "^6.5.0",
+        "@mui/material": "^6.5.0",
+        "@mui/system": "^6.5.0",
+        "@types/ace": "^0.0.52",
+        "@types/ejs": "^3.1.5",
+        "@types/react": "^18.3.19",
+        "@types/react-dom": "^18.3.5",
+        "@vitejs/plugin-react": "^5.2.0",
+        "ace-builds": "^1.44.0",
+        "ejs": "^3.1.10",
+        "iobroker.rssfeed": "file:..",
+        "prop-types": "^15.8.1",
+        "react": "^18.3.1",
+        "react-ace": "^14.0.1",
+        "react-dom": "^18.3.1",
+        "react-fast-marquee": "^1.6.5",
+        "sass": "^1.101.3",
+        "typescript": "^5.9.3",
+        "vite": "7.3.2",
+        "vite-plugin-top-level-await": "^1.6.0",
+        "vite-tsconfig-paths": "^6.1.1"
+    },
+    "scripts": {
+        "start": "vite --port 4173 --configLoader runner",
+        "build": "tsc && vite build --configLoader runner",
+        "preview": "vite preview --port 4173",
+        "lint": "eslint -c eslint.config.mjs",
+        "i18n": "node node_modules/@iobroker/vis-2-widgets-react-dev/searchI18n vis-2-widgets-rssfeed",
+        "update-browsers": "npx browserslist@latest --update-db"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "homepage": ".",
+    "browserslist": [
+        ">0.2%",
+        "not dead",
+        "not ie <= 11",
+        "not op_mini all"
+    ]
+}

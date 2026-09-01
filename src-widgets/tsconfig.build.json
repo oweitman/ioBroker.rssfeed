@@ -1,0 +1,8 @@
+{
+    // Used to generate the definition files
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "checkJs": true,
+        "strict": false
+    }
+}

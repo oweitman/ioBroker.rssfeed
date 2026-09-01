@@ -151,12 +151,12 @@
         "connectionType": "cloud",
         "dataSource": "poll",
         "visWidgets": {
-            "rssfeed": {
-                "name": "RSS Feed",
-                "ignoreInVersions": [2],
-                "components": ["nocomponents"],
-                "i18n": true,
-                "url": ""
+            "vis2rssfeedWidgets": {
+                "i18n": "component",
+                "name": "vis2rssfeedWidgets",
+                "url": "vis2rssfeed/customWidgets.js",
+                "bundlerType": "module",
+                "components": ["RSSArticleMarquee5", "RSSMetaHelper", "RSSArticleHelper", "RSSWidget", "RSSMultiWidget"]
             }
         },
         "adminUI": {

@@ -11,6 +11,8 @@ export default [
             'widgets/rssfeed/dist/**',
             'widgets/rssfeed/js/ejs.js',
             'widgets/rssfeed/js/mode-ejs.js',
+            'widgets/vis2rssfeed/**',
+            'src-widgets/**',
             '.dev-server/**',
             'backup/**',
             '*.test.js',
