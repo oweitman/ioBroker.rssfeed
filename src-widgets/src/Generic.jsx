@@ -20,7 +20,7 @@ const VisRxWidgetBase = /** @type {VisWidgetWindow} */ (window).visRxWidget;
  */
 export default class Generic extends VisRxWidgetBase {
     static getI18nPrefix() {
-        return 'vis-2-widgets-rssfeed';
+        return 'rssfeed';
     }
 
     /**

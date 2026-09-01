@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["../customWidgets.js","./vis2rssfeedWidgets__mf_v__runtimeInit__mf_v__-CIJsaS2U.js","./virtualExposes-BAXQ2bmo.js","./preload-helper-PPVm8Dsz.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["../customWidgets.js","./vis2rssfeedWidgets__mf_v__runtimeInit__mf_v__-CIJsaS2U.js","./virtualExposes-Du4AYLeC.js","./preload-helper-PPVm8Dsz.js"])))=>i.map(i=>d[i]);
 import { _ as i } from "./preload-helper-PPVm8Dsz.js";
 (async () => {
   const r = i(() => import("../customWidgets.js").then(async (m) => {

@@ -194,6 +194,19 @@
         "uk": "RSS: Призупинити при наведенні курсору",
         "zh-cn": "RSS Pause on hover"
     },
+    "rss_opentype": {
+        "en": "RSS open type",
+        "de": "RSS-Öffnungsart",
+        "ru": "Способ открытия RSS",
+        "pt": "Tipo de abertura RSS",
+        "nl": "RSS-openingstype",
+        "fr": "Type d'ouverture RSS",
+        "it": "Tipo di apertura RSS",
+        "es": "Tipo de apertura RSS",
+        "pl": "Sposób otwierania RSS",
+        "uk": "Спосіб відкриття RSS",
+        "zh-cn": "RSS 打开方式"
+    },
     "rss_link": {
         "en": "RSS Link",
         "de": "RSS-Link",
@@ -219,6 +232,45 @@
         "pl": "RSS z datą",
         "uk": "RSS із зазначенням часу",
         "zh-cn": "RSS with time"
+    },
+    "rss_withdate": {
+        "en": "RSS with date",
+        "de": "RSS mit Datum",
+        "ru": "RSS с датой",
+        "pt": "RSS com data",
+        "nl": "RSS met datum",
+        "fr": "RSS avec date",
+        "it": "RSS con data",
+        "es": "RSS con fecha",
+        "pl": "RSS z datą",
+        "uk": "RSS з датою",
+        "zh-cn": "RSS 带日期"
+    },
+    "rss_withyear": {
+        "en": "RSS with year",
+        "de": "RSS mit Jahr",
+        "ru": "RSS с годом",
+        "pt": "RSS com ano",
+        "nl": "RSS met jaar",
+        "fr": "RSS avec année",
+        "it": "RSS con anno",
+        "es": "RSS con año",
+        "pl": "RSS z rokiem",
+        "uk": "RSS з роком",
+        "zh-cn": "RSS 带年份"
+    },
+    "rss_withname": {
+        "en": "RSS with name",
+        "de": "RSS mit Name",
+        "ru": "RSS с именем",
+        "pt": "RSS com nome",
+        "nl": "RSS met naam",
+        "fr": "RSS avec nom",
+        "it": "RSS con nome",
+        "es": "RSS con nombre",
+        "pl": "RSS z nazwą",
+        "uk": "RSS з назвою",
+        "zh-cn": "RSS 带名称"
     },
     "json_oid": {
         "en": "JSON data point",

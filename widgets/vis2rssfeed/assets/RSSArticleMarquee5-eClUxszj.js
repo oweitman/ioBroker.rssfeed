@@ -1,9 +1,9 @@
 import { j as l, __tla as __tla_0 } from "./jsx-runtime-5TN6Phqd.js";
 import { v as G, __tla as __tla_1 } from "./vis2rssfeedWidgets__loadShare__react__loadShare__-DZcZP6XT.js";
 import { v as E, __tla as __tla_2 } from "./vis2rssfeedWidgets__loadShare___mf_0_mui_mf_1_material__loadShare__-SRx7nqzf.js";
-import { G as J, r as Z } from "./rss-Boj54Q8q.js";
+import { G as J, r as Z, __tla as __tla_3 } from "./rss-Bd1IcHfO.js";
 import "./_commonjsHelpers-DsqdWQfm.js";
-import { __tla as __tla_3 } from "./vis2rssfeedWidgets__mf_v__runtimeInit__mf_v__-CIJsaS2U.js";
+import { __tla as __tla_4 } from "./vis2rssfeedWidgets__mf_v__runtimeInit__mf_v__-CIJsaS2U.js";
 let U;
 let __tla = Promise.all([
   (() => {
@@ -27,6 +27,12 @@ let __tla = Promise.all([
   (() => {
     try {
       return __tla_3;
+    } catch {
+    }
+  })(),
+  (() => {
+    try {
+      return __tla_4;
     } catch {
     }
   })()
@@ -120,11 +126,11 @@ let __tla = Promise.all([
   transform: var(--transform);
 }`);
   const ee = i.forwardRef(function({ style: r = {}, className: e = "", autoFill: a = false, play: d = true, pauseOnHover: t = false, pauseOnClick: o = false, direction: n = "left", speed: s = 50, delay: y = 0, loop: g = 0, gradient: q = false, gradientColor: u = "white", gradientWidth: _ = 200, onFinish: I, onCycleComplete: B, onMount: $, children: b }, P) {
-    const [k, X] = i.useState(0), [D, z] = i.useState(0), [S, A] = i.useState(1), [j, Y] = i.useState(false), F = i.useRef(null), h = P || F, x = i.useRef(null), w = i.useCallback(() => {
+    const [k, X] = i.useState(0), [S, z] = i.useState(0), [D, A] = i.useState(1), [j, Y] = i.useState(false), F = i.useRef(null), h = P || F, x = i.useRef(null), w = i.useCallback(() => {
       if (x.current && h.current) {
-        const c = h.current.getBoundingClientRect(), C = x.current.getBoundingClientRect();
-        let p = c.width, v = C.width;
-        (n === "up" || n === "down") && (p = c.height, v = C.height), A(a && p && v && v < p ? Math.ceil(p / v) : 1), X(p), z(v);
+        const c = h.current.getBoundingClientRect(), M = x.current.getBoundingClientRect();
+        let p = c.width, v = M.width;
+        (n === "up" || n === "down") && (p = c.height, v = M.height), A(a && p && v && v < p ? Math.ceil(p / v) : 1), X(p), z(v);
       }
     }, [
       a,
@@ -152,11 +158,11 @@ let __tla = Promise.all([
     }, []), i.useEffect(() => {
       typeof $ == "function" && $();
     }, []);
-    const W = i.useMemo(() => a ? D * S / s : D < k ? k / s : D / s, [
+    const W = i.useMemo(() => a ? S * D / s : S < k ? k / s : S / s, [
       a,
       k,
-      D,
       S,
+      D,
       s
     ]), H = i.useMemo(() => Object.assign(Object.assign({}, r), {
       "--pause-on-hover": !d || t ? "paused" : "running",
@@ -189,19 +195,19 @@ let __tla = Promise.all([
       y,
       g,
       a
-    ]), M = i.useMemo(() => ({
+    ]), C = i.useMemo(() => ({
       "--transform": n === "up" ? "rotate(90deg)" : n === "down" ? "rotate(-90deg)" : "none"
     }), [
       n
     ]), T = i.useCallback((c) => [
       ...Array(Number.isFinite(c) && c >= 0 ? c : 0)
-    ].map((C, p) => m.default.createElement(i.Fragment, {
+    ].map((M, p) => m.default.createElement(i.Fragment, {
       key: p
     }, i.Children.map(b, (v) => m.default.createElement("div", {
-      style: M,
+      style: C,
       className: "rfm-child"
     }, v)))), [
-      M,
+      C,
       b
     ]);
     return j ? m.default.createElement("div", {
@@ -220,12 +226,12 @@ let __tla = Promise.all([
       className: "rfm-initial-child-container",
       ref: x
     }, i.Children.map(b, (c) => m.default.createElement("div", {
-      style: M,
+      style: C,
       className: "rfm-child"
-    }, c))), T(S - 1)), m.default.createElement("div", {
+    }, c))), T(D - 1)), m.default.createElement("div", {
       className: "rfm-marquee",
       style: O
-    }, T(S))) : null;
+    }, T(D))) : null;
   });
   var N = L.default = ee;
   const R = window.vis;
@@ -380,9 +386,9 @@ let __tla = Promise.all([
     }
     renderTitle(r, e) {
       let a = [];
-      return r.withDate && a.push(R.formatDate(e.date, "DD.MM.")), r.withYear && a.push(R.formatDate(e.date, "YY")), a = [
+      return r.withDate && a.push(R.formatDate(e.pubdate || e.date, "DD.MM.")), r.withYear && a.push(R.formatDate(e.pubdate || e.date, "YY")), a = [
         a.join("")
-      ], r.withTime && a.push(R.formatDate(e.date, "hh:mm")), ` ${r.divider} ${a.join(" ")} ${r.withName ? `${e.meta_name || e.meta_title}: ` : ""} ${e.title} `;
+      ], r.withTime && a.push(R.formatDate(e.pubdate || e.date, "hh:mm")), ` ${r.divider} ${a.join(" ")} ${r.withName ? `${e.meta_name || e.meta_title}: ` : ""} ${e.title} `;
     }
     handleClick(r) {
       this.setState({
@@ -432,7 +438,7 @@ let __tla = Promise.all([
           key: o + u.title
         })), g && (s.articles = s.articles.filter((u) => this.checkFilter(u.title + u.description + u.categories.toString(), g))), t.concat(s.articles);
       }, []);
-      if (d.sort((t, o) => new Date(o.date).getTime() - new Date(t.date).getTime()), e.opentype === "link") return l.jsx(N, {
+      if (d.sort((t, o) => new Date(o.date).getTime() - new Date(t.date).getTime()), e.opentype === "link") return this.renderScrollableContent(l.jsx(N, {
         pauseOnHover: e.pauseonhover,
         speed: e.speed,
         children: l.jsx("div", {
@@ -444,10 +450,10 @@ let __tla = Promise.all([
             children: this.renderTitle(e, t)
           }, t.title))
         })
-      });
+      }));
       if (e.opentype === "popup") {
         const t = `dialog ${this.props.id}`, o = `iframe ${this.props.id}`;
-        return l.jsxs(l.Fragment, {
+        return this.renderScrollableContent(l.jsxs(l.Fragment, {
           children: [
             l.jsx(N, {
               pauseOnHover: e.pauseonhover,
@@ -502,8 +508,8 @@ let __tla = Promise.all([
               ]
             })
           ]
-        });
-      } else return l.jsx(N, {
+        }));
+      } else return this.renderScrollableContent(l.jsx(N, {
         pauseOnHover: e.pauseonhover,
         speed: e.speed,
         children: l.jsx("div", {
@@ -511,7 +517,7 @@ let __tla = Promise.all([
             children: this.renderTitle(e, t)
           }, t.key))
         })
-      });
+      }));
     }
   };
 });

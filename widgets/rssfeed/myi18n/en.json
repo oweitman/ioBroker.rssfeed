@@ -14,8 +14,12 @@
     "rss_speed": "RSS Speed",
     "rss_divider": "RSS Seperator",
     "rss_pauseonhover": "RSS Pause on hover",
+    "rss_opentype": "RSS open type",
     "rss_link": "RSS Link",
     "rss_withtime": "RSS with time",
+    "rss_withdate": "RSS with date",
+    "rss_withyear": "RSS with year",
+    "rss_withname": "RSS with name",
     "json_oid": "JSON data point",
     "json_template": "JSON Template"
 }

@@ -22050,9 +22050,9 @@ let __tla = Promise.all([
     const [Q, A] = xe.useState(j.value);
     return j.open ? se.jsx(Qn, {
       keyboardDisabled: true,
-      title: ue.I18n.t("vis_2_widgets_rssfeed_widget_title"),
+      title: ue.I18n.t("rssfeed_widget_title"),
       open: true,
-      actionTitle: ue.I18n.t("vis_2_widgets_rssfeed_widget_save"),
+      actionTitle: ue.I18n.t("rssfeed_widget_save"),
       action: () => j.onChange(Q),
       onClose: j.onClose,
       minWidth: 800,

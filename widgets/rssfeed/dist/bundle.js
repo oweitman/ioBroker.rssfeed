@@ -231,6 +231,19 @@
           uk: "RSS: \u041F\u0440\u0438\u0437\u0443\u043F\u0438\u043D\u0438\u0442\u0438 \u043F\u0440\u0438 \u043D\u0430\u0432\u0435\u0434\u0435\u043D\u043D\u0456 \u043A\u0443\u0440\u0441\u043E\u0440\u0443",
           "zh-cn": "RSS Pause on hover"
         },
+        rss_opentype: {
+          en: "RSS open type",
+          de: "RSS-\xD6ffnungsart",
+          ru: "\u0421\u043F\u043E\u0441\u043E\u0431 \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F RSS",
+          pt: "Tipo de abertura RSS",
+          nl: "RSS-openingstype",
+          fr: "Type d'ouverture RSS",
+          it: "Tipo di apertura RSS",
+          es: "Tipo de apertura RSS",
+          pl: "Spos\xF3b otwierania RSS",
+          uk: "\u0421\u043F\u043E\u0441\u0456\u0431 \u0432\u0456\u0434\u043A\u0440\u0438\u0442\u0442\u044F RSS",
+          "zh-cn": "RSS \u6253\u5F00\u65B9\u5F0F"
+        },
         rss_link: {
           en: "RSS Link",
           de: "RSS-Link",
@@ -256,6 +269,45 @@
           pl: "RSS z dat\u0105",
           uk: "RSS \u0456\u0437 \u0437\u0430\u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044F\u043C \u0447\u0430\u0441\u0443",
           "zh-cn": "RSS with time"
+        },
+        rss_withdate: {
+          en: "RSS with date",
+          de: "RSS mit Datum",
+          ru: "RSS \u0441 \u0434\u0430\u0442\u043E\u0439",
+          pt: "RSS com data",
+          nl: "RSS met datum",
+          fr: "RSS avec date",
+          it: "RSS con data",
+          es: "RSS con fecha",
+          pl: "RSS z dat\u0105",
+          uk: "RSS \u0437 \u0434\u0430\u0442\u043E\u044E",
+          "zh-cn": "RSS \u5E26\u65E5\u671F"
+        },
+        rss_withyear: {
+          en: "RSS with year",
+          de: "RSS mit Jahr",
+          ru: "RSS \u0441 \u0433\u043E\u0434\u043E\u043C",
+          pt: "RSS com ano",
+          nl: "RSS met jaar",
+          fr: "RSS avec ann\xE9e",
+          it: "RSS con anno",
+          es: "RSS con a\xF1o",
+          pl: "RSS z rokiem",
+          uk: "RSS \u0437 \u0440\u043E\u043A\u043E\u043C",
+          "zh-cn": "RSS \u5E26\u5E74\u4EFD"
+        },
+        rss_withname: {
+          en: "RSS with name",
+          de: "RSS mit Name",
+          ru: "RSS \u0441 \u0438\u043C\u0435\u043D\u0435\u043C",
+          pt: "RSS com nome",
+          nl: "RSS met naam",
+          fr: "RSS avec nom",
+          it: "RSS con nome",
+          es: "RSS con nombre",
+          pl: "RSS z nazw\u0105",
+          uk: "RSS \u0437 \u043D\u0430\u0437\u0432\u043E\u044E",
+          "zh-cn": "RSS \u5E26\u540D\u79F0"
         },
         json_oid: {
           en: "JSON data point",

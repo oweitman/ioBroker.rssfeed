@@ -1,12 +1,12 @@
 import { j as h, __tla as __tla_0 } from "./jsx-runtime-5TN6Phqd.js";
 import { __tla as __tla_1 } from "./vis2rssfeedWidgets__loadShare__react__loadShare__-DZcZP6XT.js";
 import { P as c, __tla as __tla_2 } from "./vis2rssfeedWidgets__loadShare__prop_mf_2_types__loadShare__-C3BqG1AV.js";
-import { V as _, e as y, I as w, __tla as __tla_3 } from "./ejs-D67t_4n6.js";
-import { G as S, r as b } from "./rss-Boj54Q8q.js";
+import { V as _, e as y, I as w, __tla as __tla_3 } from "./ejs-Dj0TZOSH.js";
+import { G as S, r as b, __tla as __tla_4 } from "./rss-Bd1IcHfO.js";
 import "./_commonjsHelpers-DsqdWQfm.js";
-import { __tla as __tla_4 } from "./vis2rssfeedWidgets__mf_v__runtimeInit__mf_v__-CIJsaS2U.js";
-import { __tla as __tla_5 } from "./vis2rssfeedWidgets__loadShare___mf_0_mui_mf_1_material__loadShare__-SRx7nqzf.js";
-import { __tla as __tla_6 } from "./vis2rssfeedWidgets__loadShare___mf_0_mui_mf_1_icons_mf_2_material__loadShare__-59lJ2BkQ.js";
+import { __tla as __tla_5 } from "./vis2rssfeedWidgets__mf_v__runtimeInit__mf_v__-CIJsaS2U.js";
+import { __tla as __tla_6 } from "./vis2rssfeedWidgets__loadShare___mf_0_mui_mf_1_material__loadShare__-SRx7nqzf.js";
+import { __tla as __tla_7 } from "./vis2rssfeedWidgets__loadShare___mf_0_mui_mf_1_icons_mf_2_material__loadShare__-59lJ2BkQ.js";
 let f;
 let __tla = Promise.all([
   (() => {
@@ -48,6 +48,12 @@ let __tla = Promise.all([
   (() => {
     try {
       return __tla_6;
+    } catch {
+    }
+  })(),
+  (() => {
+    try {
+      return __tla_7;
     } catch {
     }
   })()
@@ -92,8 +98,10 @@ let __tla = Promise.all([
 
 <style> 
 #<%- widgetid %> img {
-    width: calc(<%- style.width || "230px" %> - 15px);
+    width: 100%;
+    max-width: 100%;
     height: auto;
+    box-sizing: border-box;
 }
 #<%- widgetid %> img.rssfeed  {
     width: auto;
@@ -102,7 +110,7 @@ let __tla = Promise.all([
 </style> 
 <% rss.articles.forEach(function(item){ %>
     <p><%- item.meta_name || item.meta_title || '' %></p>
-    <p><small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small></p>
+    <p><small><%- vis.formatDate(item.pubdate || item.date, "TT.MM.JJJJ SS:mm") %></small></p>
     <h3><%- item.title %></h3>
     <p><%- item.description %></p>
     <div style="clear:both;" />
@@ -249,15 +257,14 @@ let __tla = Promise.all([
       } catch (a) {
         d = this.escapeHTML(a instanceof Error ? a.message : String(a)).replace(/(?:\r\n|\r|\n)/g, "<br>"), d = d.replace(/ /gm, "&nbsp;"), d = `<code style="color:red;">${d}</code>`;
       }
-      return h.jsx(w, {
+      return this.renderScrollableContent(h.jsx(w, {
         style: {
           width: "100%",
           height: "100%",
-          position: "relative",
-          overflow: "auto"
+          position: "relative"
         },
         html: d
-      });
+      }));
     }
   };
   f.propTypes = {
