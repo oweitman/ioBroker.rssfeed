@@ -9,7 +9,6 @@
             "args": ["--debug", "0"],
             "program": "node_modules/iobroker.rssfeed/main.js",
             "cwd": "${workspaceFolder}/.dev-server/default",
-            "runtimeExecutable": "c:/Users/oweit/AppData/Roaming/fnm/aliases/default/node.exe",
             "stopOnEntry": false,
             "sourceMaps": true,
             "console": "internalConsole",
@@ -17,23 +16,18 @@
             "resolveSourceMapLocations": ["${workspaceFolder}/**", "**/node_modules/**"]
         },
         {
-            "type": "node",
+            "type": "chrome",
             "request": "launch",
-            "name": "vis2 Launch ioBroker Adapter ",
-            "skipFiles": ["<node_internals>/**"],
-            "args": ["--debug", "0"],
-            "program": "node_modules/iobroker.rssfeed/main.js",
-            "cwd": "${workspaceFolder}/.dev-server/vis2",
-            "runtimeExecutable": "c:/Users/oweit/AppData/Roaming/fnm/aliases/default/node.exe",
-            "stopOnEntry": false,
-            "sourceMaps": true,
-            "resolveSourceMapLocations": ["${workspaceFolder}/**", "!**/node_modules/**"]
+            "name": "vis edit",
+            "url": "http://127.0.0.1:8082/vis/edit.html#test",
+            "trace": true,
+            "skipFiles": ["socket.io.js"]
         },
         {
             "type": "chrome",
             "request": "launch",
             "name": "vis runtime",
-            "url": "http://127.0.0.1:8082/vis/index.html#main",
+            "url": "http://127.0.0.1:8082/vis/index.html#test",
             "trace": true,
             "skipFiles": ["socket.io.js"]
         },
@@ -50,16 +44,9 @@
             "type": "chrome",
             "request": "launch",
             "name": "vis2 Launch runtime",
-            "url": "http://localhost:8082/vis-2/?main#default",
+            "url": "http://localhost:8082/vis-2/?main#test",
             "trace": true,
             "skipFiles": ["socket.io.js"]
-        },
-        {
-            "name": "Debug TS adapter",
-            "port": 9229,
-            "request": "attach",
-            "skipFiles": ["<node_internals>/**"],
-            "type": "node"
         }
     ]
 }

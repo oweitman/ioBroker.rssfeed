@@ -83,9 +83,6 @@ If you delete an entry, the datapoints aren't deleted automatically.
 The RSS feed widgets are included for both VIS 1 and VIS 2. VIS 1 uses the classic widget set from
 `widgets/rssfeed`; VIS 2 loads the module-federation bundle from `widgets/vis2rssfeed`.
 
-The VIS 2 sources are located in `src-widgets`. Use `npm run build-vis2widgets` to rebuild only the
-VIS 2 bundle, or `npm run build-widgets` to rebuild both widget generations.
-
 The following widgets actually exists
 
 - [`RSS Feed widget 2`](#rss-feed-widget-2) - to show a single feed
@@ -659,8 +656,10 @@ It has been tested with the following feeds
     -->
 <style>
     #<%- widgetid %> img {
-        width: calc(<%- style.width %> - 15px);
+        width: 100%;
+        max-width: 100%;
         height: auto;
+        box-sizing: border-box;
     }
     #<%- widgetid %> img.rssfeed {
         width: auto;
@@ -700,8 +699,10 @@ It has been tested with the following feeds
     -->
 <style>
     #<%- widgetid %> img {
-        width: calc(<%- style.width || '230px' %> - 15px);
+        width: 100%;
+        max-width: 100%;
         height: auto;
+        box-sizing: border-box;
     }
     #<%- widgetid %> img.rssfeed {
         width: auto;
@@ -731,8 +732,10 @@ It has been tested with the following feeds
 
 <style>
     #<%- widgetid %> img {
-        width: calc(<%- style.width || '230px' %> - 15px);
+        width: 100%;
+        max-width: 100%;
         height: auto;
+        box-sizing: border-box;
     }
     #<%- widgetid %> img.rssfeed {
         width: auto;
@@ -853,6 +856,7 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 - update ejs and update prepare mechanism
 - integrate the VIS 2 RSS feed widgets into this adapter
 - widgets have now overflow auto and scrollbars
+- fix date/publishdate in templates
 
 ### 4.1.2 (2026-06-10)
 

@@ -6,6 +6,17 @@
 <!-- here you can include so many js-files as you want -->
 <script type="text/javascript" src="widgets/rssfeed/dist/bundle.js"></script>
 
+<style>
+    .rssfeed-scroll-content {
+        scrollbar-width: thin;
+    }
+
+    .rssfeed-scroll-content::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+</style>
+
 <script id="tplrssfeedWidget2" type="text/ejs" class="vis-tpl"
     data-vis-prev='<img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="widgets/rssfeed/img/rssfeed-vis.png"></img>'
     data-vis-attrs="rss_oid/id;rss_template/custom,rssfeed.editEjs;rss_maxarticles/number,1;rss_filter;"

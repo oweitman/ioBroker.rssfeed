@@ -25,8 +25,10 @@ class RSSWidget extends Generic {
 -->
 <style>
 #<%- widgetid %> img {
-    width: calc(<%- style.width %> - 15px);
+    width: 100%;
+    max-width: 100%;
     height: auto;
+    box-sizing: border-box;
 }
 #<%- widgetid %> img.rssfeed  {
     width: auto;

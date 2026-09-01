@@ -1497,6 +1497,18 @@ function encode_char(c) {
   vis.binds["rssfeed"] = {
     version,
     /**
+     * Render widget output into an inner scrolling container so VIS editor controls remain outside it.
+     * Scrollbars are shown only when the content exceeds the configured widget dimensions.
+     *
+     * @param widgetID - The ID of the widget element.
+     * @param html - The rendered widget content.
+     */
+    setContent: function(widgetID, html) {
+      $(`#${widgetID}`).html(
+        `<div class="rssfeed-scroll-content" style="width:100%; height:100%; min-width:0; min-height:0; overflow:auto; box-sizing:border-box;">${html}</div>`
+      );
+    },
+    /**
      * Log the version of rssfeed and remove it.
      * Should be called from the main thread, as it logs to the console.
      */
@@ -1580,8 +1592,10 @@ function encode_char(c) {
         const defaulttemplate = `
 <style>
   #<%- widgetid %> img {
-    width: calc(<%- style.width || "230px" %> - 15px);
+    width: 100%;
+    max-width: 100%;
     height: auto;
+    box-sizing: border-box;
   }
   #<%- widgetid %> img.rssfeed {
     width: auto;
@@ -1660,7 +1674,7 @@ function encode_char(c) {
           text = text.replace(/ /gm, "&nbsp;");
           text = `<code style="color:red;">${text}</code>`;
         }
-        $(`#${widgetID}`).html(text);
+        vis.binds["rssfeed"].setContent(widgetID, text);
       }
     },
     marquee5: {
@@ -1794,7 +1808,7 @@ function encode_char(c) {
           text += `    </dialog>`;
           text += `</div>`;
         }
-        $(`#${widgetID}`).html(text);
+        vis.binds["rssfeed"].setContent(widgetID, text);
         for (const attr in style) {
           if ("left,top,width,height".indexOf(attr) < 0 && style[attr] != "") {
             $(`#${widgetID} span`).css(attr, style[attr]);
@@ -1928,8 +1942,10 @@ function encode_char(c) {
 -->
 <style>
 #<%- widgetid %> img {
-    width: calc(<%- style.width || "230px" %> - 15px);
+    width: 100%;
+    max-width: 100%;
     height: auto;
+    box-sizing: border-box;
 }
 #<%- widgetid %> img.rssfeed  {
     width: auto;
@@ -1987,7 +2003,7 @@ function encode_char(c) {
           text = text.replace(/ /gm, "&nbsp;");
           text = `<code style="color:red;">${text}</code>`;
         }
-        $(`#${widgetID}`).html(text);
+        vis.binds["rssfeed"].setContent(widgetID, text);
       }
     },
     metahelper: {
@@ -2047,7 +2063,7 @@ function encode_char(c) {
         text += `<tr><th>meta.generator</th><td>${rss.meta.generator}</td></tr>`;
         text += `<tr><th>meta.categories</th><td>${rss.meta.categories.toString()}</td></tr>`;
         text += "</table>";
-        $(`#${widgetID}`).html(text);
+        vis.binds["rssfeed"].setContent(widgetID, text);
       }
     },
     articlehelper2: {
@@ -2118,7 +2134,7 @@ function encode_char(c) {
           text += `<tr><th>No Data. End of List of ${rss.articles.length} Articles</th></tr>`;
           text += "</table>";
         }
-        $(`#${widgetID}`).html(text);
+        vis.binds["rssfeed"].setContent(widgetID, text);
       }
     },
     /**

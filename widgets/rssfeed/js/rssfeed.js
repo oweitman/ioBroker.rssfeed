@@ -19,6 +19,18 @@ $.extend(true, systemDictionary, translations);
 vis.binds['rssfeed'] = {
     version: pkgVersion,
     /**
+     * Render widget output into an inner scrolling container so VIS editor controls remain outside it.
+     * Scrollbars are shown only when the content exceeds the configured widget dimensions.
+     *
+     * @param widgetID - The ID of the widget element.
+     * @param html - The rendered widget content.
+     */
+    setContent: function (widgetID, html) {
+        $(`#${widgetID}`).html(
+            `<div class="rssfeed-scroll-content" style="width:100%; height:100%; min-width:0; min-height:0; overflow:auto; box-sizing:border-box;">${html}</div>`,
+        );
+    },
+    /**
      * Log the version of rssfeed and remove it.
      * Should be called from the main thread, as it logs to the console.
      */
@@ -107,8 +119,10 @@ vis.binds['rssfeed'] = {
             const defaulttemplate = `
 <style>
   #<%- widgetid %> img {
-    width: calc(<%- style.width || "230px" %> - 15px);
+    width: 100%;
+    max-width: 100%;
     height: auto;
+    box-sizing: border-box;
   }
   #<%- widgetid %> img.rssfeed {
     width: auto;
@@ -202,7 +216,7 @@ vis.binds['rssfeed'] = {
                 text = `<code style="color:red;">${text}</code>`;
             }
 
-            $(`#${widgetID}`).html(text);
+            vis.binds['rssfeed'].setContent(widgetID, text);
         },
     },
     marquee5: {
@@ -338,7 +352,7 @@ vis.binds['rssfeed'] = {
                 text += `    </dialog>`;
                 text += `</div>`;
             }
-            $(`#${widgetID}`).html(text);
+            vis.binds['rssfeed'].setContent(widgetID, text);
             for (const attr in style) {
                 if ('left,top,width,height'.indexOf(attr) < 0 && style[attr] != '') {
                     $(`#${widgetID} span`).css(attr, style[attr]);
@@ -483,8 +497,10 @@ vis.binds['rssfeed'] = {
 -->
 <style>
 #<%- widgetid %> img {
-    width: calc(<%- style.width || "230px" %> - 15px);
+    width: 100%;
+    max-width: 100%;
     height: auto;
+    box-sizing: border-box;
 }
 #<%- widgetid %> img.rssfeed  {
     width: auto;
@@ -554,7 +570,7 @@ vis.binds['rssfeed'] = {
                 text = `<code style="color:red;">${text}</code>`;
             }
 
-            $(`#${widgetID}`).html(text);
+            vis.binds['rssfeed'].setContent(widgetID, text);
         },
     },
     metahelper: {
@@ -628,7 +644,7 @@ vis.binds['rssfeed'] = {
             text += `<tr><th>meta.categories</th><td>${rss.meta.categories.toString()}</td></tr>`;
             text += '</table>';
 
-            $(`#${widgetID}`).html(text);
+            vis.binds['rssfeed'].setContent(widgetID, text);
         },
     },
     articlehelper2: {
@@ -713,7 +729,7 @@ vis.binds['rssfeed'] = {
                 text += '</table>';
             }
 
-            $(`#${widgetID}`).html(text);
+            vis.binds['rssfeed'].setContent(widgetID, text);
         },
     },
     /**
