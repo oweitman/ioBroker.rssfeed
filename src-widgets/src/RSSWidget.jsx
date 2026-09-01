@@ -37,7 +37,7 @@ class RSSWidget extends Generic {
 <p><%- rss.meta.title %> </p>
 <% rss.articles.forEach(function(item){ %>
     <div class="article">
-    <p><small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small></p>    
+    <p><small><%- vis.formatDate(item.pubdate || item.date, "TT.MM.JJJJ SS:mm") %></small></p>    
     <h3><%- item.title %></h3>
     <p><%- item.description %></p>
     <div style="clear:both;"></div>

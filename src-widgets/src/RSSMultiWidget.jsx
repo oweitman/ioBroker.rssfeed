@@ -35,7 +35,7 @@ class RSSMultiWidget extends Generic {
 </style> 
 <% rss.articles.forEach(function(item){ %>
     <p><%- item.meta_name || item.meta_title || '' %></p>
-    <p><small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small></p>
+    <p><small><%- vis.formatDate(item.pubdate || item.date, "TT.MM.JJJJ SS:mm") %></small></p>
     <h3><%- item.title %></h3>
     <p><%- item.description %></p>
     <div style="clear:both;" />

@@ -670,7 +670,7 @@ It has been tested with the following feeds
 <p><%- rss.meta.title %></p>
 <% rss.articles.forEach(function(item){ %>
 <div class="article">
-    <p><small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small></p>
+    <p><small><%- vis.formatDate(item.pubdate || item.date, "TT.MM.JJJJ SS:mm") %></small></p>
     <h3><%- item.title %></h3>
     <p><%- item.description %></p>
     <div style="clear:both;"></div>
@@ -710,7 +710,7 @@ It has been tested with the following feeds
 </style>
 <% rss.articles.forEach(function(item){ %>
 <p><%- item.meta_name || item.meta_title || '' %></p>
-<p><small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small></p>
+<p><small><%- vis.formatDate(item.pubdate || item.date, "TT.MM.JJJJ SS:mm") %></small></p>
 <h3><%- item.title %></h3>
 <p><%- item.description %></p>
 <div style="clear:both;" />
@@ -769,7 +769,7 @@ It has been tested with the following feeds
         <% rss.articles.forEach(function(item){ %>
         <div class="article slide">
             <p>
-                <small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small>
+                <small><%- vis.formatDate(item.pubdate || item.date, "TT.MM.JJJJ SS:mm") %></small>
             </p>
             <h3><%- item.title %></h3>
             <p><%- item.description %></p>
@@ -814,7 +814,7 @@ It has been tested with the following feeds
 
 ```html
 <%= meta.title %> <% articles.forEach(function(item){ %>
-<p><small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small></p>
+<p><small><%- vis.formatDate(item.pubdate || item.date, "TT.MM.JJJJ SS:mm") %></small></p>
 <h3><%- item.title %></h3>
 <p><%- item.description %></p>
 <div style="clear:both;" />
@@ -852,6 +852,7 @@ Z7: Without output. This line closed the javascript loop . Everything that was d
 
 - update ejs and update prepare mechanism
 - integrate the VIS 2 RSS feed widgets into this adapter
+- widgets have now overflow auto and scrollbars
 
 ### 4.1.2 (2026-06-10)
 
