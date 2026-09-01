@@ -195,7 +195,7 @@ class RSSWidget extends Generic {
             text = text.replace(/ /gm, '&nbsp;');
             text = `<code style="color:red;">${text}</code>`;
         }
-        return <InnerHtml html={text} />;
+        return this.renderScrollableContent(<InnerHtml html={text} />);
     }
 }
 RSSWidget.propTypes = {

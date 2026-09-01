@@ -1590,7 +1590,7 @@ function encode_char(c) {
 </style>
 <% rss.articles.forEach(function(item){ %>
 <p><%- item.meta_name || item.meta_title || '' %></p>
-<p><small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small></p>
+<p><small><%- vis.formatDate(item.pubdate || item.date, "TT.MM.JJJJ SS:mm") %></small></p>
 <h3><%- item.title %></h3>
 <p><%- item.description %></p>
 <div style="clear:both;" />
@@ -1873,13 +1873,13 @@ function encode_char(c) {
             let time = "";
             titleslength += item.title.length;
             if (rss_withtime) {
-              time = vis.formatDate(item.date, "hh:mm");
+              time = vis.formatDate(item.pubdate || item.date, "hh:mm");
             }
             if (rss_withdate) {
-              time = vis.formatDate(item.date, "DD.MM/hh:mm");
+              time = vis.formatDate(item.pubdate || item.date, "DD.MM/hh:mm");
             }
             if (rss_withyear) {
-              time = vis.formatDate(item.date, "DD.MM.YY/hh:mm");
+              time = vis.formatDate(item.pubdate || item.date, "DD.MM.YY/hh:mm");
             }
             const source = rss_withname ? `${item.meta_name || item.meta_title}: ` : "";
             let title;
@@ -1940,7 +1940,7 @@ function encode_char(c) {
 <p><%- rss.meta.title %> </p>
 <% rss.articles.forEach(function(item){ %>
     <div class="article">
-    <p><small><%- vis.formatDate(item.pubdate, "TT.MM.JJJJ SS:mm") %></small></p>    
+    <p><small><%- vis.formatDate(item.pubdate || item.date, "TT.MM.JJJJ SS:mm") %></small></p>    
     <h3><%- item.title %></h3>
     <p><%- item.description %></p>
     <div style="clear:both;"></div>

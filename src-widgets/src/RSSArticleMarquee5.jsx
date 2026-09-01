@@ -191,10 +191,10 @@ class RSSArticleMarquee5 extends Generic {
 
     renderTitle(data, item) {
         let time = [];
-        if (data.withDate) time.push(vis.formatDate(item.date, 'DD.MM.'));
-        if (data.withYear) time.push(vis.formatDate(item.date, 'YY'));
+        if (data.withDate) time.push(vis.formatDate(item.pubdate || item.date, 'DD.MM.'));
+        if (data.withYear) time.push(vis.formatDate(item.pubdate || item.date, 'YY'));
         time = [time.join('')];
-        if (data.withTime) time.push(vis.formatDate(item.date, 'hh:mm'));
+        if (data.withTime) time.push(vis.formatDate(item.pubdate || item.date, 'hh:mm'));
 
         return ` ${data.divider} ${time.join(' ')} ${data.withName ? `${item.meta_name || item.meta_title}: ` : ''} ${
             item.title
@@ -258,7 +258,7 @@ class RSSArticleMarquee5 extends Generic {
         articles.sort((aEl, bEl) => new Date(bEl.date).getTime() - new Date(aEl.date).getTime());
 
         if (data.opentype === 'link') {
-            return (
+            return this.renderScrollableContent(
                 <Marquee
                     pauseOnHover={data.pauseonhover}
                     speed={data.speed}
@@ -278,12 +278,12 @@ class RSSArticleMarquee5 extends Generic {
                             );
                         })}
                     </div>
-                </Marquee>
+                </Marquee>,
             );
         } else if (data.opentype === 'popup') {
             const classesDialog = `dialog ${this.props.id}`;
             const classesiFrame = `iframe ${this.props.id}`;
-            return (
+            return this.renderScrollableContent(
                 <>
                     <Marquee
                         pauseOnHover={data.pauseonhover}
@@ -339,12 +339,12 @@ class RSSArticleMarquee5 extends Generic {
                             style={{ width: '100%', height: '100%' }}
                         />
                     </Dialog>
-                </>
+                </>,
             );
             /*             <Dialog open={this.state.showDialog} onClose={() => {}} />;
             <Dialog open={true} onClose={() => {}} />; */
         } else {
-            return (
+            return this.renderScrollableContent(
                 <Marquee
                     pauseOnHover={data.pauseonhover}
                     speed={data.speed}
@@ -354,7 +354,7 @@ class RSSArticleMarquee5 extends Generic {
                             return <span key={item.key}>{this.renderTitle(data, item)}</span>;
                         })}
                     </div>
-                </Marquee>
+                </Marquee>,
             );
         }
     }

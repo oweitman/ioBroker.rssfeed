@@ -235,7 +235,7 @@ class RSSArticleHelper extends Generic {
                 </table>
             );
         }
-        return result;
+        return this.renderScrollableContent(result);
     }
 }
 export default RSSArticleHelper;

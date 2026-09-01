@@ -73,7 +73,7 @@ class RSSMetaHelper extends Generic {
         const thStyle = { whiteSpace: 'nowrap', textAlign: 'left', verticalAlign: 'top' };
         const rss = JSON.parse(this.getPropertyValue('oid') || JSON.stringify(rssExample));
 
-        return (
+        return this.renderScrollableContent(
             <table style={{ whiteSpace: 'nowrap' }}>
                 <tbody>
                     <tr>
@@ -133,7 +133,7 @@ class RSSMetaHelper extends Generic {
                     <td>{rss.meta.categories}</td>
                     </tr>
                 </tbody>
-            </table>
+            </table>,
         );
     }
 }

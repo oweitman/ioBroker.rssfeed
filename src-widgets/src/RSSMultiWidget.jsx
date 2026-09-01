@@ -291,11 +291,11 @@ class RSSMultiWidget extends Generic {
             text = `<code style="color:red;">${text}</code>`;
         }
 
-        return (
+        return this.renderScrollableContent(
             <InnerHtml
-                style={{ width: '100%', height: '100%', position: 'relative', overflow: 'auto' }}
+                style={{ width: '100%', height: '100%', position: 'relative' }}
                 html={text}
-            />
+            />,
         );
     }
 }

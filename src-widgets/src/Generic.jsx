@@ -1,5 +1,7 @@
 // @ts-check
 
+import React from 'react';
+
 /**
  * @typedef {Window & {
  *     visRxWidget: typeof import('@iobroker/types-vis-2/visRxWidget').default
@@ -29,5 +31,28 @@ export default class Generic extends VisRxWidgetBase {
         const stateId = this.state.rxData[stateName];
 
         return this.state.values[`${String(stateId)}.val`];
+    }
+
+    /**
+     * Keep widget content inside the configured VIS dimensions and show scrollbars only on overflow.
+     *
+     * @param {React.ReactNode} content
+     * @returns {React.ReactElement}
+     */
+    renderScrollableContent(content) {
+        return React.createElement(
+            'div',
+            {
+                style: {
+                    width: '100%',
+                    height: '100%',
+                    minWidth: 0,
+                    minHeight: 0,
+                    boxSizing: 'border-box',
+                    overflow: 'auto',
+                },
+            },
+            content,
+        );
     }
 }

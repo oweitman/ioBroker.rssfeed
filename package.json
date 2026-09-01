@@ -71,6 +71,7 @@
         "dev:run": "dev-server run",
         "dev:watch": "dev-server watch --noStart",
         "dev:watchvis2widgets": "npm run start --prefix src-widgets",
+        "dev:watchvis1widgets": "npm run watch --prefix widgets",
         "prepublishOnly": "npm run build",
         "npm": "npm i && npm i --prefix widgets && npm i --prefix src-widgets",
         "npmci": "npm ci && npm ci --prefix widgets && npm ci --prefix src-widgets",
