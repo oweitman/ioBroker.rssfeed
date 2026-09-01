@@ -3,6 +3,19 @@
         "name": "rssfeed",
         "version": "4.1.2",
         "news": {
+            "5.0.0": {
+                "en": "update EJS, integrate VIS 2 RSS widgets, improve documentation and widget overflow handling, fix template dates, and rework README",
+                "de": "EJS aktualisiert, VIS 2 RSS-Widgets integriert, Dokumentation und Widget-Overflow verbessert, Template-Datumsangaben korrigiert und README überarbeitet",
+                "ru": "обновлён EJS, интегрированы RSS-виджеты VIS 2, улучшены документация и обработка переполнения виджетов, исправлены даты в шаблонах и переработан README",
+                "pt": "EJS atualizado, widgets RSS do VIS 2 integrados, documentação e overflow dos widgets melhorados, datas dos templates corrigidas e README reformulado",
+                "nl": "EJS bijgewerkt, VIS 2 RSS-widgets geïntegreerd, documentatie en widget-overflow verbeterd, template-datums gecorrigeerd en README herwerkt",
+                "fr": "EJS mis à jour, widgets RSS VIS 2 intégrés, documentation et gestion du débordement améliorées, dates des modèles corrigées et README remanié",
+                "it": "EJS aggiornato, widget RSS VIS 2 integrati, documentazione e gestione dell'overflow migliorate, date dei template corrette e README rielaborato",
+                "es": "EJS actualizado, widgets RSS de VIS 2 integrados, documentación y gestión del desbordamiento mejoradas, fechas de las plantillas corregidas y README revisado",
+                "pl": "zaktualizowano EJS, zintegrowano widżety RSS VIS 2, ulepszono dokumentację i obsługę przepełnienia widżetów, poprawiono daty w szablonach i README",
+                "uk": "оновлено EJS, інтегровано RSS-віджети VIS 2, покращено документацію та обробку переповнення віджетів, виправлено дати в шаблонах і README",
+                "zh-cn": "更新 EJS，集成 VIS 2 RSS 小部件，改进文档和小部件溢出处理，修复模板日期并重写 README"
+            },
             "4.1.2": {
                 "en": "fix package lock",
                 "de": "fixpackungsschloss",
