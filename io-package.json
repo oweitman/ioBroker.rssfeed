@@ -1,9 +1,9 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "5.0.0",
+    "version": "5.0.1",
     "news": {
-      "5.0.0": {
+      "5.0.1": {
         "en": "update EJS, integrate VIS 2 RSS widgets, improve documentation and widget overflow handling, fix template dates, and rework README",
         "de": "EJS aktualisiert, VIS 2 RSS-Widgets integriert, Dokumentation und Widget-Overflow verbessert, Template-Datumsangaben korrigiert und README überarbeitet",
         "ru": "обновлён EJS, интегрированы RSS-виджеты VIS 2, улучшены документация и обработка переполнения виджетов, исправлены даты в шаблонах и переработан README",

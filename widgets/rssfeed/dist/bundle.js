@@ -1541,7 +1541,7 @@ function encode_char(c) {
   });
 
   // ../package.json
-  var version = "5.0.0";
+  var version = "5.0.1";
 
   // rssfeed/js/rssfeed.js
   var translations = require_translations();

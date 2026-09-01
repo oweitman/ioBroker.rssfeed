@@ -116,7 +116,7 @@ widget-specific variables and examples remain in the corresponding VIS guide.
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-### 5.0.0 (2026-09-01)
+### 5.0.1 (2026-09-01)
 
 - update EJS and update preparation mechanism
 - integrate the VIS 2 RSS feed widgets into this adapter
