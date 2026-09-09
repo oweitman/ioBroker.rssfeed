@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./assets/index-D5a900JT.js","./assets/defaultTheme-CnUWaJB8.js","./assets/vis2rssfeedWidgets__loadShare__react__loadShare__-DZcZP6XT.js","./assets/_commonjsHelpers-DsqdWQfm.js","./assets/vis2rssfeedWidgets__mf_v__runtimeInit__mf_v__-CIJsaS2U.js","./assets/vis2rssfeedWidgets__loadShare__prop_mf_2_types__loadShare__-C3BqG1AV.js","./assets/vis2rssfeedWidgets__loadShare___mf_0_mui_mf_1_material__loadShare__-SRx7nqzf.js","./assets/vis2rssfeedWidgets__loadShare___mf_0_mui_mf_1_icons_mf_2_material__loadShare__-59lJ2BkQ.js","./assets/useTheme-CBr1SOjK.js","./assets/index-9Q4Rf6zb.js","./assets/jsx-runtime-5TN6Phqd.js","./assets/createSvgIcon-BNXykqM_.js","./assets/index-VcWy9dct.js","./assets/index-mSUAwCBH.js","./assets/index-DN8zaYv1.js","./assets/index-CnPkgegJ.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./assets/index-HtWWq1vR.js","./assets/defaultTheme-CnUWaJB8.js","./assets/vis2rssfeedWidgets__loadShare__react__loadShare__-DZcZP6XT.js","./assets/_commonjsHelpers-DsqdWQfm.js","./assets/vis2rssfeedWidgets__mf_v__runtimeInit__mf_v__-CIJsaS2U.js","./assets/vis2rssfeedWidgets__loadShare__prop_mf_2_types__loadShare__-C3BqG1AV.js","./assets/vis2rssfeedWidgets__loadShare___mf_0_mui_mf_1_material__loadShare__-SRx7nqzf.js","./assets/vis2rssfeedWidgets__loadShare___mf_0_mui_mf_1_icons_mf_2_material__loadShare__-59lJ2BkQ.js","./assets/useTheme-CBr1SOjK.js","./assets/index-9Q4Rf6zb.js","./assets/jsx-runtime-5TN6Phqd.js","./assets/createSvgIcon-BNXykqM_.js","./assets/index-VcWy9dct.js","./assets/index-mSUAwCBH.js","./assets/index-DN8zaYv1.js","./assets/index-CnPkgegJ.js"])))=>i.map(i=>d[i]);
 import { i as m, v as p, __tla as __tla_0 } from "./assets/vis2rssfeedWidgets__mf_v__runtimeInit__mf_v__-CIJsaS2U.js";
 import n, { __tla as __tla_1 } from "./assets/virtualExposes-Du4AYLeC.js";
 import { _ as a } from "./assets/preload-helper-PPVm8Dsz.js";
@@ -18,7 +18,7 @@ let __tla = Promise.all([
   })()
 ]).then(async () => {
   const i = {
-    "@iobroker/adapter-react-v5": async () => await a(() => import("./assets/index-D5a900JT.js").then(async (m2) => {
+    "@iobroker/adapter-react-v5": async () => await a(() => import("./assets/index-HtWWq1vR.js").then(async (m2) => {
       await m2.__tla;
       return m2;
     }), __vite__mapDeps([0,1,2,3,4,5,6,7,8]), import.meta.url),

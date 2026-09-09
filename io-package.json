@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "5.0.1",
+    "version": "5.0.2",
     "news": {
+      "5.0.2": {
+        "en": "fix template variables",
+        "de": "fix Template-Variablen",
+        "ru": "исправить переменные шаблона",
+        "pt": "fixar variáveis modelo",
+        "nl": "sjabloonvariabelen corrigeren",
+        "fr": "corriger les variables du modèle",
+        "it": "fix variabili modello",
+        "es": "fijar variables de plantilla",
+        "pl": "naprawić zmienne szablonu",
+        "uk": "виправлення змінних шаблонів",
+        "zh-cn": "修复模板变量"
+      },
       "5.0.1": {
         "en": "update EJS, integrate VIS 2 RSS widgets, improve documentation and widget overflow handling, fix template dates, and rework README",
         "de": "EJS aktualisiert, VIS 2 RSS-Widgets integriert, Dokumentation und Widget-Overflow verbessert, Template-Datumsangaben korrigiert und README überarbeitet",
