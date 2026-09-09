@@ -7,10 +7,11 @@
 */
 'use strict';
 /* jshint -W069 */
-/* globals $,window,document,systemDictionary,vis,ejs,ace,_ */
+/* globals $,window,document,systemDictionary,vis,ace,_ */
 
 // add translations for edit mode
 // add translations for edit mode
+import ejs from '../../node_modules/ejs/ejs.min.js';
 import { version as pkgVersion } from '../../../package.json';
 var translations = require('../myi18n/translations.json');
 $.extend(true, systemDictionary, translations);
@@ -72,7 +73,8 @@ vis.binds['rssfeed'] = {
                 }
             }
             for (let i = 1; i <= feedCount; i++) {
-                const rss = data[`rss_oid${i}`] ? JSON.parse(vis.states.attr(`${data[`rss_oid${i}`]}.val`)) : {};
+                //const rss = data[`rss_oid${i}`] ? JSON.parse(vis.states.attr(`${data[`rss_oid${i}`]}.val`)) : {};
+                const rss = vis.binds['rssfeed'].getState(data[`rss_oid${i}`]);
                 if (!Object.prototype.hasOwnProperty.call(rss, 'articles')) {
                     continue;
                 }
@@ -144,7 +146,8 @@ vis.binds['rssfeed'] = {
                 : defaulttemplate;
 
             for (let i = 1; i <= feedCount; i++) {
-                const rss = data[`rss_oid${i}`] ? JSON.parse(vis.states.attr(`${data[`rss_oid${i}`]}.val`)) : {};
+                //const rss = data[`rss_oid${i}`] ? JSON.parse(vis.states.attr(`${data[`rss_oid${i}`]}.val`)) : {};
+                const rss = vis.binds['rssfeed'].getState(data[`rss_oid${i}`]);
                 if (!Object.prototype.hasOwnProperty.call(rss, 'articles')) {
                     continue;
                 }
@@ -249,7 +252,8 @@ vis.binds['rssfeed'] = {
             const opentype = data.rss_opentype ? data.rss_opentype : 'none';
 
             for (let i = 1; i <= feedCount; i++) {
-                const rss = data[`rss_oid${i}`] ? JSON.parse(vis.states.attr(`${data[`rss_oid${i}`]}.val`)) : {};
+                //const rss = data[`rss_oid${i}`] ? JSON.parse(vis.states.attr(`${data[`rss_oid${i}`]}.val`)) : {};
+                const rss = vis.binds['rssfeed'].getState(data[`rss_oid${i}`]);
                 if (!Object.prototype.hasOwnProperty.call(rss, 'articles')) {
                     continue;
                 }
@@ -392,7 +396,8 @@ vis.binds['rssfeed'] = {
 
             for (let i = 1; i <= feedCount; i++) {
                 const filter = data[`rss_filter${i}`] ? data[`rss_filter${i}`] : '';
-                const rss = data[`rss_oid${i}`] ? JSON.parse(vis.states.attr(`${data[`rss_oid${i}`]}.val`)) : {};
+                //const rss = data[`rss_oid${i}`] ? JSON.parse(vis.states.attr(`${data[`rss_oid${i}`]}.val`)) : {};
+                const rss = vis.binds['rssfeed'].getState(data[`rss_oid${i}`]);
                 if (!Object.prototype.hasOwnProperty.call(rss, 'articles')) {
                     continue;
                 }
@@ -484,7 +489,8 @@ vis.binds['rssfeed'] = {
                     vis.binds['rssfeed'].rssfeedwidget2.createWidget(widgetID, view, data, style);
                 }, 100);
             }
-            const rss = data.rss_oid ? JSON.parse(vis.states.attr(`${data.rss_oid}.val`)) : {};
+            //const rss = data.rss_oid ? JSON.parse(vis.states.attr(`${data.rss_oid}.val`)) : {};
+            const rss = vis.binds['rssfeed'].getState(data.rss_oid);
             const defaulttemplate = `
 <!--
  available variables:
@@ -508,8 +514,8 @@ vis.binds['rssfeed'] = {
 }
 
 </style>
-<p><%- rss.meta.title %> </p>
-<% rss.articles.forEach(function(item){ %>
+<p><%- meta.title %> </p>
+<% articles.forEach(function(item){ %>
     <div class="article">
     <p><small><%- vis.formatDate(item.pubdate || item.date, "TT.MM.JJJJ SS:mm") %></small></p>    
     <h3><%- item.title %></h3>
@@ -560,9 +566,19 @@ vis.binds['rssfeed'] = {
             let text = '';
             try {
                 if (typeof rss.meta == 'undefined') {
-                    text = ejs.render(errortemplate, rss);
+                    text = ejs.render(errortemplate, {
+                        meta: {},
+                        articles: rss.articles,
+                        widgetid: widgetID,
+                        style: style,
+                    });
                 } else {
-                    text = ejs.render(template, { rss: rss, widgetid: widgetID, style: style });
+                    text = ejs.render(template, {
+                        meta: rss.meta,
+                        articles: rss.articles,
+                        widgetid: widgetID,
+                        style: style,
+                    });
                 }
             } catch (e) {
                 text = vis.binds['rssfeed'].escapeHTML(e.message).replace(/(?:\r\n|\r|\n)/g, '<br>');
@@ -595,7 +611,8 @@ vis.binds['rssfeed'] = {
                     vis.binds['rssfeed'].metahelper.createWidget(widgetID, view, data, style);
                 }, 100);
             }
-            const rss = data.rss_oid ? JSON.parse(vis.states.attr(`${data.rss_oid}.val`)) : {};
+            //const rss = data.rss_oid ? JSON.parse(vis.states.attr(`${data.rss_oid}.val`)) : {};
+            const rss = vis.binds['rssfeed'].getState(data.rss_oid);
 
             /**
              * This function is used as a state change callback for the data point binding.
@@ -668,7 +685,8 @@ vis.binds['rssfeed'] = {
                     vis.binds['rssfeed'].articlehelper2.createWidget(widgetID, view, data, style);
                 }, 100);
             }
-            const rss = data.rss_oid ? JSON.parse(vis.states.attr(`${data.rss_oid}.val`)) : {};
+            //const rss = data.rss_oid ? JSON.parse(vis.states.attr(`${data.rss_oid}.val`)) : {};
+            const rss = vis.binds['rssfeed'].getState(data.rss_oid);
             const prefix = data.rss_prefix ? data.rss_prefix : 'item';
             let article = data.rss_article ? data.rss_article : 1;
             article = article > 0 ? article : 1;
@@ -786,6 +804,22 @@ vis.binds['rssfeed'] = {
                 vis.updateStates(states);
             }.bind({ change_callback }),
         );
+    },
+    getState: function (oid) {
+        if (!oid && oid !== '') {
+            return {};
+        }
+        if (vis.states.attr(`${oid}.val`)) {
+            // ensure that return value is a object
+
+            try {
+                const value = JSON.parse(vis.states.attr(`${oid}.val`));
+                return value && typeof value === 'object' && !Array.isArray(value) ? value : {};
+            } catch {
+                return {};
+            }
+        }
+        return {};
     },
     /**
      * Escapes HTML special characters in a given string.

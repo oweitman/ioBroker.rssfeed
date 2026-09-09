@@ -32,313 +32,6 @@
     mod
   ));
 
-  // rssfeed/myi18n/translations.json
-  var require_translations = __commonJS({
-    "rssfeed/myi18n/translations.json"(exports, module) {
-      module.exports = {
-        "rssfeed adapter settings": {
-          en: "Adapter settings for rssfeed",
-          de: "Adaptereinstellungen f\xFCr rssfeed",
-          ru: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438 \u0430\u0434\u0430\u043F\u0442\u0435\u0440\u0430 \u0434\u043B\u044F rssfeed",
-          pt: "Defini\xE7\xF5es do adaptador para o rssfeed",
-          nl: "Instellingen voor de RSS-feed",
-          fr: "Param\xE8tres de l'adaptateur pour le flux RSS",
-          it: "Impostazioni dell'adattatore per rssfeed",
-          es: "Configuraci\xF3n del adaptador para rssfeed",
-          pl: "Ustawienia adaptera dla kana\u0142u RSS",
-          uk: "\u041D\u0430\u043B\u0430\u0448\u0442\u0443\u0432\u0430\u043D\u043D\u044F \u0430\u0434\u0430\u043F\u0442\u0435\u0440\u0430 \u0434\u043B\u044F rssfeed",
-          "zh-cn": "Adapter settings for rssfeed"
-        },
-        rss_oid: {
-          en: "RSS feed data point",
-          de: "RSS-Feed-Datenpunkt",
-          ru: "\u042D\u043B\u0435\u043C\u0435\u043D\u0442 \u0434\u0430\u043D\u043D\u044B\u0445 RSS-\u043A\u0430\u043D\u0430\u043B\u0430",
-          pt: "Dados do feed RSS",
-          nl: "RSS-feed-gegevenspunt",
-          fr: "\xC9l\xE9ment de donn\xE9es du flux RSS",
-          it: "Dato del feed RSS",
-          es: "Datos del canal RSS",
-          pl: "Element danych kana\u0142u RSS",
-          uk: "\u0415\u043B\u0435\u043C\u0435\u043D\u0442 \u0434\u0430\u043D\u0438\u0445 RSS-\u043A\u0430\u043D\u0430\u043B\u0443",
-          "zh-cn": "RSS feed data point"
-        },
-        rss_template: {
-          en: "RSS Template",
-          de: "RSS-Vorlage",
-          ru: "\u0428\u0430\u0431\u043B\u043E\u043D RSS",
-          pt: "Modelo RSS",
-          nl: "RSS-sjabloon",
-          fr: "Mod\xE8le RSS",
-          it: "Modello RSS",
-          es: "Plantilla RSS",
-          pl: "Szablon RSS",
-          uk: "\u0428\u0430\u0431\u043B\u043E\u043D RSS",
-          "zh-cn": "RSS Template"
-        },
-        rss_maxarticles: {
-          en: "RSS max. articles",
-          de: "RSS \u2013 maximale Anzahl an Artikeln",
-          ru: "\u041C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u043E\u0435 \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0441\u0442\u0430\u0442\u0435\u0439 \u0432 RSS",
-          pt: "N\xFAmero m\xE1ximo de artigos no RSS",
-          nl: "Max. aantal RSS-artikelen",
-          fr: "Nombre maximal d'articles RSS",
-          it: "Numero massimo di articoli RSS",
-          es: "N\xFAmero m\xE1ximo de art\xEDculos en RSS",
-          pl: "Maksymalna liczba artyku\u0142\xF3w w kanale RSS",
-          uk: "\u041C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u0430 \u043A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C \u0441\u0442\u0430\u0442\u0435\u0439 \u0443 RSS",
-          "zh-cn": "RSS max. articles"
-        },
-        rss_filter: {
-          en: "RSS Filter",
-          de: "RSS-Filter",
-          ru: "\u0424\u0438\u043B\u044C\u0442\u0440 RSS",
-          pt: "Filtro RSS",
-          nl: "RSS-filter",
-          fr: "Filtre RSS",
-          it: "Filtro RSS",
-          es: "Filtro RSS",
-          pl: "Filtr RSS",
-          uk: "\u0424\u0456\u043B\u044C\u0442\u0440 RSS",
-          "zh-cn": "RSS Filter"
-        },
-        rss_feedCount: {
-          en: "RSS Feed Number",
-          de: "Anzahl der RSS-Feeds",
-          ru: "\u041D\u043E\u043C\u0435\u0440 RSS-\u043A\u0430\u043D\u0430\u043B\u0430",
-          pt: "N\xFAmero do feed RSS",
-          nl: "Aantal RSS-feeds",
-          fr: "Nombre d'abonnements RSS",
-          it: "Numero del feed RSS",
-          es: "N\xFAmero de fuentes RSS",
-          pl: "Liczba kana\u0142\xF3w RSS",
-          uk: "\u041D\u043E\u043C\u0435\u0440 RSS-\u043A\u0430\u043D\u0430\u043B\u0443",
-          "zh-cn": "RSS Feed Number"
-        },
-        rss_dpCount: {
-          en: "Additional datapoint Count",
-          de: "Anzahl der zus\xE4tzlichen Datenpunkte",
-          ru: "\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0434\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0445 \u0442\u043E\u0447\u0435\u043A \u0434\u0430\u043D\u043D\u044B\u0445",
-          pt: "Contagem de pontos de dados adicionais",
-          nl: "Aantal extra gegevenspunten",
-          fr: "Nombre de points de donn\xE9es suppl\xE9mentaires",
-          it: "Numero di dati aggiuntivi",
-          es: "Recuento de datos adicionales",
-          pl: "Liczba dodatkowych punkt\xF3w danych",
-          uk: "\u041A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C \u0434\u043E\u0434\u0430\u0442\u043A\u043E\u0432\u0438\u0445 \u0434\u0430\u043D\u0438\u0445",
-          "zh-cn": "Additional datapoint Count"
-        },
-        rss_dp: {
-          en: "data point",
-          de: "Datenpunkt",
-          ru: "\u0442\u043E\u0447\u043A\u0430 \u0434\u0430\u043D\u043D\u044B\u0445",
-          pt: "valor",
-          nl: "gegevenspunt",
-          fr: "data point",
-          it: "data point",
-          es: "dato",
-          pl: "punkt danych",
-          uk: "\u0434\u0430\u043D\u0456",
-          "zh-cn": "data point"
-        },
-        rss_name: {
-          en: "RSS Name",
-          de: "RSS-Name",
-          ru: "\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435 RSS",
-          pt: "Nome do RSS",
-          nl: "RSS-naam",
-          fr: "Nom du flux RSS",
-          it: "Nome RSS",
-          es: "Nombre del RSS",
-          pl: "Nazwa kana\u0142u RSS",
-          uk: "\u041D\u0430\u0437\u0432\u0430 RSS",
-          "zh-cn": "RSS Name"
-        },
-        group_feeds: {
-          en: "RSS Feed Group",
-          de: "RSS-Feed-Gruppe",
-          ru: "\u0413\u0440\u0443\u043F\u043F\u0430 RSS-\u043A\u0430\u043D\u0430\u043B\u043E\u0432",
-          pt: "Grupo de feeds RSS",
-          nl: "RSS-feedgroep",
-          fr: "Groupe de flux RSS",
-          it: "Gruppo feed RSS",
-          es: "Grupo de fuentes RSS",
-          pl: "Grupa kana\u0142\xF3w RSS",
-          uk: "\u0413\u0440\u0443\u043F\u0430 RSS-\u043A\u0430\u043D\u0430\u043B\u0456\u0432",
-          "zh-cn": "RSS Feed Group"
-        },
-        rss_prefix: {
-          en: "RSS Prefix",
-          de: "RSS-Pr\xE4fix",
-          ru: "\u041F\u0440\u0435\u0444\u0438\u043A\u0441 RSS",
-          pt: "Prefixo RSS",
-          nl: "RSS-voorvoegsel",
-          fr: "Pr\xE9fixe RSS",
-          it: "Prefisso RSS",
-          es: "Prefijo RSS",
-          pl: "Prefiks RSS",
-          uk: "\u041F\u0440\u0435\u0444\u0456\u043A\u0441 RSS",
-          "zh-cn": "RSS Prefix"
-        },
-        rss_article: {
-          en: "RSS Article count",
-          de: "Anzahl der RSS-Artikel",
-          ru: "\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0441\u0442\u0430\u0442\u0435\u0439 \u0432 RSS",
-          pt: "N\xFAmero de artigos RSS",
-          nl: "Aantal RSS-artikelen",
-          fr: "Nombre d'articles RSS",
-          it: "Numero di articoli RSS",
-          es: "RSS: N\xFAmero de art\xEDculos",
-          pl: "Liczba artyku\u0142\xF3w RSS",
-          uk: "\u041A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C \u0441\u0442\u0430\u0442\u0435\u0439 \u0443 RSS",
-          "zh-cn": "RSS Article count"
-        },
-        rss_speed: {
-          en: "RSS Speed",
-          de: "RSS-Geschwindigkeit",
-          ru: "\u0421\u043A\u043E\u0440\u043E\u0441\u0442\u044C RSS",
-          pt: "Velocidade do RSS",
-          nl: "RSS-snelheid",
-          fr: "Vitesse RSS",
-          it: "Velocit\xE0 RSS",
-          es: "Velocidad RSS",
-          pl: "Pr\u0119dko\u015B\u0107 RSS",
-          uk: "\u0428\u0432\u0438\u0434\u043A\u0456\u0441\u0442\u044C RSS",
-          "zh-cn": "RSS Speed"
-        },
-        rss_divider: {
-          en: "RSS Seperator",
-          de: "RSS-Trennzeichen",
-          ru: "\u0420\u0430\u0437\u0434\u0435\u043B\u0438\u0442\u0435\u043B\u044C RSS",
-          pt: "Separador RSS",
-          nl: "RSS-scheidingsteken",
-          fr: "S\xE9parateur RSS",
-          it: "Separatore RSS",
-          es: "Separador RSS",
-          pl: "Separator RSS",
-          uk: "\u0420\u043E\u0437\u0434\u0456\u043B\u044C\u043D\u0438\u043A RSS",
-          "zh-cn": "RSS Seperator"
-        },
-        rss_pauseonhover: {
-          en: "RSS Pause on hover",
-          de: "RSS beim Bewegen des Mauszeigers anhalten",
-          ru: "RSS: \u043F\u0440\u0438 \u043D\u0430\u0432\u0435\u0434\u0435\u043D\u0438\u0438 \u043A\u0443\u0440\u0441\u043E\u0440\u0430",
-          pt: "RSS: Pausar ao passar o cursor",
-          nl: "RSS: pauzeren bij aanwijzen",
-          fr: "RSS : mise en pause au survol",
-          it: "RSS: Pausa al passaggio del mouse",
-          es: "RSS: Pausa al pasar el cursor",
-          pl: "RSS \u2013 Wstrzymaj przy najechaniu kursorem",
-          uk: "RSS: \u041F\u0440\u0438\u0437\u0443\u043F\u0438\u043D\u0438\u0442\u0438 \u043F\u0440\u0438 \u043D\u0430\u0432\u0435\u0434\u0435\u043D\u043D\u0456 \u043A\u0443\u0440\u0441\u043E\u0440\u0443",
-          "zh-cn": "RSS Pause on hover"
-        },
-        rss_opentype: {
-          en: "RSS open type",
-          de: "RSS-\xD6ffnungsart",
-          ru: "\u0421\u043F\u043E\u0441\u043E\u0431 \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F RSS",
-          pt: "Tipo de abertura RSS",
-          nl: "RSS-openingstype",
-          fr: "Type d'ouverture RSS",
-          it: "Tipo di apertura RSS",
-          es: "Tipo de apertura RSS",
-          pl: "Spos\xF3b otwierania RSS",
-          uk: "\u0421\u043F\u043E\u0441\u0456\u0431 \u0432\u0456\u0434\u043A\u0440\u0438\u0442\u0442\u044F RSS",
-          "zh-cn": "RSS \u6253\u5F00\u65B9\u5F0F"
-        },
-        rss_link: {
-          en: "RSS Link",
-          de: "RSS-Link",
-          ru: "\u0421\u0441\u044B\u043B\u043A\u0430 RSS",
-          pt: "Link RSS",
-          nl: "RSS-link",
-          fr: "Lien RSS",
-          it: "Link RSS",
-          es: "Enlace RSS",
-          pl: "Link do kana\u0142u RSS",
-          uk: "\u041F\u043E\u0441\u0438\u043B\u0430\u043D\u043D\u044F \u043D\u0430 RSS",
-          "zh-cn": "RSS Link"
-        },
-        rss_withtime: {
-          en: "RSS with time",
-          de: "RSS mit Zeitangabe",
-          ru: "RSS \u0441 \u0443\u043A\u0430\u0437\u0430\u043D\u0438\u0435\u043C \u0432\u0440\u0435\u043C\u0435\u043D\u0438",
-          pt: "RSS com hora",
-          nl: "RSS met tijdsaanduiding",
-          fr: "RSS avec l'heure",
-          it: "RSS con indicazione dell'ora",
-          es: "RSS con hora",
-          pl: "RSS z dat\u0105",
-          uk: "RSS \u0456\u0437 \u0437\u0430\u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044F\u043C \u0447\u0430\u0441\u0443",
-          "zh-cn": "RSS with time"
-        },
-        rss_withdate: {
-          en: "RSS with date",
-          de: "RSS mit Datum",
-          ru: "RSS \u0441 \u0434\u0430\u0442\u043E\u0439",
-          pt: "RSS com data",
-          nl: "RSS met datum",
-          fr: "RSS avec date",
-          it: "RSS con data",
-          es: "RSS con fecha",
-          pl: "RSS z dat\u0105",
-          uk: "RSS \u0437 \u0434\u0430\u0442\u043E\u044E",
-          "zh-cn": "RSS \u5E26\u65E5\u671F"
-        },
-        rss_withyear: {
-          en: "RSS with year",
-          de: "RSS mit Jahr",
-          ru: "RSS \u0441 \u0433\u043E\u0434\u043E\u043C",
-          pt: "RSS com ano",
-          nl: "RSS met jaar",
-          fr: "RSS avec ann\xE9e",
-          it: "RSS con anno",
-          es: "RSS con a\xF1o",
-          pl: "RSS z rokiem",
-          uk: "RSS \u0437 \u0440\u043E\u043A\u043E\u043C",
-          "zh-cn": "RSS \u5E26\u5E74\u4EFD"
-        },
-        rss_withname: {
-          en: "RSS with name",
-          de: "RSS mit Name",
-          ru: "RSS \u0441 \u0438\u043C\u0435\u043D\u0435\u043C",
-          pt: "RSS com nome",
-          nl: "RSS met naam",
-          fr: "RSS avec nom",
-          it: "RSS con nome",
-          es: "RSS con nombre",
-          pl: "RSS z nazw\u0105",
-          uk: "RSS \u0437 \u043D\u0430\u0437\u0432\u043E\u044E",
-          "zh-cn": "RSS \u5E26\u540D\u79F0"
-        },
-        json_oid: {
-          en: "JSON data point",
-          de: "JSON-Datenpunkt",
-          ru: "\u042D\u043B\u0435\u043C\u0435\u043D\u0442 \u0434\u0430\u043D\u043D\u044B\u0445 JSON",
-          pt: "Ponto de dados JSON",
-          nl: "JSON-gegevenspunt",
-          fr: "\xC9l\xE9ment de donn\xE9es JSON",
-          it: "Voce di dati JSON",
-          es: "Punto de datos JSON",
-          pl: "Warto\u015B\u0107 danych JSON",
-          uk: "\u0415\u043B\u0435\u043C\u0435\u043D\u0442 \u0434\u0430\u043D\u0438\u0445 JSON",
-          "zh-cn": "JSON data point"
-        },
-        json_template: {
-          en: "JSON Template",
-          de: "JSON-Vorlage",
-          ru: "\u0428\u0430\u0431\u043B\u043E\u043D JSON",
-          pt: "Modelo JSON",
-          nl: "JSON-sjabloon",
-          fr: "Mod\xE8le JSON",
-          it: "Modello JSON",
-          es: "Plantilla JSON",
-          pl: "Szablon JSON",
-          uk: "\u0428\u0430\u0431\u043B\u043E\u043D JSON",
-          "zh-cn": "JSON Template"
-        }
-      };
-    }
-  });
-
   // node_modules/ejs/ejs.min.js
   var require_ejs_min = __commonJS({
     "node_modules/ejs/ejs.min.js"(exports, module) {
@@ -1540,6 +1233,316 @@ function encode_char(c) {
     }
   });
 
+  // rssfeed/myi18n/translations.json
+  var require_translations = __commonJS({
+    "rssfeed/myi18n/translations.json"(exports, module) {
+      module.exports = {
+        "rssfeed adapter settings": {
+          en: "Adapter settings for rssfeed",
+          de: "Adaptereinstellungen f\xFCr rssfeed",
+          ru: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438 \u0430\u0434\u0430\u043F\u0442\u0435\u0440\u0430 \u0434\u043B\u044F rssfeed",
+          pt: "Defini\xE7\xF5es do adaptador para o rssfeed",
+          nl: "Instellingen voor de RSS-feed",
+          fr: "Param\xE8tres de l'adaptateur pour le flux RSS",
+          it: "Impostazioni dell'adattatore per rssfeed",
+          es: "Configuraci\xF3n del adaptador para rssfeed",
+          pl: "Ustawienia adaptera dla kana\u0142u RSS",
+          uk: "\u041D\u0430\u043B\u0430\u0448\u0442\u0443\u0432\u0430\u043D\u043D\u044F \u0430\u0434\u0430\u043F\u0442\u0435\u0440\u0430 \u0434\u043B\u044F rssfeed",
+          "zh-cn": "Adapter settings for rssfeed"
+        },
+        rss_oid: {
+          en: "RSS feed data point",
+          de: "RSS-Feed-Datenpunkt",
+          ru: "\u042D\u043B\u0435\u043C\u0435\u043D\u0442 \u0434\u0430\u043D\u043D\u044B\u0445 RSS-\u043A\u0430\u043D\u0430\u043B\u0430",
+          pt: "Dados do feed RSS",
+          nl: "RSS-feed-gegevenspunt",
+          fr: "\xC9l\xE9ment de donn\xE9es du flux RSS",
+          it: "Dato del feed RSS",
+          es: "Datos del canal RSS",
+          pl: "Element danych kana\u0142u RSS",
+          uk: "\u0415\u043B\u0435\u043C\u0435\u043D\u0442 \u0434\u0430\u043D\u0438\u0445 RSS-\u043A\u0430\u043D\u0430\u043B\u0443",
+          "zh-cn": "RSS feed data point"
+        },
+        rss_template: {
+          en: "RSS Template",
+          de: "RSS-Vorlage",
+          ru: "\u0428\u0430\u0431\u043B\u043E\u043D RSS",
+          pt: "Modelo RSS",
+          nl: "RSS-sjabloon",
+          fr: "Mod\xE8le RSS",
+          it: "Modello RSS",
+          es: "Plantilla RSS",
+          pl: "Szablon RSS",
+          uk: "\u0428\u0430\u0431\u043B\u043E\u043D RSS",
+          "zh-cn": "RSS Template"
+        },
+        rss_maxarticles: {
+          en: "RSS max. articles",
+          de: "RSS \u2013 maximale Anzahl an Artikeln",
+          ru: "\u041C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u043E\u0435 \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0441\u0442\u0430\u0442\u0435\u0439 \u0432 RSS",
+          pt: "N\xFAmero m\xE1ximo de artigos no RSS",
+          nl: "Max. aantal RSS-artikelen",
+          fr: "Nombre maximal d'articles RSS",
+          it: "Numero massimo di articoli RSS",
+          es: "N\xFAmero m\xE1ximo de art\xEDculos en RSS",
+          pl: "Maksymalna liczba artyku\u0142\xF3w w kanale RSS",
+          uk: "\u041C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u0430 \u043A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C \u0441\u0442\u0430\u0442\u0435\u0439 \u0443 RSS",
+          "zh-cn": "RSS max. articles"
+        },
+        rss_filter: {
+          en: "RSS Filter",
+          de: "RSS-Filter",
+          ru: "\u0424\u0438\u043B\u044C\u0442\u0440 RSS",
+          pt: "Filtro RSS",
+          nl: "RSS-filter",
+          fr: "Filtre RSS",
+          it: "Filtro RSS",
+          es: "Filtro RSS",
+          pl: "Filtr RSS",
+          uk: "\u0424\u0456\u043B\u044C\u0442\u0440 RSS",
+          "zh-cn": "RSS Filter"
+        },
+        rss_feedCount: {
+          en: "RSS Feed Number",
+          de: "Anzahl der RSS-Feeds",
+          ru: "\u041D\u043E\u043C\u0435\u0440 RSS-\u043A\u0430\u043D\u0430\u043B\u0430",
+          pt: "N\xFAmero do feed RSS",
+          nl: "Aantal RSS-feeds",
+          fr: "Nombre d'abonnements RSS",
+          it: "Numero del feed RSS",
+          es: "N\xFAmero de fuentes RSS",
+          pl: "Liczba kana\u0142\xF3w RSS",
+          uk: "\u041D\u043E\u043C\u0435\u0440 RSS-\u043A\u0430\u043D\u0430\u043B\u0443",
+          "zh-cn": "RSS Feed Number"
+        },
+        rss_dpCount: {
+          en: "Additional datapoint Count",
+          de: "Anzahl der zus\xE4tzlichen Datenpunkte",
+          ru: "\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0434\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0445 \u0442\u043E\u0447\u0435\u043A \u0434\u0430\u043D\u043D\u044B\u0445",
+          pt: "Contagem de pontos de dados adicionais",
+          nl: "Aantal extra gegevenspunten",
+          fr: "Nombre de points de donn\xE9es suppl\xE9mentaires",
+          it: "Numero di dati aggiuntivi",
+          es: "Recuento de datos adicionales",
+          pl: "Liczba dodatkowych punkt\xF3w danych",
+          uk: "\u041A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C \u0434\u043E\u0434\u0430\u0442\u043A\u043E\u0432\u0438\u0445 \u0434\u0430\u043D\u0438\u0445",
+          "zh-cn": "Additional datapoint Count"
+        },
+        rss_dp: {
+          en: "data point",
+          de: "Datenpunkt",
+          ru: "\u0442\u043E\u0447\u043A\u0430 \u0434\u0430\u043D\u043D\u044B\u0445",
+          pt: "valor",
+          nl: "gegevenspunt",
+          fr: "data point",
+          it: "data point",
+          es: "dato",
+          pl: "punkt danych",
+          uk: "\u0434\u0430\u043D\u0456",
+          "zh-cn": "data point"
+        },
+        rss_name: {
+          en: "RSS Name",
+          de: "RSS-Name",
+          ru: "\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435 RSS",
+          pt: "Nome do RSS",
+          nl: "RSS-naam",
+          fr: "Nom du flux RSS",
+          it: "Nome RSS",
+          es: "Nombre del RSS",
+          pl: "Nazwa kana\u0142u RSS",
+          uk: "\u041D\u0430\u0437\u0432\u0430 RSS",
+          "zh-cn": "RSS Name"
+        },
+        group_feeds: {
+          en: "RSS Feed Group",
+          de: "RSS-Feed-Gruppe",
+          ru: "\u0413\u0440\u0443\u043F\u043F\u0430 RSS-\u043A\u0430\u043D\u0430\u043B\u043E\u0432",
+          pt: "Grupo de feeds RSS",
+          nl: "RSS-feedgroep",
+          fr: "Groupe de flux RSS",
+          it: "Gruppo feed RSS",
+          es: "Grupo de fuentes RSS",
+          pl: "Grupa kana\u0142\xF3w RSS",
+          uk: "\u0413\u0440\u0443\u043F\u0430 RSS-\u043A\u0430\u043D\u0430\u043B\u0456\u0432",
+          "zh-cn": "RSS Feed Group"
+        },
+        rss_prefix: {
+          en: "RSS Prefix",
+          de: "RSS-Pr\xE4fix",
+          ru: "\u041F\u0440\u0435\u0444\u0438\u043A\u0441 RSS",
+          pt: "Prefixo RSS",
+          nl: "RSS-voorvoegsel",
+          fr: "Pr\xE9fixe RSS",
+          it: "Prefisso RSS",
+          es: "Prefijo RSS",
+          pl: "Prefiks RSS",
+          uk: "\u041F\u0440\u0435\u0444\u0456\u043A\u0441 RSS",
+          "zh-cn": "RSS Prefix"
+        },
+        rss_article: {
+          en: "RSS Article count",
+          de: "Anzahl der RSS-Artikel",
+          ru: "\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0441\u0442\u0430\u0442\u0435\u0439 \u0432 RSS",
+          pt: "N\xFAmero de artigos RSS",
+          nl: "Aantal RSS-artikelen",
+          fr: "Nombre d'articles RSS",
+          it: "Numero di articoli RSS",
+          es: "RSS: N\xFAmero de art\xEDculos",
+          pl: "Liczba artyku\u0142\xF3w RSS",
+          uk: "\u041A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C \u0441\u0442\u0430\u0442\u0435\u0439 \u0443 RSS",
+          "zh-cn": "RSS Article count"
+        },
+        rss_speed: {
+          en: "RSS Speed",
+          de: "RSS-Geschwindigkeit",
+          ru: "\u0421\u043A\u043E\u0440\u043E\u0441\u0442\u044C RSS",
+          pt: "Velocidade do RSS",
+          nl: "RSS-snelheid",
+          fr: "Vitesse RSS",
+          it: "Velocit\xE0 RSS",
+          es: "Velocidad RSS",
+          pl: "Pr\u0119dko\u015B\u0107 RSS",
+          uk: "\u0428\u0432\u0438\u0434\u043A\u0456\u0441\u0442\u044C RSS",
+          "zh-cn": "RSS Speed"
+        },
+        rss_divider: {
+          en: "RSS Seperator",
+          de: "RSS-Trennzeichen",
+          ru: "\u0420\u0430\u0437\u0434\u0435\u043B\u0438\u0442\u0435\u043B\u044C RSS",
+          pt: "Separador RSS",
+          nl: "RSS-scheidingsteken",
+          fr: "S\xE9parateur RSS",
+          it: "Separatore RSS",
+          es: "Separador RSS",
+          pl: "Separator RSS",
+          uk: "\u0420\u043E\u0437\u0434\u0456\u043B\u044C\u043D\u0438\u043A RSS",
+          "zh-cn": "RSS Seperator"
+        },
+        rss_pauseonhover: {
+          en: "RSS Pause on hover",
+          de: "RSS beim Bewegen des Mauszeigers anhalten",
+          ru: "RSS: \u043F\u0440\u0438 \u043D\u0430\u0432\u0435\u0434\u0435\u043D\u0438\u0438 \u043A\u0443\u0440\u0441\u043E\u0440\u0430",
+          pt: "RSS: Pausar ao passar o cursor",
+          nl: "RSS: pauzeren bij aanwijzen",
+          fr: "RSS : mise en pause au survol",
+          it: "RSS: Pausa al passaggio del mouse",
+          es: "RSS: Pausa al pasar el cursor",
+          pl: "RSS \u2013 Wstrzymaj przy najechaniu kursorem",
+          uk: "RSS: \u041F\u0440\u0438\u0437\u0443\u043F\u0438\u043D\u0438\u0442\u0438 \u043F\u0440\u0438 \u043D\u0430\u0432\u0435\u0434\u0435\u043D\u043D\u0456 \u043A\u0443\u0440\u0441\u043E\u0440\u0443",
+          "zh-cn": "RSS Pause on hover"
+        },
+        rss_opentype: {
+          en: "RSS open type",
+          de: "RSS-\xD6ffnungsart",
+          ru: "\u0421\u043F\u043E\u0441\u043E\u0431 \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F RSS",
+          pt: "Tipo de abertura RSS",
+          nl: "RSS-openingstype",
+          fr: "Type d'ouverture RSS",
+          it: "Tipo di apertura RSS",
+          es: "Tipo de apertura RSS",
+          pl: "Spos\xF3b otwierania RSS",
+          uk: "\u0421\u043F\u043E\u0441\u0456\u0431 \u0432\u0456\u0434\u043A\u0440\u0438\u0442\u0442\u044F RSS",
+          "zh-cn": "RSS \u6253\u5F00\u65B9\u5F0F"
+        },
+        rss_link: {
+          en: "RSS Link",
+          de: "RSS-Link",
+          ru: "\u0421\u0441\u044B\u043B\u043A\u0430 RSS",
+          pt: "Link RSS",
+          nl: "RSS-link",
+          fr: "Lien RSS",
+          it: "Link RSS",
+          es: "Enlace RSS",
+          pl: "Link do kana\u0142u RSS",
+          uk: "\u041F\u043E\u0441\u0438\u043B\u0430\u043D\u043D\u044F \u043D\u0430 RSS",
+          "zh-cn": "RSS Link"
+        },
+        rss_withtime: {
+          en: "RSS with time",
+          de: "RSS mit Zeitangabe",
+          ru: "RSS \u0441 \u0443\u043A\u0430\u0437\u0430\u043D\u0438\u0435\u043C \u0432\u0440\u0435\u043C\u0435\u043D\u0438",
+          pt: "RSS com hora",
+          nl: "RSS met tijdsaanduiding",
+          fr: "RSS avec l'heure",
+          it: "RSS con indicazione dell'ora",
+          es: "RSS con hora",
+          pl: "RSS z dat\u0105",
+          uk: "RSS \u0456\u0437 \u0437\u0430\u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044F\u043C \u0447\u0430\u0441\u0443",
+          "zh-cn": "RSS with time"
+        },
+        rss_withdate: {
+          en: "RSS with date",
+          de: "RSS mit Datum",
+          ru: "RSS \u0441 \u0434\u0430\u0442\u043E\u0439",
+          pt: "RSS com data",
+          nl: "RSS met datum",
+          fr: "RSS avec date",
+          it: "RSS con data",
+          es: "RSS con fecha",
+          pl: "RSS z dat\u0105",
+          uk: "RSS \u0437 \u0434\u0430\u0442\u043E\u044E",
+          "zh-cn": "RSS \u5E26\u65E5\u671F"
+        },
+        rss_withyear: {
+          en: "RSS with year",
+          de: "RSS mit Jahr",
+          ru: "RSS \u0441 \u0433\u043E\u0434\u043E\u043C",
+          pt: "RSS com ano",
+          nl: "RSS met jaar",
+          fr: "RSS avec ann\xE9e",
+          it: "RSS con anno",
+          es: "RSS con a\xF1o",
+          pl: "RSS z rokiem",
+          uk: "RSS \u0437 \u0440\u043E\u043A\u043E\u043C",
+          "zh-cn": "RSS \u5E26\u5E74\u4EFD"
+        },
+        rss_withname: {
+          en: "RSS with name",
+          de: "RSS mit Name",
+          ru: "RSS \u0441 \u0438\u043C\u0435\u043D\u0435\u043C",
+          pt: "RSS com nome",
+          nl: "RSS met naam",
+          fr: "RSS avec nom",
+          it: "RSS con nome",
+          es: "RSS con nombre",
+          pl: "RSS z nazw\u0105",
+          uk: "RSS \u0437 \u043D\u0430\u0437\u0432\u043E\u044E",
+          "zh-cn": "RSS \u5E26\u540D\u79F0"
+        },
+        json_oid: {
+          en: "JSON data point",
+          de: "JSON-Datenpunkt",
+          ru: "\u042D\u043B\u0435\u043C\u0435\u043D\u0442 \u0434\u0430\u043D\u043D\u044B\u0445 JSON",
+          pt: "Ponto de dados JSON",
+          nl: "JSON-gegevenspunt",
+          fr: "\xC9l\xE9ment de donn\xE9es JSON",
+          it: "Voce di dati JSON",
+          es: "Punto de datos JSON",
+          pl: "Warto\u015B\u0107 danych JSON",
+          uk: "\u0415\u043B\u0435\u043C\u0435\u043D\u0442 \u0434\u0430\u043D\u0438\u0445 JSON",
+          "zh-cn": "JSON data point"
+        },
+        json_template: {
+          en: "JSON Template",
+          de: "JSON-Vorlage",
+          ru: "\u0428\u0430\u0431\u043B\u043E\u043D JSON",
+          pt: "Modelo JSON",
+          nl: "JSON-sjabloon",
+          fr: "Mod\xE8le JSON",
+          it: "Modello JSON",
+          es: "Plantilla JSON",
+          pl: "Szablon JSON",
+          uk: "\u0428\u0430\u0431\u043B\u043E\u043D JSON",
+          "zh-cn": "JSON Template"
+        }
+      };
+    }
+  });
+
+  // rssfeed/js/rssfeed.js
+  var import_ejs_min = __toESM(require_ejs_min());
+
   // ../package.json
   var version = "5.0.1";
 
@@ -1600,7 +1603,7 @@ function encode_char(c) {
           }
         }
         for (let i = 1; i <= feedCount; i++) {
-          const rss = data[`rss_oid${i}`] ? JSON.parse(vis.states.attr(`${data[`rss_oid${i}`]}.val`)) : {};
+          const rss = vis.binds["rssfeed"].getState(data[`rss_oid${i}`]);
           if (!Object.prototype.hasOwnProperty.call(rss, "articles")) {
             continue;
           }
@@ -1664,7 +1667,7 @@ function encode_char(c) {
                             `;
         const template = data["rss_template"] ? data["rss_template"].trim() ? data["rss_template"].trim() : defaulttemplate : defaulttemplate;
         for (let i = 1; i <= feedCount; i++) {
-          const rss = data[`rss_oid${i}`] ? JSON.parse(vis.states.attr(`${data[`rss_oid${i}`]}.val`)) : {};
+          const rss = vis.binds["rssfeed"].getState(data[`rss_oid${i}`]);
           if (!Object.prototype.hasOwnProperty.call(rss, "articles")) {
             continue;
           }
@@ -1714,7 +1717,7 @@ function encode_char(c) {
           if (collect.length == 0) {
             text = "articles is empty, please select a RSS feed datapoint.";
           } else {
-            text = ejs.render(template, {
+            text = import_ejs_min.default.render(template, {
               rss: { articles: collect, meta },
               dp: datapoints,
               widgetid: widgetID,
@@ -1756,7 +1759,7 @@ function encode_char(c) {
         const backcolor = style["background-color"] ? style["background-color"] : void 0;
         const opentype = data.rss_opentype ? data.rss_opentype : "none";
         for (let i = 1; i <= feedCount; i++) {
-          const rss = data[`rss_oid${i}`] ? JSON.parse(vis.states.attr(`${data[`rss_oid${i}`]}.val`)) : {};
+          const rss = vis.binds["rssfeed"].getState(data[`rss_oid${i}`]);
           if (!Object.prototype.hasOwnProperty.call(rss, "articles")) {
             continue;
           }
@@ -1898,7 +1901,7 @@ function encode_char(c) {
         const speed = data.rss_speed ? data.rss_speed : 6;
         for (let i = 1; i <= feedCount; i++) {
           const filter = data[`rss_filter${i}`] ? data[`rss_filter${i}`] : "";
-          const rss = data[`rss_oid${i}`] ? JSON.parse(vis.states.attr(`${data[`rss_oid${i}`]}.val`)) : {};
+          const rss = vis.binds["rssfeed"].getState(data[`rss_oid${i}`]);
           if (!Object.prototype.hasOwnProperty.call(rss, "articles")) {
             continue;
           }
@@ -1981,7 +1984,7 @@ function encode_char(c) {
             vis.binds["rssfeed"].rssfeedwidget2.createWidget(widgetID, view, data, style);
           }, 100);
         }
-        const rss = data.rss_oid ? JSON.parse(vis.states.attr(`${data.rss_oid}.val`)) : {};
+        const rss = vis.binds["rssfeed"].getState(data.rss_oid);
         const defaulttemplate = `
 <!--
  available variables:
@@ -2005,8 +2008,8 @@ function encode_char(c) {
 }
 
 </style>
-<p><%- rss.meta.title %> </p>
-<% rss.articles.forEach(function(item){ %>
+<p><%- meta.title %> </p>
+<% articles.forEach(function(item){ %>
     <div class="article">
     <p><small><%- vis.formatDate(item.pubdate || item.date, "TT.MM.JJJJ SS:mm") %></small></p>    
     <h3><%- item.title %></h3>
@@ -2046,9 +2049,19 @@ function encode_char(c) {
         let text = "";
         try {
           if (typeof rss.meta == "undefined") {
-            text = ejs.render(errortemplate, rss);
+            text = import_ejs_min.default.render(errortemplate, {
+              meta: {},
+              articles: rss.articles,
+              widgetid: widgetID,
+              style
+            });
           } else {
-            text = ejs.render(template, { rss, widgetid: widgetID, style });
+            text = import_ejs_min.default.render(template, {
+              meta: rss.meta,
+              articles: rss.articles,
+              widgetid: widgetID,
+              style
+            });
           }
         } catch (e) {
           text = vis.binds["rssfeed"].escapeHTML(e.message).replace(/(?:\r\n|\r|\n)/g, "<br>");
@@ -2079,7 +2092,7 @@ function encode_char(c) {
             vis.binds["rssfeed"].metahelper.createWidget(widgetID, view, data, style);
           }, 100);
         }
-        const rss = data.rss_oid ? JSON.parse(vis.states.attr(`${data.rss_oid}.val`)) : {};
+        const rss = vis.binds["rssfeed"].getState(data.rss_oid);
         function onChange(e, newVal) {
           if (newVal) {
             vis.binds["rssfeed"].metahelper.createWidget(widgetID, view, data, style);
@@ -2138,7 +2151,7 @@ function encode_char(c) {
             vis.binds["rssfeed"].articlehelper2.createWidget(widgetID, view, data, style);
           }, 100);
         }
-        const rss = data.rss_oid ? JSON.parse(vis.states.attr(`${data.rss_oid}.val`)) : {};
+        const rss = vis.binds["rssfeed"].getState(data.rss_oid);
         const prefix = data.rss_prefix ? data.rss_prefix : "item";
         let article = data.rss_article ? data.rss_article : 1;
         article = article > 0 ? article : 1;
@@ -2242,6 +2255,20 @@ function encode_char(c) {
           vis.updateStates(states);
         }.bind({ change_callback })
       );
+    },
+    getState: function(oid) {
+      if (!oid && oid !== "") {
+        return {};
+      }
+      if (vis.states.attr(`${oid}.val`)) {
+        try {
+          const value = JSON.parse(vis.states.attr(`${oid}.val`));
+          return value && typeof value === "object" && !Array.isArray(value) ? value : {};
+        } catch (e) {
+          return {};
+        }
+      }
+      return {};
     },
     /**
      * Escapes HTML special characters in a given string.
@@ -2364,8 +2391,5 @@ function encode_char(c) {
     }
   };
   vis.binds["rssfeed"].showVersion();
-
-  // rssfeed/js/bundle.js
-  var import_ejs_min = __toESM(require_ejs_min());
 })();
 //# sourceMappingURL=bundle.js.map

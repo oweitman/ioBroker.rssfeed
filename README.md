@@ -116,6 +116,11 @@ widget-specific variables and examples remain in the corresponding VIS guide.
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+- fix template variables
+
 ### 5.0.1 (2026-09-01)
 
 - update EJS and update preparation mechanism
