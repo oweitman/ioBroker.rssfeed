@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "rssfeed",
-    "version": "5.0.3",
+    "version": "6.0.0",
     "news": {
+      "6.0.0": {
+        "en": "Widgets migrated to React 19. This requires at least vis-2 version 2.20.0 or higher.\nThe minimum browser versions have been increased to the following: “Chrome 89”, “Edge 89”, “Firefox 89”, “Safari 15”",
+        "de": "Widgets auf React 19 migriert. Das erfordert mindestens Version 2.20.0 oder höher.\nDie Mindestversionen von Browsern wurden erhöht auf: „Chrome 89“, „Edge 89“, „Firefox 89“, „Safari 15“",
+        "ru": "Виджеты перенесены в React 19. Для этого требуется как минимум версия vis-2 2.20.0 или выше.\nМинимальные версии браузеров увеличены до следующих: «Chrome 89», «Edge 89», «Firefox 89», «Safari 15»",
+        "pt": "Widgets migrados ao React 19 Isso requer pelo menos a versão 2.20.0 ou superior.\nAs versões mínimas do navegador foram aumentadas para: “Chrome 89\", “Edge 89\", “Firefox 89\", “Safari 15\"",
+        "nl": "Widgets zijn gemigreerd naar React 19. Hiervoor is ten minste versie 2.20.0 of hoger ten opzichte van versie 2 vereist.\nDe minimale browserversies zijn verhoogd naar de volgende: „Chrome 89”, „Edge 89”, „Firefox 89”, „Safari 15”",
+        "fr": "Widgets migrés vers React 19. Cela nécessite au moins vis-2 version 2.20.0 ou plus.\nLes versions minimales des navigateurs ont été augmentées comme suit : « Chrome 89 », « Edge 89 », « Firefox 89 », « Safari 15 »",
+        "it": "Widget migrati a React 19. Ciò richiede almeno vis-2 2.20.0 o superiore.\nLe versioni minime del browser sono state aumentate a: «Chrome 89», «Edge 89», «Firefox 89», «Safari 15\"",
+        "es": "Los widgets migraron a React 19. Requiere al menos la versión 2.20.0 o superior de vis-2.\nLas versiones mínimas del navegador se han aumentado a las siguientes: «Chrome 89», «Edge 89», «Firefox 89», «Safari 15»",
+        "pl": "Widżety zostały przeniesione do React 19. Wymaga to co najmniej vis-2 w wersji 2.20.0 lub nowszej.\nMinimalne wersje przeglądarki zostały zwiększone do następujących: „Chrome 89”, „Edge 89”, „Firefox 89”, „Safari 15”",
+        "uk": "Віджети перенесені на React 19. Для цього потрібно принаймні vis-2 версії 2.20.0 або новішої версії.\nМінімальні версії браузера були збільшені до наступних: «Хром 89», «Edge 89», «Firefox 89», «Safari 15»",
+        "zh-cn": "小部件迁移到 React 19。这至少需要 vis-2 版本 2.20.0 或更高版本。\n最低浏览器版本已增加到以下版本：“Chrome 89”、“Edge 89”、“Firefox 89”、“Safari 15”"
+      },
       "5.0.3": {
         "en": "last valid version for vis-2 with react 18 (vis-2 version <=2.15.4)",
         "de": "letzte gültige Version für Vis-2 mit React 18 (vis-2 <=2.15.4)",
@@ -80,19 +93,6 @@
         "pl": "Aktualizuj pakiety\nfix repochecker",
         "uk": "Пакети оновлень\nвиправити repochecker",
         "zh-cn": "更新软件包\n固定重检查器"
-      },
-      "4.0.2": {
-        "en": "fix repochecker",
-        "de": "repochecker reparieren",
-        "ru": "ремонтировать",
-        "pt": "corrigir o repochecker",
-        "nl": "repareren",
-        "fr": "réparer le repocheur",
-        "it": "correggere il repochecker",
-        "es": "arreglar repochecker",
-        "pl": "fix repochecker xx",
-        "uk": "виправити repochecker",
-        "zh-cn": "固定重检查器"
       }
     },
     "titleLang": {
@@ -125,7 +125,10 @@
       {
         "condition": {
           "operand": "and",
-          "rules": ["oldVersion<3.6.0", "newVersion>=3.6.0"]
+          "rules": [
+            "oldVersion<3.6.0",
+            "newVersion>=3.6.0"
+          ]
         },
         "title": {
           "en": "JSON template widgets deprecated",
@@ -153,12 +156,21 @@
           "uk": "Будь ласка, використовуйте адаптер vis-jsontemplate.",
           "zh-cn": "请使用适配器 vis-jsonTemplate。"
         },
-        "buttons": ["agree"],
+        "buttons": [
+          "agree"
+        ],
         "level": "info"
       }
     ],
-    "authors": ["oweitman <oweitman@gmx.de>"],
-    "keywords": ["rss", "atom", "rdf", "feed"],
+    "authors": [
+      "oweitman <oweitman@gmx.de>"
+    ],
+    "keywords": [
+      "rss",
+      "atom",
+      "rdf",
+      "feed"
+    ],
     "licenseInformation": {
       "type": "free",
       "license": "MIT"
@@ -170,7 +182,10 @@
     "readme": "https://github.com/oweitman/ioBroker.rssfeed/blob/main/README.md",
     "loglevel": "info",
     "tier": 3,
-    "restartAdapters": ["vis", "vis-2"],
+    "restartAdapters": [
+      "vis",
+      "vis-2"
+    ],
     "mode": "daemon",
     "type": "misc-data",
     "compact": true,
@@ -182,7 +197,13 @@
         "name": "vis2rssfeedWidgets",
         "url": "vis2rssfeed/customWidgets.js",
         "bundlerType": "module",
-        "components": ["RSSArticleMarquee5", "RSSMetaHelper", "RSSArticleHelper", "RSSWidget", "RSSMultiWidget"]
+        "components": [
+          "RSSArticleMarquee5",
+          "RSSMetaHelper",
+          "RSSArticleHelper",
+          "RSSWidget",
+          "RSSMultiWidget"
+        ]
       }
     },
     "adminUI": {

@@ -1,4 +1,8 @@
 # Older changes
+## 4.1.0 (2026-06-10)
+
+- fix repochecker
+
 ## 4.0.4-alpha.0 (2026-06-09)
 
 - add user agent to settings and Axios requests
