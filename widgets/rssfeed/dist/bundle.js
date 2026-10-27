@@ -1544,7 +1544,7 @@ function encode_char(c) {
   var import_ejs_min = __toESM(require_ejs_min());
 
   // ../package.json
-  var version = "5.0.2";
+  var version = "5.0.3";
 
   // rssfeed/js/rssfeed.js
   var translations = require_translations();

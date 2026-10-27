@@ -1,7 +1,7 @@
 {
     "name": "iobroker.vis-2-widgets-rssfeed",
     "private": true,
-    "version": "5.0.2",
+    "version": "5.0.3",
     "type": "module",
     "dependencies": {
         "@emotion/react": "^11.14.0",

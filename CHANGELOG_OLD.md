@@ -1,4 +1,8 @@
 # Older changes
+## 4.0.4-alpha.0 (2026-06-09)
+
+- add user agent to settings and Axios requests
+
 ## 4.0.3 (2026-03-26)
 
 - update packages
