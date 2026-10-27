@@ -125,10 +125,7 @@
       {
         "condition": {
           "operand": "and",
-          "rules": [
-            "oldVersion<3.6.0",
-            "newVersion>=3.6.0"
-          ]
+          "rules": ["oldVersion<3.6.0", "newVersion>=3.6.0"]
         },
         "title": {
           "en": "JSON template widgets deprecated",
@@ -156,21 +153,12 @@
           "uk": "Будь ласка, використовуйте адаптер vis-jsontemplate.",
           "zh-cn": "请使用适配器 vis-jsonTemplate。"
         },
-        "buttons": [
-          "agree"
-        ],
+        "buttons": ["agree"],
         "level": "info"
       }
     ],
-    "authors": [
-      "oweitman <oweitman@gmx.de>"
-    ],
-    "keywords": [
-      "rss",
-      "atom",
-      "rdf",
-      "feed"
-    ],
+    "authors": ["oweitman <oweitman@gmx.de>"],
+    "keywords": ["rss", "atom", "rdf", "feed"],
     "licenseInformation": {
       "type": "free",
       "license": "MIT"
@@ -182,10 +170,7 @@
     "readme": "https://github.com/oweitman/ioBroker.rssfeed/blob/main/README.md",
     "loglevel": "info",
     "tier": 3,
-    "restartAdapters": [
-      "vis",
-      "vis-2"
-    ],
+    "restartAdapters": ["vis", "vis-2"],
     "mode": "daemon",
     "type": "misc-data",
     "compact": true,
@@ -197,13 +182,7 @@
         "name": "vis2rssfeedWidgets",
         "url": "vis2rssfeed/customWidgets.js",
         "bundlerType": "module",
-        "components": [
-          "RSSArticleMarquee5",
-          "RSSMetaHelper",
-          "RSSArticleHelper",
-          "RSSWidget",
-          "RSSMultiWidget"
-        ]
+        "components": ["RSSArticleMarquee5", "RSSMetaHelper", "RSSArticleHelper", "RSSWidget", "RSSMultiWidget"]
       }
     },
     "adminUI": {
@@ -214,6 +193,9 @@
         "js-controller": ">=6.0.11"
       }
     ],
+    "ifInstalledDependencies": {
+      "vis-2": ">=2.20.0"
+    },
     "globalDependencies": [
       {
         "admin": ">=7.6.17"

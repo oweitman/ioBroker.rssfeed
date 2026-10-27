@@ -11,6 +11,8 @@ function cleanVis2Widgets() {
 
 function copyVis2Widgets() {
     copyFiles(['src-widgets/build/customWidgets.js'], 'widgets/vis2rssfeed');
+    copyFiles(['src-widgets/build/mf-manifest.json'], 'widgets/vis2rssfeed');
+    copyFiles(['src-widgets/build/mf-stats.json'], 'widgets/vis2rssfeed');
     copyFiles(['src-widgets/build/assets/*.*'], 'widgets/vis2rssfeed/assets');
     copyFiles(['src-widgets/build/img/*'], 'widgets/vis2rssfeed/img');
 }

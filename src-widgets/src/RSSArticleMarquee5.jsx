@@ -3,9 +3,12 @@ import '@vitejs/plugin-react/preamble';
 import React from 'react';
 import { Link, Dialog, IconButton } from '@mui/material';
 //import CloseIcon from '@mui/icons-material/Close';
-import Marquee from 'react-fast-marquee';
+import MarqueeModule from 'react-fast-marquee';
 import Generic from './Generic';
 import rssExample from './rss.json';
+
+// The Vite dev optimizer can expose this CommonJS package as a default-export wrapper.
+const Marquee = /** @type {any} */ (MarqueeModule).default || MarqueeModule;
 
 const vis = /** @type {any} */ (window).vis;
 

@@ -116,6 +116,12 @@ widget-specific variables and examples remain in the corresponding VIS guide.
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+- Widgets migrated to React 19. This requires at least vis-2 version 2.20.0 or higher.
+- The minimum browser versions have been increased to the following: “Chrome 89”, “Edge 89”, “Firefox 89”, “Safari 15”
+
 ### 5.0.3 (2026-10-27)
 
 - last valid version for vis-2 with react 18 (vis-2 version <=2.15.4)

@@ -1953,13 +1953,13 @@ function encode_char(c) {
             const source = rss_withname ? `${item.meta_name || item.meta_title}: ` : "";
             let title;
             if (opentype === "link") {
-              title = `<a href="${item.link}" target="rssarticle">${time} ${item.title}</a>`;
+              title = `<a href="${item.link}" target="rssarticle">${time} ${source}${item.title}</a>`;
             } else if (opentype === "popup") {
               title = `<a onclick="vis.binds.rssfeed.marquee5.dialog(this,event,'${widgetID}','${item.link}')">${time} ${item.title}</a>`;
             } else {
               title = item.title;
             }
-            t += ` ${divider} ${time} ${source}${title}`;
+            t += ` ${divider} ${title}`;
             return t;
           }, titles);
           const duration = (titleslength / speed).toFixed();

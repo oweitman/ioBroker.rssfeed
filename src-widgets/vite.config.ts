@@ -1,8 +1,6 @@
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import vitetsConfigPaths from 'vite-tsconfig-paths';
 import { federation } from '@module-federation/vite';
-import topLevelAwait from 'vite-plugin-top-level-await';
 import { fileURLToPath } from 'node:url';
 
 const configDir = path.dirname(fileURLToPath(import.meta.url));
@@ -19,10 +17,16 @@ const sharedModules = {
     '@mui/material': singleton(),
     '@mui/icons-material': singleton(),
     'prop-types': singleton(),
-    '@iobroker/adapter-react-v5': singleton(),
+    '@iobroker/gui-components': singleton(),
 };
 
 const config = {
+    oxc: {
+        jsx: {
+            // VIS-2 shares its production React runtime, which does not provide jsxDEV.
+            development: false,
+        },
+    },
     plugins: [
         federation({
             manifest: true,
@@ -40,12 +44,7 @@ const config = {
             shared: sharedModules,
             dts: false,
         }),
-        topLevelAwait({
-            promiseExportName: '__tla',
-            promiseImportName: (index: number): string => `__tla_${index}`,
-        }),
         react(),
-        vitetsConfigPaths(),
     ],
     server: {
         port: 3000,
@@ -63,7 +62,7 @@ const config = {
     },
     base: './',
     build: {
-        target: 'chrome81',
+        target: ['chrome89', 'edge89', 'firefox89', 'safari15'],
         outDir: './build',
         rollupOptions: {
             onwarn(warning: { code: string }, warn: (warning: { code: string }) => void): void {
@@ -86,17 +85,19 @@ const config = {
             '@mui/icons-material',
             '@mui/system',
             'prop-types',
-            '@iobroker/adapter-react-v5',
+            '@iobroker/gui-components',
         ],
     },
     resolve: {
+        tsconfigPaths: true,
         dedupe: [
             'react',
             'react-dom',
+            '@emotion/react',
             'prop-types',
             '@mui/material',
             '@mui/icons-material',
-            '@iobroker/adapter-react-v5',
+            '@iobroker/gui-components',
         ],
         alias: {
             'react-ace': path.resolve(configDir, 'node_modules/react-ace/lib/ace.js'),

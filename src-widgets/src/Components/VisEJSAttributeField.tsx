@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { TextField, Button } from '@mui/material';
 import { Edit as EditIcon } from '@mui/icons-material';
-import { I18n } from '@iobroker/adapter-react-v5';
+import { I18n } from '@iobroker/gui-components';
 
 import EJSDialog from './EJSDialog';
 
@@ -46,15 +46,18 @@ const VisEJSAttributeField = ({
                     }); // returns all changed field as object.
                     // If some propertiy is null, so it will be deleted from data
                 }}
-                InputProps={{
-                    endAdornment: (
-                        <Button
-                            size="small"
-                            onClick={() => setIdDialog(true)}
-                        >
-                            <EditIcon />
-                        </Button>
-                    ),
+                slotProps={{
+                    input: {
+                        endAdornment: (
+                            <Button
+                                size="small"
+                                aria-label={I18n.t('rssfeed_widget_title')}
+                                onClick={() => setIdDialog(true)}
+                            >
+                                <EditIcon />
+                            </Button>
+                        ),
+                    },
                 }}
                 rows={2}
             />

@@ -1,7 +1,7 @@
 // TextDialog
 import React, { useState } from 'react';
 
-import { I18n } from '@iobroker/adapter-react-v5';
+import { I18n } from '@iobroker/gui-components';
 import RSSDialog from './RSSDialog';
 import EJSAceEditor from './EJSAceEditor';
 

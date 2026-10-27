@@ -169,7 +169,7 @@ function runRegisteredCleanup(cleanupKey) {
  * } & React.HTMLAttributes<HTMLDivElement>} props
  */
 function InnerHTML({ html, allowRerender, ...rest }) {
-    /** @type {React.RefObject<HTMLDivElement>} */
+    /** @type {React.RefObject<HTMLDivElement | null>} */
     const divRef = useRef(null);
     const instanceIdRef = useRef(`vis-json-template-${Math.random().toString(36).slice(2)}`);
     const renderCountRef = useRef(0);

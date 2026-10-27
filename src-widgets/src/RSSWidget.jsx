@@ -2,7 +2,7 @@ import '@vitejs/plugin-react/preamble';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { I18n } from '@iobroker/adapter-react-v5';
+import { I18n } from '@iobroker/gui-components';
 import VisEJSAttributeField from './Components/VisEJSAttributeField';
 import InnerHtml from './Components/InnerHTML';
 import Generic from './Generic';
