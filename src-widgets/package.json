@@ -29,7 +29,7 @@
         "react-fast-marquee": "^1.6.5",
         "sass": "^1.106.1",
         "typescript": "npm:@typescript/typescript6@^6.0.2",
-        "vite": "8.3.5",
+        "vite": "8.3.7",
         "vite-tsconfig-paths": "^6.1.1"
     },
     "scripts": {
